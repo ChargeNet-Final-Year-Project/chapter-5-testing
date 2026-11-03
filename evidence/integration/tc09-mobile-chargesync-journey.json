@@ -1,0 +1,166 @@
+{
+  "driver_id": "usr_0ad0b95d8c7280959bad1410",
+  "captured_at": "2026-10-27T20:27:35.084318+08:00",
+  "session_id": "ses_87b8af704ddcbd5e07188429",
+  "live": {
+    "quoteId": "qte_df7dc3d9a11fd85c345b0ab1",
+    "originalCurrency": "SGD",
+    "walletCurrency": "MYR",
+    "exchangeRate": "3.4500000000",
+    "rateSource": "chargenet-demo-v1",
+    "originalCost": 0.19,
+    "unfundedAmount": 0,
+    "reservedAmount": 126.22,
+    "tariffDecimal": "0.600000",
+    "id": "ses_87b8af704ddcbd5e07188429",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+    "cpoId": "cpo_chargesync",
+    "cpoName": "ChargeSync",
+    "stationId": "stn_demo_marina_bay",
+    "stationName": "ChargeSync Marina Bay",
+    "connectorId": "con_demo_marina_bay_dc",
+    "evseUid": "SG*CSY*E*D12DC",
+    "connectorType": "CCS2",
+    "status": "CHARGING",
+    "startTime": "2026-10-27T20:26:58.177144+08:00",
+    "endTime": null,
+    "durationSeconds": 20,
+    "kwhDelivered": 0.318,
+    "currentPowerKw": 56.9,
+    "batterySoc": 20.72,
+    "targetSoc": 80,
+    "tariffPerKwh": 0.6,
+    "totalCost": 0.66,
+    "balanceAfter": null,
+    "stopReason": null,
+    "cdrId": null,
+    "cdrJson": null
+  },
+  "receipt": {
+    "quoteId": "qte_df7dc3d9a11fd85c345b0ab1",
+    "originalCurrency": "SGD",
+    "walletCurrency": "MYR",
+    "exchangeRate": "3.4500000000",
+    "rateSource": "chargenet-demo-v1",
+    "originalCost": 3.2,
+    "unfundedAmount": 0,
+    "reservedAmount": 126.22,
+    "tariffDecimal": "0.600000",
+    "id": "ses_87b8af704ddcbd5e07188429",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+    "cpoId": "cpo_chargesync",
+    "cpoName": "ChargeSync",
+    "stationId": "stn_demo_marina_bay",
+    "stationName": "ChargeSync Marina Bay",
+    "connectorId": "con_demo_marina_bay_dc",
+    "evseUid": "SG*CSY*E*D12DC",
+    "connectorType": "CCS2",
+    "status": "COMPLETED",
+    "startTime": "2026-10-27T20:26:58.177144+08:00",
+    "endTime": "2026-10-27T20:27:32.862433+08:00",
+    "durationSeconds": 340,
+    "kwhDelivered": 5.325,
+    "currentPowerKw": 55.84,
+    "batterySoc": 27.4,
+    "targetSoc": 80,
+    "tariffPerKwh": 0.6,
+    "totalCost": 11.04,
+    "balanceAfter": 115.18,
+    "stopReason": "USER",
+    "cdrId": "cdr_9ebddd7f94b0cbcec6ad4bd2",
+    "cdrJson": {
+      "auth_method": "COMMAND",
+      "cdr_location": {
+        "address": "Marina Boulevard, Marina Bay, Singapore (simulated site)",
+        "city": "Marina Bay",
+        "connector_format": "CABLE",
+        "connector_id": "1",
+        "connector_power_type": "DC",
+        "connector_standard": "IEC_62196_T2_COMBO",
+        "coordinates": {
+          "latitude": "1.280000",
+          "longitude": "103.854000"
+        },
+        "country": "SGP",
+        "evse_id": "SG*CSY*E*D12DC",
+        "evse_uid": "SG*CSY*E*D12DC",
+        "id": "DEMO-MARINA-BAY",
+        "name": "ChargeSync Marina Bay"
+      },
+      "cdr_token": {
+        "contract_id": "usr_0ad0b95d8c7280959bad1410",
+        "country_code": "MY",
+        "party_id": "CNT",
+        "type": "APP_USER",
+        "uid": "usr_0ad0b95d8c7280959bad1410"
+      },
+      "charging_periods": [
+        {
+          "dimensions": [
+            {
+              "type": "ENERGY",
+              "volume": 5.325
+            },
+            {
+              "type": "TIME",
+              "volume": 0.0944
+            }
+          ],
+          "start_date_time": "2026-10-27T12:26:58Z"
+        }
+      ],
+      "country_code": "MY",
+      "currency": "SGD",
+      "end_date_time": "2026-10-27T12:27:32Z",
+      "id": "cdr_9ebddd7f94b0cbcec6ad4bd2",
+      "last_updated": "2026-10-27T12:27:32Z",
+      "party_id": "CSY",
+      "session_id": "ses_87b8af704ddcbd5e07188429",
+      "start_date_time": "2026-10-27T12:26:58Z",
+      "tariffs": [
+        {
+          "country_code": "MY",
+          "currency": "SGD",
+          "elements": [
+            {
+              "price_components": [
+                {
+                  "price": 0.6,
+                  "step_size": 1,
+                  "type": "ENERGY"
+                }
+              ]
+            }
+          ],
+          "id": "trf_demo_chargesync_sg_dc",
+          "last_updated": "2026-10-27T12:26:58Z",
+          "party_id": "CSY",
+          "tax_included": "N/A"
+        }
+      ],
+      "total_cost": {
+        "before_taxes": 3.2
+      },
+      "total_energy": 5.325,
+      "total_time": 0.0944
+    }
+  },
+  "walletBefore": {
+    "reserved": 0,
+    "availableBalance": 126.22,
+    "id": "wal_20bbd19066fde17edacc6d02",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "balance": 126.22,
+    "currency": "MYR"
+  },
+  "walletAfter": {
+    "reserved": 0,
+    "availableBalance": 115.18,
+    "id": "wal_20bbd19066fde17edacc6d02",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "balance": 115.18,
+    "currency": "MYR"
+  }
+}

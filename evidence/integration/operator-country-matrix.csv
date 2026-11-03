@@ -1,0 +1,289 @@
+case_id,subcase,status,at,elapsed_seconds,source_log,observed_test_output
+TC21,voltgo_MY,Pass,2026-10-27T20:05:06.9100788+08:00,0.39,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/voltgo_MY
+2026/10/27 20:05:06 POST /api/v1/quotes -> 201 (24ms, 657B)
+2026/10/27 20:05:06 POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/10/27 20:05:06 ocpi: command START_SESSION for ses_801f646c6751c4c3b9f9f7b1 answered ACCEPTED
+2026/10/27 20:05:06 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_801f646c6751c4c3b9f9f7b1 -> 200 (3ms, 112B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/10/27 20:05:06 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BATU-KAWAN
+2026/10/27 20:05:06 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BATU-KAWAN/MY*VLT*E*D11DC -> 200 (16ms, 158B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:06 POST /api/v1/sessions/start -> 201 (160ms, 865B)
+2026/10/27 20:05:06 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-801f646c6751c4c3b9f9f7b1 -> 200 (20ms, 850B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:06 POST /api/v1/sessions/start -> 201 (5ms, 865B)
+2026/10/27 20:05:06 ocpi: command STOP_SESSION for ses_801f646c6751c4c3b9f9f7b1 answered ACCEPTED
+2026/10/27 20:05:06 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_801f646c6751c4c3b9f9f7b1 -> 200 (3ms, 112B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:06 POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200 (4ms, 112B)
+2026/10/27 20:05:06 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-801f646c6751c4c3b9f9f7b1 -> 200 (45ms, 848B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:06 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BATU-KAWAN
+2026/10/27 20:05:06 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BATU-KAWAN/MY*VLT*E*D11DC -> 200 (15ms, 159B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:06 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-801f646c6751c4c3b9f9f7b1 -> 200 (11ms, 890B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:06 POST /api/v1/sessions/ses_801f646c6751c4c3b9f9f7b1/stop -> 200 (177ms, 2171B)
+2026/10/27 20:05:06 ocpi: partner=cpo_voltgo stored the cdr of session ses_801f646c6751c4c3b9f9f7b1 (4.803 kWh)
+2026/10/27 20:05:06 POST /ocpi/emsp/2.3.0/cdrs -> 201 (120ms, 1608B)
+2026/10/27 20:05:06 emulator[voltgo]: pushed cdr (POST)
+2026/10/27 20:05:06 POST /api/v1/sessions/ses_801f646c6751c4c3b9f9f7b1/stop -> 200 (6ms, 2171B)
+    roaming_e2e_test.go:130: voltgo MY: 4.803 kWh, MYR 7.20, rate 1.0000000000, MYR 7.20 deducted, CDR cdr_c6dcf392ea52a824b860d8d1
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/voltgo_MY (0.39s)
+"
+TC21,voltgo_SG,Pass,2026-10-27T20:05:07.2086686+08:00,0.3,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/voltgo_SG
+2026/10/27 20:05:06 POST /api/v1/quotes -> 201 (29ms, 674B)
+2026/10/27 20:05:07 POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/10/27 20:05:07 ocpi: command START_SESSION for ses_97677e3ccedb669b3ea40a8e answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_97677e3ccedb669b3ea40a8e -> 200 (2ms, 112B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/10/27 20:05:07 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-JURONG-EAST
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-JURONG-EAST/SG*VLT*E*D13DC -> 200 (11ms, 159B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (104ms, 873B)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (3ms, 873B)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-97677e3ccedb669b3ea40a8e -> 200 (16ms, 851B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-97677e3ccedb669b3ea40a8e -> 200 (8ms, 850B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:07 ocpi: command STOP_SESSION for ses_97677e3ccedb669b3ea40a8e answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_97677e3ccedb669b3ea40a8e -> 200 (2ms, 112B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:07 POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200 (3ms, 112B)
+2026/10/27 20:05:07 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-JURONG-EAST
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-JURONG-EAST/SG*VLT*E*D13DC -> 200 (11ms, 160B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-97677e3ccedb669b3ea40a8e -> 200 (8ms, 892B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_97677e3ccedb669b3ea40a8e/stop -> 200 (99ms, 2174B)
+2026/10/27 20:05:07 ocpi: partner=cpo_voltgo stored the cdr of session ses_97677e3ccedb669b3ea40a8e (4.671 kWh)
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/cdrs -> 201 (73ms, 1600B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed cdr (POST)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_97677e3ccedb669b3ea40a8e/stop -> 200 (4ms, 2174B)
+    roaming_e2e_test.go:130: voltgo SG: 4.671 kWh, SGD 2.80, rate 3.4500000000, MYR 9.66 deducted, CDR cdr_0cf58c979232699100c401e6
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/voltgo_SG (0.30s)
+"
+TC21,voltgo_TH,Pass,2026-10-27T20:05:07.4983527+08:00,0.29,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/voltgo_TH
+2026/10/27 20:05:07 POST /api/v1/quotes -> 201 (13ms, 678B)
+2026/10/27 20:05:07 POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/10/27 20:05:07 ocpi: command START_SESSION for ses_b03afd6bfa677952261f91f3 answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_b03afd6bfa677952261f91f3 -> 200 (1ms, 112B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (88ms, 874B)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (3ms, 874B)
+2026/10/27 20:05:07 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BANGKOK-WEST
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BANGKOK-WEST/TH*VLT*E*D24DC -> 200 (12ms, 160B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-b03afd6bfa677952261f91f3 -> 200 (13ms, 852B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-b03afd6bfa677952261f91f3 -> 200 (8ms, 851B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:07 ocpi: command STOP_SESSION for ses_b03afd6bfa677952261f91f3 answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_b03afd6bfa677952261f91f3 -> 200 (2ms, 112B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:07 POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200 (5ms, 112B)
+2026/10/27 20:05:07 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BANGKOK-WEST
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BANGKOK-WEST/TH*VLT*E*D24DC -> 200 (17ms, 161B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-b03afd6bfa677952261f91f3 -> 200 (9ms, 893B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed session (PUT)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_b03afd6bfa677952261f91f3/stop -> 200 (128ms, 2179B)
+2026/10/27 20:05:07 ocpi: partner=cpo_voltgo stored the cdr of session ses_b03afd6bfa677952261f91f3 (4.525 kWh)
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/cdrs -> 201 (96ms, 1603B)
+2026/10/27 20:05:07 emulator[voltgo]: pushed cdr (POST)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_b03afd6bfa677952261f91f3/stop -> 200 (4ms, 2179B)
+    roaming_e2e_test.go:130: voltgo TH: 4.525 kWh, THB 36.20, rate 0.1300000000, MYR 4.71 deducted, CDR cdr_bfc3734ea51f454d1f483355
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/voltgo_TH (0.29s)
+"
+TC21,chargesync_MY,Pass,2026-10-27T20:05:07.7303211+08:00,0.23,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/chargesync_MY
+2026/10/27 20:05:07 POST /api/v1/quotes -> 201 (17ms, 660B)
+2026/10/27 20:05:07 POST /emulator/chargesync/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/10/27 20:05:07 ocpi: command START_SESSION for ses_6c15dcce0605bd64431c8d36 answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_6c15dcce0605bd64431c8d36 -> 200 (1ms, 112B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed START_SESSION result (POST)
+2026/10/27 20:05:07 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-AIR-ITAM
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-AIR-ITAM/MY*CSY*E*D04DC -> 200 (11ms, 156B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (69ms, 872B)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (4ms, 872B)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-6c15dcce0605bd64431c8d36 -> 200 (16ms, 848B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-6c15dcce0605bd64431c8d36 -> 200 (8ms, 847B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:07 ocpi: command STOP_SESSION for ses_6c15dcce0605bd64431c8d36 answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_6c15dcce0605bd64431c8d36 -> 200 (1ms, 112B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:07 POST /emulator/chargesync/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/10/27 20:05:07 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-AIR-ITAM
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-AIR-ITAM/MY*CSY*E*D04DC -> 200 (11ms, 157B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-6c15dcce0605bd64431c8d36 -> 200 (7ms, 889B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:07 ocpi: partner=cpo_chargesync stored the cdr of session ses_6c15dcce0605bd64431c8d36 (1.871 kWh)
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/cdrs -> 201 (53ms, 1601B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed cdr (POST)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_6c15dcce0605bd64431c8d36/stop -> 200 (91ms, 2173B)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_6c15dcce0605bd64431c8d36/stop -> 200 (2ms, 2173B)
+    roaming_e2e_test.go:130: chargesync MY: 1.871 kWh, MYR 2.81, rate 1.0000000000, MYR 2.81 deducted, CDR cdr_18d07521d1ad8f6993541962
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/chargesync_MY (0.23s)
+"
+TC21,chargesync_SG,Pass,2026-10-27T20:05:07.9595874+08:00,0.23,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/chargesync_SG
+2026/10/27 20:05:07 POST /api/v1/quotes -> 201 (15ms, 680B)
+2026/10/27 20:05:07 POST /emulator/chargesync/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/10/27 20:05:07 ocpi: command START_SESSION for ses_dc344d288beacd43fcfd65e2 answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_dc344d288beacd43fcfd65e2 -> 200 (1ms, 112B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed START_SESSION result (POST)
+2026/10/27 20:05:07 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-MARINA-BAY
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-MARINA-BAY/SG*CSY*E*D12DC -> 200 (11ms, 158B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (67ms, 881B)
+2026/10/27 20:05:07 POST /api/v1/sessions/start -> 201 (3ms, 881B)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-dc344d288beacd43fcfd65e2 -> 200 (12ms, 850B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-dc344d288beacd43fcfd65e2 -> 200 (6ms, 848B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:07 ocpi: command STOP_SESSION for ses_dc344d288beacd43fcfd65e2 answered ACCEPTED
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_dc344d288beacd43fcfd65e2 -> 200 (1ms, 112B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:07 POST /emulator/chargesync/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/10/27 20:05:07 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-MARINA-BAY
+2026/10/27 20:05:07 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-MARINA-BAY/SG*CSY*E*D12DC -> 200 (10ms, 159B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:07 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-dc344d288beacd43fcfd65e2 -> 200 (4ms, 890B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:07 ocpi: partner=cpo_chargesync stored the cdr of session ses_dc344d288beacd43fcfd65e2 (1.891 kWh)
+2026/10/27 20:05:07 POST /ocpi/emsp/2.3.0/cdrs -> 201 (53ms, 1602B)
+2026/10/27 20:05:07 emulator[chargesync]: pushed cdr (POST)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_dc344d288beacd43fcfd65e2/stop -> 200 (94ms, 2183B)
+2026/10/27 20:05:07 POST /api/v1/sessions/ses_dc344d288beacd43fcfd65e2/stop -> 200 (2ms, 2183B)
+    roaming_e2e_test.go:130: chargesync SG: 1.891 kWh, SGD 1.13, rate 3.4500000000, MYR 3.90 deducted, CDR cdr_bc0dd7a9afac05cf2cd20a42
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/chargesync_SG (0.23s)
+"
+TC21,chargesync_TH,Pass,2026-10-27T20:05:08.1808639+08:00,0.22,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/chargesync_TH
+2026/10/27 20:05:07 POST /api/v1/quotes -> 201 (32ms, 676B)
+2026/10/27 20:05:08 POST /emulator/chargesync/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/10/27 20:05:08 ocpi: command START_SESSION for ses_2845071b2255cef7f12f198b answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_2845071b2255cef7f12f198b -> 200 (2ms, 112B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed START_SESSION result (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (65ms, 871B)
+2026/10/27 20:05:08 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-BANGKOK
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-BANGKOK/TH*CSY*E*D20DC -> 200 (12ms, 155B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (3ms, 871B)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-2845071b2255cef7f12f198b -> 200 (10ms, 847B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-2845071b2255cef7f12f198b -> 200 (6ms, 849B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:08 ocpi: command STOP_SESSION for ses_2845071b2255cef7f12f198b answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_2845071b2255cef7f12f198b -> 200 (2ms, 112B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:08 POST /emulator/chargesync/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/10/27 20:05:08 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-BANGKOK
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-BANGKOK/TH*CSY*E*D20DC -> 200 (9ms, 156B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-2845071b2255cef7f12f198b -> 200 (6ms, 891B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed session (PUT)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_2845071b2255cef7f12f198b/stop -> 200 (70ms, 2167B)
+2026/10/27 20:05:08 ocpi: partner=cpo_chargesync stored the cdr of session ses_2845071b2255cef7f12f198b (1.922 kWh)
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/cdrs -> 201 (48ms, 1599B)
+2026/10/27 20:05:08 emulator[chargesync]: pushed cdr (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_2845071b2255cef7f12f198b/stop -> 200 (2ms, 2167B)
+    roaming_e2e_test.go:130: chargesync TH: 1.922 kWh, THB 15.38, rate 0.1300000000, MYR 2.00 deducted, CDR cdr_0ccf879f6b6e83434a1b3ae6
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/chargesync_TH (0.22s)
+"
+TC21,ecowatt_MY,Pass,2026-10-27T20:05:08.4042072+08:00,0.22,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_MY
+2026/10/27 20:05:08 POST /api/v1/quotes -> 201 (14ms, 666B)
+2026/10/27 20:05:08 POST /emulator/ecowatt/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/10/27 20:05:08 ocpi: command START_SESSION for ses_628a3dabf4031750f1f602f6 answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_628a3dabf4031750f1f602f6 -> 200 (2ms, 112B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed START_SESSION result (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (63ms, 879B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-BUKIT-MERTAJAM
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-BUKIT-MERTAJAM/MY*ECO*E*D09DC -> 200 (10ms, 162B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (3ms, 879B)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-628a3dabf4031750f1f602f6 -> 200 (10ms, 853B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-628a3dabf4031750f1f602f6 -> 200 (6ms, 854B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 ocpi: command STOP_SESSION for ses_628a3dabf4031750f1f602f6 answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_628a3dabf4031750f1f602f6 -> 200 (1ms, 112B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:08 POST /emulator/ecowatt/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-BUKIT-MERTAJAM
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-BUKIT-MERTAJAM/MY*ECO*E*D09DC -> 200 (10ms, 163B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-628a3dabf4031750f1f602f6 -> 200 (6ms, 896B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt stored the cdr of session ses_628a3dabf4031750f1f602f6 (1.866 kWh)
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/cdrs -> 201 (55ms, 1616B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed cdr (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_628a3dabf4031750f1f602f6/stop -> 200 (92ms, 2197B)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_628a3dabf4031750f1f602f6/stop -> 200 (3ms, 2197B)
+    roaming_e2e_test.go:130: ecowatt MY: 1.866 kWh, MYR 2.05, rate 1.0000000000, MYR 2.05 deducted, CDR cdr_f429213724a29ea126a4ba2b
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_MY (0.22s)
+"
+TC21,ecowatt_SG,Pass,2026-10-27T20:05:08.6063883+08:00,0.2,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_SG
+2026/10/27 20:05:08 POST /api/v1/quotes -> 201 (14ms, 668B)
+2026/10/27 20:05:08 POST /emulator/ecowatt/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/10/27 20:05:08 ocpi: command START_SESSION for ses_5826eea936718fccc88532e4 answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_5826eea936718fccc88532e4 -> 200 (2ms, 112B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed START_SESSION result (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (56ms, 867B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-ORCHARD
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-ORCHARD/SG*ECO*E*D16DC -> 200 (10ms, 155B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (3ms, 867B)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-5826eea936718fccc88532e4 -> 200 (13ms, 846B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-5826eea936718fccc88532e4 -> 200 (6ms, 846B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 ocpi: command STOP_SESSION for ses_5826eea936718fccc88532e4 answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_5826eea936718fccc88532e4 -> 200 (2ms, 112B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:08 POST /emulator/ecowatt/ocpi/2.3.0/commands/STOP_SESSION -> 200 (3ms, 112B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-ORCHARD
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-ORCHARD/SG*ECO*E*D16DC -> 200 (10ms, 156B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-5826eea936718fccc88532e4 -> 200 (6ms, 888B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_5826eea936718fccc88532e4/stop -> 200 (75ms, 2167B)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_5826eea936718fccc88532e4/stop -> 200 (4ms, 2167B)
+    roaming_e2e_test.go:130: ecowatt SG: 1.809 kWh, SGD 0.99, rate 3.4500000000, MYR 3.42 deducted, CDR cdr_837ffedb27bfa1a4cd0842a6
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_SG (0.20s)
+"
+TC21,ecowatt_TH,Pass,2026-10-27T20:05:08.8267988+08:00,0.22,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_TH
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt stored the cdr of session ses_5826eea936718fccc88532e4 (1.809 kWh)
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/cdrs -> 201 (53ms, 1598B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed cdr (POST)
+2026/10/27 20:05:08 POST /api/v1/quotes -> 201 (20ms, 680B)
+2026/10/27 20:05:08 POST /emulator/ecowatt/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/10/27 20:05:08 ocpi: command START_SESSION for ses_7da2489af23387677e67e1a8 answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_7da2489af23387677e67e1a8 -> 200 (1ms, 112B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed START_SESSION result (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (76ms, 879B)
+2026/10/27 20:05:08 POST /api/v1/sessions/start -> 201 (3ms, 879B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-HAT-YAI-EAST
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-HAT-YAI-EAST/TH*ECO*E*D21DC -> 200 (13ms, 160B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed evse CHARGING (PATCH)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-7da2489af23387677e67e1a8 -> 200 (12ms, 851B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-7da2489af23387677e67e1a8 -> 200 (5ms, 852B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 ocpi: command STOP_SESSION for ses_7da2489af23387677e67e1a8 answered ACCEPTED
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_7da2489af23387677e67e1a8 -> 200 (2ms, 112B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed STOP_SESSION result (POST)
+2026/10/27 20:05:08 POST /emulator/ecowatt/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-HAT-YAI-EAST
+2026/10/27 20:05:08 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-HAT-YAI-EAST/TH*ECO*E*D21DC -> 200 (10ms, 161B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed evse AVAILABLE (PATCH)
+2026/10/27 20:05:08 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-7da2489af23387677e67e1a8 -> 200 (4ms, 894B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed session (PUT)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_7da2489af23387677e67e1a8/stop -> 200 (66ms, 2188B)
+2026/10/27 20:05:08 ocpi: partner=cpo_ecowatt stored the cdr of session ses_7da2489af23387677e67e1a8 (1.925 kWh)
+2026/10/27 20:05:08 POST /ocpi/emsp/2.3.0/cdrs -> 201 (46ms, 1608B)
+2026/10/27 20:05:08 emulator[ecowatt]: pushed cdr (POST)
+2026/10/27 20:05:08 POST /api/v1/sessions/ses_7da2489af23387677e67e1a8/stop -> 200 (5ms, 2188B)
+    roaming_e2e_test.go:130: ecowatt TH: 1.925 kWh, THB 14.44, rate 0.1300000000, MYR 1.88 deducted, CDR cdr_016a35577b7967e9d13f90c9
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_TH (0.22s)
+"

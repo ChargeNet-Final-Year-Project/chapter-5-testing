@@ -1,0 +1,110 @@
+{
+  "quoteId": "qte_d2c7b4d6ce307b21942fa7ae",
+  "originalCurrency": "MYR",
+  "walletCurrency": "MYR",
+  "exchangeRate": "1.0000000000",
+  "rateSource": "same-currency",
+  "originalCost": 2.29,
+  "unfundedAmount": 0,
+  "reservedAmount": 82.62,
+  "tariffDecimal": "1.500000",
+  "id": "ses_06517fc7ef95b659b4e0ec9c",
+  "userId": "usr_0ad0b95d8c7280959bad1410",
+  "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+  "cpoId": "cpo_voltgo",
+  "cpoName": "VoltGo",
+  "stationId": "stn_demo_batu_kawan",
+  "stationName": "VoltGo Batu Kawan",
+  "connectorId": "con_demo_batu_kawan_dc",
+  "evseUid": "MY*VLT*E*D11DC",
+  "connectorType": "CCS2",
+  "status": "COMPLETED",
+  "startTime": "2026-10-27T20:15:01.196722+08:00",
+  "endTime": "2026-10-27T20:15:05.866555+08:00",
+  "durationSeconds": 40,
+  "kwhDelivered": 1.524,
+  "currentPowerKw": 135.88,
+  "batterySoc": 31.43,
+  "targetSoc": 100,
+  "tariffPerKwh": 1.5,
+  "totalCost": 2.29,
+  "balanceAfter": 80.33,
+  "stopReason": "USER",
+  "cdrId": "cdr_3780becf77137017f067b8db",
+  "cdrJson": {
+    "auth_method": "COMMAND",
+    "cdr_location": {
+      "address": "Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)",
+      "city": "Batu Kawan",
+      "connector_format": "CABLE",
+      "connector_id": "1",
+      "connector_power_type": "DC",
+      "connector_standard": "IEC_62196_T2_COMBO",
+      "coordinates": {
+        "latitude": "5.245000",
+        "longitude": "100.438000"
+      },
+      "country": "MYS",
+      "evse_id": "MY*VLT*E*D11DC",
+      "evse_uid": "MY*VLT*E*D11DC",
+      "id": "DEMO-BATU-KAWAN",
+      "name": "VoltGo Batu Kawan"
+    },
+    "cdr_token": {
+      "contract_id": "usr_0ad0b95d8c7280959bad1410",
+      "country_code": "MY",
+      "party_id": "CNT",
+      "type": "APP_USER",
+      "uid": "usr_0ad0b95d8c7280959bad1410"
+    },
+    "charging_periods": [
+      {
+        "dimensions": [
+          {
+            "type": "ENERGY",
+            "volume": 1.524
+          },
+          {
+            "type": "TIME",
+            "volume": 0.0111
+          }
+        ],
+        "start_date_time": "2026-10-27T12:15:01Z"
+      }
+    ],
+    "country_code": "MY",
+    "currency": "MYR",
+    "end_date_time": "2026-10-27T12:15:05Z",
+    "id": "cdr_3780becf77137017f067b8db",
+    "last_updated": "2026-10-27T12:15:05Z",
+    "party_id": "VLT",
+    "session_id": "ses_06517fc7ef95b659b4e0ec9c",
+    "start_date_time": "2026-10-27T12:15:01Z",
+    "tariffs": [
+      {
+        "country_code": "MY",
+        "currency": "MYR",
+        "elements": [
+          {
+            "price_components": [
+              {
+                "price": 1.5,
+                "step_size": 1,
+                "type": "ENERGY"
+              }
+            ]
+          }
+        ],
+        "id": "trf_demo_voltgo_my_dc",
+        "last_updated": "2026-10-27T12:15:01Z",
+        "party_id": "VLT",
+        "tax_included": "N/A"
+      }
+    ],
+    "total_cost": {
+      "before_taxes": 2.29
+    },
+    "total_energy": 1.524,
+    "total_time": 0.0111
+  }
+}

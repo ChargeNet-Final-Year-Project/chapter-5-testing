@@ -1,0 +1,779 @@
+[
+  {
+    "country": "MY",
+    "station": {
+      "region": "Penang",
+      "countryCode": "MY",
+      "isSimulated": true,
+      "id": "stn_demo_batu_kawan",
+      "cpoId": "cpo_voltgo",
+      "cpoName": "VoltGo",
+      "cpoColorHex": "#0D9488",
+      "name": "VoltGo Batu Kawan",
+      "address": "Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)",
+      "city": "Batu Kawan",
+      "latitude": 5.245,
+      "longitude": 100.438,
+      "totalBays": 2,
+      "availableBays": 2,
+      "isActive": true,
+      "distanceKm": null,
+      "connectors": [
+        {
+          "currency": "MYR",
+          "tariffId": "trf_demo_voltgo_my_ac",
+          "id": "con_demo_batu_kawan_ac",
+          "stationId": "stn_demo_batu_kawan",
+          "evseUid": "MY*VLT*E*D11AC",
+          "standard": "TYPE2",
+          "format": "SOCKET",
+          "powerType": "AC",
+          "maxPowerKw": 22,
+          "tariffPerKwh": 0.9,
+          "status": "AVAILABLE"
+        },
+        {
+          "currency": "MYR",
+          "tariffId": "trf_demo_voltgo_my_dc",
+          "id": "con_demo_batu_kawan_dc",
+          "stationId": "stn_demo_batu_kawan",
+          "evseUid": "MY*VLT*E*D11DC",
+          "standard": "CCS2",
+          "format": "CABLE",
+          "powerType": "DC",
+          "maxPowerKw": 150,
+          "tariffPerKwh": 1.5,
+          "status": "AVAILABLE"
+        }
+      ]
+    },
+    "connector": {
+      "currency": "MYR",
+      "tariffId": "trf_demo_voltgo_my_dc",
+      "id": "con_demo_batu_kawan_dc",
+      "stationId": "stn_demo_batu_kawan",
+      "evseUid": "MY*VLT*E*D11DC",
+      "standard": "CCS2",
+      "format": "CABLE",
+      "powerType": "DC",
+      "maxPowerKw": 150,
+      "tariffPerKwh": 1.5,
+      "status": "AVAILABLE"
+    },
+    "quote": {
+      "id": "qte_586f0fae4f9c77366124d4d6",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "walletId": "wal_20bbd19066fde17edacc6d02",
+      "cpoId": "cpo_voltgo",
+      "stationId": "stn_demo_batu_kawan",
+      "connectorId": "con_demo_batu_kawan_dc",
+      "tariffId": "trf_demo_voltgo_my_dc",
+      "tariffUpdatedAt": "2026-10-27T20:09:46.734003+08:00",
+      "tariffPerKwh": "1.500000",
+      "originalCurrency": "MYR",
+      "walletCurrency": "MYR",
+      "exchangeRateId": null,
+      "exchangeRate": "1.0000000000",
+      "rateSource": "same-currency",
+      "estimatedKwh": "15.000",
+      "estimatedOriginalCost": "22.50",
+      "estimatedWalletCost": "22.50",
+      "budget": "85.50",
+      "createdAt": "2026-10-27T20:10:41.087915+08:00",
+      "acceptedAt": null,
+      "equivalentTariff": "1.500000"
+    },
+    "live": {
+      "quoteId": "qte_586f0fae4f9c77366124d4d6",
+      "originalCurrency": "MYR",
+      "walletCurrency": "MYR",
+      "exchangeRate": "1.0000000000",
+      "rateSource": "same-currency",
+      "originalCost": 1.14,
+      "unfundedAmount": 0,
+      "reservedAmount": 85.5,
+      "tariffDecimal": "1.500000",
+      "id": "ses_cfb21d1761f147a96e22f991",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+      "cpoId": "cpo_voltgo",
+      "cpoName": "VoltGo",
+      "stationId": "stn_demo_batu_kawan",
+      "stationName": "VoltGo Batu Kawan",
+      "connectorId": "con_demo_batu_kawan_dc",
+      "evseUid": "MY*VLT*E*D11DC",
+      "connectorType": "CCS2",
+      "status": "CHARGING",
+      "startTime": "2026-10-27T20:10:41.152376+08:00",
+      "endTime": null,
+      "durationSeconds": 20,
+      "kwhDelivered": 0.76,
+      "currentPowerKw": 136.26,
+      "batterySoc": 30.81,
+      "targetSoc": 100,
+      "tariffPerKwh": 1.5,
+      "totalCost": 1.14,
+      "balanceAfter": null,
+      "stopReason": null,
+      "cdrId": null,
+      "cdrJson": null
+    },
+    "receipt": {
+      "id": "ses_cfb21d1761f147a96e22f991",
+      "cdrId": "cdr_bee233a81aa85d35a39cbed8",
+      "cpoId": "cpo_voltgo",
+      "status": "COMPLETED",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "cdrJson": {
+        "id": "cdr_bee233a81aa85d35a39cbed8",
+        "tariffs": [
+          {
+            "id": "trf_demo_voltgo_my_dc",
+            "currency": "MYR",
+            "elements": [
+              {
+                "price_components": [
+                  {
+                    "type": "ENERGY",
+                    "price": 1.5,
+                    "step_size": 1
+                  }
+                ]
+              }
+            ],
+            "party_id": "VLT",
+            "country_code": "MY",
+            "last_updated": "2026-10-27T12:10:41Z",
+            "tax_included": "N/A"
+          }
+        ],
+        "currency": "MYR",
+        "party_id": "VLT",
+        "cdr_token": {
+          "uid": "usr_0ad0b95d8c7280959bad1410",
+          "type": "APP_USER",
+          "party_id": "CNT",
+          "contract_id": "usr_0ad0b95d8c7280959bad1410",
+          "country_code": "MY"
+        },
+        "session_id": "ses_cfb21d1761f147a96e22f991",
+        "total_cost": {
+          "before_taxes": 1.14
+        },
+        "total_time": 0.0056,
+        "auth_method": "COMMAND",
+        "cdr_location": {
+          "id": "DEMO-BATU-KAWAN",
+          "city": "Batu Kawan",
+          "name": "VoltGo Batu Kawan",
+          "address": "Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)",
+          "country": "MYS",
+          "evse_id": "MY*VLT*E*D11DC",
+          "evse_uid": "MY*VLT*E*D11DC",
+          "coordinates": {
+            "latitude": "5.245000",
+            "longitude": "100.438000"
+          },
+          "connector_id": "1",
+          "connector_format": "CABLE",
+          "connector_standard": "IEC_62196_T2_COMBO",
+          "connector_power_type": "DC"
+        },
+        "country_code": "MY",
+        "last_updated": "2026-10-27T12:10:43Z",
+        "total_energy": 0.76,
+        "end_date_time": "2026-10-27T12:10:43Z",
+        "start_date_time": "2026-10-27T12:10:41Z",
+        "charging_periods": [
+          {
+            "dimensions": [
+              {
+                "type": "ENERGY",
+                "volume": 0.76
+              },
+              {
+                "type": "TIME",
+                "volume": 0.0056
+              }
+            ],
+            "start_date_time": "2026-10-27T12:10:41Z"
+          }
+        ]
+      },
+      "cpoName": "VoltGo",
+      "endTime": "2026-10-27T20:10:43.418098+08:00",
+      "evseUid": "MY*VLT*E*D11DC",
+      "quoteId": "qte_586f0fae4f9c77366124d4d6",
+      "startTime": "2026-10-27T20:10:41.152376+08:00",
+      "stationId": "stn_demo_batu_kawan",
+      "targetSoc": 100,
+      "totalCost": 1.14,
+      "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+      "batterySoc": 30.81,
+      "rateSource": "same-currency",
+      "stopReason": "USER",
+      "connectorId": "con_demo_batu_kawan_dc",
+      "stationName": "VoltGo Batu Kawan",
+      "balanceAfter": 84.36,
+      "exchangeRate": "1.0000000000",
+      "kwhDelivered": 0.76,
+      "originalCost": 1.14,
+      "tariffPerKwh": 1.5,
+      "connectorType": "CCS2",
+      "tariffDecimal": "1.500000",
+      "currentPowerKw": 136.26,
+      "reservedAmount": 85.5,
+      "unfundedAmount": 0,
+      "walletCurrency": "MYR",
+      "durationSeconds": 20,
+      "originalCurrency": "MYR"
+    },
+    "walletBefore": {
+      "reserved": 0,
+      "availableBalance": 85.5,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 85.5,
+      "currency": "MYR"
+    },
+    "walletAfter": {
+      "reserved": 0,
+      "availableBalance": 84.36,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 84.36,
+      "currency": "MYR"
+    },
+    "transaction": {
+      "currency": "MYR",
+      "sessionId": "ses_cfb21d1761f147a96e22f991",
+      "cdrId": "cdr_bee233a81aa85d35a39cbed8",
+      "id": "wtx_037b1ffec2612823049c55f2",
+      "walletId": "wal_20bbd19066fde17edacc6d02",
+      "type": "CHARGING_DEBIT",
+      "amount": 1.14,
+      "paymentMethod": "Wallet",
+      "referenceId": "cdr_bee233a81aa85d35a39cbed8",
+      "status": "SUCCESS",
+      "createdAt": "2026-10-27T20:10:43.418098+08:00"
+    }
+  },
+  {
+    "country": "SG",
+    "station": {
+      "region": "Central",
+      "countryCode": "SG",
+      "isSimulated": true,
+      "id": "stn_demo_marina_bay",
+      "cpoId": "cpo_chargesync",
+      "cpoName": "ChargeSync",
+      "cpoColorHex": "#2563EB",
+      "name": "ChargeSync Marina Bay",
+      "address": "Marina Boulevard, Marina Bay, Singapore (simulated site)",
+      "city": "Marina Bay",
+      "latitude": 1.28,
+      "longitude": 103.854,
+      "totalBays": 2,
+      "availableBays": 2,
+      "isActive": true,
+      "distanceKm": null,
+      "connectors": [
+        {
+          "currency": "SGD",
+          "tariffId": "trf_demo_chargesync_sg_ac",
+          "id": "con_demo_marina_bay_ac",
+          "stationId": "stn_demo_marina_bay",
+          "evseUid": "SG*CSY*E*D12AC",
+          "standard": "TYPE2",
+          "format": "SOCKET",
+          "powerType": "AC",
+          "maxPowerKw": 22,
+          "tariffPerKwh": 0.45,
+          "status": "AVAILABLE"
+        },
+        {
+          "currency": "SGD",
+          "tariffId": "trf_demo_chargesync_sg_dc",
+          "id": "con_demo_marina_bay_dc",
+          "stationId": "stn_demo_marina_bay",
+          "evseUid": "SG*CSY*E*D12DC",
+          "standard": "CCS2",
+          "format": "CABLE",
+          "powerType": "DC",
+          "maxPowerKw": 60,
+          "tariffPerKwh": 0.6,
+          "status": "AVAILABLE"
+        }
+      ]
+    },
+    "connector": {
+      "currency": "SGD",
+      "tariffId": "trf_demo_chargesync_sg_dc",
+      "id": "con_demo_marina_bay_dc",
+      "stationId": "stn_demo_marina_bay",
+      "evseUid": "SG*CSY*E*D12DC",
+      "standard": "CCS2",
+      "format": "CABLE",
+      "powerType": "DC",
+      "maxPowerKw": 60,
+      "tariffPerKwh": 0.6,
+      "status": "AVAILABLE"
+    },
+    "quote": {
+      "id": "qte_0d58982d30dd8f4ce213e769",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "walletId": "wal_20bbd19066fde17edacc6d02",
+      "cpoId": "cpo_chargesync",
+      "stationId": "stn_demo_marina_bay",
+      "connectorId": "con_demo_marina_bay_dc",
+      "tariffId": "trf_demo_chargesync_sg_dc",
+      "tariffUpdatedAt": "2026-10-27T20:09:46.734003+08:00",
+      "tariffPerKwh": "0.600000",
+      "originalCurrency": "SGD",
+      "walletCurrency": "MYR",
+      "exchangeRateId": "fx_demo_sgd_myr",
+      "exchangeRate": "3.4500000000",
+      "rateSource": "chargenet-demo-v1",
+      "estimatedKwh": "15.000",
+      "estimatedOriginalCost": "9.00",
+      "estimatedWalletCost": "31.05",
+      "budget": "84.36",
+      "createdAt": "2026-10-27T20:10:43.593653+08:00",
+      "acceptedAt": null,
+      "equivalentTariff": "2.070000"
+    },
+    "live": {
+      "quoteId": "qte_0d58982d30dd8f4ce213e769",
+      "originalCurrency": "SGD",
+      "walletCurrency": "MYR",
+      "exchangeRate": "3.4500000000",
+      "rateSource": "chargenet-demo-v1",
+      "originalCost": 0.19,
+      "unfundedAmount": 0,
+      "reservedAmount": 84.36,
+      "tariffDecimal": "0.600000",
+      "id": "ses_43cc4ea888187b66ee1d7f9f",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+      "cpoId": "cpo_chargesync",
+      "cpoName": "ChargeSync",
+      "stationId": "stn_demo_marina_bay",
+      "stationName": "ChargeSync Marina Bay",
+      "connectorId": "con_demo_marina_bay_dc",
+      "evseUid": "SG*CSY*E*D12DC",
+      "connectorType": "CCS2",
+      "status": "CHARGING",
+      "startTime": "2026-10-27T20:10:43.638719+08:00",
+      "endTime": null,
+      "durationSeconds": 20,
+      "kwhDelivered": 0.311,
+      "currentPowerKw": 55.91,
+      "batterySoc": 25.02,
+      "targetSoc": 100,
+      "tariffPerKwh": 0.6,
+      "totalCost": 0.66,
+      "balanceAfter": null,
+      "stopReason": null,
+      "cdrId": null,
+      "cdrJson": null
+    },
+    "receipt": {
+      "id": "ses_43cc4ea888187b66ee1d7f9f",
+      "cdrId": "cdr_00fee1a3819aed342c88e619",
+      "cpoId": "cpo_chargesync",
+      "status": "COMPLETED",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "cdrJson": {
+        "id": "cdr_00fee1a3819aed342c88e619",
+        "tariffs": [
+          {
+            "id": "trf_demo_chargesync_sg_dc",
+            "currency": "SGD",
+            "elements": [
+              {
+                "price_components": [
+                  {
+                    "type": "ENERGY",
+                    "price": 0.6,
+                    "step_size": 1
+                  }
+                ]
+              }
+            ],
+            "party_id": "CSY",
+            "country_code": "MY",
+            "last_updated": "2026-10-27T12:10:43Z",
+            "tax_included": "N/A"
+          }
+        ],
+        "currency": "SGD",
+        "party_id": "CSY",
+        "cdr_token": {
+          "uid": "usr_0ad0b95d8c7280959bad1410",
+          "type": "APP_USER",
+          "party_id": "CNT",
+          "contract_id": "usr_0ad0b95d8c7280959bad1410",
+          "country_code": "MY"
+        },
+        "session_id": "ses_43cc4ea888187b66ee1d7f9f",
+        "total_cost": {
+          "before_taxes": 0.19
+        },
+        "total_time": 0.0056,
+        "auth_method": "COMMAND",
+        "cdr_location": {
+          "id": "DEMO-MARINA-BAY",
+          "city": "Marina Bay",
+          "name": "ChargeSync Marina Bay",
+          "address": "Marina Boulevard, Marina Bay, Singapore (simulated site)",
+          "country": "SGP",
+          "evse_id": "SG*CSY*E*D12DC",
+          "evse_uid": "SG*CSY*E*D12DC",
+          "coordinates": {
+            "latitude": "1.280000",
+            "longitude": "103.854000"
+          },
+          "connector_id": "1",
+          "connector_format": "CABLE",
+          "connector_standard": "IEC_62196_T2_COMBO",
+          "connector_power_type": "DC"
+        },
+        "country_code": "MY",
+        "last_updated": "2026-10-27T12:10:45Z",
+        "total_energy": 0.311,
+        "end_date_time": "2026-10-27T12:10:45Z",
+        "start_date_time": "2026-10-27T12:10:43Z",
+        "charging_periods": [
+          {
+            "dimensions": [
+              {
+                "type": "ENERGY",
+                "volume": 0.311
+              },
+              {
+                "type": "TIME",
+                "volume": 0.0056
+              }
+            ],
+            "start_date_time": "2026-10-27T12:10:43Z"
+          }
+        ]
+      },
+      "cpoName": "ChargeSync",
+      "endTime": "2026-10-27T20:10:45.873327+08:00",
+      "evseUid": "SG*CSY*E*D12DC",
+      "quoteId": "qte_0d58982d30dd8f4ce213e769",
+      "startTime": "2026-10-27T20:10:43.638719+08:00",
+      "stationId": "stn_demo_marina_bay",
+      "targetSoc": 100,
+      "totalCost": 0.66,
+      "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+      "batterySoc": 25.02,
+      "rateSource": "chargenet-demo-v1",
+      "stopReason": "USER",
+      "connectorId": "con_demo_marina_bay_dc",
+      "stationName": "ChargeSync Marina Bay",
+      "balanceAfter": 83.7,
+      "exchangeRate": "3.4500000000",
+      "kwhDelivered": 0.311,
+      "originalCost": 0.19,
+      "tariffPerKwh": 0.6,
+      "connectorType": "CCS2",
+      "tariffDecimal": "0.600000",
+      "currentPowerKw": 55.91,
+      "reservedAmount": 84.36,
+      "unfundedAmount": 0,
+      "walletCurrency": "MYR",
+      "durationSeconds": 20,
+      "originalCurrency": "SGD"
+    },
+    "walletBefore": {
+      "reserved": 0,
+      "availableBalance": 84.36,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 84.36,
+      "currency": "MYR"
+    },
+    "walletAfter": {
+      "reserved": 0,
+      "availableBalance": 83.7,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 83.7,
+      "currency": "MYR"
+    },
+    "transaction": {
+      "currency": "MYR",
+      "sessionId": "ses_43cc4ea888187b66ee1d7f9f",
+      "cdrId": "cdr_00fee1a3819aed342c88e619",
+      "id": "wtx_49d8c28bed4e144cac640c85",
+      "walletId": "wal_20bbd19066fde17edacc6d02",
+      "type": "CHARGING_DEBIT",
+      "amount": 0.66,
+      "paymentMethod": "Wallet",
+      "referenceId": "cdr_00fee1a3819aed342c88e619",
+      "status": "SUCCESS",
+      "createdAt": "2026-10-27T20:10:45.873327+08:00"
+    }
+  },
+  {
+    "country": "TH",
+    "station": {
+      "region": "Songkhla",
+      "countryCode": "TH",
+      "isSimulated": true,
+      "id": "stn_demo_hat_yai_east",
+      "cpoId": "cpo_ecowatt",
+      "cpoName": "EcoWatt",
+      "cpoColorHex": "#16A34A",
+      "name": "EcoWatt Hat Yai East",
+      "address": "Kanchanawanit Road, Hat Yai East, Thailand (simulated site)",
+      "city": "Hat Yai East",
+      "latitude": 7.008,
+      "longitude": 100.5,
+      "totalBays": 2,
+      "availableBays": 2,
+      "isActive": true,
+      "distanceKm": null,
+      "connectors": [
+        {
+          "currency": "THB",
+          "tariffId": "trf_demo_ecowatt_th_ac",
+          "id": "con_demo_hat_yai_east_ac",
+          "stationId": "stn_demo_hat_yai_east",
+          "evseUid": "TH*ECO*E*D21AC",
+          "standard": "TYPE2",
+          "format": "SOCKET",
+          "powerType": "AC",
+          "maxPowerKw": 22,
+          "tariffPerKwh": 6.5,
+          "status": "AVAILABLE"
+        },
+        {
+          "currency": "THB",
+          "tariffId": "trf_demo_ecowatt_th_dc",
+          "id": "con_demo_hat_yai_east_dc",
+          "stationId": "stn_demo_hat_yai_east",
+          "evseUid": "TH*ECO*E*D21DC",
+          "standard": "CCS2",
+          "format": "CABLE",
+          "powerType": "DC",
+          "maxPowerKw": 60,
+          "tariffPerKwh": 7.5,
+          "status": "AVAILABLE"
+        }
+      ]
+    },
+    "connector": {
+      "currency": "THB",
+      "tariffId": "trf_demo_ecowatt_th_dc",
+      "id": "con_demo_hat_yai_east_dc",
+      "stationId": "stn_demo_hat_yai_east",
+      "evseUid": "TH*ECO*E*D21DC",
+      "standard": "CCS2",
+      "format": "CABLE",
+      "powerType": "DC",
+      "maxPowerKw": 60,
+      "tariffPerKwh": 7.5,
+      "status": "AVAILABLE"
+    },
+    "quote": {
+      "id": "qte_5ce4cf31732b0beaabcdd251",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "walletId": "wal_20bbd19066fde17edacc6d02",
+      "cpoId": "cpo_ecowatt",
+      "stationId": "stn_demo_hat_yai_east",
+      "connectorId": "con_demo_hat_yai_east_dc",
+      "tariffId": "trf_demo_ecowatt_th_dc",
+      "tariffUpdatedAt": "2026-10-27T20:09:46.734003+08:00",
+      "tariffPerKwh": "7.500000",
+      "originalCurrency": "THB",
+      "walletCurrency": "MYR",
+      "exchangeRateId": "fx_demo_thb_myr",
+      "exchangeRate": "0.1300000000",
+      "rateSource": "chargenet-demo-v1",
+      "estimatedKwh": "15.000",
+      "estimatedOriginalCost": "112.50",
+      "estimatedWalletCost": "14.63",
+      "budget": "83.70",
+      "createdAt": "2026-10-27T20:10:46.051921+08:00",
+      "acceptedAt": null,
+      "equivalentTariff": "0.975000"
+    },
+    "live": {
+      "quoteId": "qte_5ce4cf31732b0beaabcdd251",
+      "originalCurrency": "THB",
+      "walletCurrency": "MYR",
+      "exchangeRate": "0.1300000000",
+      "rateSource": "chargenet-demo-v1",
+      "originalCost": 2.37,
+      "unfundedAmount": 0,
+      "reservedAmount": 83.7,
+      "tariffDecimal": "7.500000",
+      "id": "ses_87b8f448c37ac4cd01c36bf7",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+      "cpoId": "cpo_ecowatt",
+      "cpoName": "EcoWatt",
+      "stationId": "stn_demo_hat_yai_east",
+      "stationName": "EcoWatt Hat Yai East",
+      "connectorId": "con_demo_hat_yai_east_dc",
+      "evseUid": "TH*ECO*E*D21DC",
+      "connectorType": "CCS2",
+      "status": "CHARGING",
+      "startTime": "2026-10-27T20:10:46.098748+08:00",
+      "endTime": null,
+      "durationSeconds": 20,
+      "kwhDelivered": 0.316,
+      "currentPowerKw": 56.65,
+      "batterySoc": 22.12,
+      "targetSoc": 100,
+      "tariffPerKwh": 7.5,
+      "totalCost": 0.31,
+      "balanceAfter": null,
+      "stopReason": null,
+      "cdrId": null,
+      "cdrJson": null
+    },
+    "receipt": {
+      "id": "ses_87b8f448c37ac4cd01c36bf7",
+      "cdrId": "cdr_40375e89f1914e170a863ff4",
+      "cpoId": "cpo_ecowatt",
+      "status": "COMPLETED",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "cdrJson": {
+        "id": "cdr_40375e89f1914e170a863ff4",
+        "tariffs": [
+          {
+            "id": "trf_demo_ecowatt_th_dc",
+            "currency": "THB",
+            "elements": [
+              {
+                "price_components": [
+                  {
+                    "type": "ENERGY",
+                    "price": 7.5,
+                    "step_size": 1
+                  }
+                ]
+              }
+            ],
+            "party_id": "ECO",
+            "country_code": "MY",
+            "last_updated": "2026-10-27T12:10:46Z",
+            "tax_included": "N/A"
+          }
+        ],
+        "currency": "THB",
+        "party_id": "ECO",
+        "cdr_token": {
+          "uid": "usr_0ad0b95d8c7280959bad1410",
+          "type": "APP_USER",
+          "party_id": "CNT",
+          "contract_id": "usr_0ad0b95d8c7280959bad1410",
+          "country_code": "MY"
+        },
+        "session_id": "ses_87b8f448c37ac4cd01c36bf7",
+        "total_cost": {
+          "before_taxes": 2.37
+        },
+        "total_time": 0.0056,
+        "auth_method": "COMMAND",
+        "cdr_location": {
+          "id": "DEMO-HAT-YAI-EAST",
+          "city": "Hat Yai East",
+          "name": "EcoWatt Hat Yai East",
+          "address": "Kanchanawanit Road, Hat Yai East, Thailand (simulated site)",
+          "country": "THA",
+          "evse_id": "TH*ECO*E*D21DC",
+          "evse_uid": "TH*ECO*E*D21DC",
+          "coordinates": {
+            "latitude": "7.008000",
+            "longitude": "100.500000"
+          },
+          "connector_id": "1",
+          "connector_format": "CABLE",
+          "connector_standard": "IEC_62196_T2_COMBO",
+          "connector_power_type": "DC"
+        },
+        "country_code": "MY",
+        "last_updated": "2026-10-27T12:10:48Z",
+        "total_energy": 0.316,
+        "end_date_time": "2026-10-27T12:10:48Z",
+        "start_date_time": "2026-10-27T12:10:46Z",
+        "charging_periods": [
+          {
+            "dimensions": [
+              {
+                "type": "ENERGY",
+                "volume": 0.316
+              },
+              {
+                "type": "TIME",
+                "volume": 0.0056
+              }
+            ],
+            "start_date_time": "2026-10-27T12:10:46Z"
+          }
+        ]
+      },
+      "cpoName": "EcoWatt",
+      "endTime": "2026-10-27T20:10:48.267159+08:00",
+      "evseUid": "TH*ECO*E*D21DC",
+      "quoteId": "qte_5ce4cf31732b0beaabcdd251",
+      "startTime": "2026-10-27T20:10:46.098748+08:00",
+      "stationId": "stn_demo_hat_yai_east",
+      "targetSoc": 100,
+      "totalCost": 0.31,
+      "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+      "batterySoc": 22.12,
+      "rateSource": "chargenet-demo-v1",
+      "stopReason": "USER",
+      "connectorId": "con_demo_hat_yai_east_dc",
+      "stationName": "EcoWatt Hat Yai East",
+      "balanceAfter": 83.39,
+      "exchangeRate": "0.1300000000",
+      "kwhDelivered": 0.316,
+      "originalCost": 2.37,
+      "tariffPerKwh": 7.5,
+      "connectorType": "CCS2",
+      "tariffDecimal": "7.500000",
+      "currentPowerKw": 56.65,
+      "reservedAmount": 83.7,
+      "unfundedAmount": 0,
+      "walletCurrency": "MYR",
+      "durationSeconds": 20,
+      "originalCurrency": "THB"
+    },
+    "walletBefore": {
+      "reserved": 0,
+      "availableBalance": 83.7,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 83.7,
+      "currency": "MYR"
+    },
+    "walletAfter": {
+      "reserved": 0,
+      "availableBalance": 83.39,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 83.39,
+      "currency": "MYR"
+    },
+    "transaction": {
+      "currency": "MYR",
+      "sessionId": "ses_87b8f448c37ac4cd01c36bf7",
+      "cdrId": "cdr_40375e89f1914e170a863ff4",
+      "id": "wtx_62ea1dd54bc98d54ee9c31a9",
+      "walletId": "wal_20bbd19066fde17edacc6d02",
+      "type": "CHARGING_DEBIT",
+      "amount": 0.31,
+      "paymentMethod": "Wallet",
+      "referenceId": "cdr_40375e89f1914e170a863ff4",
+      "status": "SUCCESS",
+      "createdAt": "2026-10-27T20:10:48.267159+08:00"
+    }
+  }
+]

@@ -1,0 +1,43 @@
+{
+  "status": 200,
+  "response": {
+    "data": {
+      "version": "2.3.0",
+      "endpoints": [
+        {
+          "identifier": "credentials",
+          "role": "RECEIVER",
+          "url": "http://localhost:18080/ocpi/emsp/2.3.0/credentials"
+        },
+        {
+          "identifier": "locations",
+          "role": "RECEIVER",
+          "url": "http://localhost:18080/ocpi/emsp/2.3.0/locations"
+        },
+        {
+          "identifier": "tariffs",
+          "role": "RECEIVER",
+          "url": "http://localhost:18080/ocpi/emsp/2.3.0/tariffs"
+        },
+        {
+          "identifier": "sessions",
+          "role": "RECEIVER",
+          "url": "http://localhost:18080/ocpi/emsp/2.3.0/sessions"
+        },
+        {
+          "identifier": "cdrs",
+          "role": "RECEIVER",
+          "url": "http://localhost:18080/ocpi/emsp/2.3.0/cdrs"
+        },
+        {
+          "identifier": "commands",
+          "role": "RECEIVER",
+          "url": "http://localhost:18080/ocpi/emsp/2.3.0/commands"
+        }
+      ]
+    },
+    "status_code": 1000,
+    "status_message": "Success",
+    "timestamp": "2026-10-27T12:13:43Z"
+  }
+}

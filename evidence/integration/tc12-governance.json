@@ -1,0 +1,86 @@
+{
+  "cpo_id": "cpo_6e639f4ecf9614ee3a2ab08d",
+  "verified": {
+    "status": "VERIFIED",
+    "steps": [
+      {
+        "step": 1,
+        "label": "Credentials registered",
+        "status": "PASS",
+        "detail": "Token B and Token C are registered.",
+        "durationMs": 0
+      },
+      {
+        "step": 2,
+        "label": "GET versions",
+        "status": "PASS",
+        "detail": "The CPO serves OCPI 2.3.0.",
+        "durationMs": 5
+      },
+      {
+        "step": 3,
+        "label": "GET version details",
+        "status": "PASS",
+        "detail": "4 endpoints, including locations and commands.",
+        "durationMs": 5
+      },
+      {
+        "step": 4,
+        "label": "GET locations",
+        "status": "PASS",
+        "detail": "1 locations, 1 EVSEs; 1 stored.",
+        "durationMs": 13
+      },
+      {
+        "step": 5,
+        "label": "GET tariffs",
+        "status": "PASS",
+        "detail": "1 tariffs stored.",
+        "durationMs": 10
+      },
+      {
+        "step": 6,
+        "label": "Commands endpoint reachable",
+        "status": "PASS",
+        "detail": "The commands endpoint answers.",
+        "durationMs": 1
+      }
+    ]
+  },
+  "pending": {
+    "ocpiVersion": "2.3.0",
+    "id": "cpo_6e639f4ecf9614ee3a2ab08d",
+    "name": "Evidence Partner Two Updated",
+    "slug": "evidencepartnertwo",
+    "countryCode": "MY",
+    "partyId": "EV2",
+    "baseUrl": "http://127.0.0.1:18090",
+    "colorHex": "#123456",
+    "contactEmail": "operator-evidence2@example.test",
+    "tokenA": "[REDACTED]",
+    "tokenAUsed": true,
+    "tokenBSet": true,
+    "tokenCSet": true,
+    "tokenBLast4": "en-b",
+    "tokenCLast4": "9159",
+    "handshakeStatus": "VERIFIED",
+    "status": "PENDING",
+    "platformFeePct": 5,
+    "bankName": "",
+    "bankAccountHolder": "",
+    "bankAccountNo": "[REDACTED]",
+    "payoutCycle": "MONTHLY",
+    "createdAt": "2026-10-27T20:30:33.972792+08:00",
+    "handshakeAt": "2026-10-27T20:32:01.861573+08:00"
+  },
+  "approved_station_count": 1,
+  "suspended_station_count": 0,
+  "suspended_start_status": 409,
+  "suspended_start_response": {
+    "error": {
+      "code": "CONNECTOR_UNAVAILABLE",
+      "message": "That charger is not available right now."
+    }
+  },
+  "restored": true
+}

@@ -1,0 +1,21 @@
+name: chargenet-testing
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: chargenet-testing-postgres
+    environment:
+      POSTGRES_USER: chargenet
+      POSTGRES_PASSWORD: ${CHARGENET_TEST_DB_PASSWORD:?Set a disposable database password}
+      POSTGRES_DB: chargenet_test
+    ports:
+      - "127.0.0.1:${CHARGENET_DB_PORT:-55433}:5432"
+    volumes:
+      - test-data:/var/lib/postgresql/data
+      - ./tests/create_runtime_database.sql:/docker-entrypoint-initdb.d/01-runtime.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U chargenet -d chargenet_test"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+volumes:
+  test-data:

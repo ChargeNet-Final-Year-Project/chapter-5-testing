@@ -1,0 +1,141 @@
+[
+  {
+    "case_id": "TC14",
+    "name": "operator navigation",
+    "status": "Pass",
+    "started_at": "2026-10-27T20:20:26.151724+08:00",
+    "finished_at": "2026-10-27T20:20:30.231279+08:00",
+    "details": {
+      "captures": [
+        "02 Evidence/Screen Captures/Edge 2026-10-27T202027.070389 0800 PF overview.png",
+        "02 Evidence/Screen Captures/Edge 2026-10-27T202028.092503 0800 PF network.png",
+        "02 Evidence/Screen Captures/Edge 2026-10-27T202029.115641 0800 PF ledger.png",
+        "02 Evidence/Screen Captures/Edge 2026-10-27T202030.140508 0800 PF credentials.png"
+      ],
+      "browser": "156.0.4314.42"
+    }
+  },
+  {
+    "case_id": "TC14",
+    "name": "company form available",
+    "status": "Pass",
+    "started_at": "2026-10-27T20:20:30.232295+08:00",
+    "finished_at": "2026-10-27T20:20:31.193759+08:00",
+    "details": {
+      "field_names": [
+        {
+          "name": "name",
+          "id": "field-:r7:",
+          "type": "text"
+        },
+        {
+          "name": "contactEmail",
+          "id": "field-:r9:",
+          "type": "email"
+        },
+        {
+          "name": "baseUrl",
+          "id": "field-:rb:",
+          "type": "text"
+        },
+        {
+          "name": "colorHex",
+          "id": "field-:rd:",
+          "type": "text"
+        },
+        {
+          "name": "bank_accountHolder",
+          "id": "field-:rh:",
+          "type": "text"
+        },
+        {
+          "name": "bank_accountNo",
+          "id": "field-:rj:",
+          "type": "text"
+        }
+      ],
+      "heading": "Company & billing"
+    }
+  },
+  {
+    "case_id": "TC42",
+    "name": "desktop and narrow keyboard/layout samples",
+    "status": "Pass",
+    "started_at": "2026-10-27T20:20:41.346710+08:00",
+    "finished_at": "2026-10-27T20:20:49.425320+08:00",
+    "details": [
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 1440,
+        "route": "overview",
+        "keyboard_focus_tag": "SELECT",
+        "document_width": 1440,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-1440-overview.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 1440,
+        "route": "ledger",
+        "keyboard_focus_tag": "BUTTON",
+        "document_width": 1440,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-1440-ledger.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 1440,
+        "route": "network",
+        "keyboard_focus_tag": "INPUT",
+        "document_width": 1440,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-1440-network.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 1440,
+        "route": "credentials",
+        "keyboard_focus_tag": "BUTTON",
+        "document_width": 1440,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-1440-credentials.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 390,
+        "route": "overview",
+        "keyboard_focus_tag": "SELECT",
+        "document_width": 390,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-390-overview.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 390,
+        "route": "ledger",
+        "keyboard_focus_tag": "BUTTON",
+        "document_width": 390,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-390-ledger.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 390,
+        "route": "network",
+        "keyboard_focus_tag": "INPUT",
+        "document_width": 390,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-390-network.png"
+      },
+      {
+        "browser": "Edge Chromium 156.0.4314.42",
+        "viewport_width": 390,
+        "route": "credentials",
+        "keyboard_focus_tag": "BUTTON",
+        "document_width": 390,
+        "horizontal_document_overflow": false,
+        "capture": "evidence/captures/edge-tc42-390-credentials.png"
+      }
+    ]
+  }
+]

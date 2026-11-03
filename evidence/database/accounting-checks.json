@@ -1,0 +1,218 @@
+[
+  {
+    "session_id": "ses_cfb21d1761f147a96e22f991",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_43cc4ea888187b66ee1d7f9f",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_87b8f448c37ac4cd01c36bf7",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_e88516c9a357e636c297a68c",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_b4f55106b8fb8a2f2b1ce8e9",
+    "positive_energy_cost": false,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_1f4d719859fdc1b3ffc16e0b",
+    "positive_energy_cost": false,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_06517fc7ef95b659b4e0ec9c",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_de2e87003bb918132db0bc5c",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_ac1e21a16eee103f1ef402d1",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_87b8af704ddcbd5e07188429",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_92f4fd91ce7262419b59e4e6",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_1125fa6a3889123502d574be",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_face72f36feb4cb512565b85",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  },
+  {
+    "session_id": "ses_dc7100d0c6b6ccf62f3a7282",
+    "positive_energy_cost": true,
+    "conditions": {
+      "one_cdr": true,
+      "one_debit": true,
+      "debit_equals_cost": true,
+      "hold_released": true,
+      "connector_available": true,
+      "cdr_currency_preserved": true,
+      "cdr_gross_matches": true,
+      "fee_plus_net_equals_gross": true,
+      "locked_fx_wallet_rounding": true
+    },
+    "status": "Pass"
+  }
+]

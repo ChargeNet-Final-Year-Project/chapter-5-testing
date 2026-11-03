@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-27T20:55:14.098107+08:00",
+  "viewport_dp": [
+    320,
+    640
+  ],
+  "text_scale": 2,
+  "confirmation_reachable": true,
+  "labels": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Back",
+    "Start charging",
+    "",
+    "",
+    "Vehicle\nTesla Model Y · CCS2 (Type 2)",
+    "Used for the compatibility check and the estimate.",
+    "",
+    "Charge to\n80 %\nAbout 45.0 kWh · ~23 min · assumes the car starts near 20 %.",
+    "60%, 80 %",
+    "",
+    "",
+    "",
+    "Available wallet funds\nRM 107.60",
+    "",
+    "Confirm and start",
+    "Start charging with confirmation"
+  ]
+}

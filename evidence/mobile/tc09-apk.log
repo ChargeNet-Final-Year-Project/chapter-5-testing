@@ -1,0 +1,45 @@
+Running Gradle task 'assembleDebug'...                          
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set DEFAULT_JVM_OPTS= 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set DIRNAME=C:\code projects\chargenet-latest\chargenet-mobile\android\ 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if "C:\code projects\chargenet-latest\chargenet-mobile\android\" == "" set DIRNAME=. 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set APP_BASE_NAME=gradlew 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set APP_HOME=C:\code projects\chargenet-latest\chargenet-mobile\android\ 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set JAVA_HOME=C:\Program Files\Java\jdk-21.0.12.1 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set JAVA_EXE=C:\Program Files\Java\jdk-21.0.12.1/bin/java.exe 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if exist "C:\Program Files\Java\jdk-21.0.12.1/bin/java.exe" goto init 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if not "Windows_NT" == "Windows_NT" goto win9xME_args 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if "@eval[2+2]" == "4" goto 4NT_args 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set CMD_LINE_ARGS= 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set _SKIP=2 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if "x-q" == "x" goto execute 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set CMD_LINE_ARGS=-q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=QVBJX0JBU0VfVVJMPWh0dHA6Ly8xMC4wLjIuMjoxODA4MA==,RkxVVFRFUl9CVUlMRF9OQU1FPTEuMC4w,RkxVVFRFUl9CVUlMRF9OVU1CRVI9MQ==,RkxVVFRFUl9WRVJTSU9OPTMuNDcuMQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NjY1NTQ4MmVjMA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NWQ1MzE3ODg2OQ==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMy4x -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false -Pflutter.androidSdkRoot=C:\Users\ongji\AppData\Local\Android\sdk -Pflutter.installedNdkVersions=28.2.13676358 -Pflutter.sdkManagerPath=C:\Users\ongji\AppData\Local\Android\sdk\cmdline-tools\22.0\bin\sdkmanager.bat assembleDebug 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>goto execute 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>set CLASSPATH=C:\code projects\chargenet-latest\chargenet-mobile\android\\gradle\wrapper\gradle-wrapper.jar 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>"C:\Program Files\Java\jdk-21.0.12.1/bin/java.exe"    "-Dorg.gradle.appname=gradlew" -classpath "C:\code projects\chargenet-latest\chargenet-mobile\android\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain -q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=QVBJX0JBU0VfVVJMPWh0dHA6Ly8xMC4wLjIuMjoxODA4MA==,RkxVVFRFUl9CVUlMRF9OQU1FPTEuMC4w,RkxVVFRFUl9CVUlMRF9OVU1CRVI9MQ==,RkxVVFRFUl9WRVJTSU9OPTMuNDcuMQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NjY1NTQ4MmVjMA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NWQ1MzE3ODg2OQ==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMy4x -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false -Pflutter.androidSdkRoot=C:\Users\ongji\AppData\Local\Android\sdk -Pflutter.installedNdkVersions=28.2.13676358 -Pflutter.sdkManagerPath=C:\Users\ongji\AppData\Local\Android\sdk\cmdline-tools\22.0\bin\sdkmanager.bat assembleDebug 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if "0" == "0" goto mainEnd 
+
+C:\code projects\chargenet-latest\chargenet-mobile\android>if "Windows_NT" == "Windows_NT" endlocal
+Running Gradle task 'assembleDebug'...                             55.1s
+√ Built build\app\outputs\flutter-apk\app-debug.apk

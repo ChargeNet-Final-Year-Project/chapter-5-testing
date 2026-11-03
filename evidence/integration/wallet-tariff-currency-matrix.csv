@@ -1,0 +1,28 @@
+case_id,subcase,status,at,elapsed_seconds,source_log,observed_test_output
+TC34,MYR_MY,Pass,2026-10-27T20:06:39.694812+08:00,0.43,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/MYR_MY
+--- PASS: TestQuoteCurrencyMatrix/MYR_MY (0.43s)
+"
+TC34,MYR_SG,Pass,2026-10-27T20:06:39.9980019+08:00,0.3,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/MYR_SG
+--- PASS: TestQuoteCurrencyMatrix/MYR_SG (0.30s)
+"
+TC34,MYR_TH,Pass,2026-10-27T20:06:40.4014364+08:00,0.4,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/MYR_TH
+--- PASS: TestQuoteCurrencyMatrix/MYR_TH (0.40s)
+"
+TC34,SGD_MY,Pass,2026-10-27T20:06:40.7607379+08:00,0.37,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/SGD_MY
+--- PASS: TestQuoteCurrencyMatrix/SGD_MY (0.37s)
+"
+TC34,SGD_SG,Pass,2026-10-27T20:06:41.0005377+08:00,0.24,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/SGD_SG
+--- PASS: TestQuoteCurrencyMatrix/SGD_SG (0.24s)
+"
+TC34,SGD_TH,Pass,2026-10-27T20:06:41.2219073+08:00,0.22,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/SGD_TH
+--- PASS: TestQuoteCurrencyMatrix/SGD_TH (0.22s)
+"
+TC34,THB_MY,Pass,2026-10-27T20:06:41.5204284+08:00,0.3,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/THB_MY
+--- PASS: TestQuoteCurrencyMatrix/THB_MY (0.30s)
+"
+TC34,THB_SG,Pass,2026-10-27T20:06:41.7937018+08:00,0.27,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/THB_SG
+--- PASS: TestQuoteCurrencyMatrix/THB_SG (0.27s)
+"
+TC34,THB_TH,Pass,2026-10-27T20:06:41.9687566+08:00,0.17,evidence/backend/backend-tests.events.jsonl,"=== RUN   TestQuoteCurrencyMatrix/THB_TH
+--- PASS: TestQuoteCurrencyMatrix/THB_TH (0.17s)
+"

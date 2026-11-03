@@ -1,0 +1,3 @@
+cdr_id,session_id,start,end,station,evse,kwh,minutes,tariff,gross,platform_fee,net_payout,currency
+cdr_3e1a239caacae64c1cd76c85,ses_e88516c9a357e636c297a68c,2026-10-27T20:13:39+08:00,2026-10-27T20:13:42+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,0.745,0,8.00,5.96,0.30,5.66,THB
+TOTAL,,,,,,0.745,,,5.96,0.30,5.66,THB

@@ -1,0 +1,38 @@
+{
+  "before": [
+    {
+      "currency": "MYR",
+      "count": "4",
+      "gross": "57.54"
+    },
+    {
+      "currency": "SGD",
+      "count": "1",
+      "gross": "0.19"
+    },
+    {
+      "currency": "THB",
+      "count": "2",
+      "gross": "8.33"
+    }
+  ],
+  "after": [
+    {
+      "currency": "MYR",
+      "count": "4",
+      "gross": "57.54"
+    },
+    {
+      "currency": "SGD",
+      "count": "1",
+      "gross": "0.19"
+    },
+    {
+      "currency": "THB",
+      "count": "2",
+      "gross": "8.33"
+    }
+  ],
+  "start_text": "CN\nChargeNet\nPartner Portal\nOverview\nNetwork\nRevenue\nCredentials\nCompany\nSandbox\nOps voltgo\nops@voltgo.my\nCPO\nSign out\nPartner portal\nOCPI 2.3.0\nSandbox\nTest commands only\nThese commands bill ChargeNet's internal test driver. They are excluded from your revenue reports.\nSend a command\nEVSE (required)\nTH*VLT*E*D24AC · VoltGo Bangkok West · AVAILABLE\nTH*VLT*E*D24DC · VoltGo Bangkok West · AVAILABLE\nMY*VLT*E*D11AC · VoltGo Batu Kawan · AVAILABLE\nMY*VLT*E*D11DC · VoltGo Batu Kawan · AVAILABLE\nMY*VLT*E*D05AC · VoltGo Bayan Lepas / Queensbay area · AVAILABLE\nMY*VLT*E*D05DC · VoltGo Bayan Lepas / Queensbay area · AVAILABLE\nMY*VLT*E*D07AC · VoltGo Butterworth · AVAILABLE\nMY*VLT*E*D07DC · VoltGo Butterworth · AVAILABLE\nVLT-GSR-01 · VoltGo Genting Sempah R&R · AVAILABLE\nVLT-GSR-02 · VoltGo Genting Sempah R&R · AVAILABLE\nMY*VLT*E*D01AC · VoltGo George Town · AVAILABLE\nMY*VLT*E*D01DC · VoltGo George Town · AVAILABLE\nTH*VLT*E*D17AC · VoltGo Hat Yai · AVAILABLE\nTH*VLT*E*D17DC · VoltGo Hat Yai · AVAILABLE\nSG*VLT*E*D13AC · VoltGo Jurong East · AVAILABLE\nSG*VLT*E*D13DC · VoltGo Jurong East · AVAILABLE\nSG*VLT*E*D23AC · VoltGo Marina South · AVAILABLE\nSG*VLT*E*D23DC · VoltGo Marina South · AVAILABLE\nVLT-PJS-01 · VoltGo Putrajaya Sentral · AVAILABLE\nVLT-PJS-02 · VoltGo Putrajaya Sentral · AVAILABLE\nVLT-PJS-03 · VoltGo Putrajaya Sentral · AVAILABLE\nVLT-SRR-01 · VoltGo Seremban R&R · AVAILABLE\nVLT-SRR-02 · VoltGo Seremban R&R · AVAILABLE\nVLT-SRR-03 · VoltGo Seremban R&R · AVAILABLE\nVLT-SRR-04 · VoltGo Seremban R&R · INOPERATIVE\nVLT-SGB-01 · VoltGo Sungai Buloh R&R · AVAILABLE\nVLT-SGB-02 · VoltGo Sungai Buloh R&R · CHARGING\nVLT-SGB-03 · VoltGo Sungai Buloh R&R · AVAILABLE\nSG*VLT*E*D15AC · VoltGo Woodlands · AVAILABLE\nSG*VLT*E*D15DC · VoltGo Woodlands · AVAILABLE\nCommand (required)\nStart session — RemoteStartTransaction\nStop session — RemoteStopTransaction\nUnlock connector — UnlockConnector\nTarget state of charge (%) (required)\nUsed by START_SESSION.\nSend command\nRefresh status\n\nObserved bay status change: AVAILABLE → CHARGING. This is a network poll, not an OCPI callback or confirmation of this command.\n\nStatus:\nCHARGING\nRequest / response trace\nOBSERVED\n08:25 pm\n\nObserved bay status change\n\n{\n  \"source\": \"GET /admin/api/network polling\",\n  \"evseUid\": \"MY*VLT*E*D07DC\"\n}\nObservation\n{\n  \"from\": \"AVAILABLE\",\n  \"to\": \"CHARGING\"\n}\nACCEPTED\n08:25 pm\n\nRequest\n\n{\n  \"evseUid\": \"MY*VLT*E*D07DC\",\n  \"command\": \"START_SESSION\",\n  \"targetSoc\": 80\n}\nResponse\n{\n  \"command\": \"START_SESSION\",\n  \"connectorId\": \"con_demo_butterworth_dc\",\n  \"evseUid\": \"MY*VLT*E*D07DC\",\n  \"result\": \"ACCEPTED\",\n  \"sessionId\": \"ses_4a405d3c71561af9c2ad376c\"\n}",
+  "stop_text": "CN\nChargeNet\nPartner Portal\nOverview\nNetwork\nRevenue\nCredentials\nCompany\nSandbox\nOps voltgo\nops@voltgo.my\nCPO\nSign out\nPartner portal\nOCPI 2.3.0\nSandbox\nTest commands only\nThese commands bill ChargeNet's internal test driver. They are excluded from your revenue reports.\nSend a command\nEVSE (required)\nTH*VLT*E*D24AC · VoltGo Bangkok West · AVAILABLE\nTH*VLT*E*D24DC · VoltGo Bangkok West · AVAILABLE\nMY*VLT*E*D11AC · VoltGo Batu Kawan · AVAILABLE\nMY*VLT*E*D11DC · VoltGo Batu Kawan · AVAILABLE\nMY*VLT*E*D05AC · VoltGo Bayan Lepas / Queensbay area · AVAILABLE\nMY*VLT*E*D05DC · VoltGo Bayan Lepas / Queensbay area · AVAILABLE\nMY*VLT*E*D07AC · VoltGo Butterworth · AVAILABLE\nMY*VLT*E*D07DC · VoltGo Butterworth · AVAILABLE\nVLT-GSR-01 · VoltGo Genting Sempah R&R · AVAILABLE\nVLT-GSR-02 · VoltGo Genting Sempah R&R · AVAILABLE\nMY*VLT*E*D01AC · VoltGo George Town · AVAILABLE\nMY*VLT*E*D01DC · VoltGo George Town · AVAILABLE\nTH*VLT*E*D17AC · VoltGo Hat Yai · AVAILABLE\nTH*VLT*E*D17DC · VoltGo Hat Yai · AVAILABLE\nSG*VLT*E*D13AC · VoltGo Jurong East · AVAILABLE\nSG*VLT*E*D13DC · VoltGo Jurong East · AVAILABLE\nSG*VLT*E*D23AC · VoltGo Marina South · AVAILABLE\nSG*VLT*E*D23DC · VoltGo Marina South · AVAILABLE\nVLT-PJS-01 · VoltGo Putrajaya Sentral · AVAILABLE\nVLT-PJS-02 · VoltGo Putrajaya Sentral · AVAILABLE\nVLT-PJS-03 · VoltGo Putrajaya Sentral · AVAILABLE\nVLT-SRR-01 · VoltGo Seremban R&R · AVAILABLE\nVLT-SRR-02 · VoltGo Seremban R&R · AVAILABLE\nVLT-SRR-03 · VoltGo Seremban R&R · AVAILABLE\nVLT-SRR-04 · VoltGo Seremban R&R · INOPERATIVE\nVLT-SGB-01 · VoltGo Sungai Buloh R&R · AVAILABLE\nVLT-SGB-02 · VoltGo Sungai Buloh R&R · CHARGING\nVLT-SGB-03 · VoltGo Sungai Buloh R&R · AVAILABLE\nSG*VLT*E*D15AC · VoltGo Woodlands · AVAILABLE\nSG*VLT*E*D15DC · VoltGo Woodlands · AVAILABLE\nCommand (required)\nStart session — RemoteStartTransaction\nStop session — RemoteStopTransaction\nUnlock connector — UnlockConnector\nSend command\nRefresh status\n\nObserved bay status change: CHARGING → AVAILABLE. This is a network poll, not an OCPI callback or confirmation of this command.\n\nStatus:\nAVAILABLE\nRequest / response trace\nOBSERVED\n08:26 pm\n\nObserved bay status change\n\n{\n  \"source\": \"GET /admin/api/network polling\",\n  \"evseUid\": \"MY*VLT*E*D07DC\"\n}\nObservation\n{\n  \"from\": \"CHARGING\",\n  \"to\": \"AVAILABLE\"\n}\nACCEPTED\n08:25 pm\n\nRequest\n\n{\n  \"evseUid\": \"MY*VLT*E*D07DC\",\n  \"command\": \"STOP_SESSION\"\n}\nResponse\n{\n  \"command\": \"STOP_SESSION\",\n  \"evseUid\": \"MY*VLT*E*D07DC\",\n  \"result\": \"ACCEPTED\",\n  \"sessionId\": \"ses_4a405d3c71561af9c2ad376c\"\n}\nOBSERVED\n08:25 pm\n\nObserved bay status change\n\n{\n  \"source\": \"GET /admin/api/network polling\",\n  \"evseUid\": \"MY*VLT*E*D07DC\"\n}\nObservation\n{\n  \"from\": \"AVAILABLE\",\n  \"to\": \"CHARGING\"\n}\nACCEPTED\n08:25 pm\n\nRequest\n\n{\n  \"evseUid\": \"MY*VLT*E*D07DC\",\n  \"command\": \"START_SESSION\",\n  \"targetSoc\": 80\n}\nResponse\n{\n  \"command\": \"START_SESSION\",\n  \"connectorId\": \"con_demo_butterworth_dc\",\n  \"evseUid\": \"MY*VLT*E*D07DC\",\n  \"result\": \"ACCEPTED\",\n  \"sessionId\": \"ses_4a405d3c71561af9c2ad376c\"\n}"
+}

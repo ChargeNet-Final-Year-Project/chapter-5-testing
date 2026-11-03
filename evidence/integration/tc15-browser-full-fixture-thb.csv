@@ -1,0 +1,28 @@
+cdr_id,session_id,start,end,station,evse,kwh,minutes,tariff,gross,platform_fee,net_payout,currency
+cdr_report_THB_inside_9,report_THB_inside_9,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_8,report_THB_inside_8,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_7,report_THB_inside_7,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_6,report_THB_inside_6,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_5,report_THB_inside_5,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_4,report_THB_inside_4,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_3,report_THB_inside_3,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_26,report_THB_inside_26,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_25,report_THB_inside_25,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_24,report_THB_inside_24,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_23,report_THB_inside_23,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_22,report_THB_inside_22,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_21,report_THB_inside_21,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_20,report_THB_inside_20,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_2,report_THB_inside_2,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_19,report_THB_inside_19,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_18,report_THB_inside_18,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_17,report_THB_inside_17,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_16,report_THB_inside_16,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_15,report_THB_inside_15,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_14,report_THB_inside_14,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_13,report_THB_inside_13,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_12,report_THB_inside_12,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_11,report_THB_inside_11,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_10,report_THB_inside_10,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_1,report_THB_inside_1,2026-10-25T23:59:00+08:00,2026-10-26T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+TOTAL,,,,,,26.000,,,41.60,2.08,39.52,THB

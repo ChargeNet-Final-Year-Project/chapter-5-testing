@@ -1,0 +1,2394 @@
+{
+  "all_events": 298,
+  "visible_results": {
+    "success": 265
+  },
+  "hidden_events": 33,
+  "skip_count": 0,
+  "tests": [
+    {
+      "id": 1,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 4,
+      "name": "telemetry formatters formatClock renders the simulated duration as a clock",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 5,
+      "name": "telemetry formatters formatPercent rounds, and reads \"unknown\" for null",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 7,
+      "name": "stop reasons every reason the backend can send has words",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 8,
+      "name": "stop reasons an unknown code degrades instead of leaking a backend enum",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 10,
+      "name": "live monitor lays out the charger, battery progress and labelled readings",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 11,
+      "name": "live monitor mirrors the session into the shared notifier",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 12,
+      "name": "live monitor three telemetry frames move the %, kW and kWh",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 13,
+      "name": "live monitor a just-started session reads \"unknown\", never zero",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 14,
+      "name": "live monitor completion dismisses only its own pending confirmation before the receipt",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 15,
+      "name": "live monitor a terminal frame ends the session and shows the receipt",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 16,
+      "name": "live monitor the finish presenter receives the terminal session",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 17,
+      "name": "live monitor sliding to stop asks the backend and blocks the screen",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 18,
+      "name": "live monitor a rejected stop re-arms the slide and explains why",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 19,
+      "name": "live monitor a dropped stream and missing session never fabricate completion",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 20,
+      "name": "live monitor stream exhaustion retains the active session without a receipt",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 21,
+      "name": "live monitor coming back to the foreground re-opens the stream",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 23,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 26,
+      "name": "the shared cost and date rules energyCost rounds the way the backend rounds",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 27,
+      "name": "the shared cost and date rules formatDayMonth matches the wallet ledger",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 28,
+      "name": "the shared cost and date rules cpoAccentColor finds the brand colour and falls back",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 30,
+      "name": "HistoryMonth labelFor names the month and the year",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 31,
+      "name": "HistoryMonth group buckets a newest-first list into consecutive months",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 32,
+      "name": "HistoryMonth group parks an undated row under \"Earlier\"",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 33,
+      "name": "HistoryMonth flatten puts a divider in front of every month",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 34,
+      "name": "HistoryMonth flatten of an empty archive is empty",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 36,
+      "name": "HistoryTile dateLabel and detailLabel summarise a row",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 37,
+      "name": "HistoryTile a row the backend never dated still reads",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 38,
+      "name": "HistoryTile costLabel prefers the priced total over the estimate",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 39,
+      "name": "HistoryTile isFailed flags only a failed session",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 41,
+      "name": "OngoingSessionCard quotes the live numbers, and the estimate behind the cost",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 42,
+      "name": "OngoingSessionCard a priced session reports the backend total",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 43,
+      "name": "OngoingSessionCard missing readings read as unknown, never as zero",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 44,
+      "name": "OngoingSessionCard socLabel names the target and socFraction stays inside the bar",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 46,
+      "name": "ActivityScreen · Ongoing offers a way back to the map when nothing is running",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 47,
+      "name": "ActivityScreen · Ongoing follows the telemetry notifier while a session runs",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 48,
+      "name": "ActivityScreen · Ongoing hands the session to the live monitor",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 49,
+      "name": "ActivityScreen · Ongoing paints the card in the CPO brand colour",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 51,
+      "name": "ActivityScreen · History lists finished sessions newest first, grouped by month",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 52,
+      "name": "ActivityScreen · History tapping a row opens its digital receipt",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 53,
+      "name": "ActivityScreen · History flags a failed session in the row",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 54,
+      "name": "ActivityScreen · History pull-to-refresh reloads the tab",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 55,
+      "name": "ActivityScreen · History shows an empty state before the first charge",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 56,
+      "name": "ActivityScreen · History appends the next page at the end, then stops asking",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 58,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/api_service_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/api_service_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 60,
+      "name": "login posts the credentials and decodes the session",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/api_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 61,
+      "name": "an error envelope becomes an ApiException with its codes",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/api_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 62,
+      "name": "an authenticated call carries the bearer token",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/api_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 64,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 66,
+      "name": "login reports an empty email and password",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 67,
+      "name": "login rejects a malformed email",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 68,
+      "name": "the debug demo shortcut prefills the demo account",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 69,
+      "name": "register rejects a mismatched confirmation",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 71,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 74,
+      "name": "activation capabilities the camera scanner only exists on Android and iOS",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 75,
+      "name": "activation capabilities the seeded EVSE shortcut is offered where the camera cannot run",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 77,
+      "name": "pre-charge rules the wallet must hold the RM 10 minimum",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 78,
+      "name": "pre-charge rules start needs an available connector and enough balance",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 79,
+      "name": "pre-charge rules blocker explains a busy connector and a thin wallet",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 80,
+      "name": "pre-charge rules estimates energy, time and cost from the charging formula",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 81,
+      "name": "pre-charge rules start failures are translated for the driver",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 83,
+      "name": "confirm panel a preselected EVSE goes straight to the confirm panel",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 84,
+      "name": "confirm panel estimates the session for the chosen vehicle and target",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 85,
+      "name": "confirm panel without a vehicle the default energy assumption is disclosed",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 86,
+      "name": "confirm panel a thin wallet disables the slide and offers a top-up",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 87,
+      "name": "confirm panel a busy connector disables the slide",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 88,
+      "name": "confirm panel a full slide starts the session and opens the monitor",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 89,
+      "name": "confirm panel changed pricing requires confirmation again and never starts automatically",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 90,
+      "name": "confirm panel an already-running session offers the monitor instead",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 92,
+      "name": "manual entry opens on manual entry when no EVSE is preselected",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 93,
+      "name": "manual entry normalises the typed code before looking it up",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 94,
+      "name": "manual entry refuses input that is not a ChargeNet code",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 95,
+      "name": "manual entry an unknown EVSE leaves the code in the field with a reason",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 96,
+      "name": "manual entry the debug shortcut fills in the seeded EVSE",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 98,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/charging_mini_bar_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_mini_bar_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 100,
+      "name": "telemetryLabel joins the battery level and the power",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_mini_bar_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 101,
+      "name": "telemetryLabel survives a session whose readings are not in yet",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_mini_bar_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 102,
+      "name": "shows the live numbers and taps through to the monitor",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_mini_bar_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 104,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 107,
+      "name": "receipt formatters formatDuration renders the backend seconds as a clock",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 108,
+      "name": "receipt formatters the monitor row and the receipt row read the same clock",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 109,
+      "name": "receipt formatters formatDateTime writes a local date and time",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 111,
+      "name": "receipt rows prints one row per itemised line in display order",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 112,
+      "name": "receipt rows the paid figure is the wallet's CHARGING_DEBIT row",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 113,
+      "name": "receipt rows an unpriced settlement keeps paid money unknown",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 114,
+      "name": "receipt rows a very small session prices out at RM 0.00, not unknown",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 115,
+      "name": "receipt rows the two optional rows only appear when there is something to say",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 116,
+      "name": "receipt rows plainText carries every row and never the platform fee",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 118,
+      "name": "ChargingReceipt renders the header, the detail rows and both actions",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 119,
+      "name": "ChargingReceipt reads as a failure when the session failed",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 120,
+      "name": "ChargingReceipt stays paper-light over the dark monitor",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 121,
+      "name": "ChargingReceipt a tiny session on a small phone scrolls instead of clipping",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 122,
+      "name": "ChargingReceipt Done dismisses the sheet",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 123,
+      "name": "ChargingReceipt Copy receipt puts the plain text on the clipboard",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 125,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 128,
+      "name": "ConnectorTileWidget renders the standard, rating, tariff and a live badge",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 129,
+      "name": "ConnectorTileWidget enables Start charging when AVAILABLE and reports the tap",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 130,
+      "name": "ConnectorTileWidget disables Start charging while the connector is CHARGING",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 131,
+      "name": "ConnectorTileWidget disables Start charging when the connector is INOPERATIVE",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 132,
+      "name": "ConnectorTileWidget maps known standards onto their display names",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 133,
+      "name": "ConnectorTileWidget falls back to the raw value for an unknown standard",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 134,
+      "name": "ConnectorTileWidget title-cases statuses and tolerates an empty one",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 136,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/discovery_controller_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/discovery_controller_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 138,
+      "name": "new search wins reversed completion and superseded errors",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/discovery_controller_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 139,
+      "name": "refresh updates selected connectors, dismisses missing selection, hides fallback distance",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/discovery_controller_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 140,
+      "name": "clearing filters cancels a pending search debounce",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/discovery_controller_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 142,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 145,
+      "name": "EvseCodeParser accepts a bare uid, trimming and upper-casing it",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 146,
+      "name": "EvseCodeParser reads the ChargeNet deep link",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 147,
+      "name": "EvseCodeParser reads an /evse/<uid> path out of an https link",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 148,
+      "name": "EvseCodeParser rejects links that do not point at an EVSE",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 149,
+      "name": "EvseCodeParser rejects empty, malformed and clearly not-a-code input",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 150,
+      "name": "EvseCodeParser isValidUid mirrors what parse returns",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 152,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/home_search_selection_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/home_search_selection_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 154,
+      "name": "selecting a search result dismisses search and retains station selection",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/home_search_selection_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 156,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 158,
+      "name": "scanner feedback and torch remain reachable at 1.0 text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 159,
+      "name": "scanner feedback and torch remain reachable at 2.0 text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 160,
+      "name": "semantic and keyboard activation require a second deliberate confirmation",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 161,
+      "name": "interrupted drag resets without submitting",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 162,
+      "name": "disabling the action while confirmation is open prevents submission",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 163,
+      "name": "first-load failures hide default balances and retry independently",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 164,
+      "name": "onboarding exposes the current step to assistive technology",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 165,
+      "name": "operator swatches retain identity with contrasting foregrounds",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 167,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 169,
+      "name": "(setUpAll)",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 170,
+      "name": "profile groups remain reachable at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 171,
+      "name": "discovery controls reflow at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 172,
+      "name": "ongoing activity stays actionable at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 173,
+      "name": "profile groups remain reachable at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 174,
+      "name": "discovery controls reflow at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 175,
+      "name": "ongoing activity stays actionable at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 176,
+      "name": "profile groups remain reachable at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 177,
+      "name": "discovery controls reflow at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 178,
+      "name": "ongoing activity stays actionable at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 179,
+      "name": "profile groups remain reachable at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 180,
+      "name": "discovery controls reflow at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 181,
+      "name": "ongoing activity stays actionable at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 182,
+      "name": "(tearDownAll)",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 184,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 186,
+      "name": "a failed wallet does not turn successful empty slices into failures",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 187,
+      "name": "zero becomes valid after success and remains labelled stale after failure",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 188,
+      "name": "settlement refresh includes the transaction ledger",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 189,
+      "name": "account cleanup rejects an old successful wallet response",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 191,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 194,
+      "name": "model round-trips (fromJson → toJson is the identity) AppUser",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 195,
+      "name": "model round-trips (fromJson → toJson is the identity) CpoPartner",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 196,
+      "name": "model round-trips (fromJson → toJson is the identity) Connector",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 197,
+      "name": "model round-trips (fromJson → toJson is the identity) Station with connectors",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 198,
+      "name": "model round-trips (fromJson → toJson is the identity) Station sent without a computed distance",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 199,
+      "name": "model round-trips (fromJson → toJson is the identity) Wallet",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 200,
+      "name": "model round-trips (fromJson → toJson is the identity) WalletTransaction",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 201,
+      "name": "model round-trips (fromJson → toJson is the identity) Vehicle",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 203,
+      "name": "ChargingSession completed session with an object cdrJson",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 204,
+      "name": "ChargingSession running session keeps every optional field null",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 205,
+      "name": "ChargingSession a vehicle-less session parses vehicleId as null",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 207,
+      "name": "EvConnectorType fromApi maps every canonical value",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 208,
+      "name": "EvConnectorType fromApi tolerates case and surrounding whitespace",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 209,
+      "name": "EvConnectorType apiValue round-trips through fromApi",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 210,
+      "name": "EvConnectorType fromApi throws for an unknown standard",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 211,
+      "name": "EvConnectorType display names are unchanged",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 213,
+      "name": "KConstants exposes the API contract defaults",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 214,
+      "name": "KConstants apiBaseUrl is always an absolute http URL",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 216,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 218,
+      "name": "quote confirmation glyphs fit the track at 200% text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 219,
+      "name": "new OCPI-style charging identifiers survive discovery and QR entry",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 220,
+      "name": "currency formatting identifies all three denominations",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 221,
+      "name": "quote is readable at 320dp / 1.0 text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 222,
+      "name": "quote is readable at 320dp / 2.0 text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 223,
+      "name": "failed estimate can be retried",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 224,
+      "name": "receipt preserves original amount and wallet deduction",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 225,
+      "name": "clusters respect distance and zoom without merging countries",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 227,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 230,
+      "name": "ProfileScreen stacks user, wallet, vehicles and sign out",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 231,
+      "name": "ProfileScreen keeps saved vehicles without a roaming catalogue on Profile",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 232,
+      "name": "ProfileScreen shows the empty garage call to action without a vehicle",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 233,
+      "name": "ProfileScreen keeps the wallet card visible while partners load",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 235,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 237,
+      "name": "terminal snapshot settles once despite stop and late-frame races",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 238,
+      "name": "404 reconciliation retains uncertainty and retry can confirm failure",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 239,
+      "name": "replacement and account reset ignore old stream and reconciliation",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 240,
+      "name": "minimising preserves one owner; reopening uses fresh telemetry",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 241,
+      "name": "a nonterminal stop response cannot authorize a receipt",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 242,
+      "name": "interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 243,
+      "name": "interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 244,
+      "name": "interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 245,
+      "name": "interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 246,
+      "name": "late reconciliation cannot overwrite a newer live snapshot",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 248,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 251,
+      "name": "parseSessionEvents emits each telemetry frame, then completed, then closes",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 252,
+      "name": "parseSessionEvents reassembles frames split across many byte chunks",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 253,
+      "name": "parseSessionEvents accepts CRLF line endings",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 254,
+      "name": "parseSessionEvents ignores comments, unknown events and bad payloads",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 255,
+      "name": "parseSessionEvents emits a final frame that arrived without its blank line",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 256,
+      "name": "parseSessionEvents a comment-only stream closes without emitting",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 258,
+      "name": "watchdogSseBytes a silent connection fails with a TimeoutException, after its frames",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 259,
+      "name": "watchdogSseBytes keepalive traffic keeps the watchdog from firing",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 260,
+      "name": "watchdogSseBytes the default window outlasts the backend keepalive",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 262,
+      "name": "isSessionTerminal only COMPLETED and FAILED are terminal",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 264,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 267,
+      "name": "SlideToConfirm geometry the thumb travels the track minus its own width",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 268,
+      "name": "SlideToConfirm geometry arms only past 90 % of the travel",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 270,
+      "name": "SlideToConfirm widget runs the action once on a full swipe",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 271,
+      "name": "SlideToConfirm widget springs back without firing on a short drag",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 272,
+      "name": "SlideToConfirm widget does nothing while disabled",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 273,
+      "name": "SlideToConfirm widget shows a spinner and ignores drags while loading",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 274,
+      "name": "SlideToConfirm widget renders the blocker hint under the track",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 276,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 278,
+      "name": "changing country clears its region and retains other filters",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 279,
+      "name": "API sends geographic and power constraints in one request",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 280,
+      "name": "filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 281,
+      "name": "filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 282,
+      "name": "filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 283,
+      "name": "filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 284,
+      "name": "country change clears region and Apply returns the combined draft",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 285,
+      "name": "Reset is a draft and dismissal cancels all changes",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 287,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 290,
+      "name": "colorFromHex parses the 6-digit brand tokens served by the API",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 291,
+      "name": "colorFromHex honours an explicit alpha channel",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 292,
+      "name": "colorFromHex expands 3-digit shorthand",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 293,
+      "name": "colorFromHex falls back instead of throwing on malformed input",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 295,
+      "name": "StationMarkerWidget.ringColorFor green while at least one bay is free",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 296,
+      "name": "StationMarkerWidget.ringColorFor amber when the station is live but full",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 297,
+      "name": "StationMarkerWidget.ringColorFor grey when the station is inactive",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 298,
+      "name": "StationMarkerWidget.ringColorFor grey when every connector reports INOPERATIVE",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 299,
+      "name": "StationMarkerWidget.ringColorFor amber, not grey, when full but the connectors are merely busy",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 300,
+      "name": "StationMarkerWidget.ringColorFor falls back to the bay count when connector rows are absent",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 302,
+      "name": "StationMarkerWidget paints the CPO brand colour and a green ring when free",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 303,
+      "name": "StationMarkerWidget shows the grey ring and a 0/total chip when inactive",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 304,
+      "name": "StationMarkerWidget reports taps so the map can select the station",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 305,
+      "name": "StationMarkerWidget an unusable brand colour degrades to the fallback",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 307,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 310,
+      "name": "TopUpSheet amount rules offers the four preset amounts",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 311,
+      "name": "TopUpSheet amount rules accepts 5–2000 and rejects everything else",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 312,
+      "name": "TopUpSheet amount rules labels the pay button with the amount, or plain Pay",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 313,
+      "name": "TopUpSheet amount rules accepts at most two decimals in the field",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 314,
+      "name": "TopUpSheet amount rules the keystroke formatter keeps the last valid text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 316,
+      "name": "TopUpSheet widget starts with Pay disabled and no amount",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 317,
+      "name": "TopUpSheet widget disables Pay for an amount below RM 5",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 318,
+      "name": "TopUpSheet widget enables Pay and updates the label for a custom amount",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 319,
+      "name": "TopUpSheet widget a preset fills the field and relabels the button",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 320,
+      "name": "TopUpSheet widget offers the three simulated gateways with icons",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 322,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 325,
+      "name": "TransactionTileWidget labels prefixes a top-up with + and a charge with −",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 326,
+      "name": "TransactionTileWidget labels colours credits green and charges red",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 327,
+      "name": "TransactionTileWidget labels names the gateway for a top-up and the session for a debit",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 328,
+      "name": "TransactionTileWidget labels picks a distinct icon per type",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 329,
+      "name": "TransactionTileWidget labels formats the local date as dd MMM, h:mm a",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 331,
+      "name": "TransactionTileWidget widget renders a credit row",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 332,
+      "name": "TransactionTileWidget widget renders a debit row in red",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 334,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 336,
+      "name": "(setUpAll)",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 337,
+      "name": "welcome remains reachable at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 338,
+      "name": "features remains reachable at Size(320.0, 640.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 339,
+      "name": "welcome remains reachable at Size(320.0, 640.0) / 1.3",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 340,
+      "name": "features remains reachable at Size(320.0, 640.0) / 1.3",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 341,
+      "name": "welcome remains reachable at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 342,
+      "name": "features remains reachable at Size(320.0, 640.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 343,
+      "name": "welcome remains reachable at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 344,
+      "name": "features remains reachable at Size(640.0, 320.0) / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 345,
+      "name": "welcome remains reachable at Size(640.0, 320.0) / 1.3",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 346,
+      "name": "features remains reachable at Size(640.0, 320.0) / 1.3",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 347,
+      "name": "welcome remains reachable at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 348,
+      "name": "features remains reachable at Size(640.0, 320.0) / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 349,
+      "name": "wallet keeps its balance and controls at 200% text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 350,
+      "name": "charging strip reflows and remains actionable at 200% text",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 351,
+      "name": "monitor preserves readouts at 320.0 / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 352,
+      "name": "monitor preserves readouts at 320.0 / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 353,
+      "name": "monitor preserves readouts at 390.0 / 1.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 354,
+      "name": "monitor preserves readouts at 390.0 / 2.0",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 355,
+      "name": "(tearDownAll)",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 357,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 360,
+      "name": "VehicleCardWidget formatting drops a trailing .0 from the capacity",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 361,
+      "name": "VehicleCardWidget formatting keeps one decimal when the capacity has one",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 362,
+      "name": "VehicleCardWidget formatting maps the canonical connector value onto its display name",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 363,
+      "name": "VehicleCardWidget formatting falls back to the raw value for an unknown connector",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 365,
+      "name": "VehicleCardWidget widget renders name, plate, connector, capacity and badge",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 366,
+      "name": "VehicleCardWidget widget hides the Default badge for a non-default vehicle",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 367,
+      "name": "VehicleCardWidget widget shows a decimal capacity without rounding it away",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 369,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 372,
+      "name": "VehicleEditScreen validation requires a name",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 373,
+      "name": "VehicleEditScreen validation requires a license plate",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 374,
+      "name": "VehicleEditScreen validation keeps the capacity between 10 and 250 kWh",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 375,
+      "name": "VehicleEditScreen validation the capacity field allows three digits and one decimal",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 376,
+      "name": "VehicleEditScreen validation uppercases plates and drops the characters the API rejects",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 377,
+      "name": "VehicleEditScreen validation maps an unknown connector onto the CCS2 default",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 379,
+      "name": "VehicleEditScreen form add mode shows every validation message",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 380,
+      "name": "VehicleEditScreen form rejects an out-of-range capacity and uppercases the plate",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 381,
+      "name": "VehicleEditScreen form edit mode prefills the saved vehicle",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 382,
+      "name": "VehicleEditScreen form delete asks for confirmation first",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 384,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 387,
+      "name": "WalletCardWidget.formatBalance renders two decimals with the RM prefix",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 388,
+      "name": "WalletCardWidget.formatBalance groups thousands",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 390,
+      "name": "WalletCardWidget shows the live balance from the notifier",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 391,
+      "name": "WalletCardWidget hides the balance behind a mask and restores it",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 392,
+      "name": "WalletCardWidget remembers a hidden balance across a restart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    },
+    {
+      "id": 394,
+      "name": "loading C:/code projects/chargenet-latest/chargenet-mobile/test/widget_test.dart",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/widget_test.dart",
+      "result": "success",
+      "hidden": true,
+      "skipped": false
+    },
+    {
+      "id": 396,
+      "name": "shows light onboarding even when the OS prefers dark",
+      "source": "C:/code projects/chargenet-latest/chargenet-mobile/test/widget_test.dart",
+      "result": "success",
+      "hidden": false,
+      "skipped": false
+    }
+  ]
+}

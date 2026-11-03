@@ -1,0 +1,166 @@
+{
+  "driver_id": "usr_0ad0b95d8c7280959bad1410",
+  "captured_at": "2026-10-27T20:31:52.857354+08:00",
+  "session_id": "ses_92f4fd91ce7262419b59e4e6",
+  "live": {
+    "quoteId": "qte_3f423551f0f916684ccf0c11",
+    "originalCurrency": "THB",
+    "walletCurrency": "MYR",
+    "exchangeRate": "0.1300000000",
+    "rateSource": "chargenet-demo-v1",
+    "originalCost": 2.28,
+    "unfundedAmount": 0,
+    "reservedAmount": 115.18,
+    "tariffDecimal": "7.500000",
+    "id": "ses_92f4fd91ce7262419b59e4e6",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+    "cpoId": "cpo_ecowatt",
+    "cpoName": "EcoWatt",
+    "stationId": "stn_demo_hat_yai_east",
+    "stationName": "EcoWatt Hat Yai East",
+    "connectorId": "con_demo_hat_yai_east_dc",
+    "evseUid": "TH*ECO*E*D21DC",
+    "connectorType": "CCS2",
+    "status": "CHARGING",
+    "startTime": "2026-10-27T20:31:37.745141+08:00",
+    "endTime": null,
+    "durationSeconds": 20,
+    "kwhDelivered": 0.304,
+    "currentPowerKw": 54.32,
+    "batterySoc": 30.81,
+    "targetSoc": 80,
+    "tariffPerKwh": 7.5,
+    "totalCost": 0.3,
+    "balanceAfter": null,
+    "stopReason": null,
+    "cdrId": null,
+    "cdrJson": null
+  },
+  "receipt": {
+    "quoteId": "qte_3f423551f0f916684ccf0c11",
+    "originalCurrency": "THB",
+    "walletCurrency": "MYR",
+    "exchangeRate": "0.1300000000",
+    "rateSource": "chargenet-demo-v1",
+    "originalCost": 13.56,
+    "unfundedAmount": 0,
+    "reservedAmount": 115.18,
+    "tariffDecimal": "7.500000",
+    "id": "ses_92f4fd91ce7262419b59e4e6",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+    "cpoId": "cpo_ecowatt",
+    "cpoName": "EcoWatt",
+    "stationId": "stn_demo_hat_yai_east",
+    "stationName": "EcoWatt Hat Yai East",
+    "connectorId": "con_demo_hat_yai_east_dc",
+    "evseUid": "TH*ECO*E*D21DC",
+    "connectorType": "CCS2",
+    "status": "COMPLETED",
+    "startTime": "2026-10-27T20:31:37.745141+08:00",
+    "endTime": "2026-10-27T20:31:50.624136+08:00",
+    "durationSeconds": 120,
+    "kwhDelivered": 1.808,
+    "currentPowerKw": 53.38,
+    "batterySoc": 32.81,
+    "targetSoc": 80,
+    "tariffPerKwh": 7.5,
+    "totalCost": 1.76,
+    "balanceAfter": 113.42,
+    "stopReason": "USER",
+    "cdrId": "cdr_c6dce552d83b581bb0daa7f1",
+    "cdrJson": {
+      "auth_method": "COMMAND",
+      "cdr_location": {
+        "address": "Kanchanawanit Road, Hat Yai East, Thailand (simulated site)",
+        "city": "Hat Yai East",
+        "connector_format": "CABLE",
+        "connector_id": "1",
+        "connector_power_type": "DC",
+        "connector_standard": "IEC_62196_T2_COMBO",
+        "coordinates": {
+          "latitude": "7.008000",
+          "longitude": "100.500000"
+        },
+        "country": "THA",
+        "evse_id": "TH*ECO*E*D21DC",
+        "evse_uid": "TH*ECO*E*D21DC",
+        "id": "DEMO-HAT-YAI-EAST",
+        "name": "EcoWatt Hat Yai East"
+      },
+      "cdr_token": {
+        "contract_id": "usr_0ad0b95d8c7280959bad1410",
+        "country_code": "MY",
+        "party_id": "CNT",
+        "type": "APP_USER",
+        "uid": "usr_0ad0b95d8c7280959bad1410"
+      },
+      "charging_periods": [
+        {
+          "dimensions": [
+            {
+              "type": "ENERGY",
+              "volume": 1.808
+            },
+            {
+              "type": "TIME",
+              "volume": 0.0333
+            }
+          ],
+          "start_date_time": "2026-10-27T12:31:37Z"
+        }
+      ],
+      "country_code": "MY",
+      "currency": "THB",
+      "end_date_time": "2026-10-27T12:31:50Z",
+      "id": "cdr_c6dce552d83b581bb0daa7f1",
+      "last_updated": "2026-10-27T12:31:50Z",
+      "party_id": "ECO",
+      "session_id": "ses_92f4fd91ce7262419b59e4e6",
+      "start_date_time": "2026-10-27T12:31:37Z",
+      "tariffs": [
+        {
+          "country_code": "MY",
+          "currency": "THB",
+          "elements": [
+            {
+              "price_components": [
+                {
+                  "price": 7.5,
+                  "step_size": 1,
+                  "type": "ENERGY"
+                }
+              ]
+            }
+          ],
+          "id": "trf_demo_ecowatt_th_dc",
+          "last_updated": "2026-10-27T12:31:37Z",
+          "party_id": "ECO",
+          "tax_included": "N/A"
+        }
+      ],
+      "total_cost": {
+        "before_taxes": 13.56
+      },
+      "total_energy": 1.808,
+      "total_time": 0.0333
+    }
+  },
+  "walletBefore": {
+    "reserved": 0,
+    "availableBalance": 115.18,
+    "id": "wal_20bbd19066fde17edacc6d02",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "balance": 115.18,
+    "currency": "MYR"
+  },
+  "walletAfter": {
+    "reserved": 0,
+    "availableBalance": 113.42,
+    "id": "wal_20bbd19066fde17edacc6d02",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "balance": 113.42,
+    "currency": "MYR"
+  }
+}

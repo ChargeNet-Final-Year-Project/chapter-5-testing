@@ -1,0 +1,56 @@
+[
+  {
+    "case_id": "TC42",
+    "scope": "administrator navigation",
+    "metrics": {
+      "width": 1440,
+      "scroll": 1440,
+      "focus": "A"
+    },
+    "capture": "evidence/captures/edge-tc42-admin-1440.png",
+    "status": "Pass"
+  },
+  {
+    "case_id": "TC42",
+    "scope": "administrator navigation",
+    "metrics": {
+      "width": 390,
+      "scroll": 390,
+      "focus": "BUTTON"
+    },
+    "capture": "evidence/captures/edge-tc42-admin-390.png",
+    "status": "Pass"
+  },
+  {
+    "case_id": "TC15",
+    "currency": "MYR",
+    "capture": "02 Evidence/Screen Captures/Edge 2026-10-27T205238.478833 0800 TC15 full range MYR.png",
+    "status": "Pass"
+  },
+  {
+    "case_id": "TC15",
+    "currency": "SGD",
+    "capture": "02 Evidence/Screen Captures/Edge 2026-10-27T205239.199254 0800 TC15 full range SGD.png",
+    "status": "Pass"
+  },
+  {
+    "case_id": "TC15",
+    "currency": "THB",
+    "capture": "02 Evidence/Screen Captures/Edge 2026-10-27T205239.937156 0800 TC15 full range THB.png",
+    "status": "Pass"
+  },
+  {
+    "case_id": "TC39",
+    "scope": "correctly signed expired JWT",
+    "status": "Pass",
+    "expired_by_seconds": 60,
+    "protected_view_removed": true
+  },
+  {
+    "case_id": "TC13",
+    "scope": "unused Token A reveal/copy/hide",
+    "status": "Pass",
+    "clipboard_matched": true,
+    "capture": "evidence/captures/edge-tc13-unused-token-masked.png"
+  }
+]

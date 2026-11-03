@@ -1,0 +1,9 @@
+browser,viewport_width,route,keyboard_focus_tag,document_width,horizontal_document_overflow,capture
+Edge Chromium 156.0.4314.42,1440,overview,SELECT,1440,False,evidence/captures/edge-tc42-1440-overview.png
+Edge Chromium 156.0.4314.42,1440,ledger,BUTTON,1440,False,evidence/captures/edge-tc42-1440-ledger.png
+Edge Chromium 156.0.4314.42,1440,network,INPUT,1440,False,evidence/captures/edge-tc42-1440-network.png
+Edge Chromium 156.0.4314.42,1440,credentials,BUTTON,1440,False,evidence/captures/edge-tc42-1440-credentials.png
+Edge Chromium 156.0.4314.42,390,overview,SELECT,390,False,evidence/captures/edge-tc42-390-overview.png
+Edge Chromium 156.0.4314.42,390,ledger,BUTTON,390,False,evidence/captures/edge-tc42-390-ledger.png
+Edge Chromium 156.0.4314.42,390,network,INPUT,390,False,evidence/captures/edge-tc42-390-network.png
+Edge Chromium 156.0.4314.42,390,credentials,BUTTON,390,False,evidence/captures/edge-tc42-390-credentials.png

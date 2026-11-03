@@ -1,0 +1,11 @@
+=== RUN   TestEvidenceUnknownStopPreservesUncertainty
+    stop_uncertainty_test.go:72: phase=uncertain attempt=1 session=ses_a76db2c6b990509445560408 status=CHARGING cdrs=0 debits=0 debit_amount=0.00 balance=100.00 reserved=100.00 connector=CHARGING stop_error=CPO_UNREACHABLE: The operator could not confirm that charging stopped. Your session remains active; retry or wait for an update.
+    stop_uncertainty_test.go:72: phase=uncertain attempt=2 session=ses_a76db2c6b990509445560408 status=CHARGING cdrs=0 debits=0 debit_amount=0.00 balance=100.00 reserved=100.00 connector=CHARGING stop_error=CPO_UNREACHABLE: The operator could not confirm that charging stopped. Your session remains active; retry or wait for an update.
+    stop_uncertainty_test.go:72: phase=uncertain attempt=3 session=ses_a76db2c6b990509445560408 status=CHARGING cdrs=0 debits=0 debit_amount=0.00 balance=100.00 reserved=100.00 connector=CHARGING stop_error=CPO_UNREACHABLE: The operator could not confirm that charging stopped. Your session remains active; retry or wait for an update.
+    stop_uncertainty_test.go:132: phase=confirmed session=ses_a76db2c6b990509445560408 status=COMPLETED cdr=cdr_9282901182efdf5a21ced6ef cdrs=1 debits=1 debit_amount=1.80 energy_kwh=1.000 balance=98.20 reserved=0.00 connector=AVAILABLE
+--- PASS: TestEvidenceUnknownStopPreservesUncertainty (1.36s)
+=== RUN   TestEvidenceUnknownStopAfterConfirmedSettlement
+    stop_uncertainty_test.go:165: phase=confirmed_during_command session=ses_e1622bc07662b6b380c5c5c6 cdr=cdr_2d53a2df392da3abd4325ec3 cdrs=1 debits=1 balance=98.20 reserved=0.00 stop_error=nil
+--- PASS: TestEvidenceUnknownStopAfterConfirmedSettlement (1.10s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/sessions	2.607s

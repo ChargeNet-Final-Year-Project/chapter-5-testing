@@ -1,0 +1,68 @@
+[
+  {
+    "currency": "MYR",
+    "timezone": "Asia/Kuala_Lumpur",
+    "from_date": "2026-10-26",
+    "to_date": "2026-10-26",
+    "json_page_1": 25,
+    "json_page_2": 1,
+    "csv_records": 26,
+    "gross": "41.60",
+    "net": "39.52",
+    "database": [
+      {
+        "currency": "MYR",
+        "cdrs": "26",
+        "gross": "41.60",
+        "fee": "2.08",
+        "net": "39.52"
+      }
+    ],
+    "status": "Pass",
+    "fixture_type": "direct SQL reporting records; no charging or wallet debit"
+  },
+  {
+    "currency": "SGD",
+    "timezone": "Asia/Kuala_Lumpur",
+    "from_date": "2026-10-26",
+    "to_date": "2026-10-26",
+    "json_page_1": 25,
+    "json_page_2": 1,
+    "csv_records": 26,
+    "gross": "41.60",
+    "net": "39.52",
+    "database": [
+      {
+        "currency": "SGD",
+        "cdrs": "26",
+        "gross": "41.60",
+        "fee": "2.08",
+        "net": "39.52"
+      }
+    ],
+    "status": "Pass",
+    "fixture_type": "direct SQL reporting records; no charging or wallet debit"
+  },
+  {
+    "currency": "THB",
+    "timezone": "Asia/Kuala_Lumpur",
+    "from_date": "2026-10-26",
+    "to_date": "2026-10-26",
+    "json_page_1": 25,
+    "json_page_2": 1,
+    "csv_records": 26,
+    "gross": "41.60",
+    "net": "39.52",
+    "database": [
+      {
+        "currency": "THB",
+        "cdrs": "26",
+        "gross": "41.60",
+        "fee": "2.08",
+        "net": "39.52"
+      }
+    ],
+    "status": "Pass",
+    "fixture_type": "direct SQL reporting records; no charging or wallet debit"
+  }
+]

@@ -1,0 +1,48 @@
+{
+  "lost_at": "2026-10-27T20:13:39.655879+08:00",
+  "response_bytes_read": 0,
+  "original": [
+    {
+      "response_status": "201",
+      "session_id": "ses_e88516c9a357e636c297a68c"
+    }
+  ],
+  "replay_status": 201,
+  "replay_header": "true",
+  "session_id": "ses_e88516c9a357e636c297a68c",
+  "live": {
+    "quoteId": "qte_27a1e2d92d510e9d41b01fb9",
+    "originalCurrency": "THB",
+    "walletCurrency": "MYR",
+    "exchangeRate": "0.1300000000",
+    "rateSource": "chargenet-demo-v1",
+    "originalCost": 5.96,
+    "unfundedAmount": 0,
+    "reservedAmount": 83.39,
+    "tariffDecimal": "8.000000",
+    "id": "ses_e88516c9a357e636c297a68c",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+    "cpoId": "cpo_voltgo",
+    "cpoName": "VoltGo",
+    "stationId": "stn_demo_bangkok_west",
+    "stationName": "VoltGo Bangkok West",
+    "connectorId": "con_demo_bangkok_west_dc",
+    "evseUid": "TH*VLT*E*D24DC",
+    "connectorType": "CCS2",
+    "status": "CHARGING",
+    "startTime": "2026-10-27T20:13:39.6906+08:00",
+    "endTime": null,
+    "durationSeconds": 20,
+    "kwhDelivered": 0.745,
+    "currentPowerKw": 132.1,
+    "batterySoc": 35.29,
+    "targetSoc": 100,
+    "tariffPerKwh": 8,
+    "totalCost": 0.77,
+    "balanceAfter": null,
+    "stopReason": null,
+    "cdrId": null,
+    "cdrJson": null
+  }
+}

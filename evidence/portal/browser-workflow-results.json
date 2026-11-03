@@ -1,0 +1,133 @@
+[
+  {
+    "case_id": "TC15",
+    "name": "separate-currency browser CSV downloads",
+    "status": "Pass",
+    "started_at": "2026-10-27T20:25:52.474542+08:00",
+    "finished_at": "2026-10-27T20:25:56.261426+08:00",
+    "details": {
+      "exports": [
+        {
+          "currency": "MYR",
+          "file": "evidence/integration/tc15-browser-export-myr.csv",
+          "rows": 4,
+          "total_row": [
+            "TOTAL",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "38.355",
+            "",
+            "",
+            "57.54",
+            "2.88",
+            "54.66",
+            "MYR"
+          ]
+        },
+        {
+          "currency": "SGD",
+          "file": "evidence/integration/tc15-browser-export-sgd.csv",
+          "rows": 0,
+          "total_row": [
+            "TOTAL",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.000",
+            "",
+            "",
+            "0.00",
+            "0.00",
+            "0.00",
+            "SGD"
+          ]
+        },
+        {
+          "currency": "THB",
+          "file": "evidence/integration/tc15-browser-export-thb.csv",
+          "rows": 1,
+          "total_row": [
+            "TOTAL",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "0.745",
+            "",
+            "",
+            "5.96",
+            "0.30",
+            "5.66",
+            "THB"
+          ]
+        }
+      ],
+      "capture": "02 Evidence/Screen Captures/Edge 2026-10-27T202556.153233 0800 TC15 ledger export.png"
+    }
+  },
+  {
+    "case_id": "TC16",
+    "name": "sandbox acknowledgement and later observation",
+    "status": "Pass",
+    "started_at": "2026-10-27T20:25:56.263426+08:00",
+    "finished_at": "2026-10-27T20:26:02.508439+08:00",
+    "details": {
+      "start_capture": "02 Evidence/Screen Captures/Edge 2026-10-27T202559.774804 0800 TC16 sandbox start.png",
+      "stop_capture": "evidence/captures/edge-tc16-sandbox-stop.png",
+      "totals_before": [
+        {
+          "currency": "MYR",
+          "count": "4",
+          "gross": "57.54"
+        },
+        {
+          "currency": "SGD",
+          "count": "1",
+          "gross": "0.19"
+        },
+        {
+          "currency": "THB",
+          "count": "2",
+          "gross": "8.33"
+        }
+      ],
+      "totals_after": [
+        {
+          "currency": "MYR",
+          "count": "4",
+          "gross": "57.54"
+        },
+        {
+          "currency": "SGD",
+          "count": "1",
+          "gross": "0.19"
+        },
+        {
+          "currency": "THB",
+          "count": "2",
+          "gross": "8.33"
+        }
+      ],
+      "non_sandbox_unchanged": true
+    }
+  },
+  {
+    "case_id": "TC39",
+    "name": "invalid session and logout boundaries",
+    "status": "Pass",
+    "started_at": "2026-10-27T20:26:02.510442+08:00",
+    "finished_at": "2026-10-27T20:26:09.857630+08:00",
+    "details": {
+      "expired_or_invalid_cookie_denied": true,
+      "logout_protected_navigation_denied": true,
+      "trace_cleared_on_auth_loss": true,
+      "capture": "02 Evidence/Screen Captures/Edge 2026-10-27T202609.776007 0800 TC39 signed out.png"
+    }
+  }
+]

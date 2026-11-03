@@ -1,0 +1,1 @@
+UPDATE charging_sessions SET settlement_requested_status='COMPLETED',settlement_requested_reason='USER' WHERE id='ses_de2e87003bb918132db0bc5c';

@@ -1,0 +1,11 @@
+{
+  "warmups": 5,
+  "sample_count": 30,
+  "median_ms": 8.029500000702683,
+  "p95_ms": 31.094899997697212,
+  "p95_method": "nearest rank: sorted successful samples at ceil(0.95*n)",
+  "errors": [],
+  "station_count": 38,
+  "sla": null,
+  "scope": "single local sequential client; descriptive"
+}

@@ -1,0 +1,79 @@
+[
+  {
+    "role": "other_driver",
+    "path": "/api/v1/sessions/ses_e88516c9a357e636c297a68c",
+    "status": 404,
+    "response": {
+      "error": {
+        "code": "SESSION_NOT_FOUND",
+        "message": "We couldn't find that session."
+      }
+    }
+  },
+  {
+    "role": "other_driver",
+    "path": "/api/v1/sessions/ses_e88516c9a357e636c297a68c/stream",
+    "status": 404,
+    "response": {
+      "error": {
+        "code": "SESSION_NOT_FOUND",
+        "message": "We couldn't find that session."
+      }
+    }
+  },
+  {
+    "role": "anonymous",
+    "path": "/admin/api/network",
+    "status": 401,
+    "response": {
+      "error": {
+        "code": "UNAUTHORIZED",
+        "message": "Sign in to continue."
+      }
+    }
+  },
+  {
+    "role": "CPO",
+    "path": "/admin/api/admin/cpos",
+    "status": 403,
+    "response": {
+      "error": {
+        "code": "FORBIDDEN",
+        "message": "Your account cannot do that."
+      }
+    }
+  },
+  {
+    "role": "foreign_CPO",
+    "path": "/admin/api/cdrs/cdr_3e1a239caacae64c1cd76c85",
+    "status": 404,
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "message": "No such charge detail record."
+      }
+    }
+  },
+  {
+    "role": "missing_or_unknown_OCPI_token",
+    "path": "/ocpi/emsp/2.3.0/locations",
+    "status": 401,
+    "response": {
+      "data": {},
+      "status_code": 2001,
+      "status_message": "Missing or malformed Authorization header.",
+      "timestamp": "2026-10-27T12:13:42Z"
+    }
+  },
+  {
+    "role": "missing_or_unknown_OCPI_token",
+    "path": "/ocpi/emsp/2.3.0/locations",
+    "status": 401,
+    "response": {
+      "data": {},
+      "status_code": 2001,
+      "status_message": "Unknown or expired token.",
+      "timestamp": "2026-10-27T12:13:42Z"
+    }
+  }
+]

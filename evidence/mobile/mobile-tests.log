@@ -1,0 +1,662 @@
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/active_charging_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 1
+START telemetry formatters formatClock renders the simulated duration as a clock
+PASS test 4
+START telemetry formatters formatPercent rounds, and reads "unknown" for null
+PASS test 5
+START stop reasons every reason the backend can send has words
+PASS test 7
+START stop reasons an unknown code degrades instead of leaking a backend enum
+PASS test 8
+START live monitor lays out the charger, battery progress and labelled readings
+PASS test 10
+START live monitor mirrors the session into the shared notifier
+PASS test 11
+START live monitor three telemetry frames move the %, kW and kWh
+PASS test 12
+START live monitor a just-started session reads "unknown", never zero
+PASS test 13
+START live monitor completion dismisses only its own pending confirmation before the receipt
+PASS test 14
+START live monitor a terminal frame ends the session and shows the receipt
+PASS test 15
+START live monitor the finish presenter receives the terminal session
+PASS test 16
+START live monitor sliding to stop asks the backend and blocks the screen
+PASS test 17
+START live monitor a rejected stop re-arms the slide and explains why
+PASS test 18
+START live monitor a dropped stream and missing session never fabricate completion
+PASS test 19
+START live monitor stream exhaustion retains the active session without a receipt
+PASS test 20
+START live monitor coming back to the foreground re-opens the stream
+PASS test 21
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/activity_screen_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 23
+START the shared cost and date rules energyCost rounds the way the backend rounds
+PASS test 26
+START the shared cost and date rules formatDayMonth matches the wallet ledger
+PASS test 27
+START the shared cost and date rules cpoAccentColor finds the brand colour and falls back
+PASS test 28
+START HistoryMonth labelFor names the month and the year
+PASS test 30
+START HistoryMonth group buckets a newest-first list into consecutive months
+PASS test 31
+START HistoryMonth group parks an undated row under "Earlier"
+PASS test 32
+START HistoryMonth flatten puts a divider in front of every month
+PASS test 33
+START HistoryMonth flatten of an empty archive is empty
+PASS test 34
+START HistoryTile dateLabel and detailLabel summarise a row
+PASS test 36
+START HistoryTile a row the backend never dated still reads
+PASS test 37
+START HistoryTile costLabel prefers the priced total over the estimate
+PASS test 38
+START HistoryTile isFailed flags only a failed session
+PASS test 39
+START OngoingSessionCard quotes the live numbers, and the estimate behind the cost
+PASS test 41
+START OngoingSessionCard a priced session reports the backend total
+PASS test 42
+START OngoingSessionCard missing readings read as unknown, never as zero
+PASS test 43
+START OngoingSessionCard socLabel names the target and socFraction stays inside the bar
+PASS test 44
+START ActivityScreen Â· Ongoing offers a way back to the map when nothing is running
+PASS test 46
+START ActivityScreen Â· Ongoing follows the telemetry notifier while a session runs
+PASS test 47
+START ActivityScreen Â· Ongoing hands the session to the live monitor
+PASS test 48
+START ActivityScreen Â· Ongoing paints the card in the CPO brand colour
+PASS test 49
+START ActivityScreen Â· History lists finished sessions newest first, grouped by month
+PASS test 51
+START ActivityScreen Â· History tapping a row opens its digital receipt
+PASS test 52
+START ActivityScreen Â· History flags a failed session in the row
+PASS test 53
+START ActivityScreen Â· History pull-to-refresh reloads the tab
+PASS test 54
+START ActivityScreen Â· History shows an empty state before the first charge
+PASS test 55
+START ActivityScreen Â· History appends the next page at the end, then stops asking
+PASS test 56
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/api_service_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 58
+START login posts the credentials and decodes the session
+PASS test 60
+START an error envelope becomes an ApiException with its codes
+PASS test 61
+START an authenticated call carries the bearer token
+PASS test 62
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/auth_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 64
+START login reports an empty email and password
+PASS test 66
+START login rejects a malformed email
+PASS test 67
+START the debug demo shortcut prefills the demo account
+PASS test 68
+START register rejects a mismatched confirmation
+PASS test 69
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/charger_activation_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 71
+START activation capabilities the camera scanner only exists on Android and iOS
+PASS test 74
+START activation capabilities the seeded EVSE shortcut is offered where the camera cannot run
+PASS test 75
+START pre-charge rules the wallet must hold the RM 10 minimum
+PASS test 77
+START pre-charge rules start needs an available connector and enough balance
+PASS test 78
+START pre-charge rules blocker explains a busy connector and a thin wallet
+PASS test 79
+START pre-charge rules estimates energy, time and cost from the charging formula
+PASS test 80
+START pre-charge rules start failures are translated for the driver
+PASS test 81
+START confirm panel a preselected EVSE goes straight to the confirm panel
+PASS test 83
+START confirm panel estimates the session for the chosen vehicle and target
+PASS test 84
+START confirm panel without a vehicle the default energy assumption is disclosed
+PASS test 85
+START confirm panel a thin wallet disables the slide and offers a top-up
+PASS test 86
+START confirm panel a busy connector disables the slide
+PASS test 87
+START confirm panel a full slide starts the session and opens the monitor
+PASS test 88
+START confirm panel changed pricing requires confirmation again and never starts automatically
+PASS test 89
+START confirm panel an already-running session offers the monitor instead
+PASS test 90
+START manual entry opens on manual entry when no EVSE is preselected
+PASS test 92
+START manual entry normalises the typed code before looking it up
+PASS test 93
+START manual entry refuses input that is not a ChargeNet code
+PASS test 94
+START manual entry an unknown EVSE leaves the code in the field with a reason
+PASS test 95
+START manual entry the debug shortcut fills in the seeded EVSE
+PASS test 96
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/charging_mini_bar_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 98
+START telemetryLabel joins the battery level and the power
+PASS test 100
+START telemetryLabel survives a session whose readings are not in yet
+PASS test 101
+START shows the live numbers and taps through to the monitor
+PASS test 102
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/charging_receipt_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 104
+START receipt formatters formatDuration renders the backend seconds as a clock
+PASS test 107
+START receipt formatters the monitor row and the receipt row read the same clock
+PASS test 108
+START receipt formatters formatDateTime writes a local date and time
+PASS test 109
+START receipt rows prints one row per itemised line in display order
+PASS test 111
+START receipt rows the paid figure is the wallet's CHARGING_DEBIT row
+PASS test 112
+START receipt rows an unpriced settlement keeps paid money unknown
+PASS test 113
+START receipt rows a very small session prices out at RM 0.00, not unknown
+PASS test 114
+START receipt rows the two optional rows only appear when there is something to say
+PASS test 115
+START receipt rows plainText carries every row and never the platform fee
+PASS test 116
+START ChargingReceipt renders the header, the detail rows and both actions
+PASS test 118
+START ChargingReceipt reads as a failure when the session failed
+PASS test 119
+START ChargingReceipt stays paper-light over the dark monitor
+PASS test 120
+START ChargingReceipt a tiny session on a small phone scrolls instead of clipping
+PASS test 121
+START ChargingReceipt Done dismisses the sheet
+PASS test 122
+START ChargingReceipt Copy receipt puts the plain text on the clipboard
+PASS test 123
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/connector_tile_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 125
+START ConnectorTileWidget renders the standard, rating, tariff and a live badge
+PASS test 128
+START ConnectorTileWidget enables Start charging when AVAILABLE and reports the tap
+PASS test 129
+START ConnectorTileWidget disables Start charging while the connector is CHARGING
+PASS test 130
+START ConnectorTileWidget disables Start charging when the connector is INOPERATIVE
+PASS test 131
+START ConnectorTileWidget maps known standards onto their display names
+PASS test 132
+START ConnectorTileWidget falls back to the raw value for an unknown standard
+PASS test 133
+START ConnectorTileWidget title-cases statuses and tolerates an empty one
+PASS test 134
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/discovery_controller_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 136
+START new search wins reversed completion and superseded errors
+PASS test 138
+START refresh updates selected connectors, dismisses missing selection, hides fallback distance
+PASS test 139
+START clearing filters cancels a pending search debounce
+PASS test 140
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/evse_code_parser_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 142
+START EvseCodeParser accepts a bare uid, trimming and upper-casing it
+PASS test 145
+START EvseCodeParser reads the ChargeNet deep link
+PASS test 146
+START EvseCodeParser reads an /evse/<uid> path out of an https link
+PASS test 147
+START EvseCodeParser rejects links that do not point at an EVSE
+PASS test 148
+START EvseCodeParser rejects empty, malformed and clearly not-a-code input
+PASS test 149
+START EvseCodeParser isValidUid mirrors what parse returns
+PASS test 150
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/home_search_selection_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 152
+START selecting a search result dismisses search and retains station selection
+  [1m[flutter_map][0m
+    We want to help keep OpenStreetMap available for everyone. Our examples
+    and demo app use the public tile servers, but they are NOT free to use by
+    everyone! Please review whether the OpenStreetMap tile servers are suitable
+    for your project.
+    See:
+      * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+      * https://docs.fleaflet.dev/osm-warn for more information about this warning
+PASS test 154
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/interaction_accessibility_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 156
+START scanner feedback and torch remain reachable at 1.0 text
+PASS test 158
+START scanner feedback and torch remain reachable at 2.0 text
+PASS test 159
+START semantic and keyboard activation require a second deliberate confirmation
+PASS test 160
+START interrupted drag resets without submitting
+PASS test 161
+START disabling the action while confirmation is open prevents submission
+PASS test 162
+START first-load failures hide default balances and retry independently
+PASS test 163
+START onboarding exposes the current step to assistive technology
+PASS test 164
+START operator swatches retain identity with contrasting foregrounds
+PASS test 165
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/layout_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 167
+START (setUpAll)
+PASS test 169
+START profile groups remain reachable at Size(320.0, 640.0) / 1.0
+PASS test 170
+START discovery controls reflow at Size(320.0, 640.0) / 1.0
+PASS test 171
+START ongoing activity stays actionable at Size(320.0, 640.0) / 1.0
+PASS test 172
+START profile groups remain reachable at Size(320.0, 640.0) / 2.0
+PASS test 173
+START discovery controls reflow at Size(320.0, 640.0) / 2.0
+PASS test 174
+START ongoing activity stays actionable at Size(320.0, 640.0) / 2.0
+PASS test 175
+START profile groups remain reachable at Size(640.0, 320.0) / 1.0
+PASS test 176
+START discovery controls reflow at Size(640.0, 320.0) / 1.0
+PASS test 177
+START ongoing activity stays actionable at Size(640.0, 320.0) / 1.0
+PASS test 178
+START profile groups remain reachable at Size(640.0, 320.0) / 2.0
+PASS test 179
+START discovery controls reflow at Size(640.0, 320.0) / 2.0
+PASS test 180
+START ongoing activity stays actionable at Size(640.0, 320.0) / 2.0
+PASS test 181
+START (tearDownAll)
+PASS test 182
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/load_state_service_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 184
+START a failed wallet does not turn successful empty slices into failures
+PASS test 186
+START zero becomes valid after success and remains labelled stale after failure
+PASS test 187
+START settlement refresh includes the transaction ledger
+PASS test 188
+START account cleanup rejects an old successful wallet response
+PASS test 189
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/models_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 191
+START model round-trips (fromJson â†’ toJson is the identity) AppUser
+PASS test 194
+START model round-trips (fromJson â†’ toJson is the identity) CpoPartner
+PASS test 195
+START model round-trips (fromJson â†’ toJson is the identity) Connector
+PASS test 196
+START model round-trips (fromJson â†’ toJson is the identity) Station with connectors
+PASS test 197
+START model round-trips (fromJson â†’ toJson is the identity) Station sent without a computed distance
+PASS test 198
+START model round-trips (fromJson â†’ toJson is the identity) Wallet
+PASS test 199
+START model round-trips (fromJson â†’ toJson is the identity) WalletTransaction
+PASS test 200
+START model round-trips (fromJson â†’ toJson is the identity) Vehicle
+PASS test 201
+START ChargingSession completed session with an object cdrJson
+PASS test 203
+START ChargingSession running session keeps every optional field null
+PASS test 204
+START ChargingSession a vehicle-less session parses vehicleId as null
+PASS test 205
+START EvConnectorType fromApi maps every canonical value
+PASS test 207
+START EvConnectorType fromApi tolerates case and surrounding whitespace
+PASS test 208
+START EvConnectorType apiValue round-trips through fromApi
+PASS test 209
+START EvConnectorType fromApi throws for an unknown standard
+PASS test 210
+START EvConnectorType display names are unchanged
+PASS test 211
+START KConstants exposes the API contract defaults
+PASS test 213
+START KConstants apiBaseUrl is always an absolute http URL
+PASS test 214
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/multi_currency_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 216
+START quote confirmation glyphs fit the track at 200% text
+PASS test 218
+START new OCPI-style charging identifiers survive discovery and QR entry
+PASS test 219
+START currency formatting identifies all three denominations
+PASS test 220
+START quote is readable at 320dp / 1.0 text
+PASS test 221
+START quote is readable at 320dp / 2.0 text
+PASS test 222
+START failed estimate can be retried
+PASS test 223
+START receipt preserves original amount and wallet deduction
+PASS test 224
+START clusters respect distance and zoom without merging countries
+PASS test 225
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/profile_screen_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 227
+START ProfileScreen stacks user, wallet, vehicles and sign out
+PASS test 230
+START ProfileScreen keeps saved vehicles without a roaming catalogue on Profile
+PASS test 231
+START ProfileScreen shows the empty garage call to action without a vehicle
+PASS test 232
+START ProfileScreen keeps the wallet card visible while partners load
+PASS test 233
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/session_coordinator_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 235
+START terminal snapshot settles once despite stop and late-frame races
+PASS test 237
+START 404 reconciliation retains uncertainty and retry can confirm failure
+PASS test 238
+START replacement and account reset ignore old stream and reconciliation
+PASS test 239
+START minimising preserves one owner; reopening uses fresh telemetry
+PASS test 240
+START a nonterminal stop response cannot authorize a receipt
+PASS test 241
+START interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 1.0
+PASS test 242
+START interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 2.0
+PASS test 243
+START interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 1.0
+PASS test 244
+START interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 2.0
+PASS test 245
+START late reconciliation cannot overwrite a newer live snapshot
+PASS test 246
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/session_stream_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 248
+START parseSessionEvents emits each telemetry frame, then completed, then closes
+PASS test 251
+START parseSessionEvents reassembles frames split across many byte chunks
+PASS test 252
+START parseSessionEvents accepts CRLF line endings
+PASS test 253
+START parseSessionEvents ignores comments, unknown events and bad payloads
+PASS test 254
+START parseSessionEvents emits a final frame that arrived without its blank line
+PASS test 255
+START parseSessionEvents a comment-only stream closes without emitting
+PASS test 256
+START watchdogSseBytes a silent connection fails with a TimeoutException, after its frames
+PASS test 258
+START watchdogSseBytes keepalive traffic keeps the watchdog from firing
+PASS test 259
+START watchdogSseBytes the default window outlasts the backend keepalive
+PASS test 260
+START isSessionTerminal only COMPLETED and FAILED are terminal
+PASS test 262
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/slide_to_confirm_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 264
+START SlideToConfirm geometry the thumb travels the track minus its own width
+PASS test 267
+START SlideToConfirm geometry arms only past 90 % of the travel
+PASS test 268
+START SlideToConfirm widget runs the action once on a full swipe
+PASS test 270
+START SlideToConfirm widget springs back without firing on a short drag
+PASS test 271
+START SlideToConfirm widget does nothing while disabled
+PASS test 272
+START SlideToConfirm widget shows a spinner and ignores drags while loading
+PASS test 273
+START SlideToConfirm widget renders the blocker hint under the track
+PASS test 274
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/station_filters_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 276
+START changing country clears its region and retains other filters
+PASS test 278
+START API sends geographic and power constraints in one request
+PASS test 279
+START filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 1.0
+PASS test 280
+START filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 2.0
+PASS test 281
+START filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 1.0
+PASS test 282
+START filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 2.0
+PASS test 283
+START country change clears region and Apply returns the combined draft
+PASS test 284
+START Reset is a draft and dismissal cancels all changes
+PASS test 285
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/station_marker_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 287
+START colorFromHex parses the 6-digit brand tokens served by the API
+PASS test 290
+START colorFromHex honours an explicit alpha channel
+PASS test 291
+START colorFromHex expands 3-digit shorthand
+PASS test 292
+START colorFromHex falls back instead of throwing on malformed input
+PASS test 293
+START StationMarkerWidget.ringColorFor green while at least one bay is free
+PASS test 295
+START StationMarkerWidget.ringColorFor amber when the station is live but full
+PASS test 296
+START StationMarkerWidget.ringColorFor grey when the station is inactive
+PASS test 297
+START StationMarkerWidget.ringColorFor grey when every connector reports INOPERATIVE
+PASS test 298
+START StationMarkerWidget.ringColorFor amber, not grey, when full but the connectors are merely busy
+PASS test 299
+START StationMarkerWidget.ringColorFor falls back to the bay count when connector rows are absent
+PASS test 300
+START StationMarkerWidget paints the CPO brand colour and a green ring when free
+PASS test 302
+START StationMarkerWidget shows the grey ring and a 0/total chip when inactive
+PASS test 303
+START StationMarkerWidget reports taps so the map can select the station
+PASS test 304
+START StationMarkerWidget an unusable brand colour degrades to the fallback
+PASS test 305
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/topup_sheet_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 307
+START TopUpSheet amount rules offers the four preset amounts
+PASS test 310
+START TopUpSheet amount rules accepts 5â€“2000 and rejects everything else
+PASS test 311
+START TopUpSheet amount rules labels the pay button with the amount, or plain Pay
+PASS test 312
+START TopUpSheet amount rules accepts at most two decimals in the field
+PASS test 313
+START TopUpSheet amount rules the keystroke formatter keeps the last valid text
+PASS test 314
+START TopUpSheet widget starts with Pay disabled and no amount
+PASS test 316
+START TopUpSheet widget disables Pay for an amount below RM 5
+PASS test 317
+START TopUpSheet widget enables Pay and updates the label for a custom amount
+PASS test 318
+START TopUpSheet widget a preset fills the field and relabels the button
+PASS test 319
+START TopUpSheet widget offers the three simulated gateways with icons
+PASS test 320
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/transaction_tile_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 322
+START TransactionTileWidget labels prefixes a top-up with + and a charge with âˆ’
+PASS test 325
+START TransactionTileWidget labels colours credits green and charges red
+PASS test 326
+START TransactionTileWidget labels names the gateway for a top-up and the session for a debit
+PASS test 327
+START TransactionTileWidget labels picks a distinct icon per type
+PASS test 328
+START TransactionTileWidget labels formats the local date as dd MMM, h:mm a
+PASS test 329
+START TransactionTileWidget widget renders a credit row
+PASS test 331
+START TransactionTileWidget widget renders a debit row in red
+PASS test 332
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/typesetting_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 334
+START (setUpAll)
+PASS test 336
+START welcome remains reachable at Size(320.0, 640.0) / 1.0
+PASS test 337
+START features remains reachable at Size(320.0, 640.0) / 1.0
+PASS test 338
+START welcome remains reachable at Size(320.0, 640.0) / 1.3
+PASS test 339
+START features remains reachable at Size(320.0, 640.0) / 1.3
+PASS test 340
+START welcome remains reachable at Size(320.0, 640.0) / 2.0
+PASS test 341
+START features remains reachable at Size(320.0, 640.0) / 2.0
+PASS test 342
+START welcome remains reachable at Size(640.0, 320.0) / 1.0
+PASS test 343
+START features remains reachable at Size(640.0, 320.0) / 1.0
+PASS test 344
+START welcome remains reachable at Size(640.0, 320.0) / 1.3
+PASS test 345
+START features remains reachable at Size(640.0, 320.0) / 1.3
+PASS test 346
+START welcome remains reachable at Size(640.0, 320.0) / 2.0
+PASS test 347
+START features remains reachable at Size(640.0, 320.0) / 2.0
+PASS test 348
+START wallet keeps its balance and controls at 200% text
+PASS test 349
+START charging strip reflows and remains actionable at 200% text
+PASS test 350
+START monitor preserves readouts at 320.0 / 1.0
+PASS test 351
+START monitor preserves readouts at 320.0 / 2.0
+PASS test 352
+START monitor preserves readouts at 390.0 / 1.0
+PASS test 353
+START monitor preserves readouts at 390.0 / 2.0
+PASS test 354
+START (tearDownAll)
+PASS test 355
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_card_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 357
+START VehicleCardWidget formatting drops a trailing .0 from the capacity
+PASS test 360
+START VehicleCardWidget formatting keeps one decimal when the capacity has one
+PASS test 361
+START VehicleCardWidget formatting maps the canonical connector value onto its display name
+PASS test 362
+START VehicleCardWidget formatting falls back to the raw value for an unknown connector
+PASS test 363
+START VehicleCardWidget widget renders name, plate, connector, capacity and badge
+PASS test 365
+START VehicleCardWidget widget hides the Default badge for a non-default vehicle
+PASS test 366
+START VehicleCardWidget widget shows a decimal capacity without rounding it away
+PASS test 367
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/vehicle_edit_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 369
+START VehicleEditScreen validation requires a name
+PASS test 372
+START VehicleEditScreen validation requires a license plate
+PASS test 373
+START VehicleEditScreen validation keeps the capacity between 10 and 250 kWh
+PASS test 374
+START VehicleEditScreen validation the capacity field allows three digits and one decimal
+PASS test 375
+START VehicleEditScreen validation uppercases plates and drops the characters the API rejects
+PASS test 376
+START VehicleEditScreen validation maps an unknown connector onto the CCS2 default
+PASS test 377
+START VehicleEditScreen form add mode shows every validation message
+PASS test 379
+START VehicleEditScreen form rejects an out-of-range capacity and uppercases the plate
+PASS test 380
+START VehicleEditScreen form edit mode prefills the saved vehicle
+PASS test 381
+START VehicleEditScreen form delete asks for confirmation first
+PASS test 382
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/wallet_card_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 384
+START WalletCardWidget.formatBalance renders two decimals with the RM prefix
+PASS test 387
+START WalletCardWidget.formatBalance groups thousands
+PASS test 388
+START WalletCardWidget shows the live balance from the notifier
+PASS test 390
+START WalletCardWidget hides the balance behind a mask and restores it
+PASS test 391
+START WalletCardWidget remembers a hidden balance across a restart
+PASS test 392
+START loading C:/code projects/chargenet-latest/chargenet-mobile/test/widget_test.dart
+
+[{"event":"test.startedProcess","params":{"vmServiceUri":null}}]
+PASS test 394
+START shows light onboarding even when the OS prefers dark
+PASS test 396

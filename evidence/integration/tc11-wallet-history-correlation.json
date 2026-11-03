@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-27T21:03:28.024672+08:00",
+  "session_id": "ses_87b8af704ddcbd5e07188429",
+  "cdr_id": "cdr_9ebddd7f94b0cbcec6ad4bd2",
+  "receipt_wallet_cost": 11.04,
+  "visible_wallet_labels": [
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "Back",
+    "Wallet history",
+    "",
+    "",
+    "Charging session\n27 Oct, 12:50 PM\nRef cdr_60fe6aaf604eaf5aa463e1d6\n− RM 0.60",
+    "Charging session\n27 Oct, 12:45 PM\nRef cdr_8bd2c3d3cafaff7fa9395fd4\n− RM 5.22",
+    "Charging session\n27 Oct, 12:31 PM\nRef cdr_c6dce552d83b581bb0daa7f1\n− RM 1.76",
+    "Charging session\n27 Oct, 12:27 PM\nRef cdr_9ebddd7f94b0cbcec6ad4bd2\n− RM 11.04",
+    "Maybank FPX\n27 Oct, 12:25 PM\nRef SIM-1793103914\n+ RM 100.00",
+    "Charging session\n27 Oct, 12:22 PM\nRef cdr_8a45895c189288d9a7160654\n− RM 52.94",
+    "Charging session\n27 Oct, 12:15 PM\nRef cdr_331f61ce9488cc85f8fbc2e4\n− RM 1.17",
+    "Charging session\n27 Oct, 12:15 PM\nRef cdr_3780becf77137017f067b8db\n− RM 2.29",
+    "Charging session\n27 Oct, 12:13 PM\nRef cdr_3e1a239caacae64c1cd76c85\n− RM 0.77"
+  ]
+}

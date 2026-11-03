@@ -1,0 +1,994 @@
+?   	github.com/chargenet/chargenet-backend/cmd/server	[no test files]
+=== RUN   TestReportingRangeBusinessDays
+--- PASS: TestReportingRangeBusinessDays (0.00s)
+=== RUN   TestRegisterLoginMe
+2026/11/01 17:34:27 POST /api/v1/auth/register -> 201 (135ms, 346B)
+2026/11/01 17:34:27 POST /api/v1/auth/login -> 200 (122ms, 350B)
+2026/11/01 17:34:27 GET /api/v1/auth/me -> 200 (4ms, 130B)
+--- PASS: TestRegisterLoginMe (0.99s)
+=== RUN   TestLoginWrongPassword
+2026/11/01 17:34:28 POST /api/v1/auth/register -> 201 (129ms, 342B)
+2026/11/01 17:34:28 POST /api/v1/auth/login -> 401 (119ms, 80B)
+--- PASS: TestLoginWrongPassword (0.88s)
+=== RUN   TestRegisterDuplicateEmail
+2026/11/01 17:34:29 POST /api/v1/auth/register -> 201 (137ms, 342B)
+2026/11/01 17:34:29 POST /api/v1/auth/register -> 409 (122ms, 79B)
+--- PASS: TestRegisterDuplicateEmail (0.91s)
+=== RUN   TestRegisterValidation
+2026/11/01 17:34:29 POST /api/v1/auth/register -> 400 (1ms, 215B)
+--- PASS: TestRegisterValidation (0.65s)
+=== RUN   TestMeRequiresValidToken
+2026/11/01 17:34:30 GET /api/v1/auth/me -> 401 (0s, 71B)
+2026/11/01 17:34:30 GET /api/v1/auth/me -> 401 (0s, 71B)
+--- PASS: TestMeRequiresValidToken (0.69s)
+=== RUN   TestSeedUsersDemoLogin
+2026/11/01 17:34:31 POST /api/v1/auth/login -> 200 (117ms, 351B)
+--- PASS: TestSeedUsersDemoLogin (1.09s)
+=== RUN   TestNewServerSelectsTheChargeTransport
+=== RUN   TestNewServerSelectsTheChargeTransport/ocpi_is_the_real_gateway
+--- PASS: TestNewServerSelectsTheChargeTransport/ocpi_is_the_real_gateway (0.62s)
+=== RUN   TestNewServerSelectsTheChargeTransport/empty_defaults_to_the_OCPI_gateway
+--- PASS: TestNewServerSelectsTheChargeTransport/empty_defaults_to_the_OCPI_gateway (0.64s)
+=== RUN   TestNewServerSelectsTheChargeTransport/local_is_the_simulator
+--- PASS: TestNewServerSelectsTheChargeTransport/local_is_the_simulator (0.63s)
+=== RUN   TestNewServerSelectsTheChargeTransport/an_unknown_value_falls_back_to_the_simulator
+2026/11/01 17:34:34 api: GATEWAY="typo" is not a known transport; using the local simulator
+--- PASS: TestNewServerSelectsTheChargeTransport/an_unknown_value_falls_back_to_the_simulator (0.65s)
+--- PASS: TestNewServerSelectsTheChargeTransport (2.55s)
+=== RUN   TestPortalWholeRangeCSVAndBusinessBoundary
+=== RUN   TestPortalWholeRangeCSVAndBusinessBoundary/26
+2026/11/01 17:34:35 POST /admin/api/login -> 200 (118ms, 115B)
+2026/11/01 17:34:35 POST /admin/api/login -> 200 (121ms, 127B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 200 (18ms, 7854B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 200 (7ms, 582B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 200 (12ms, 3988B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 200 (12ms, 3988B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 200 (11ms, 137B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 200 (16ms, 137B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 400 (0s, 124B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 400 (0s, 124B)
+2026/11/01 17:34:35 GET /admin/api/cdrs -> 400 (0s, 124B)
+--- PASS: TestPortalWholeRangeCSVAndBusinessBoundary/26 (1.83s)
+=== RUN   TestPortalWholeRangeCSVAndBusinessBoundary/630
+2026/11/01 17:34:37 POST /admin/api/login -> 200 (119ms, 115B)
+2026/11/01 17:34:37 POST /admin/api/login -> 200 (116ms, 127B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 200 (20ms, 7856B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 200 (10ms, 7856B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 200 (20ms, 93385B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 200 (25ms, 93385B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 200 (14ms, 137B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 200 (9ms, 137B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 400 (0s, 124B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 400 (0s, 124B)
+2026/11/01 17:34:37 GET /admin/api/cdrs -> 400 (0s, 124B)
+--- PASS: TestPortalWholeRangeCSVAndBusinessBoundary/630 (2.22s)
+--- PASS: TestPortalWholeRangeCSVAndBusinessBoundary (4.06s)
+=== RUN   TestPortalDashboardBusinessDaysIgnoreDatabaseTimezone
+--- PASS: TestPortalDashboardBusinessDaysIgnoreDatabaseTimezone (1.38s)
+=== RUN   TestPortalRegisterProfileAndHandshake
+2026/11/01 17:34:40 POST /admin/api/register -> 201 (149ms, 762B)
+2026/11/01 17:34:40 GET /admin/api/cpo -> 200 (2ms, 628B)
+2026/11/01 17:34:40 POST /admin/api/cpo/token-a/regenerate -> 200 (6ms, 78B)
+2026/11/01 17:34:40 POST /admin/api/cpo/handshake-test -> 200 (9ms, 1200B)
+2026/11/01 17:34:40 GET /admin/api/cpo -> 200 (2ms, 653B)
+--- PASS: TestPortalRegisterProfileAndHandshake (1.43s)
+=== RUN   TestPortalLoginRateLimited
+2026/11/01 17:34:42 POST /admin/api/register -> 201 (142ms, 749B)
+2026/11/01 17:34:42 POST /admin/api/login -> 401 (118ms, 80B)
+2026/11/01 17:34:42 POST /admin/api/login -> 401 (117ms, 80B)
+2026/11/01 17:34:42 POST /admin/api/login -> 401 (117ms, 80B)
+2026/11/01 17:34:42 POST /admin/api/login -> 401 (116ms, 80B)
+2026/11/01 17:34:42 POST /admin/api/login -> 401 (118ms, 80B)
+2026/11/01 17:34:42 POST /admin/api/login -> 429 (0s, 93B)
+--- PASS: TestPortalLoginRateLimited (2.09s)
+=== RUN   TestPortalRequiresSession
+2026/11/01 17:34:43 GET /admin/api/cpo -> 401 (0s, 67B)
+2026/11/01 17:34:43 GET /admin/api/cpo -> 401 (0s, 67B)
+--- PASS: TestPortalRequiresSession (1.13s)
+=== RUN   TestPortalAdminConsoleAndTenancy
+2026/11/01 17:34:46 POST /admin/api/login -> 200 (116ms, 115B)
+2026/11/01 17:34:46 GET /admin/api/admin/cpos -> 403 (0s, 72B)
+2026/11/01 17:34:46 POST /admin/api/login -> 200 (116ms, 112B)
+2026/11/01 17:34:46 GET /admin/api/admin/cpos -> 200 (17ms, 600B)
+2026/11/01 17:34:46 PUT /admin/api/admin/cpos/cpo_ecowatt/status -> 200 (17ms, 63B)
+2026/11/01 17:34:46 GET /admin/api/admin/cpos -> 200 (5ms, 605B)
+2026/11/01 17:34:46 GET /admin/api/network -> 200 (14ms, 10939B)
+2026/11/01 17:34:46 GET /admin/api/overview -> 200 (27ms, 490B)
+2026/11/01 17:34:46 GET /admin/api/cdrs -> 200 (13ms, 268B)
+2026/11/01 17:34:46 GET /admin/api/cdrs -> 200 (10ms, 137B)
+--- PASS: TestPortalAdminConsoleAndTenancy (2.80s)
+=== RUN   TestPortalDisconnectCredentials
+2026/11/01 17:34:48 POST /admin/api/register -> 201 (140ms, 774B)
+2026/11/01 17:34:48 GET /admin/api/cpo -> 200 (2ms, 637B)
+2026/11/01 17:34:48 POST /admin/api/cpo/disconnect -> 200 (5ms, 34B)
+2026/11/01 17:34:48 GET /admin/api/cpo -> 200 (2ms, 634B)
+--- PASS: TestPortalDisconnectCredentials (1.30s)
+=== RUN   TestPortalCDRDetailIsTenancyScopedAndFilterableByEVSE
+2026/11/01 17:34:49 POST /admin/api/login -> 200 (119ms, 115B)
+2026/11/01 17:34:49 POST /admin/api/login -> 200 (119ms, 127B)
+2026/11/01 17:34:49 GET /admin/api/cdrs/cdr_cdrtest -> 200 (8ms, 354B)
+2026/11/01 17:34:49 GET /admin/api/cdrs/cdr_cdrtest -> 404 (2ms, 80B)
+2026/11/01 17:34:49 GET /admin/api/cdrs -> 200 (17ms, 598B)
+2026/11/01 17:34:49 GET /admin/api/cdrs -> 200 (8ms, 278B)
+--- PASS: TestPortalCDRDetailIsTenancyScopedAndFilterableByEVSE (1.74s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry
+2026/11/01 17:34:51 GET /emulator/chargesync/ocpi/2.3.0/locations -> 200 (50ms, 15660B)
+2026/11/01 17:34:51 GET /emulator/chargesync/ocpi/2.3.0/tariffs -> 200 (43ms, 1900B)
+2026/11/01 17:34:51 GET /emulator/ecowatt/ocpi/2.3.0/locations -> 200 (39ms, 14524B)
+2026/11/01 17:34:51 GET /emulator/ecowatt/ocpi/2.3.0/tariffs -> 200 (42ms, 1878B)
+2026/11/01 17:34:51 GET /emulator/voltgo/ocpi/2.3.0/locations -> 200 (44ms, 14742B)
+2026/11/01 17:34:52 GET /emulator/voltgo/ocpi/2.3.0/tariffs -> 200 (42ms, 2086B)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/voltgo_MY
+2026/11/01 17:34:52 POST /api/v1/quotes -> 201 (29ms, 657B)
+2026/11/01 17:34:52 POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/11/01 17:34:52 ocpi: command START_SESSION for ses_ac7a6af80a5fceca97f3348e answered ACCEPTED
+2026/11/01 17:34:52 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_ac7a6af80a5fceca97f3348e -> 200 (6ms, 112B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/11/01 17:34:52 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BATU-KAWAN
+2026/11/01 17:34:52 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BATU-KAWAN/MY*VLT*E*D11DC -> 200 (22ms, 158B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (28ms, 850B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (10ms, 849B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 POST /api/v1/sessions/start -> 201 (237ms, 862B)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (17ms, 849B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (8ms, 850B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 POST /api/v1/sessions/start -> 201 (30ms, 862B)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (8ms, 850B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (7ms, 852B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 ocpi: command STOP_SESSION for ses_ac7a6af80a5fceca97f3348e answered ACCEPTED
+2026/11/01 17:34:52 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_ac7a6af80a5fceca97f3348e -> 200 (3ms, 112B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:52 POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200 (5ms, 112B)
+2026/11/01 17:34:52 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BATU-KAWAN
+2026/11/01 17:34:52 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BATU-KAWAN/MY*VLT*E*D11DC -> 200 (14ms, 159B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-ac7a6af80a5fceca97f3348e -> 200 (10ms, 894B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 ocpi: partner=cpo_voltgo stored the cdr of session ses_ac7a6af80a5fceca97f3348e (13.969 kWh)
+2026/11/01 17:34:52 POST /ocpi/emsp/2.3.0/cdrs -> 201 (128ms, 1580B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed cdr (POST)
+2026/11/01 17:34:52 POST /api/v1/sessions/ses_ac7a6af80a5fceca97f3348e/stop -> 200 (174ms, 2176B)
+2026/11/01 17:34:52 POST /api/v1/sessions/ses_ac7a6af80a5fceca97f3348e/stop -> 200 (7ms, 2176B)
+    roaming_e2e_test.go:130: voltgo MY: 13.969 kWh, MYR 20.95, rate 1.0000000000, MYR 20.95 deducted, CDR cdr_158f24575951c863e98dd1f4
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/voltgo_MY (0.52s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/voltgo_SG
+2026/11/01 17:34:52 POST /api/v1/quotes -> 201 (40ms, 686B)
+2026/11/01 17:34:52 POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/11/01 17:34:52 ocpi: command START_SESSION for ses_8423acd2507509401115b3f8 answered ACCEPTED
+2026/11/01 17:34:52 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_8423acd2507509401115b3f8 -> 200 (2ms, 112B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/11/01 17:34:52 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-JURONG-EAST
+2026/11/01 17:34:52 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-JURONG-EAST/SG*VLT*E*D13DC -> 200 (12ms, 159B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:52 POST /api/v1/sessions/start -> 201 (136ms, 874B)
+2026/11/01 17:34:52 POST /api/v1/sessions/start -> 201 (3ms, 874B)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-8423acd2507509401115b3f8 -> 200 (19ms, 849B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-8423acd2507509401115b3f8 -> 200 (10ms, 851B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-8423acd2507509401115b3f8 -> 200 (8ms, 850B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:52 ocpi: command STOP_SESSION for ses_8423acd2507509401115b3f8 answered ACCEPTED
+2026/11/01 17:34:52 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_8423acd2507509401115b3f8 -> 200 (2ms, 112B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:52 POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/11/01 17:34:52 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-JURONG-EAST
+2026/11/01 17:34:52 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-JURONG-EAST/SG*VLT*E*D13DC -> 200 (15ms, 160B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:52 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-8423acd2507509401115b3f8 -> 200 (9ms, 892B)
+2026/11/01 17:34:52 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: partner=cpo_voltgo stored the cdr of session ses_8423acd2507509401115b3f8 (6.690 kWh)
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/cdrs -> 201 (115ms, 1571B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed cdr (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_8423acd2507509401115b3f8/stop -> 200 (157ms, 2171B)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_8423acd2507509401115b3f8/stop -> 200 (4ms, 2171B)
+    roaming_e2e_test.go:130: voltgo SG: 6.690 kWh, SGD 4.01, rate 3.4500000000, MYR 13.83 deducted, CDR cdr_e38ddc7f4fb522db836123d4
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/voltgo_SG (0.41s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/voltgo_TH
+2026/11/01 17:34:53 POST /api/v1/quotes -> 201 (36ms, 678B)
+2026/11/01 17:34:53 POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/11/01 17:34:53 ocpi: command START_SESSION for ses_bf0c58a890a14c5ca56cabd6 answered ACCEPTED
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_bf0c58a890a14c5ca56cabd6 -> 200 (2ms, 112B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/start -> 201 (122ms, 874B)
+2026/11/01 17:34:53 POST /api/v1/sessions/start -> 201 (3ms, 874B)
+2026/11/01 17:34:53 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BANGKOK-WEST
+2026/11/01 17:34:53 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BANGKOK-WEST/TH*VLT*E*D24DC -> 200 (13ms, 160B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-bf0c58a890a14c5ca56cabd6 -> 200 (17ms, 850B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-bf0c58a890a14c5ca56cabd6 -> 200 (9ms, 851B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: command STOP_SESSION for ses_bf0c58a890a14c5ca56cabd6 answered ACCEPTED
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_bf0c58a890a14c5ca56cabd6 -> 200 (2ms, 112B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:53 POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200 (3ms, 112B)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-bf0c58a890a14c5ca56cabd6 -> 200 (9ms, 852B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: partner=cpo_voltgo patched 1 EVSE statuses of location DEMO-BANGKOK-WEST
+2026/11/01 17:34:53 PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BANGKOK-WEST/TH*VLT*E*D24DC -> 200 (12ms, 161B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-bf0c58a890a14c5ca56cabd6 -> 200 (6ms, 894B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_bf0c58a890a14c5ca56cabd6/stop -> 200 (98ms, 2173B)
+2026/11/01 17:34:53 ocpi: partner=cpo_voltgo stored the cdr of session ses_bf0c58a890a14c5ca56cabd6 (7.138 kWh)
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/cdrs -> 201 (65ms, 1573B)
+2026/11/01 17:34:53 emulator[voltgo]: pushed cdr (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_bf0c58a890a14c5ca56cabd6/stop -> 200 (4ms, 2173B)
+    roaming_e2e_test.go:130: voltgo TH: 7.138 kWh, THB 57.10, rate 0.1300000000, MYR 7.42 deducted, CDR cdr_bdbaa39642a841ec937ec34c
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/voltgo_TH (0.33s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/chargesync_MY
+2026/11/01 17:34:53 POST /api/v1/quotes -> 201 (16ms, 660B)
+2026/11/01 17:34:53 POST /emulator/chargesync/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/11/01 17:34:53 ocpi: command START_SESSION for ses_9b8468988c43f4d6d2e51412 answered ACCEPTED
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_9b8468988c43f4d6d2e51412 -> 200 (2ms, 112B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed START_SESSION result (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/start -> 201 (87ms, 869B)
+2026/11/01 17:34:53 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-AIR-ITAM
+2026/11/01 17:34:53 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-AIR-ITAM/MY*CSY*E*D04DC -> 200 (13ms, 156B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:53 POST /api/v1/sessions/start -> 201 (3ms, 869B)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-9b8468988c43f4d6d2e51412 -> 200 (15ms, 846B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-9b8468988c43f4d6d2e51412 -> 200 (6ms, 846B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: command STOP_SESSION for ses_9b8468988c43f4d6d2e51412 answered ACCEPTED
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_9b8468988c43f4d6d2e51412 -> 200 (2ms, 112B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:53 POST /emulator/chargesync/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/11/01 17:34:53 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-AIR-ITAM
+2026/11/01 17:34:53 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-AIR-ITAM/MY*CSY*E*D04DC -> 200 (13ms, 157B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-9b8468988c43f4d6d2e51412 -> 200 (7ms, 888B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: partner=cpo_chargesync stored the cdr of session ses_9b8468988c43f4d6d2e51412 (1.791 kWh)
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/cdrs -> 201 (63ms, 1601B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed cdr (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_9b8468988c43f4d6d2e51412/stop -> 200 (97ms, 2171B)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_9b8468988c43f4d6d2e51412/stop -> 200 (5ms, 2171B)
+    roaming_e2e_test.go:130: chargesync MY: 1.791 kWh, MYR 2.69, rate 1.0000000000, MYR 2.69 deducted, CDR cdr_e549f87554bf122ab19d9191
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/chargesync_MY (0.26s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/chargesync_SG
+2026/11/01 17:34:53 POST /api/v1/quotes -> 201 (19ms, 692B)
+2026/11/01 17:34:53 POST /emulator/chargesync/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/11/01 17:34:53 ocpi: command START_SESSION for ses_07b9e9c3d5f963eaa7c064da answered ACCEPTED
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_07b9e9c3d5f963eaa7c064da -> 200 (2ms, 112B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed START_SESSION result (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/start -> 201 (88ms, 882B)
+2026/11/01 17:34:53 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-MARINA-BAY
+2026/11/01 17:34:53 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-MARINA-BAY/SG*CSY*E*D12DC -> 200 (12ms, 158B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:53 POST /api/v1/sessions/start -> 201 (4ms, 882B)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-07b9e9c3d5f963eaa7c064da -> 200 (11ms, 848B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-07b9e9c3d5f963eaa7c064da -> 200 (6ms, 850B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: command STOP_SESSION for ses_07b9e9c3d5f963eaa7c064da answered ACCEPTED
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_07b9e9c3d5f963eaa7c064da -> 200 (2ms, 112B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:53 POST /emulator/chargesync/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/11/01 17:34:53 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-MARINA-BAY
+2026/11/01 17:34:53 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-MARINA-BAY/SG*CSY*E*D12DC -> 200 (13ms, 159B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:53 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-07b9e9c3d5f963eaa7c064da -> 200 (6ms, 892B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:53 ocpi: partner=cpo_chargesync stored the cdr of session ses_07b9e9c3d5f963eaa7c064da (1.816 kWh)
+2026/11/01 17:34:53 POST /ocpi/emsp/2.3.0/cdrs -> 201 (64ms, 1604B)
+2026/11/01 17:34:53 emulator[chargesync]: pushed cdr (POST)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_07b9e9c3d5f963eaa7c064da/stop -> 200 (102ms, 2186B)
+2026/11/01 17:34:53 POST /api/v1/sessions/ses_07b9e9c3d5f963eaa7c064da/stop -> 200 (6ms, 2186B)
+    roaming_e2e_test.go:130: chargesync SG: 1.816 kWh, SGD 1.09, rate 3.4500000000, MYR 3.76 deducted, CDR cdr_f00a34f07c3d3a7d7406d1c7
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/chargesync_SG (0.27s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/chargesync_TH
+2026/11/01 17:34:53 POST /api/v1/quotes -> 201 (23ms, 676B)
+2026/11/01 17:34:54 POST /emulator/chargesync/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/11/01 17:34:54 ocpi: command START_SESSION for ses_4c182e91cb0fa07e19dbf7b3 answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_4c182e91cb0fa07e19dbf7b3 -> 200 (2ms, 112B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed START_SESSION result (POST)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (84ms, 871B)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (4ms, 871B)
+2026/11/01 17:34:54 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-BANGKOK
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-BANGKOK/TH*CSY*E*D20DC -> 200 (12ms, 155B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-4c182e91cb0fa07e19dbf7b3 -> 200 (13ms, 845B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-4c182e91cb0fa07e19dbf7b3 -> 200 (7ms, 848B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: command STOP_SESSION for ses_4c182e91cb0fa07e19dbf7b3 answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_4c182e91cb0fa07e19dbf7b3 -> 200 (1ms, 112B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:54 POST /emulator/chargesync/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/11/01 17:34:54 ocpi: partner=cpo_chargesync patched 1 EVSE statuses of location DEMO-BANGKOK
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/CSY/DEMO-BANGKOK/TH*CSY*E*D20DC -> 200 (13ms, 156B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/CSY/CSY-4c182e91cb0fa07e19dbf7b3 -> 200 (6ms, 890B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: partner=cpo_chargesync stored the cdr of session ses_4c182e91cb0fa07e19dbf7b3 (1.843 kWh)
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/cdrs -> 201 (58ms, 1599B)
+2026/11/01 17:34:54 emulator[chargesync]: pushed cdr (POST)
+2026/11/01 17:34:54 POST /api/v1/sessions/ses_4c182e91cb0fa07e19dbf7b3/stop -> 200 (98ms, 2171B)
+2026/11/01 17:34:54 POST /api/v1/sessions/ses_4c182e91cb0fa07e19dbf7b3/stop -> 200 (4ms, 2171B)
+    roaming_e2e_test.go:130: chargesync TH: 1.843 kWh, THB 14.74, rate 0.1300000000, MYR 1.92 deducted, CDR cdr_301f8be780b9b47cb6fa1ae8
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/chargesync_TH (0.27s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_MY
+2026/11/01 17:34:54 POST /api/v1/quotes -> 201 (18ms, 665B)
+2026/11/01 17:34:54 POST /emulator/ecowatt/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/11/01 17:34:54 ocpi: command START_SESSION for ses_f717d14a2cd0962115ffd3b9 answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_f717d14a2cd0962115ffd3b9 -> 200 (1ms, 112B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed START_SESSION result (POST)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-BUKIT-MERTAJAM
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-BUKIT-MERTAJAM/MY*ECO*E*D09DC -> 200 (11ms, 162B)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (81ms, 881B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (3ms, 881B)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-f717d14a2cd0962115ffd3b9 -> 200 (14ms, 852B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-f717d14a2cd0962115ffd3b9 -> 200 (6ms, 853B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: command STOP_SESSION for ses_f717d14a2cd0962115ffd3b9 answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_f717d14a2cd0962115ffd3b9 -> 200 (2ms, 112B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:54 POST /emulator/ecowatt/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-BUKIT-MERTAJAM
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-BUKIT-MERTAJAM/MY*ECO*E*D09DC -> 200 (13ms, 163B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-f717d14a2cd0962115ffd3b9 -> 200 (6ms, 895B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt stored the cdr of session ses_f717d14a2cd0962115ffd3b9 (1.921 kWh)
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/cdrs -> 201 (62ms, 1616B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed cdr (POST)
+2026/11/01 17:34:54 POST /api/v1/sessions/ses_f717d14a2cd0962115ffd3b9/stop -> 200 (95ms, 2206B)
+2026/11/01 17:34:54 POST /api/v1/sessions/ses_f717d14a2cd0962115ffd3b9/stop -> 200 (3ms, 2206B)
+    roaming_e2e_test.go:130: ecowatt MY: 1.921 kWh, MYR 2.11, rate 1.0000000000, MYR 2.11 deducted, CDR cdr_0e973aae891fd7a9bab4cfc2
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_MY (0.25s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_SG
+2026/11/01 17:34:54 POST /api/v1/quotes -> 201 (19ms, 680B)
+2026/11/01 17:34:54 POST /emulator/ecowatt/ocpi/2.3.0/commands/START_SESSION -> 200 (1ms, 112B)
+2026/11/01 17:34:54 ocpi: command START_SESSION for ses_fbba0d4200bbc967755b4ae0 answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_fbba0d4200bbc967755b4ae0 -> 200 (2ms, 112B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed START_SESSION result (POST)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (90ms, 870B)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-ORCHARD
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-ORCHARD/SG*ECO*E*D16DC -> 200 (13ms, 155B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (4ms, 870B)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-fbba0d4200bbc967755b4ae0 -> 200 (13ms, 846B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-fbba0d4200bbc967755b4ae0 -> 200 (7ms, 847B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-fbba0d4200bbc967755b4ae0 -> 200 (7ms, 848B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: command STOP_SESSION for ses_fbba0d4200bbc967755b4ae0 answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_fbba0d4200bbc967755b4ae0 -> 200 (2ms, 112B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:54 POST /emulator/ecowatt/ocpi/2.3.0/commands/STOP_SESSION -> 200 (3ms, 112B)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-ORCHARD
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-ORCHARD/SG*ECO*E*D16DC -> 200 (12ms, 156B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-fbba0d4200bbc967755b4ae0 -> 200 (7ms, 890B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt stored the cdr of session ses_fbba0d4200bbc967755b4ae0 (2.896 kWh)
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/cdrs -> 201 (94ms, 1568B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed cdr (POST)
+2026/11/01 17:34:54 POST /api/v1/sessions/ses_fbba0d4200bbc967755b4ae0/stop -> 200 (125ms, 2164B)
+2026/11/01 17:34:54 POST /api/v1/sessions/ses_fbba0d4200bbc967755b4ae0/stop -> 200 (8ms, 2164B)
+    roaming_e2e_test.go:130: ecowatt SG: 2.896 kWh, SGD 1.59, rate 3.4500000000, MYR 5.49 deducted, CDR cdr_81727a57b10eede6e045d58b
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_SG (0.31s)
+=== RUN   TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_TH
+2026/11/01 17:34:54 POST /api/v1/quotes -> 201 (24ms, 679B)
+2026/11/01 17:34:54 POST /emulator/ecowatt/ocpi/2.3.0/commands/START_SESSION -> 200 (0s, 112B)
+2026/11/01 17:34:54 ocpi: command START_SESSION for ses_4fff1f0198d6c465581d30ad answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_4fff1f0198d6c465581d30ad -> 200 (2ms, 112B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed START_SESSION result (POST)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (86ms, 879B)
+2026/11/01 17:34:54 POST /api/v1/sessions/start -> 201 (4ms, 879B)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-HAT-YAI-EAST
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-HAT-YAI-EAST/TH*ECO*E*D21DC -> 200 (14ms, 160B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed evse CHARGING (PATCH)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-4fff1f0198d6c465581d30ad -> 200 (13ms, 851B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-4fff1f0198d6c465581d30ad -> 200 (6ms, 852B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:54 ocpi: command STOP_SESSION for ses_4fff1f0198d6c465581d30ad answered ACCEPTED
+2026/11/01 17:34:54 POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_4fff1f0198d6c465581d30ad -> 200 (1ms, 112B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed STOP_SESSION result (POST)
+2026/11/01 17:34:54 POST /emulator/ecowatt/ocpi/2.3.0/commands/STOP_SESSION -> 200 (2ms, 112B)
+2026/11/01 17:34:54 ocpi: partner=cpo_ecowatt patched 1 EVSE statuses of location DEMO-HAT-YAI-EAST
+2026/11/01 17:34:54 PATCH /ocpi/emsp/2.3.0/locations/MY/ECO/DEMO-HAT-YAI-EAST/TH*ECO*E*D21DC -> 200 (13ms, 161B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:34:54 PUT /ocpi/emsp/2.3.0/sessions/MY/ECO/ECO-4fff1f0198d6c465581d30ad -> 200 (6ms, 894B)
+2026/11/01 17:34:54 emulator[ecowatt]: pushed session (PUT)
+2026/11/01 17:34:55 ocpi: partner=cpo_ecowatt stored the cdr of session ses_4fff1f0198d6c465581d30ad (1.810 kWh)
+2026/11/01 17:34:55 POST /ocpi/emsp/2.3.0/cdrs -> 201 (57ms, 1608B)
+2026/11/01 17:34:55 emulator[ecowatt]: pushed cdr (POST)
+2026/11/01 17:34:55 POST /api/v1/sessions/ses_4fff1f0198d6c465581d30ad/stop -> 200 (92ms, 2185B)
+2026/11/01 17:34:55 POST /api/v1/sessions/ses_4fff1f0198d6c465581d30ad/stop -> 200 (4ms, 2185B)
+    roaming_e2e_test.go:130: ecowatt TH: 1.810 kWh, THB 13.58, rate 0.1300000000, MYR 1.77 deducted, CDR cdr_606c2741e755373866d50894
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry/ecowatt_TH (0.27s)
+--- PASS: TestRoamingAcrossEveryEmulatorAndCountry (5.30s)
+=== RUN   TestServerRunReturnsImmediately
+--- PASS: TestServerRunReturnsImmediately (1.16s)
+=== RUN   TestStationRegionAndPowerFilters
+2026/11/01 17:34:57 POST /api/v1/auth/register -> 201 (134ms, 346B)
+=== RUN   TestStationRegionAndPowerFilters/country=MY&region=Penang
+2026/11/01 17:34:57 GET /api/v1/stations -> 200 (14ms, 10148B)
+--- PASS: TestStationRegionAndPowerFilters/country=MY&region=Penang (0.01s)
+=== RUN   TestStationRegionAndPowerFilters/country=SG
+2026/11/01 17:34:57 GET /api/v1/stations -> 200 (8ms, 5383B)
+--- PASS: TestStationRegionAndPowerFilters/country=SG (0.01s)
+=== RUN   TestStationRegionAndPowerFilters/country=TH
+2026/11/01 17:34:57 GET /api/v1/stations -> 200 (7ms, 6293B)
+--- PASS: TestStationRegionAndPowerFilters/country=TH (0.01s)
+=== RUN   TestStationRegionAndPowerFilters/country=MY&region=Penang&powerType=AC&minPower=10&maxPower=22
+2026/11/01 17:34:57 GET /api/v1/stations -> 200 (8ms, 10148B)
+--- PASS: TestStationRegionAndPowerFilters/country=MY&region=Penang&powerType=AC&minPower=10&maxPower=22 (0.01s)
+=== RUN   TestStationRegionAndPowerFilters/country=MY&region=Penang&powerType=AC&minPower=50
+2026/11/01 17:34:57 GET /api/v1/stations -> 200 (6ms, 3B)
+--- PASS: TestStationRegionAndPowerFilters/country=MY&region=Penang&powerType=AC&minPower=50 (0.01s)
+=== RUN   TestStationRegionAndPowerFilters/country=SG&region=Central
+2026/11/01 17:34:57 GET /api/v1/stations -> 200 (7ms, 2714B)
+--- PASS: TestStationRegionAndPowerFilters/country=SG&region=Central (0.01s)
+2026/11/01 17:34:57 GET /api/v1/stations/regions -> 200 (6ms, 1482B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (0s, 77B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (0s, 86B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (0s, 77B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (0s, 93B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (0s, 78B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (0s, 71B)
+2026/11/01 17:34:57 GET /api/v1/stations -> 400 (1ms, 93B)
+--- PASS: TestStationRegionAndPowerFilters (1.34s)
+=== RUN   TestListStationsSortedByDistance
+2026/11/01 17:34:58 POST /api/v1/auth/register -> 201 (147ms, 346B)
+2026/11/01 17:34:58 GET /api/v1/stations -> 200 (15ms, 37463B)
+--- PASS: TestListStationsSortedByDistance (1.54s)
+=== RUN   TestListStationsConnectorTypeFilter
+2026/11/01 17:35:00 POST /api/v1/auth/register -> 201 (140ms, 346B)
+2026/11/01 17:35:00 GET /api/v1/stations -> 200 (16ms, 27499B)
+--- PASS: TestListStationsConnectorTypeFilter (1.19s)
+=== RUN   TestListStationsAvailableAndMinPowerFilter
+2026/11/01 17:35:01 POST /api/v1/auth/register -> 201 (137ms, 346B)
+2026/11/01 17:35:01 GET /api/v1/stations -> 200 (14ms, 12364B)
+--- PASS: TestListStationsAvailableAndMinPowerFilter (1.29s)
+=== RUN   TestListStationsQueryFilter
+2026/11/01 17:35:02 POST /api/v1/auth/register -> 201 (135ms, 346B)
+2026/11/01 17:35:02 GET /api/v1/stations -> 200 (14ms, 1302B)
+--- PASS: TestListStationsQueryFilter (1.24s)
+=== RUN   TestGetEVSE
+2026/11/01 17:35:04 POST /api/v1/auth/register -> 201 (144ms, 345B)
+2026/11/01 17:35:04 GET /api/v1/evse/vlt-sgb-01 -> 200 (21ms, 1303B)
+2026/11/01 17:35:04 GET /api/v1/evse/NOPE-XXX-99 -> 404 (3ms, 79B)
+--- PASS: TestGetEVSE (1.23s)
+=== RUN   TestSuspendedCpoHiddenFromDiscovery
+2026/11/01 17:35:05 POST /api/v1/auth/register -> 201 (136ms, 346B)
+2026/11/01 17:35:05 GET /api/v1/stations -> 200 (9ms, 25088B)
+2026/11/01 17:35:05 GET /api/v1/stations/stn_vlt_sgb -> 404 (2ms, 70B)
+2026/11/01 17:35:05 GET /api/v1/evse/VLT-SGB-01 -> 404 (3ms, 79B)
+--- PASS: TestSuspendedCpoHiddenFromDiscovery (1.34s)
+=== RUN   TestVehicleCreateDefaults
+2026/11/01 17:35:06 POST /api/v1/auth/register -> 201 (144ms, 346B)
+2026/11/01 17:35:06 GET /api/v1/vehicles -> 200 (8ms, 3B)
+2026/11/01 17:35:06 POST /api/v1/vehicles -> 201 (17ms, 187B)
+2026/11/01 17:35:06 POST /api/v1/vehicles -> 201 (9ms, 186B)
+2026/11/01 17:35:06 GET /api/v1/vehicles -> 200 (2ms, 375B)
+--- PASS: TestVehicleCreateDefaults (1.32s)
+=== RUN   TestVehicleIgnoresBodyIdentity
+2026/11/01 17:35:07 POST /api/v1/auth/register -> 201 (130ms, 346B)
+2026/11/01 17:35:08 POST /api/v1/vehicles -> 201 (16ms, 181B)
+--- PASS: TestVehicleIgnoresBodyIdentity (1.29s)
+=== RUN   TestVehicleUpdateFlipsDefault
+2026/11/01 17:35:09 POST /api/v1/auth/register -> 201 (150ms, 346B)
+2026/11/01 17:35:09 POST /api/v1/vehicles -> 201 (15ms, 179B)
+2026/11/01 17:35:09 POST /api/v1/vehicles -> 201 (8ms, 180B)
+2026/11/01 17:35:09 PUT /api/v1/vehicles/veh_370c42a7e84e2406949def52 -> 200 (12ms, 187B)
+2026/11/01 17:35:09 GET /api/v1/vehicles -> 200 (7ms, 369B)
+--- PASS: TestVehicleUpdateFlipsDefault (1.41s)
+=== RUN   TestVehicleDeletePromotesOldest
+2026/11/01 17:35:10 POST /api/v1/auth/register -> 201 (145ms, 346B)
+2026/11/01 17:35:10 POST /api/v1/vehicles -> 201 (20ms, 179B)
+2026/11/01 17:35:10 POST /api/v1/vehicles -> 201 (9ms, 180B)
+2026/11/01 17:35:10 POST /api/v1/vehicles -> 201 (10ms, 182B)
+2026/11/01 17:35:10 DELETE /api/v1/vehicles/veh_a14b3f14ffb52ce5b23d519b -> 204 (17ms, 0B)
+2026/11/01 17:35:10 GET /api/v1/vehicles -> 200 (4ms, 363B)
+--- PASS: TestVehicleDeletePromotesOldest (1.62s)
+=== RUN   TestVehicleOwnershipIsolation
+2026/11/01 17:35:12 POST /api/v1/auth/register -> 201 (142ms, 346B)
+2026/11/01 17:35:12 POST /api/v1/auth/register -> 201 (130ms, 348B)
+2026/11/01 17:35:12 POST /api/v1/vehicles -> 201 (18ms, 176B)
+2026/11/01 17:35:12 GET /api/v1/vehicles -> 200 (7ms, 3B)
+2026/11/01 17:35:12 PUT /api/v1/vehicles/veh_edd449f50ad4f55d4740685f -> 404 (6ms, 70B)
+2026/11/01 17:35:12 DELETE /api/v1/vehicles/veh_edd449f50ad4f55d4740685f -> 404 (7ms, 70B)
+2026/11/01 17:35:12 GET /api/v1/vehicles -> 200 (2ms, 178B)
+--- PASS: TestVehicleOwnershipIsolation (1.64s)
+=== RUN   TestVehicleValidation
+2026/11/01 17:35:14 POST /api/v1/auth/register -> 201 (141ms, 346B)
+2026/11/01 17:35:14 POST /api/v1/vehicles -> 400 (0s, 297B)
+--- PASS: TestVehicleValidation (1.59s)
+=== RUN   TestVehicleUnknownIDIsNotFound
+2026/11/01 17:35:15 POST /api/v1/auth/register -> 201 (145ms, 346B)
+2026/11/01 17:35:15 DELETE /api/v1/vehicles/veh_missing -> 404 (8ms, 70B)
+2026/11/01 17:35:15 GET /api/v1/vehicles -> 401 (0s, 71B)
+--- PASS: TestVehicleUnknownIDIsNotFound (1.62s)
+=== RUN   TestWalletTopUpAndTransactions
+2026/11/01 17:35:17 POST /api/v1/auth/register -> 201 (145ms, 346B)
+2026/11/01 17:35:17 GET /api/v1/wallet -> 200 (6ms, 141B)
+2026/11/01 17:35:18 POST /api/v1/wallet/topup -> 200 (828ms, 143B)
+2026/11/01 17:35:18 GET /api/v1/wallet/transactions -> 200 (10ms, 283B)
+--- PASS: TestWalletTopUpAndTransactions (2.42s)
+=== RUN   TestWalletTopUpDemoDriver
+2026/11/01 17:35:20 POST /api/v1/auth/login -> 200 (121ms, 351B)
+2026/11/01 17:35:20 POST /api/v1/wallet/topup -> 200 (845ms, 149B)
+2026/11/01 17:35:20 GET /api/v1/wallet/transactions -> 200 (8ms, 291B)
+--- PASS: TestWalletTopUpDemoDriver (2.72s)
+=== RUN   TestWalletTopUpIdempotentReplay
+2026/11/01 17:35:22 POST /api/v1/auth/register -> 201 (134ms, 346B)
+2026/11/01 17:35:23 POST /api/v1/wallet/topup -> 200 (845ms, 153B)
+2026/11/01 17:35:23 POST /api/v1/wallet/topup -> 200 (3ms, 153B)
+2026/11/01 17:35:23 GET /api/v1/wallet/transactions -> 200 (11ms, 283B)
+2026/11/01 17:35:24 POST /api/v1/wallet/topup -> 200 (824ms, 143B)
+--- PASS: TestWalletTopUpIdempotentReplay (3.36s)
+=== RUN   TestWalletTopUpValidation
+2026/11/01 17:35:25 POST /api/v1/auth/register -> 201 (145ms, 346B)
+2026/11/01 17:35:25 POST /api/v1/wallet/topup -> 400 (0s, 174B)
+2026/11/01 17:35:25 POST /api/v1/wallet/topup -> 400 (0s, 174B)
+2026/11/01 17:35:25 POST /api/v1/wallet/topup -> 400 (0s, 156B)
+2026/11/01 17:35:25 POST /api/v1/wallet/topup -> 400 (0s, 91B)
+--- PASS: TestWalletTopUpValidation (1.63s)
+=== RUN   TestWalletRequiresAuth
+2026/11/01 17:35:27 GET /api/v1/wallet -> 401 (0s, 71B)
+2026/11/01 17:35:27 GET /api/v1/wallet/transactions -> 401 (0s, 71B)
+--- PASS: TestWalletRequiresAuth (1.48s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/api	61.650s
+?   	github.com/chargenet/chargenet-backend/internal/auth	[no test files]
+?   	github.com/chargenet/chargenet-backend/internal/config	[no test files]
+=== RUN   TestLocalGatewayStartStepsAndStopPublishesTerminalEvent
+--- PASS: TestLocalGatewayStartStepsAndStopPublishesTerminalEvent (0.01s)
+=== RUN   TestLocalGatewayStopsForTheReasonItWasGiven
+--- PASS: TestLocalGatewayStopsForTheReasonItWasGiven (0.00s)
+=== RUN   TestLocalGatewayFinishesOnItsOwnWhenTheTargetIsReached
+--- PASS: TestLocalGatewayFinishesOnItsOwnWhenTheTargetIsReached (0.00s)
+=== RUN   TestLocalGatewayInjectsFaults
+--- PASS: TestLocalGatewayInjectsFaults (0.00s)
+=== RUN   TestLocalGatewayRejectsUnusableStartCommands
+--- PASS: TestLocalGatewayRejectsUnusableStartCommands (0.00s)
+=== RUN   TestLocalGatewayResumesFromStoredState
+--- PASS: TestLocalGatewayResumesFromStoredState (0.00s)
+=== RUN   TestLocalGatewayFanoutToEverySubscriber
+--- PASS: TestLocalGatewayFanoutToEverySubscriber (0.00s)
+=== RUN   TestLocalGatewayUnsubscribeStopsDelivery
+--- PASS: TestLocalGatewayUnsubscribeStopsDelivery (0.05s)
+=== RUN   TestLocalGatewayUnlockConnector
+--- PASS: TestLocalGatewayUnlockConnector (0.00s)
+=== RUN   TestLocalGatewayCloseEndsSessionsWithoutTerminalEvents
+--- PASS: TestLocalGatewayCloseEndsSessionsWithoutTerminalEvents (0.05s)
+=== RUN   TestLocalGatewayDefaultsTheTimeScale
+--- PASS: TestLocalGatewayDefaultsTheTimeScale (0.00s)
+=== RUN   TestLocalGatewayRunsSessionsIndependently
+--- PASS: TestLocalGatewayRunsSessionsIndependently (0.00s)
+=== RUN   TestTelemetryTerminal
+--- PASS: TestTelemetryTerminal (0.00s)
+=== RUN   TestGatewayErrorsCarryTheirAPICode
+--- PASS: TestGatewayErrorsCarryTheirAPICode (0.00s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/gateway	1.163s
+=== RUN   TestHaversineKnownDistance
+--- PASS: TestHaversineKnownDistance (0.00s)
+=== RUN   TestHaversineSamePoint
+--- PASS: TestHaversineSamePoint (0.00s)
+=== RUN   TestRound1
+--- PASS: TestRound1 (0.00s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/geo	0.875s
+=== RUN   TestExactRounding
+--- PASS: TestExactRounding (0.00s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/money	0.935s
+=== RUN   TestEvidenceScheduledSyncRepairsMissedPush
+2026/11/01 17:35:37 ocpi: sync chargesync (cpo_chargesync): locations: CPO_UNREACHABLE: GET http://localhost:8080/emulator/chargesync/ocpi/2.3.0/locations: Get "http://localhost:8080/emulator/chargesync/ocpi/2.3.0/locations": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+2026/11/01 17:35:37 ocpi: sync ecowatt (cpo_ecowatt): locations: CPO_UNREACHABLE: GET http://localhost:8080/emulator/ecowatt/ocpi/2.3.0/locations: Get "http://localhost:8080/emulator/ecowatt/ocpi/2.3.0/locations": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+    chapter5_evidence_test.go:50: source_changed=2026-11-01T17:35:37.1494885+08:00 old=SyncTest Hub new=Missed push recovered status=INOPERATIVE observed=2026-11-01T17:35:37.4686382+08:00 delay_ms=319 interval_ms=50 normal_interval=5m push_sent=false
+2026/11/01 17:35:37 ocpi: sync synctest: tariffs: store tariff trf_sync: context canceled
+2026/11/01 17:35:37 ocpi: sync voltgo (cpo_voltgo): locations: CPO_UNREACHABLE: GET http://localhost:8080/emulator/voltgo/ocpi/2.3.0/locations: Get "http://localhost:8080/emulator/voltgo/ocpi/2.3.0/locations": context canceled
+2026/11/01 17:35:37 ocpi: periodic sync: locations: CPO_UNREACHABLE: GET http://localhost:8080/emulator/chargesync/ocpi/2.3.0/locations: Get "http://localhost:8080/emulator/chargesync/ocpi/2.3.0/locations": dial tcp [::1]:8080: connectex: No connection could be made because the target machine actively refused it.
+2026/11/01 17:35:37 ocpi: periodic sync: list active CPOs: context canceled
+--- PASS: TestEvidenceScheduledSyncRepairsMissedPush (1.90s)
+=== RUN   TestGatewayStartSessionSendsThePlanCommand
+--- PASS: TestGatewayStartSessionSendsThePlanCommand (1.58s)
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/REJECTED_is_the_connector
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/REJECTED_is_the_connector (0.01s)
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/NOT_SUPPORTED_is_the_partner
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/NOT_SUPPORTED_is_the_partner (0.01s)
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/TIMEOUT_is_the_partner
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/TIMEOUT_is_the_partner (0.00s)
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/an_unknown_result_is_the_partner
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/an_unknown_result_is_the_partner (0.00s)
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/an_empty_body_is_the_partner
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/an_empty_body_is_the_partner (0.00s)
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer (1.59s)
+=== RUN   TestGatewayStopSessionPostsBackThroughTheReceiver
+2026/11/01 17:35:41 ocpi: command STOP_SESSION for csn_T62 answered ACCEPTED
+--- PASS: TestGatewayStopSessionPostsBackThroughTheReceiver (0.72s)
+=== RUN   TestGatewayStopSessionEndsOnTheSessionsTerminalEvent
+--- PASS: TestGatewayStopSessionEndsOnTheSessionsTerminalEvent (0.75s)
+=== RUN   TestGatewayStopSessionGivesUpWhenTheCPONeverAnswers
+--- PASS: TestGatewayStopSessionGivesUpWhenTheCPONeverAnswers (0.79s)
+=== RUN   TestGatewayAsyncStartRejectionFailsTheSession
+2026/11/01 17:35:44 ocpi: session csn_T65: CPO turned down the start: the bay is blocked
+--- PASS: TestGatewayAsyncStartRejectionFailsTheSession (0.73s)
+=== RUN   TestGatewayUnlockConnector
+--- PASS: TestGatewayUnlockConnector (0.80s)
+=== RUN   TestGatewayReportsWhatItCannotAddress
+--- PASS: TestGatewayReportsWhatItCannotAddress (0.76s)
+=== RUN   TestVersionsListsChargeNetVersion
+--- PASS: TestVersionsListsChargeNetVersion (0.64s)
+=== RUN   TestVersionDetailsListsEveryModule
+--- PASS: TestVersionDetailsListsEveryModule (0.61s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/locations_read
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/locations_read (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/locations_push
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/locations_push (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/locations_evse_patch
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/locations_evse_patch (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/tariffs_push
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/tariffs_push (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/sessions_push
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/sessions_push (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/cdrs_post
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/cdrs_post (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/cdr_read
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/cdr_read (0.01s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/command_result
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/command_result (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/garbage_token
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/garbage_token (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/garbage_token_read
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/garbage_token_read (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/base64_garbage_token
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/base64_garbage_token (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/no_token
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/no_token (0.00s)
+=== RUN   TestModuleEndpointsEnforceTheTokenContract/token_a
+--- PASS: TestModuleEndpointsEnforceTheTokenContract/token_a (0.00s)
+--- PASS: TestModuleEndpointsEnforceTheTokenContract (0.70s)
+=== RUN   TestMissingOrUnknownTokenIsRejected
+=== RUN   TestMissingOrUnknownTokenIsRejected/no_header
+--- PASS: TestMissingOrUnknownTokenIsRejected/no_header (0.00s)
+=== RUN   TestMissingOrUnknownTokenIsRejected/wrong_scheme
+--- PASS: TestMissingOrUnknownTokenIsRejected/wrong_scheme (0.00s)
+=== RUN   TestMissingOrUnknownTokenIsRejected/empty_token
+--- PASS: TestMissingOrUnknownTokenIsRejected/empty_token (0.00s)
+=== RUN   TestMissingOrUnknownTokenIsRejected/unknown_token
+--- PASS: TestMissingOrUnknownTokenIsRejected/unknown_token (0.01s)
+--- PASS: TestMissingOrUnknownTokenIsRejected (0.61s)
+=== RUN   TestGetCredentialsReturnsChargeNetIdentity
+--- PASS: TestGetCredentialsReturnsChargeNetIdentity (0.60s)
+=== RUN   TestPostCredentialsCompletesRegistration
+2026/11/01 17:35:49 ocpi: cpo_test_ts1 registered (party=MY/TS1 base_url=http://fixture.test/emulator/ts1/ocpi handshake=IN_PROGRESS)
+--- PASS: TestPostCredentialsCompletesRegistration (0.67s)
+=== RUN   TestPostCredentialsValidatesBody
+=== RUN   TestPostCredentialsValidatesBody/no_token
+--- PASS: TestPostCredentialsValidatesBody/no_token (0.01s)
+=== RUN   TestPostCredentialsValidatesBody/no_url
+--- PASS: TestPostCredentialsValidatesBody/no_url (0.00s)
+=== RUN   TestPostCredentialsValidatesBody/relative_url
+--- PASS: TestPostCredentialsValidatesBody/relative_url (0.00s)
+=== RUN   TestPostCredentialsValidatesBody/foreign_party
+--- PASS: TestPostCredentialsValidatesBody/foreign_party (0.00s)
+--- PASS: TestPostCredentialsValidatesBody (0.68s)
+=== RUN   TestPutCredentialsRotatesTokens
+2026/11/01 17:35:50 ocpi: cpo_test_ts3 rotated credentials (party=MY/TS3 base_url=http://fixture.test/ocpi)
+--- PASS: TestPutCredentialsRotatesTokens (0.67s)
+=== RUN   TestDeleteCredentialsUnregistersPartner
+2026/11/01 17:35:51 ocpi: cpo_test_ts4 unregistered (status=SUSPENDED)
+--- PASS: TestDeleteCredentialsUnregistersPartner (0.73s)
+=== RUN   TestSuspendedPartnerLeavesDiscovery
+2026/11/01 17:35:52 POST /api/v1/auth/register -> 201 (194ms, 355B)
+2026/11/01 17:35:52 GET /api/v1/stations -> 200 (16ms, 38010B)
+2026/11/01 17:35:52 ocpi: cpo_test_ts5 unregistered (status=SUSPENDED)
+2026/11/01 17:35:52 DELETE /ocpi/emsp/2.3.0/credentials -> 200 (8ms, 93B)
+2026/11/01 17:35:52 GET /api/v1/stations -> 200 (8ms, 37450B)
+--- PASS: TestSuspendedPartnerLeavesDiscovery (0.92s)
+=== RUN   TestStoredCDRDecodesIntoTypes
+--- PASS: TestStoredCDRDecodesIntoTypes (0.00s)
+=== RUN   TestLocationPushStoresStationAndConnectors
+2026/11/01 17:35:53 ocpi: partner=cpo_test_t30 stored location T30-LOC as station stn_d9ee5225d21a816eb6d113d6 with 3 connectors
+=== RUN   TestLocationPushStoresStationAndConnectors/a_location_with_no_address_is_refused
+--- PASS: TestLocationPushStoresStationAndConnectors/a_location_with_no_address_is_refused (0.00s)
+=== RUN   TestLocationPushStoresStationAndConnectors/a_push_for_another_party_is_refused
+--- PASS: TestLocationPushStoresStationAndConnectors/a_push_for_another_party_is_refused (0.00s)
+=== RUN   TestLocationPushStoresStationAndConnectors/the_locations_module_serves_no_reads
+--- PASS: TestLocationPushStoresStationAndConnectors/the_locations_module_serves_no_reads (0.00s)
+2026/11/01 17:35:53 ocpi: partner=cpo_test_t30 stored location T30-LOC as station stn_d9ee5225d21a816eb6d113d6 with 1 connectors
+--- PASS: TestLocationPushStoresStationAndConnectors (0.76s)
+=== RUN   TestLocationPatchUpdatesEvseStatuses
+2026/11/01 17:35:53 ocpi: partner=cpo_test_t31 stored location T31-LOC as station stn_5bb9c6064631687dfb87b166 with 3 connectors
+2026/11/01 17:35:53 ocpi: partner=cpo_test_t31 patched 1 EVSE statuses of location T31-LOC
+2026/11/01 17:35:53 ocpi: partner=cpo_test_t31 patched 2 EVSE statuses of location T31-LOC
+=== RUN   TestLocationPatchUpdatesEvseStatuses/a_patch_with_nothing_in_it_is_refused
+--- PASS: TestLocationPatchUpdatesEvseStatuses/a_patch_with_nothing_in_it_is_refused (0.00s)
+=== RUN   TestLocationPatchUpdatesEvseStatuses/a_patch_for_an_EVSE_ChargeNet_does_not_have_is_a_404
+--- PASS: TestLocationPatchUpdatesEvseStatuses/a_patch_for_an_EVSE_ChargeNet_does_not_have_is_a_404 (0.01s)
+--- PASS: TestLocationPatchUpdatesEvseStatuses (0.79s)
+=== RUN   TestTariffPushRepricesConnectors
+2026/11/01 17:35:54 ocpi: partner=cpo_test_t32 stored location T32-LOC as station stn_00dcc35930eecaf123b13c20 with 1 connectors
+2026/11/01 17:35:54 ocpi: partner=cpo_test_t32 stored tariff TAR-T32 at 0.85 MYR per kWh
+2026/11/01 17:35:54 ocpi: partner=cpo_test_t32 stored tariff TAR-T32 at 1.10 MYR per kWh
+=== RUN   TestTariffPushRepricesConnectors/a_tariff_with_no_ENERGY_price_is_refused
+--- PASS: TestTariffPushRepricesConnectors/a_tariff_with_no_ENERGY_price_is_refused (0.01s)
+=== RUN   TestTariffPushRepricesConnectors/a_tariff_in_another_currency_is_refused
+--- PASS: TestTariffPushRepricesConnectors/a_tariff_in_another_currency_is_refused (0.00s)
+=== RUN   TestTariffPushRepricesConnectors/an_id_that_contradicts_the_URL_is_refused
+--- PASS: TestTariffPushRepricesConnectors/an_id_that_contradicts_the_URL_is_refused (0.00s)
+=== RUN   TestTariffPushRepricesConnectors/a_push_for_another_party_is_refused
+--- PASS: TestTariffPushRepricesConnectors/a_push_for_another_party_is_refused (0.00s)
+=== RUN   TestTariffPushRepricesConnectors/the_tariffs_module_serves_no_reads
+--- PASS: TestTariffPushRepricesConnectors/the_tariffs_module_serves_no_reads (0.00s)
+--- PASS: TestTariffPushRepricesConnectors (0.83s)
+=== RUN   TestSessionPushLinksToTheChargeNetSession
+=== RUN   TestSessionPushLinksToTheChargeNetSession/a_status_that_says_nothing_about_a_running_charge_is_accepted_silently
+2026/11/01 17:35:55 ocpi: session csn_T40 is PENDING at the CPO; ChargeNet keeps the status it has
+--- PASS: TestSessionPushLinksToTheChargeNetSession/a_status_that_says_nothing_about_a_running_charge_is_accepted_silently (0.01s)
+=== RUN   TestSessionPushLinksToTheChargeNetSession/an_unknown_status_is_accepted_silently
+2026/11/01 17:35:55 ocpi: session csn_T40 reports the status "SOMETHING_NEW"; ChargeNet keeps the status it has
+--- PASS: TestSessionPushLinksToTheChargeNetSession/an_unknown_status_is_accepted_silently (0.01s)
+=== RUN   TestSessionPushLinksToTheChargeNetSession/a_push_for_a_charge_ChargeNet_does_not_have_is_a_404
+--- PASS: TestSessionPushLinksToTheChargeNetSession/a_push_for_a_charge_ChargeNet_does_not_have_is_a_404 (0.00s)
+=== RUN   TestSessionPushLinksToTheChargeNetSession/the_id_in_the_body_must_be_the_one_in_the_URL
+--- PASS: TestSessionPushLinksToTheChargeNetSession/the_id_in_the_body_must_be_the_one_in_the_URL (0.00s)
+=== RUN   TestSessionPushLinksToTheChargeNetSession/another_partner_cannot_push_a_charge_that_is_not_its_own
+--- PASS: TestSessionPushLinksToTheChargeNetSession/another_partner_cannot_push_a_charge_that_is_not_its_own (0.03s)
+=== RUN   TestSessionPushLinksToTheChargeNetSession/the_sessions_module_serves_no_reads
+--- PASS: TestSessionPushLinksToTheChargeNetSession/the_sessions_module_serves_no_reads (0.00s)
+--- PASS: TestSessionPushLinksToTheChargeNetSession (0.86s)
+=== RUN   TestCDRPostSettlesTheSessionOnce
+2026/11/01 17:35:56 ocpi: partner=cpo_test_t50 stored the cdr of session csn_T50 (10.000 kWh)
+2026/11/01 17:35:56 ocpi: partner=cpo_test_t50 stored the cdr of session csn_T50 (12.000 kWh)
+=== RUN   TestCDRPostSettlesTheSessionOnce/a_CDR_for_a_charge_ChargeNet_does_not_have_is_a_404
+--- PASS: TestCDRPostSettlesTheSessionOnce/a_CDR_for_a_charge_ChargeNet_does_not_have_is_a_404 (0.01s)
+=== RUN   TestCDRPostSettlesTheSessionOnce/a_CDR_that_names_no_session_is_refused
+--- PASS: TestCDRPostSettlesTheSessionOnce/a_CDR_that_names_no_session_is_refused (0.00s)
+=== RUN   TestCDRPostSettlesTheSessionOnce/the_id_in_the_body_must_be_the_one_in_the_URL
+--- PASS: TestCDRPostSettlesTheSessionOnce/the_id_in_the_body_must_be_the_one_in_the_URL (0.00s)
+=== RUN   TestCDRPostSettlesTheSessionOnce/a_CDR_for_another_party_is_refused
+--- PASS: TestCDRPostSettlesTheSessionOnce/a_CDR_for_another_party_is_refused (0.00s)
+=== RUN   TestCDRPostSettlesTheSessionOnce/another_partner_cannot_read_the_record
+--- PASS: TestCDRPostSettlesTheSessionOnce/another_partner_cannot_read_the_record (0.03s)
+=== RUN   TestCDRPostSettlesTheSessionOnce/the_read_URL_names_ChargeNet's_own_party
+--- PASS: TestCDRPostSettlesTheSessionOnce/the_read_URL_names_ChargeNet's_own_party (0.00s)
+=== RUN   TestCDRPostSettlesTheSessionOnce/the_cdrs_module_only_takes_a_POST
+--- PASS: TestCDRPostSettlesTheSessionOnce/the_cdrs_module_only_takes_a_POST (0.00s)
+--- PASS: TestCDRPostSettlesTheSessionOnce (0.96s)
+=== RUN   TestCommandResultReachesTheGateway
+2026/11/01 17:35:57 ocpi: command STOP_SESSION for SES-T52 answered ACCEPTED
+2026/11/01 17:35:57 ocpi: command START_SESSION for SES-T52 answered REJECTED
+=== RUN   TestCommandResultReachesTheGateway/a_command_ChargeNet_never_sends_is_a_3001
+--- PASS: TestCommandResultReachesTheGateway/a_command_ChargeNet_never_sends_is_a_3001 (0.00s)
+=== RUN   TestCommandResultReachesTheGateway/the_commands_module_serves_no_reads
+--- PASS: TestCommandResultReachesTheGateway/the_commands_module_serves_no_reads (0.00s)
+=== RUN   TestCommandResultReachesTheGateway/a_callback_needs_both_a_command_and_a_uid
+--- PASS: TestCommandResultReachesTheGateway/a_callback_needs_both_a_command_and_a_uid (0.00s)
+=== RUN   TestCommandResultReachesTheGateway/another_token_cannot_answer_the_command
+--- PASS: TestCommandResultReachesTheGateway/another_token_cannot_answer_the_command (0.00s)
+=== RUN   TestCommandResultReachesTheGateway/with_no_gateway_running_the_answer_has_nowhere_to_go
+--- PASS: TestCommandResultReachesTheGateway/with_no_gateway_running_the_answer_has_nowhere_to_go (0.00s)
+--- PASS: TestCommandResultReachesTheGateway (0.71s)
+=== RUN   TestSyncOnePullsLocationsAndTariffs
+--- PASS: TestSyncOnePullsLocationsAndTariffs (0.74s)
+=== RUN   TestSyncWithoutTariffsModuleStillStoresLocations
+2026/11/01 17:35:58 ocpi: sync synctest: tariffs: CPO_UNREACHABLE: http://127.0.0.1:58014/2.3.0/tariffs: OCPI 3001: Not supported
+--- PASS: TestSyncWithoutTariffsModuleStillStoresLocations (0.71s)
+=== RUN   TestSyncOneReportsAnUnreachablePartner
+--- PASS: TestSyncOneReportsAnUnreachablePartner (0.65s)
+=== RUN   TestSyncSkipsMalformedLocation
+2026/11/01 17:36:00 ocpi: sync synctest: skipping location SYN-BAD: a location needs an address and a city
+--- PASS: TestSyncSkipsMalformedLocation (0.80s)
+=== RUN   TestSyncAllStoresEveryReachablePartner
+2026/11/01 17:36:00 ocpi: sync chargesync (cpo_chargesync): locations: CPO_UNREACHABLE: GET http://127.0.0.1:1/ocpi/2.3.0/locations: Get "http://127.0.0.1:1/ocpi/2.3.0/locations": dial tcp 127.0.0.1:1: connectex: No connection could be made because the target machine actively refused it.
+2026/11/01 17:36:00 ocpi: sync ecowatt (cpo_ecowatt): locations: CPO_UNREACHABLE: GET http://127.0.0.1:1/ocpi/2.3.0/locations: Get "http://127.0.0.1:1/ocpi/2.3.0/locations": dial tcp 127.0.0.1:1: connectex: No connection could be made because the target machine actively refused it.
+2026/11/01 17:36:01 ocpi: sync voltgo (cpo_voltgo): locations: CPO_UNREACHABLE: GET http://127.0.0.1:1/ocpi/2.3.0/locations: Get "http://127.0.0.1:1/ocpi/2.3.0/locations": dial tcp 127.0.0.1:1: connectex: No connection could be made because the target machine actively refused it.
+--- PASS: TestSyncAllStoresEveryReachablePartner (0.78s)
+=== RUN   Test230AndLegacyPriceRepresentations
+--- PASS: Test230AndLegacyPriceRepresentations (0.00s)
+=== RUN   Test230DiscoveryDoesNotAdvertiseOptionalPayments
+--- PASS: Test230DiscoveryDoesNotAdvertiseOptionalPayments (0.63s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/ocpi	25.970s
+=== RUN   TestEmulatorServesItsNetwork
+--- PASS: TestEmulatorServesItsNetwork (0.78s)
+=== RUN   TestEmulatorRunsASession
+2026/11/01 17:36:04 emulator[voltgo]: pushed START_SESSION result (POST)
+2026/11/01 17:36:04 emulator[voltgo]: pushed evse CHARGING (PATCH)
+2026/11/01 17:36:04 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:36:04 emulator[voltgo]: pushed evse AVAILABLE (PATCH)
+2026/11/01 17:36:04 emulator[voltgo]: pushed STOP_SESSION result (POST)
+2026/11/01 17:36:04 emulator[voltgo]: pushed session (PUT)
+2026/11/01 17:36:04 emulator[voltgo]: pushed cdr (POST)
+--- PASS: TestEmulatorRunsASession (0.75s)
+=== RUN   TestEmulatorOfflineAndReject
+--- PASS: TestEmulatorOfflineAndReject (0.63s)
+=== RUN   TestEmulatorPushesItsNetworkOnBoot
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-BANGKOK-WEST (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-BATU-KAWAN (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-BAYAN-LEPAS (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-BUTTERWORTH (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-GEORGE-TOWN (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-HAT-YAI (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-JURONG-EAST (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-MARINA-SOUTH (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location DEMO-WOODLANDS (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location VLT-GSR (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location VLT-PJS (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location VLT-SGB (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed location VLT-SRR (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed tariff trf_demo_voltgo_my_ac (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: pushed tariff trf_demo_voltgo_my_dc (PUT)
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_sg_ac: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_sg_ac": context canceled
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_sg_dc: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_sg_dc": context canceled
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_th_ac: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_th_ac": context canceled
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_th_dc: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_demo_voltgo_th_dc": context canceled
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_voltgo_180: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_voltgo_180": context canceled
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_voltgo_250: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_voltgo_250": context canceled
+2026/11/01 17:36:05 emulator[voltgo]: PUT /ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_voltgo_350: Put "http://127.0.0.1:58056/ocpi/emsp/2.3.0/tariffs/MY/VLT/trf_voltgo_350": context canceled
+--- PASS: TestEmulatorPushesItsNetworkOnBoot (0.76s)
+=== RUN   TestEmulatorRegistersWithChargeNet
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-BANGKOK-WEST (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-BATU-KAWAN (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-BAYAN-LEPAS (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-BUTTERWORTH (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-GEORGE-TOWN (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-HAT-YAI (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-JURONG-EAST (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-MARINA-SOUTH (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location DEMO-WOODLANDS (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location VLT-GSR (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location VLT-PJS (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location VLT-SGB (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed location VLT-SRR (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_demo_voltgo_my_ac (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_demo_voltgo_my_dc (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_demo_voltgo_sg_ac (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_demo_voltgo_sg_dc (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_demo_voltgo_th_ac (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_demo_voltgo_th_dc (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_voltgo_180 (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_voltgo_250 (PUT)
+2026/11/01 17:36:06 emulator[voltgo]: pushed tariff trf_voltgo_350 (PUT)
+--- PASS: TestEmulatorRegistersWithChargeNet (0.75s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/ocpi/emulator	3.962s
+=== RUN   TestEvidenceConcurrentDriversSameConnector
+    chapter5_evidence_test.go:94: winner session=ses_2f4027ee00fdcc0cbcace2e6 user=usr_0179247b87f71d6c4751b652 reserved=100.00
+    chapter5_evidence_test.go:100: loser user=usr_f0d9fdd3583d34f358eb79a6 sessions=0 reserved=0.00
+--- PASS: TestEvidenceConcurrentDriversSameConnector (0.90s)
+=== RUN   TestEvidenceZeroEnergyRepeatedStop
+    chapter5_evidence_test.go:137: session=ses_c640da496785d598709e5059 cdrs=1 debits=0 balance=100.00 reserved=0.00 connector=AVAILABLE
+--- PASS: TestEvidenceZeroEnergyRepeatedStop (1.07s)
+=== RUN   TestEvidenceStartFailureReleasesAccounting
+=== RUN   TestEvidenceStartFailureReleasesAccounting/CONNECTOR_UNAVAILABLE
+    chapter5_evidence_test.go:170: error=CONNECTOR_UNAVAILABLE active=0 cdrs=0 debits=0 reserved=0.00 balance=100.00
+--- PASS: TestEvidenceStartFailureReleasesAccounting/CONNECTOR_UNAVAILABLE (0.85s)
+=== RUN   TestEvidenceStartFailureReleasesAccounting/CPO_UNREACHABLE
+    chapter5_evidence_test.go:170: error=CPO_UNREACHABLE active=0 cdrs=0 debits=0 reserved=0.00 balance=100.00
+--- PASS: TestEvidenceStartFailureReleasesAccounting/CPO_UNREACHABLE (0.83s)
+--- PASS: TestEvidenceStartFailureReleasesAccounting (1.67s)
+=== RUN   TestStartChargingSettlesAtTarget
+--- PASS: TestStartChargingSettlesAtTarget (1.28s)
+=== RUN   TestWalletExhaustedStopsAndClampsSettlement
+--- PASS: TestWalletExhaustedStopsAndClampsSettlement (1.05s)
+=== RUN   TestStopSettlesExactlyOnce
+--- PASS: TestStopSettlesExactlyOnce (1.11s)
+=== RUN   TestStreamCarriesTelemetryThenCompleted
+--- PASS: TestStreamCarriesTelemetryThenCompleted (1.31s)
+=== RUN   TestSubscribeHidesAnotherDriversSession
+--- PASS: TestSubscribeHidesAnotherDriversSession (0.97s)
+=== RUN   TestStartValidationOrder
+--- PASS: TestStartValidationOrder (1.16s)
+=== RUN   TestStartRejectsSuspendedCpo
+--- PASS: TestStartRejectsSuspendedCpo (0.75s)
+=== RUN   TestRestartResumesInterruptedSession
+2026/11/01 17:36:20 sessions: resumed ses_2f0a0abb41b3a4dcb1fa0a25 on con_vlt_sgb_01 after restart
+--- PASS: TestRestartResumesInterruptedSession (1.36s)
+=== RUN   TestRestartFinishesDurableSettlementAndReleasesHold
+--- PASS: TestRestartFinishesDurableSettlementAndReleasesHold (1.07s)
+=== RUN   TestEvidenceUnknownStopPreservesUncertainty
+    stop_uncertainty_test.go:72: phase=uncertain attempt=1 session=ses_0fe284de6d65687501c63ed8 status=CHARGING cdrs=0 debits=0 debit_amount=0.00 balance=100.00 reserved=100.00 connector=CHARGING stop_error=CPO_UNREACHABLE: The operator could not confirm that charging stopped. Your session remains active; retry or wait for an update.
+    stop_uncertainty_test.go:72: phase=uncertain attempt=2 session=ses_0fe284de6d65687501c63ed8 status=CHARGING cdrs=0 debits=0 debit_amount=0.00 balance=100.00 reserved=100.00 connector=CHARGING stop_error=CPO_UNREACHABLE: The operator could not confirm that charging stopped. Your session remains active; retry or wait for an update.
+    stop_uncertainty_test.go:72: phase=uncertain attempt=3 session=ses_0fe284de6d65687501c63ed8 status=CHARGING cdrs=0 debits=0 debit_amount=0.00 balance=100.00 reserved=100.00 connector=CHARGING stop_error=CPO_UNREACHABLE: The operator could not confirm that charging stopped. Your session remains active; retry or wait for an update.
+    stop_uncertainty_test.go:132: phase=confirmed session=ses_0fe284de6d65687501c63ed8 status=COMPLETED cdr=cdr_3d72215d8e4d9179ef7bfe66 cdrs=1 debits=1 debit_amount=1.80 energy_kwh=1.000 balance=98.20 reserved=0.00 connector=AVAILABLE
+--- PASS: TestEvidenceUnknownStopPreservesUncertainty (1.18s)
+=== RUN   TestEvidenceUnknownStopAfterConfirmedSettlement
+    stop_uncertainty_test.go:165: phase=confirmed_during_command session=ses_48e07c626e568dcfb90884c6 cdr=cdr_0bd28fb16c11d6465e9afedf cdrs=1 debits=1 balance=98.20 reserved=0.00 stop_error=nil
+--- PASS: TestEvidenceUnknownStopAfterConfirmedSettlement (1.00s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/sessions	16.280s
+=== RUN   TestPowerCurveSegments
+--- PASS: TestPowerCurveSegments (0.00s)
+=== RUN   TestPowerNeverExceedsCap
+--- PASS: TestPowerNeverExceedsCap (0.00s)
+=== RUN   TestJitterStaysWithinOneAndAHalfPercent
+--- PASS: TestJitterStaysWithinOneAndAHalfPercent (0.00s)
+=== RUN   TestCapKW
+--- PASS: TestCapKW (0.00s)
+=== RUN   TestVehicleAcceptKWFallbacks
+--- PASS: TestVehicleAcceptKWFallbacks (0.00s)
+=== RUN   TestStartSoCStaysInTheDocumentedBand
+--- PASS: TestStartSoCStaysInTheDocumentedBand (0.00s)
+=== RUN   TestStepKeepsSoCEnergyAndCostConsistent
+--- PASS: TestStepKeepsSoCEnergyAndCostConsistent (0.00s)
+=== RUN   TestStepSessionDurationMatchesTheCurve
+    engine_test.go:210: the curve implies 17.5 simulated minutes for a 60 kWh / 150 kW session from 20 % to 80 % (expected range: 25â€“40)
+--- PASS: TestStepSessionDurationMatchesTheCurve (0.00s)
+=== RUN   TestStepTrimsTheTickThatReachesTheTarget
+--- PASS: TestStepTrimsTheTickThatReachesTheTarget (0.00s)
+=== RUN   TestStepAlreadyAtTarget
+--- PASS: TestStepAlreadyAtTarget (0.00s)
+=== RUN   TestStepWithoutTargetKeepsCharging
+--- PASS: TestStepWithoutTargetKeepsCharging (0.00s)
+=== RUN   TestStepRespectsAnACVehicleLimit
+--- PASS: TestStepRespectsAnACVehicleLimit (0.00s)
+=== RUN   TestStepIgnoresUnusableInput
+--- PASS: TestStepIgnoresUnusableInput (0.00s)
+=== RUN   TestRound2
+--- PASS: TestRound2 (0.00s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/simulation	1.485s
+=== RUN   TestUpgradePreservesLegacyFinancialHistory
+--- PASS: TestUpgradePreservesLegacyFinancialHistory (1.77s)
+=== RUN   TestPricingRevalidationAtStart
+=== RUN   TestPricingRevalidationAtStart/unchanged
+--- PASS: TestPricingRevalidationAtStart/unchanged (0.17s)
+=== RUN   TestPricingRevalidationAtStart/same-value-new-record
+--- PASS: TestPricingRevalidationAtStart/same-value-new-record (0.11s)
+=== RUN   TestPricingRevalidationAtStart/changed-value
+--- PASS: TestPricingRevalidationAtStart/changed-value (0.23s)
+--- PASS: TestPricingRevalidationAtStart (1.21s)
+=== RUN   TestLegacyEstimateDeadlineNoLongerBlocksStart
+--- PASS: TestLegacyEstimateDeadlineNoLongerBlocksStart (1.02s)
+=== RUN   TestRateCommittedWhileStartWaitsIsRevalidated
+--- PASS: TestRateCommittedWhileStartWaitsIsRevalidated (0.76s)
+=== RUN   TestQuoteCurrencyMatrix
+=== RUN   TestQuoteCurrencyMatrix/MYR_MY
+--- PASS: TestQuoteCurrencyMatrix/MYR_MY (0.43s)
+=== RUN   TestQuoteCurrencyMatrix/MYR_SG
+--- PASS: TestQuoteCurrencyMatrix/MYR_SG (0.59s)
+=== RUN   TestQuoteCurrencyMatrix/MYR_TH
+--- PASS: TestQuoteCurrencyMatrix/MYR_TH (0.54s)
+=== RUN   TestQuoteCurrencyMatrix/SGD_MY
+--- PASS: TestQuoteCurrencyMatrix/SGD_MY (0.36s)
+=== RUN   TestQuoteCurrencyMatrix/SGD_SG
+--- PASS: TestQuoteCurrencyMatrix/SGD_SG (0.32s)
+=== RUN   TestQuoteCurrencyMatrix/SGD_TH
+--- PASS: TestQuoteCurrencyMatrix/SGD_TH (0.25s)
+=== RUN   TestQuoteCurrencyMatrix/THB_MY
+--- PASS: TestQuoteCurrencyMatrix/THB_MY (0.23s)
+=== RUN   TestQuoteCurrencyMatrix/THB_SG
+--- PASS: TestQuoteCurrencyMatrix/THB_SG (0.24s)
+=== RUN   TestQuoteCurrencyMatrix/THB_TH
+--- PASS: TestQuoteCurrencyMatrix/THB_TH (0.26s)
+--- PASS: TestQuoteCurrencyMatrix (3.78s)
+=== RUN   TestQuoteOwnershipConsumptionAndFailure
+--- PASS: TestQuoteOwnershipConsumptionAndFailure (0.86s)
+=== RUN   TestLockedRateAndHistoricalReceipt
+--- PASS: TestLockedRateAndHistoricalReceipt (0.87s)
+=== RUN   TestStationGeographyAndSeedIdempotency
+--- PASS: TestStationGeographyAndSeedIdempotency (0.66s)
+=== RUN   TestStaleQuotesMissingRatesAndConcurrentAcceptance
+--- PASS: TestStaleQuotesMissingRatesAndConcurrentAcceptance (0.95s)
+=== RUN   TestDebitSeesHoldCommittedWhileWaitingForWalletLock
+--- PASS: TestDebitSeesHoldCommittedWhileWaitingForWalletLock (0.84s)
+=== RUN   TestTopUpWalletConcurrent
+--- PASS: TestTopUpWalletConcurrent (0.95s)
+=== RUN   TestDebitWalletTypes
+--- PASS: TestDebitWalletTypes (0.70s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/store	14.756s
+?   	github.com/chargenet/chargenet-backend/internal/testutil	[no test files]
+?   	github.com/chargenet/chargenet-backend/scripts	[no test files]

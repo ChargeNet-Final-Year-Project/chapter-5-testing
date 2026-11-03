@@ -1,0 +1,344 @@
+{
+  "session_id": "ses_e88516c9a357e636c297a68c",
+  "responses": [
+    [
+      200,
+      {
+        "quoteId": "qte_27a1e2d92d510e9d41b01fb9",
+        "originalCurrency": "THB",
+        "walletCurrency": "MYR",
+        "exchangeRate": "0.1300000000",
+        "rateSource": "chargenet-demo-v1",
+        "originalCost": 5.96,
+        "unfundedAmount": 0,
+        "reservedAmount": 83.39,
+        "tariffDecimal": "8.000000",
+        "id": "ses_e88516c9a357e636c297a68c",
+        "userId": "usr_0ad0b95d8c7280959bad1410",
+        "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+        "cpoId": "cpo_voltgo",
+        "cpoName": "VoltGo",
+        "stationId": "stn_demo_bangkok_west",
+        "stationName": "VoltGo Bangkok West",
+        "connectorId": "con_demo_bangkok_west_dc",
+        "evseUid": "TH*VLT*E*D24DC",
+        "connectorType": "CCS2",
+        "status": "COMPLETED",
+        "startTime": "2026-10-27T20:13:39.6906+08:00",
+        "endTime": "2026-10-27T20:13:42.066231+08:00",
+        "durationSeconds": 20,
+        "kwhDelivered": 0.745,
+        "currentPowerKw": 132.1,
+        "batterySoc": 35.29,
+        "targetSoc": 100,
+        "tariffPerKwh": 8,
+        "totalCost": 0.77,
+        "balanceAfter": 82.62,
+        "stopReason": "USER",
+        "cdrId": "cdr_3e1a239caacae64c1cd76c85",
+        "cdrJson": {
+          "auth_method": "COMMAND",
+          "cdr_location": {
+            "address": "Charoen Nakhon Road, Bangkok West, Thailand (simulated site)",
+            "city": "Bangkok West",
+            "connector_format": "CABLE",
+            "connector_id": "1",
+            "connector_power_type": "DC",
+            "connector_standard": "IEC_62196_T2_COMBO",
+            "coordinates": {
+              "latitude": "13.724000",
+              "longitude": "100.510000"
+            },
+            "country": "THA",
+            "evse_id": "TH*VLT*E*D24DC",
+            "evse_uid": "TH*VLT*E*D24DC",
+            "id": "DEMO-BANGKOK-WEST",
+            "name": "VoltGo Bangkok West"
+          },
+          "cdr_token": {
+            "contract_id": "usr_0ad0b95d8c7280959bad1410",
+            "country_code": "MY",
+            "party_id": "CNT",
+            "type": "APP_USER",
+            "uid": "usr_0ad0b95d8c7280959bad1410"
+          },
+          "charging_periods": [
+            {
+              "dimensions": [
+                {
+                  "type": "ENERGY",
+                  "volume": 0.745
+                },
+                {
+                  "type": "TIME",
+                  "volume": 0.0056
+                }
+              ],
+              "start_date_time": "2026-10-27T12:13:39Z"
+            }
+          ],
+          "country_code": "MY",
+          "currency": "THB",
+          "end_date_time": "2026-10-27T12:13:42Z",
+          "id": "cdr_3e1a239caacae64c1cd76c85",
+          "last_updated": "2026-10-27T12:13:42Z",
+          "party_id": "VLT",
+          "session_id": "ses_e88516c9a357e636c297a68c",
+          "start_date_time": "2026-10-27T12:13:39Z",
+          "tariffs": [
+            {
+              "country_code": "MY",
+              "currency": "THB",
+              "elements": [
+                {
+                  "price_components": [
+                    {
+                      "price": 8,
+                      "step_size": 1,
+                      "type": "ENERGY"
+                    }
+                  ]
+                }
+              ],
+              "id": "trf_demo_voltgo_th_dc",
+              "last_updated": "2026-10-27T12:13:39Z",
+              "party_id": "VLT",
+              "tax_included": "N/A"
+            }
+          ],
+          "total_cost": {
+            "before_taxes": 5.96
+          },
+          "total_energy": 0.745,
+          "total_time": 0.0056
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "quoteId": "qte_27a1e2d92d510e9d41b01fb9",
+        "originalCurrency": "THB",
+        "walletCurrency": "MYR",
+        "exchangeRate": "0.1300000000",
+        "rateSource": "chargenet-demo-v1",
+        "originalCost": 5.96,
+        "unfundedAmount": 0,
+        "reservedAmount": 83.39,
+        "tariffDecimal": "8.000000",
+        "id": "ses_e88516c9a357e636c297a68c",
+        "userId": "usr_0ad0b95d8c7280959bad1410",
+        "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+        "cpoId": "cpo_voltgo",
+        "cpoName": "VoltGo",
+        "stationId": "stn_demo_bangkok_west",
+        "stationName": "VoltGo Bangkok West",
+        "connectorId": "con_demo_bangkok_west_dc",
+        "evseUid": "TH*VLT*E*D24DC",
+        "connectorType": "CCS2",
+        "status": "COMPLETED",
+        "startTime": "2026-10-27T20:13:39.6906+08:00",
+        "endTime": "2026-10-27T20:13:42.066231+08:00",
+        "durationSeconds": 20,
+        "kwhDelivered": 0.745,
+        "currentPowerKw": 132.1,
+        "batterySoc": 35.29,
+        "targetSoc": 100,
+        "tariffPerKwh": 8,
+        "totalCost": 0.77,
+        "balanceAfter": 82.62,
+        "stopReason": "USER",
+        "cdrId": "cdr_3e1a239caacae64c1cd76c85",
+        "cdrJson": {
+          "auth_method": "COMMAND",
+          "cdr_location": {
+            "address": "Charoen Nakhon Road, Bangkok West, Thailand (simulated site)",
+            "city": "Bangkok West",
+            "connector_format": "CABLE",
+            "connector_id": "1",
+            "connector_power_type": "DC",
+            "connector_standard": "IEC_62196_T2_COMBO",
+            "coordinates": {
+              "latitude": "13.724000",
+              "longitude": "100.510000"
+            },
+            "country": "THA",
+            "evse_id": "TH*VLT*E*D24DC",
+            "evse_uid": "TH*VLT*E*D24DC",
+            "id": "DEMO-BANGKOK-WEST",
+            "name": "VoltGo Bangkok West"
+          },
+          "cdr_token": {
+            "contract_id": "usr_0ad0b95d8c7280959bad1410",
+            "country_code": "MY",
+            "party_id": "CNT",
+            "type": "APP_USER",
+            "uid": "usr_0ad0b95d8c7280959bad1410"
+          },
+          "charging_periods": [
+            {
+              "dimensions": [
+                {
+                  "type": "ENERGY",
+                  "volume": 0.745
+                },
+                {
+                  "type": "TIME",
+                  "volume": 0.0056
+                }
+              ],
+              "start_date_time": "2026-10-27T12:13:39Z"
+            }
+          ],
+          "country_code": "MY",
+          "currency": "THB",
+          "end_date_time": "2026-10-27T12:13:42Z",
+          "id": "cdr_3e1a239caacae64c1cd76c85",
+          "last_updated": "2026-10-27T12:13:42Z",
+          "party_id": "VLT",
+          "session_id": "ses_e88516c9a357e636c297a68c",
+          "start_date_time": "2026-10-27T12:13:39Z",
+          "tariffs": [
+            {
+              "country_code": "MY",
+              "currency": "THB",
+              "elements": [
+                {
+                  "price_components": [
+                    {
+                      "price": 8,
+                      "step_size": 1,
+                      "type": "ENERGY"
+                    }
+                  ]
+                }
+              ],
+              "id": "trf_demo_voltgo_th_dc",
+              "last_updated": "2026-10-27T12:13:39Z",
+              "party_id": "VLT",
+              "tax_included": "N/A"
+            }
+          ],
+          "total_cost": {
+            "before_taxes": 5.96
+          },
+          "total_energy": 0.745,
+          "total_time": 0.0056
+        }
+      }
+    ],
+    [
+      200,
+      {
+        "quoteId": "qte_27a1e2d92d510e9d41b01fb9",
+        "originalCurrency": "THB",
+        "walletCurrency": "MYR",
+        "exchangeRate": "0.1300000000",
+        "rateSource": "chargenet-demo-v1",
+        "originalCost": 5.96,
+        "unfundedAmount": 0,
+        "reservedAmount": 83.39,
+        "tariffDecimal": "8.000000",
+        "id": "ses_e88516c9a357e636c297a68c",
+        "userId": "usr_0ad0b95d8c7280959bad1410",
+        "vehicleId": "veh_4997ce7dc28eb043f0a43212",
+        "cpoId": "cpo_voltgo",
+        "cpoName": "VoltGo",
+        "stationId": "stn_demo_bangkok_west",
+        "stationName": "VoltGo Bangkok West",
+        "connectorId": "con_demo_bangkok_west_dc",
+        "evseUid": "TH*VLT*E*D24DC",
+        "connectorType": "CCS2",
+        "status": "COMPLETED",
+        "startTime": "2026-10-27T20:13:39.6906+08:00",
+        "endTime": "2026-10-27T20:13:42.066231+08:00",
+        "durationSeconds": 20,
+        "kwhDelivered": 0.745,
+        "currentPowerKw": 132.1,
+        "batterySoc": 35.29,
+        "targetSoc": 100,
+        "tariffPerKwh": 8,
+        "totalCost": 0.77,
+        "balanceAfter": 82.62,
+        "stopReason": "USER",
+        "cdrId": "cdr_3e1a239caacae64c1cd76c85",
+        "cdrJson": {
+          "auth_method": "COMMAND",
+          "cdr_location": {
+            "address": "Charoen Nakhon Road, Bangkok West, Thailand (simulated site)",
+            "city": "Bangkok West",
+            "connector_format": "CABLE",
+            "connector_id": "1",
+            "connector_power_type": "DC",
+            "connector_standard": "IEC_62196_T2_COMBO",
+            "coordinates": {
+              "latitude": "13.724000",
+              "longitude": "100.510000"
+            },
+            "country": "THA",
+            "evse_id": "TH*VLT*E*D24DC",
+            "evse_uid": "TH*VLT*E*D24DC",
+            "id": "DEMO-BANGKOK-WEST",
+            "name": "VoltGo Bangkok West"
+          },
+          "cdr_token": {
+            "contract_id": "usr_0ad0b95d8c7280959bad1410",
+            "country_code": "MY",
+            "party_id": "CNT",
+            "type": "APP_USER",
+            "uid": "usr_0ad0b95d8c7280959bad1410"
+          },
+          "charging_periods": [
+            {
+              "dimensions": [
+                {
+                  "type": "ENERGY",
+                  "volume": 0.745
+                },
+                {
+                  "type": "TIME",
+                  "volume": 0.0056
+                }
+              ],
+              "start_date_time": "2026-10-27T12:13:39Z"
+            }
+          ],
+          "country_code": "MY",
+          "currency": "THB",
+          "end_date_time": "2026-10-27T12:13:42Z",
+          "id": "cdr_3e1a239caacae64c1cd76c85",
+          "last_updated": "2026-10-27T12:13:42Z",
+          "party_id": "VLT",
+          "session_id": "ses_e88516c9a357e636c297a68c",
+          "start_date_time": "2026-10-27T12:13:39Z",
+          "tariffs": [
+            {
+              "country_code": "MY",
+              "currency": "THB",
+              "elements": [
+                {
+                  "price_components": [
+                    {
+                      "price": 8,
+                      "step_size": 1,
+                      "type": "ENERGY"
+                    }
+                  ]
+                }
+              ],
+              "id": "trf_demo_voltgo_th_dc",
+              "last_updated": "2026-10-27T12:13:39Z",
+              "party_id": "VLT",
+              "tax_included": "N/A"
+            }
+          ],
+          "total_cost": {
+            "before_taxes": 5.96
+          },
+          "total_energy": 0.745,
+          "total_time": 0.0056
+        }
+      }
+    ]
+  ]
+}

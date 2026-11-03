@@ -1,0 +1,31 @@
+{
+  "token_a_reuse_denied": true,
+  "old_operational_token_denied_after_rotation": true,
+  "unregistered": true,
+  "profile": {
+    "ocpiVersion": "2.3.0",
+    "id": "cpo_6e639f4ecf9614ee3a2ab08d",
+    "name": "Evidence Partner Two Updated",
+    "slug": "evidencepartnertwo",
+    "countryCode": "MY",
+    "partyId": "EV2",
+    "baseUrl": "http://127.0.0.1:18090",
+    "colorHex": "#123456",
+    "contactEmail": "operator-evidence2@example.test",
+    "tokenA": "[REDACTED]",
+    "tokenAUsed": true,
+    "tokenBSet": false,
+    "tokenCSet": false,
+    "tokenBLast4": "",
+    "tokenCLast4": "",
+    "handshakeStatus": "NOT_STARTED",
+    "status": "SUSPENDED",
+    "platformFeePct": 5,
+    "bankName": "",
+    "bankAccountHolder": "",
+    "bankAccountNo": "[REDACTED]",
+    "payoutCycle": "MONTHLY",
+    "createdAt": "2026-10-27T20:30:33.972792+08:00",
+    "handshakeAt": "2026-10-27T20:32:01.861573+08:00"
+  }
+}

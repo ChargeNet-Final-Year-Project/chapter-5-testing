@@ -1,0 +1,1 @@
+SELECT id,status,kwh_delivered,original_cost,exchange_rate,settlement_requested_status,settlement_requested_reason FROM charging_sessions WHERE id='ses_de2e87003bb918132db0bc5c';

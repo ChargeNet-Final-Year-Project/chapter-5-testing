@@ -1,0 +1,2 @@
+cdr_id,session_id,start,end,station,evse,kwh,minutes,tariff,gross,platform_fee,net_payout,currency
+TOTAL,,,,,,0.000,,,0.00,0.00,0.00,SGD

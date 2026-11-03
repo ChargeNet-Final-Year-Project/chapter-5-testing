@@ -1,0 +1,80 @@
+{
+  "pushed_at": "2026-10-27T20:35:16.821440+08:00",
+  "observed_at": "2026-10-27T20:35:16.908271+08:00",
+  "visibility_ms": 86.4473999972688,
+  "status": 200,
+  "reply": {
+    "data": {
+      "country": "MYS",
+      "publish": false,
+      "time_zone": "",
+      "charging_when_closed": false,
+      "country_code": "MY",
+      "party_id": "EV2",
+      "id": "EVIDENCE-01",
+      "name": "Evidence Scheduled Recovery",
+      "address": "Synthetic evidence site",
+      "city": "Kuala Lumpur",
+      "coordinates": {
+        "latitude": "3.139",
+        "longitude": "101.686"
+      },
+      "evse": [
+        {
+          "uid": "MY*EV2*E*01DC",
+          "status": "OUTOFORDER",
+          "connectors": [
+            {
+              "id": "1",
+              "standard": "IEC_62196_T2_COMBO",
+              "format": "CABLE",
+              "power_type": "DC",
+              "max_electric_power": 50000,
+              "tariff_ids": [
+                "evidence_two_price"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "status_code": 1000,
+    "status_message": "Success",
+    "timestamp": "2026-10-27T12:35:16Z"
+  },
+  "driver_api": [
+    {
+      "region": "",
+      "countryCode": "MY",
+      "isSimulated": false,
+      "id": "stn_9e7a19d07fc87aa3e29ed3a3",
+      "cpoId": "cpo_6e639f4ecf9614ee3a2ab08d",
+      "cpoName": "Evidence Partner Two Updated",
+      "cpoColorHex": "#123456",
+      "name": "Evidence Scheduled Recovery",
+      "address": "Synthetic evidence site",
+      "city": "Kuala Lumpur",
+      "latitude": 3.139,
+      "longitude": 101.686,
+      "totalBays": 1,
+      "availableBays": 0,
+      "isActive": true,
+      "distanceKm": null,
+      "connectors": [
+        {
+          "currency": "MYR",
+          "tariffId": "evidence_two_price",
+          "id": "con_86a839bffecf04cd3661c511",
+          "stationId": "stn_9e7a19d07fc87aa3e29ed3a3",
+          "evseUid": "MY*EV2*E*01DC",
+          "standard": "CCS2",
+          "format": "CABLE",
+          "powerType": "DC",
+          "maxPowerKw": 50,
+          "tariffPerKwh": 1.75,
+          "status": "INOPERATIVE"
+        }
+      ]
+    }
+  ]
+}

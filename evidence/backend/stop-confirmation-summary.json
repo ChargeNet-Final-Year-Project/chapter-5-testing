@@ -1,0 +1,13 @@
+{
+  "test_events": {
+    "pass": 2,
+    "fail": 0,
+    "skip": 0
+  },
+  "top_level_tests": {
+    "pass": 2,
+    "fail": 0,
+    "skip": 0
+  },
+  "tested_commit": "ca5052217633bb405ceb52f5e98e9b61ccd060ba"
+}

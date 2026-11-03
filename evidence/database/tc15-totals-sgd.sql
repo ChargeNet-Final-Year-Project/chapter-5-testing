@@ -1,0 +1,1 @@
+SELECT currency,count(*) AS cdrs,sum(gross_amount) AS gross,sum(platform_fee) AS fee,sum(net_payout) AS net FROM cdrs WHERE cpo_id='cpo_voltgo' AND user_id<>'usr_sandbox' AND currency='SGD' AND created_at>='2026-10-25T16:00:00Z' AND created_at<'2026-10-26T16:00:00Z' GROUP BY currency;

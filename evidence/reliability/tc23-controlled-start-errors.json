@@ -1,0 +1,54 @@
+[
+  {
+    "knob": "reject_next",
+    "status": 409,
+    "response": {
+      "error": {
+        "code": "CONNECTOR_UNAVAILABLE",
+        "message": "CONNECTOR_UNAVAILABLE: The connector is not available."
+      }
+    },
+    "walletBefore": {
+      "reserved": 0,
+      "availableBalance": 82.62,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 82.62,
+      "currency": "MYR"
+    },
+    "walletAfter": {
+      "reserved": 0,
+      "availableBalance": 82.62,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 82.62,
+      "currency": "MYR"
+    }
+  },
+  {
+    "knob": "offline",
+    "status": 502,
+    "response": {
+      "error": {
+        "code": "CPO_UNREACHABLE",
+        "message": "CPO_UNREACHABLE: POST http://localhost:18080/emulator/voltgo/ocpi/2.3.0/commands/START_SESSION: the CPO answered 503"
+      }
+    },
+    "walletBefore": {
+      "reserved": 0,
+      "availableBalance": 82.62,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 82.62,
+      "currency": "MYR"
+    },
+    "walletAfter": {
+      "reserved": 0,
+      "availableBalance": 82.62,
+      "id": "wal_20bbd19066fde17edacc6d02",
+      "userId": "usr_0ad0b95d8c7280959bad1410",
+      "balance": 82.62,
+      "currency": "MYR"
+    }
+  }
+]

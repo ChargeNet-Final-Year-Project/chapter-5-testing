@@ -1,0 +1,18 @@
+{
+  "before": {
+    "reserved": 0,
+    "availableBalance": 26.22,
+    "id": "wal_20bbd19066fde17edacc6d02",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "balance": 26.22,
+    "currency": "MYR"
+  },
+  "after": {
+    "reserved": 0,
+    "availableBalance": 126.22,
+    "id": "wal_20bbd19066fde17edacc6d02",
+    "userId": "usr_0ad0b95d8c7280959bad1410",
+    "balance": 126.22,
+    "currency": "MYR"
+  }
+}

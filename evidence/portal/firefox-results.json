@@ -1,0 +1,98 @@
+[
+  {
+    "route": "overview",
+    "requested_outer_width": 1440,
+    "metrics": {
+      "focus": "A",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-1440-overview.png",
+    "status": "Pass"
+  },
+  {
+    "route": "ledger",
+    "requested_outer_width": 1440,
+    "metrics": {
+      "focus": "A",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-1440-ledger.png",
+    "status": "Pass"
+  },
+  {
+    "route": "network",
+    "requested_outer_width": 1440,
+    "metrics": {
+      "focus": "A",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-1440-network.png",
+    "status": "Pass"
+  },
+  {
+    "route": "credentials",
+    "requested_outer_width": 1440,
+    "metrics": {
+      "focus": "A",
+      "scroll": 1440,
+      "viewport": 1440
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-1440-credentials.png",
+    "status": "Pass"
+  },
+  {
+    "route": "overview",
+    "requested_outer_width": 390,
+    "metrics": {
+      "focus": "BUTTON",
+      "scroll": 500,
+      "viewport": 500
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-390-overview.png",
+    "status": "Pass"
+  },
+  {
+    "route": "ledger",
+    "requested_outer_width": 390,
+    "metrics": {
+      "focus": "BUTTON",
+      "scroll": 500,
+      "viewport": 500
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-390-ledger.png",
+    "status": "Pass"
+  },
+  {
+    "route": "network",
+    "requested_outer_width": 390,
+    "metrics": {
+      "focus": "INPUT",
+      "scroll": 500,
+      "viewport": 500
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-390-network.png",
+    "status": "Pass"
+  },
+  {
+    "route": "credentials",
+    "requested_outer_width": 390,
+    "metrics": {
+      "focus": "BUTTON",
+      "scroll": 500,
+      "viewport": 500
+    },
+    "browser_version": "158.0.1",
+    "capture": "evidence/captures/firefox-390-credentials.png",
+    "status": "Pass"
+  }
+]

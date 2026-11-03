@@ -1,0 +1,2 @@
+id,status,kwh_delivered,original_cost,exchange_rate,settlement_requested_status,settlement_requested_reason
+ses_de2e87003bb918132db0bc5c,CHARGING,0.778,1.17,1.0000000000,COMPLETED,USER

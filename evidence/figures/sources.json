@@ -1,0 +1,257 @@
+[
+  {
+    "figure": "5.1",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.1-discovery-across-operators.png",
+    "caption": "Discovery across three simulated operators (TC05, TC06, TC09). MY, SG and TH station details were opened under the same driver.",
+    "sources": [
+      {
+        "path": "evidence/captures/android-tc05-voltgo-discovery.png",
+        "crop": null,
+        "panel": "A  VoltGo / MY"
+      },
+      {
+        "path": "evidence/captures/android-tc05-chargesync-discovery.png",
+        "crop": null,
+        "panel": "B  ChargeSync / SG"
+      },
+      {
+        "path": "evidence/captures/android-tc05-ecowatt-discovery.png",
+        "crop": null,
+        "panel": "C  EcoWatt / TH"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:37.993242+08:00"
+  },
+  {
+    "figure": "5.2",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.2-estimate-and-currency-review.png",
+    "caption": "Actual estimate views preserve the SGD/THB tariff and MYR wallet equivalent with the disclosed simulated FX (TC09, TC34). Changed-price review was verified by tests; no changed-price device capture is claimed.",
+    "sources": [
+      {
+        "path": "evidence/captures/android-tc09-chargesync-estimate.png",
+        "crop": null,
+        "panel": "A  Singapore estimate"
+      },
+      {
+        "path": "evidence/captures/android-tc09-ecowatt-estimate.png",
+        "crop": null,
+        "panel": "B  Thailand estimate"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:38.246792+08:00"
+  },
+  {
+    "figure": "5.3",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.3-charging-reconnection.png",
+    "caption": "The same Android session before complete connectivity loss, with visible uncertainty, and after restoring connectivity and selecting Retry live updates (TC30). Both Wi-Fi and mobile data were disabled for the middle capture.",
+    "sources": [
+      {
+        "path": "evidence/captures/android-tc30-before-complete-network-loss.png",
+        "crop": null,
+        "panel": "A  Confirmed readings"
+      },
+      {
+        "path": "evidence/captures/android-tc30-complete-network-loss.png",
+        "crop": null,
+        "panel": "B  Updates interrupted"
+      },
+      {
+        "path": "evidence/captures/android-tc30-complete-network-restored.png",
+        "crop": null,
+        "panel": "C  Restored readings"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:38.586208+08:00"
+  },
+  {
+    "figure": "5.4",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.4-receipt-and-wallet.png",
+    "caption": "The ChargeSync receipt and its wallet debit share CDR cdr_9ebddd7f94b0cbcec6ad4bd2 and MYR 11.04 (TC11, TC34). The wallet history was captured later; its displayed clock uses the emulator timezone.",
+    "sources": [
+      {
+        "path": "evidence/captures/android-tc11-chargesync-receipt-details.png",
+        "crop": null,
+        "panel": "A  Settled receipt"
+      },
+      {
+        "path": "evidence/captures/android-tc11-wallet-matching-chargesync.png",
+        "crop": null,
+        "panel": "B  Matching wallet debit"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:38.840766+08:00"
+  },
+  {
+    "figure": "5.5",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.5-partner-governance.png",
+    "caption": "A verified disposable partner remains pending until administrator approval; the approved state is captured separately (TC12, TC13). Panels crop genuine browser captures; originals are retained.",
+    "sources": [
+      {
+        "path": "evidence/captures/edge-tc12-verified-pending.png",
+        "crop": [
+          260,
+          60,
+          1440,
+          300
+        ],
+        "panel": "A  Verified, pending"
+      },
+      {
+        "path": "evidence/captures/edge-tc12-verified-approved.png",
+        "crop": [
+          260,
+          60,
+          1440,
+          220
+        ],
+        "panel": "B  Verified, approved"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:38.893570+08:00"
+  },
+  {
+    "figure": "5.6",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.6-operator-ledger.png",
+    "caption": "The MYR ledger for 26 October 2026 shows the selected currency and date range (TC15). Its full CSV contains 26 records across UI pages of 25 and 1; SGD and THB exports are separate artifacts.",
+    "sources": [
+      {
+        "path": "evidence/captures/edge-tc15-full-range-myr.png",
+        "crop": [
+          260,
+          0,
+          1440,
+          1000
+        ],
+        "panel": "MYR range and ledger"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:38.969575+08:00"
+  },
+  {
+    "figure": "5.7",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.7-scheduled-network-update.png",
+    "caption": "The disposable network before and after a deliberately missed location/tariff push is recovered by the normal five-minute scheduler (TC20). The measured delay was about 182.2 seconds; originals and API timestamps are preserved.",
+    "sources": [
+      {
+        "path": "evidence/captures/edge-tc20-before-scheduled-pull.png",
+        "crop": [
+          280,
+          300,
+          1440,
+          510
+        ],
+        "panel": "A  Before scheduled recovery"
+      },
+      {
+        "path": "evidence/captures/edge-tc20-after-scheduled-pull.png",
+        "crop": [
+          280,
+          300,
+          1440,
+          510
+        ],
+        "panel": "B  After scheduled recovery"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:39.015324+08:00"
+  },
+  {
+    "figure": "5.8",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.8-sandbox-trace.png",
+    "caption": "Actual sandbox request/response trace and later network observation (TC16). Acceptance and later observation are distinct; the separate raw totals check excludes sandbox revenue.",
+    "sources": [
+      {
+        "path": "evidence/captures/edge-tc16-sandbox-stop.png",
+        "crop": [
+          260,
+          0,
+          1440,
+          1000
+        ],
+        "panel": "Sandbox stop and observations"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:39.073002+08:00"
+  },
+  {
+    "figure": "5.9",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.9-single-settlement.png",
+    "caption": "Selected columns from the actual repeated-stop session query show one CDR, one debit and no held reservation (TC28, TC24). This is a readable presentation of the preserved CSV, not an application screen.",
+    "sources": [
+      {
+        "path": "evidence/captures/artifact-tc28-single-settlement.png",
+        "crop": null,
+        "panel": "Stored repeated-stop output"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-11-02T16:41:35.709980+08:00"
+  },
+  {
+    "figure": "5.10",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.10-settlement-recovery.png",
+    "caption": "Preserved durable-intent and recovered accounting data show unchanged energy/pricing and one final settlement after repeated process recovery (TC32). The fixture and restart boundary are stated in the raw records.",
+    "sources": [
+      {
+        "path": "evidence/captures/artifact-tc32-restart-recovery.png",
+        "crop": null,
+        "panel": "Durable recovery output"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-11-02T16:41:35.709980+08:00"
+  },
+  {
+    "figure": "5.11",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.11-large-text-layout.png",
+    "caption": "Actual Android profile and estimate confirmation controls at 320dp width and 200% text (TC40, TC41). Scrolling exposes the required actions; display settings were restored afterwards.",
+    "sources": [
+      {
+        "path": "evidence/captures/android-tc40-320dp-200-profile-controls.png",
+        "crop": null,
+        "panel": "A  Profile controls"
+      },
+      {
+        "path": "evidence/captures/android-tc40-320dp-200-confirmation-full-label.png",
+        "crop": null,
+        "panel": "B  Confirmation control"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-10-27T21:33:39.352242+08:00"
+  },
+  {
+    "figure": "5.12",
+    "status": "Captured",
+    "path": "evidence/figures/figure-5.12-access-denials.png",
+    "caption": "Observed direct HTTP denials at driver, portal and OCPI boundaries (TC36-TC38). The view presents sanitized preserved response data; no bearer, cookie or OCPI token is displayed.",
+    "sources": [
+      {
+        "path": "evidence/captures/artifact-ac-access-denials.png",
+        "crop": null,
+        "panel": "Observed protected-boundary responses"
+      }
+    ],
+    "presentation_only": true,
+    "created_at": "2026-11-02T16:41:35.709980+08:00"
+  }
+]

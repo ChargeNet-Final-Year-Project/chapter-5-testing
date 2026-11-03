@@ -1,0 +1,18 @@
+{
+  "status": 200,
+  "response": {
+    "data": [
+      {
+        "version": "2.3.0",
+        "url": "http://localhost:18080/ocpi/emsp/2.3.0/"
+      },
+      {
+        "version": "2.2.1",
+        "url": "http://localhost:18080/ocpi/emsp/2.2.1/"
+      }
+    ],
+    "status_code": 1000,
+    "status_message": "Success",
+    "timestamp": "2026-10-27T12:13:43Z"
+  }
+}
