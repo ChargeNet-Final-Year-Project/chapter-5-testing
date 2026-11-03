@@ -1,0 +1,41 @@
+
+2026-11-02T01:02:29.033089+08:00
+$ go test -v -count=1 -p 1 ./internal/ocpi -run TestSync|TestSuspendedPartnerLeavesDiscovery|TestGatewayStartSessionReportsTheCPOsAnswer
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/REJECTED_is_the_connector
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/NOT_SUPPORTED_is_the_partner
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/TIMEOUT_is_the_partner
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/an_unknown_result_is_the_partner
+=== RUN   TestGatewayStartSessionReportsTheCPOsAnswer/an_empty_body_is_the_partner
+--- PASS: TestGatewayStartSessionReportsTheCPOsAnswer (0.61s)
+    --- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/REJECTED_is_the_connector (0.01s)
+    --- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/NOT_SUPPORTED_is_the_partner (0.00s)
+    --- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/TIMEOUT_is_the_partner (0.00s)
+    --- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/an_unknown_result_is_the_partner (0.00s)
+    --- PASS: TestGatewayStartSessionReportsTheCPOsAnswer/an_empty_body_is_the_partner (0.00s)
+=== RUN   TestSuspendedPartnerLeavesDiscovery
+2026/11/02 01:02:33 POST /api/v1/auth/register -> 201 (118ms, 356B)
+2026/11/02 01:02:33 GET /api/v1/stations -> 200 (11ms, 38010B)
+2026/11/02 01:02:33 ocpi: cpo_test_ts5 unregistered (status=SUSPENDED)
+2026/11/02 01:02:33 DELETE /ocpi/emsp/2.3.0/credentials -> 200 (15ms, 93B)
+2026/11/02 01:02:33 GET /api/v1/stations -> 200 (6ms, 37450B)
+--- PASS: TestSuspendedPartnerLeavesDiscovery (0.68s)
+=== RUN   TestSyncOnePullsLocationsAndTariffs
+--- PASS: TestSyncOnePullsLocationsAndTariffs (0.50s)
+=== RUN   TestSyncWithoutTariffsModuleStillStoresLocations
+2026/11/02 01:02:34 ocpi: sync synctest: tariffs: CPO_UNREACHABLE: http://127.0.0.1:63545/2.3.0/tariffs: OCPI 3001: Not supported
+--- PASS: TestSyncWithoutTariffsModuleStillStoresLocations (0.57s)
+=== RUN   TestSyncOneReportsAnUnreachablePartner
+--- PASS: TestSyncOneReportsAnUnreachablePartner (0.45s)
+=== RUN   TestSyncSkipsMalformedLocation
+2026/11/02 01:02:35 ocpi: sync synctest: skipping location SYN-BAD: a location needs an address and a city
+--- PASS: TestSyncSkipsMalformedLocation (0.51s)
+=== RUN   TestSyncAllStoresEveryReachablePartner
+2026/11/02 01:02:35 ocpi: sync chargesync (cpo_chargesync): locations: CPO_UNREACHABLE: GET http://127.0.0.1:1/ocpi/2.3.0/locations: Get "http://127.0.0.1:1/ocpi/2.3.0/locations": dial tcp 127.0.0.1:1: connectex: No connection could be made because the target machine actively refused it.
+2026/11/02 01:02:35 ocpi: sync ecowatt (cpo_ecowatt): locations: CPO_UNREACHABLE: GET http://127.0.0.1:1/ocpi/2.3.0/locations: Get "http://127.0.0.1:1/ocpi/2.3.0/locations": dial tcp 127.0.0.1:1: connectex: No connection could be made because the target machine actively refused it.
+2026/11/02 01:02:35 ocpi: sync voltgo (cpo_voltgo): locations: CPO_UNREACHABLE: GET http://127.0.0.1:1/ocpi/2.3.0/locations: Get "http://127.0.0.1:1/ocpi/2.3.0/locations": dial tcp 127.0.0.1:1: connectex: No connection could be made because the target machine actively refused it.
+--- PASS: TestSyncAllStoresEveryReachablePartner (0.50s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/ocpi	4.027s
+
+exit: 0

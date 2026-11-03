@@ -1,0 +1,19 @@
+
+2026-11-02T01:02:56.560019+08:00
+$ go test -v -count=1 -p 1 ./internal/store -run TestPricingRevalidationAtStart|TestLegacyEstimateDeadlineNoLongerBlocksStart|TestStaleQuotesMissingRatesAndConcurrentAcceptance
+=== RUN   TestPricingRevalidationAtStart
+=== RUN   TestPricingRevalidationAtStart/unchanged
+=== RUN   TestPricingRevalidationAtStart/same-value-new-record
+=== RUN   TestPricingRevalidationAtStart/changed-value
+--- PASS: TestPricingRevalidationAtStart (0.82s)
+    --- PASS: TestPricingRevalidationAtStart/unchanged (0.13s)
+    --- PASS: TestPricingRevalidationAtStart/same-value-new-record (0.08s)
+    --- PASS: TestPricingRevalidationAtStart/changed-value (0.11s)
+=== RUN   TestLegacyEstimateDeadlineNoLongerBlocksStart
+--- PASS: TestLegacyEstimateDeadlineNoLongerBlocksStart (0.62s)
+=== RUN   TestStaleQuotesMissingRatesAndConcurrentAcceptance
+--- PASS: TestStaleQuotesMissingRatesAndConcurrentAcceptance (0.65s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/store	2.299s
+
+exit: 0

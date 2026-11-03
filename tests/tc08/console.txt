@@ -1,0 +1,217 @@
+Fresh application capture; actual execution clock; no historical execution claim.
+
+2026-11-02T00:51:01.797259+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:01 GMT
+
+Content-Length: 368
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ","user":{"id":"usr_695e6d7ffec0d1aba4059d91","name":"Chapter Five Driver","email":"ch5-bf4094b18e@example.test","createdAt":"2026-11-02T16:51:01.7735445Z"}}
+
+curl exit: 0
+
+2026-11-02T00:51:01.863151+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:01 GMT
+
+Content-Length: 141
+
+
+
+{"reserved":0,"availableBalance":0,"id":"wal_c2b0bd27f22524064ccafc96","userId":"usr_695e6d7ffec0d1aba4059d91","balance":0,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T00:51:01.939181+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:01 GMT
+
+Content-Length: 3
+
+
+
+[]
+
+curl exit: 0
+
+2026-11-02T00:51:02.831266+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" -H "Idempotency-Key: 2ee0b0694bc648f9963c5df45521b83b" --data-binary @input-004.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:02 GMT
+
+Content-Length: 155
+
+
+
+{"id": "wal_c2b0bd27f22524064ccafc96", "userId": "usr_695e6d7ffec0d1aba4059d91", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T00:51:02.894539+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" -H "Idempotency-Key: 2ee0b0694bc648f9963c5df45521b83b" --data-binary @input-005.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Idempotent-Replay: true
+
+Date: Mon, 02 Nov 2026 16:51:02 GMT
+
+Content-Length: 155
+
+
+
+{"id": "wal_c2b0bd27f22524064ccafc96", "userId": "usr_695e6d7ffec0d1aba4059d91", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T00:51:02.964364+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" --data-binary @input-006.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 400 Bad Request
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:02 GMT
+
+Content-Length: 174
+
+
+
+{"error":{"code":"VALIDATION_ERROR","message":"Please fix the highlighted fields.","fields":{"amount":"Top-up amount must be between 5 and 2,000 in your wallet currency."}}}
+
+curl exit: 0
+
+2026-11-02T00:51:03.030535+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" --data-binary @input-007.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 400 Bad Request
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:03 GMT
+
+Content-Length: 91
+
+
+
+{"error":{"code":"INVALID_PAYMENT_METHOD","message":"Choose a supported payment method."}}
+
+curl exit: 0
+
+2026-11-02T00:51:03.065656+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:03 GMT
+
+Content-Length: 145
+
+
+
+{"reserved":0,"availableBalance":100,"id":"wal_c2b0bd27f22524064ccafc96","userId":"usr_695e6d7ffec0d1aba4059d91","balance":100,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T00:51:03.103379+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:51:03 GMT
+
+Content-Length: 283
+
+
+
+[{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_767df29638e038cc1cf51244","walletId":"wal_c2b0bd27f22524064ccafc96","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934262","status":"SUCCESS","createdAt":"2026-11-02T00:51:02.80356+08:00"}]
+
+curl exit: 0

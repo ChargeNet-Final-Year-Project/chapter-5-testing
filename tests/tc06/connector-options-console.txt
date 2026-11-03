@@ -1,0 +1,4 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 1565
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > connector-options.png (unaltered PNG; 202465 bytes)

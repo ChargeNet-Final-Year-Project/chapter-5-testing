@@ -1,0 +1,1411 @@
+
+2026-11-02T00:54:08.812844+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\operator-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/admin/api/register
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV84OTgzZjc1ZWEzYzVjZTVkZjRjYzk2NjAiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3NzY0OCwiaWF0IjoxNzk0OTM0NDQ4LCJyb2xlIjoiQ1BPIiwiY3BvSWQiOiJjcG9fZWY1YWM4YTM5MjM1NWJlYjZmYTFmMGI4In0.5Mo9D81iUE1U3V1e1ba6-4O-69TnawYY7hoJC8dxZAg; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 16:54:08 GMT
+
+Content-Length: 804
+
+
+
+{"cpo":{"ocpiVersion":"2.3.0","id":"cpo_ef5ac8a392355beb6fa1f0b8","name":"Controlled tc20","slug":"controlledtc20","countryCode":"MY","partyId":"X20","baseUrl":"","colorHex":"#6B7280","contactEmail":"tc20-cbeef634@example.test","tokenA":"1b3a1a033c8b7246641e886a87a6696fa95ea45f2fb73717eac30a7253f3cc5c","tokenAUsed":false,"tokenBSet":false,"tokenCSet":false,"tokenBLast4":"","tokenCLast4":"","handshakeStatus":"NOT_STARTED","status":"PENDING","platformFeePct":5,"bankName":"Synthetic Bank","bankAccountHolder":"Test Operator","bankAccountNo":"1234567890","payoutCycle":"MONTHLY","createdAt":"2026-11-02T00:54:08.736051+08:00","handshakeAt":null},"user":{"id":"pu_8983f75ea3c5ce5df4cc9660","name":"Test Operator","email":"tc20-cbeef634@example.test","role":"CPO","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8"}}
+
+curl exit: 0
+
+2026-11-02T00:54:08.953308+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\exchange-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\exchange-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token MWIzYTFhMDMzYzhiNzI0NjY0MWU4ODZhODdhNjY5NmZhOTVlYTQ1ZjJmYjczNzE3ZWFjMzBhNzI1M2YzY2M1Yw==" --data-binary @input-002.json http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:08 GMT
+
+Content-Length: 320
+
+
+
+{"data":{"token":"a02c4d39498395eb3a7adb64b619ba62716462713ca9208f9e1c47796c3e7d71","url":"http://localhost:18080/ocpi/emsp/versions","roles":[{"role":"EMSP","business_details":{"name":"ChargeNet"},"party_id":"CNT","country_code":"MY"}]},"status_code":1000,"status_message":"Success","timestamp":"2026-11-02T16:54:08Z"}
+
+curl exit: 0
+SOURCE GET /versions -> {"status_code": 1000, "data": [{"version": "2.3.0", "url": "http://127.0.0.1:18090/2.3.0"}], "timestamp": "2026-11-02T16:54:09.068136+00:00"}
+SOURCE GET /2.3.0/ -> {"status_code": 1000, "data": {"version": "2.3.0", "endpoints": [{"identifier": "locations", "role": "SENDER", "url": "http://127.0.0.1:18090/2.3.0/locations"}, {"identifier": "tariffs", "role": "SENDER", "url": "http://127.0.0.1:18090/2.3.0/tariffs"}, {"identifier": "commands", "role": "RECEIVER", "url": "http://127.0.0.1:18090/2.3.0/commands"}, {"identifier": "credentials", "role": "RECEIVER", "url": "http://127.0.0.1:18090/2.3.0/credentials"}]}, "timestamp": "2026-11-02T16:54:09.084775+00:00"}
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "LOCAL01", "name": "Controlled Chapter Five Station", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X20*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X20"]}]}]}], "timestamp": "2026-11-02T16:54:09.099618+00:00"}
+SOURCE GET /2.3.0/tariffs -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "price-X20", "currency": "MYR", "elements": [{"price_components": [{"type": "ENERGY", "price": 1.25, "step_size": 1}]}]}], "timestamp": "2026-11-02T16:54:09.140376+00:00"}
+SOURCE GET /2.3.0/commands -> {"status_code": 1000, "data": [], "timestamp": "2026-11-02T16:54:09.186207+00:00"}
+
+2026-11-02T00:54:09.209264+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo/handshake-test
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:09 GMT
+
+Content-Length: 715
+
+
+
+{"status":"VERIFIED","steps":[{"step":1,"label":"Credentials registered","status":"PASS","detail":"Token B and Token C are registered.","durationMs":0},{"step":2,"label":"GET versions","status":"PASS","detail":"The CPO serves OCPI 2.3.0.","durationMs":17},{"step":3,"label":"GET version details","status":"PASS","detail":"4 endpoints, including locations and commands.","durationMs":17},{"step":4,"label":"GET locations","status":"PASS","detail":"1 locations, 1 EVSEs; 1 stored.","durationMs":34},{"step":5,"label":"GET tariffs","status":"PASS","detail":"1 tariffs stored.","durationMs":52},{"step":6,"label":"Commands endpoint reachable","status":"PASS","detail":"The commands endpoint answers.","durationMs":6}]}
+
+curl exit: 0
+
+2026-11-02T00:54:09.427695+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-004.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9lZDZlNGY1ODNkN2NjNGQ4NDI2MTExYjkiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3NzY0OSwiaWF0IjoxNzk0OTM0NDQ5LCJyb2xlIjoiU1VQRVJfQURNSU4ifQ.COetHnIHS7je4zcFsPMYR1-jwh8dHM1ooD7PfAJT3QM; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 16:54:09 GMT
+
+Content-Length: 112
+
+
+
+{"id":"pu_ed6e4f583d7cc4d8426111b9","name":"ChargeNet Admin","email":"admin@chargenet.my","role":"SUPER_ADMIN"}
+
+curl exit: 0
+
+2026-11-02T00:54:09.614109+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-005.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:09 GMT
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T00:54:09.753691+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-006.json http://localhost:18080/admin/api/admin/cpos/cpo_ef5ac8a392355beb6fa1f0b8/status
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:09 GMT
+
+Content-Length: 78
+
+
+
+{"id":"cpo_ef5ac8a392355beb6fa1f0b8","platformFeePct":null,"status":"ACTIVE"}
+
+curl exit: 0
+
+2026-11-02T00:54:09.835367+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:09 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Change SOURCE ONLY; no receiver push and no direct synchronization call. Scheduler remains 300 seconds.
+
+2026-11-02T00:54:09.882340+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:09 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 0.04499039999791421
+
+2026-11-02T00:54:14.938741+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:14 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 5.101657899998827
+
+2026-11-02T00:54:19.998780+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:19 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 10.161581299995305
+
+2026-11-02T00:54:25.108011+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:25 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 15.273753800007398
+
+2026-11-02T00:54:30.218204+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:30 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 20.381129600005806
+
+2026-11-02T00:54:35.278256+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:35 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 25.44101260000025
+
+2026-11-02T00:54:40.345511+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:40 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 30.50793700000213
+
+2026-11-02T00:54:45.395201+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:45 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 35.55850009999995
+
+2026-11-02T00:54:50.488829+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:50 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 40.65176320000319
+
+2026-11-02T00:54:55.551492+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:54:55 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 45.71410569999716
+
+2026-11-02T00:55:00.604605+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:00 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 50.7675018000009
+
+2026-11-02T00:55:05.673618+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:05 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 55.83627899999556
+
+2026-11-02T00:55:10.839227+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:10 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 61.00210369999695
+
+2026-11-02T00:55:16.008812+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:15 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 66.1714098000084
+
+2026-11-02T00:55:21.059522+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:21 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 71.22405849999632
+
+2026-11-02T00:55:26.118906+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:26 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 76.2816032999981
+
+2026-11-02T00:55:31.159776+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:31 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 81.32250290000229
+
+2026-11-02T00:55:36.201129+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:36 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 86.36382179999782
+
+2026-11-02T00:55:58.084518+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:55:41 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 108.24869670000044
+
+2026-11-02T00:56:03.124052+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:03 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 113.28635730000678
+
+2026-11-02T00:56:08.173899+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:08 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 118.33630609999818
+
+2026-11-02T00:56:17.860792+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:13 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 128.02318709999963
+
+2026-11-02T00:56:30.434369+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:22 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 140.59729649999645
+
+2026-11-02T00:56:45.986257+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:35 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 156.15011139999842
+
+2026-11-02T00:56:51.030528+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:51 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 161.19310020000557
+
+2026-11-02T00:56:56.110413+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:56:56 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 166.2731696999981
+
+2026-11-02T00:57:01.168988+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:01 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 171.33126910000283
+
+2026-11-02T00:57:06.327782+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:06 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 176.49020080000628
+
+2026-11-02T00:57:11.365193+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:11 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 181.52790899999673
+
+2026-11-02T00:57:16.418499+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:16 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 186.5811870000034
+
+2026-11-02T00:57:21.788534+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:21 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 191.95086779999838
+
+2026-11-02T00:57:26.837695+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:26 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 197.0009132999985
+
+2026-11-02T00:57:31.878644+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:31 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 202.04117250000127
+
+2026-11-02T00:57:36.971135+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:36 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 207.13511070000823
+
+2026-11-02T00:57:42.018843+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:42 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 212.18185480000102
+
+2026-11-02T00:57:47.071341+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:47 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 217.2343375000055
+
+2026-11-02T00:57:52.117318+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:52 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 222.27976990000752
+
+2026-11-02T00:57:57.166850+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:57:57 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 227.3293229999981
+
+2026-11-02T00:58:02.206908+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:02 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 232.36957650000113
+
+2026-11-02T00:58:07.248406+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:07 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 237.41087039999547
+
+2026-11-02T00:58:12.287019+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:12 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 242.44961880000483
+
+2026-11-02T00:58:17.329301+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:17 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 247.492035999996
+
+2026-11-02T00:58:22.377568+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:22 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 252.54056360000686
+
+2026-11-02T00:58:27.417706+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:27 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 257.58025830000406
+
+2026-11-02T00:58:32.454511+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:32 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 262.61682180000935
+
+2026-11-02T00:58:37.496783+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:37 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 267.6596045000042
+
+2026-11-02T00:58:42.537064+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:42 GMT
+
+Content-Length: 651
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 272.69955570000457
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "LOCAL01", "name": "Recovered Without Push", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X20*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X20"]}]}]}], "timestamp": "2026-11-02T16:58:43.196815+00:00"}
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "LOCAL01", "name": "Recovered Without Push", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X20*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X20"]}]}]}], "timestamp": "2026-11-02T16:58:43.215825+00:00"}
+SOURCE GET /2.3.0/tariffs -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "price-X20", "currency": "MYR", "elements": [{"price_components": [{"type": "ENERGY", "price": 1.75, "step_size": 1}]}]}], "timestamp": "2026-11-02T16:58:43.233750+00:00"}
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "LOCAL01", "name": "Recovered Without Push", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X20*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X20"]}]}]}], "timestamp": "2026-11-02T16:58:43.238123+00:00"}
+SOURCE GET /2.3.0/tariffs -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "price-X20", "currency": "MYR", "elements": [{"price_components": [{"type": "ENERGY", "price": 1.75, "step_size": 1}]}]}], "timestamp": "2026-11-02T16:58:43.253525+00:00"}
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "LOCAL01", "name": "Recovered Without Push", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X20*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X20"]}]}]}], "timestamp": "2026-11-02T16:58:43.265440+00:00"}
+SOURCE GET /2.3.0/tariffs -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "price-X20", "currency": "MYR", "elements": [{"price_components": [{"type": "ENERGY", "price": 1.75, "step_size": 1}]}]}], "timestamp": "2026-11-02T16:58:43.282265+00:00"}
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "LOCAL01", "name": "Recovered Without Push", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X20*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X20"]}]}]}], "timestamp": "2026-11-02T16:58:43.718493+00:00"}
+SOURCE GET /2.3.0/tariffs -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X20", "id": "price-X20", "currency": "MYR", "elements": [{"price_components": [{"type": "ENERGY", "price": 1.75, "step_size": 1}]}]}], "timestamp": "2026-11-02T16:58:43.736789+00:00"}
+
+2026-11-02T00:58:47.580418+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA4NDksImlhdCI6MTc5NDkzNDQ0OX0.j13NWApMopPR4NihRRJFxXo3y0p53hr0V2H1hYw_EU4" http://localhost:18080/api/v1/stations?cpoId=cpo_ef5ac8a392355beb6fa1f0b8
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:47 GMT
+
+Content-Length: 642
+
+
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","cpoId":"cpo_ef5ac8a392355beb6fa1f0b8","cpoName":"Controlled tc20","cpoColorHex":"#6B7280","name":"Recovered Without Push","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.75,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+Elapsed seconds: 277.74278260000574
+
+2026-11-02T00:58:47.647958+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc20\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/network
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:58:47 GMT
+
+Content-Length: 602
+
+
+
+{"stations":[{"countryCode":"MY","isSimulated":false,"id":"stn_8230beeb39a0ef6d9285e5e1","name":"Recovered Without Push","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"connectors":[{"currency":"MYR","tariffId":"price-X20","id":"con_0afee118d7782d2ee1eb7157","stationId":"stn_8230beeb39a0ef6d9285e5e1","evseUid":"MY*X20*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.75,"status":"AVAILABLE"}]}],"counts":{"available":1,"charging":0,"blocked":0,"inoperative":0},"sessionsToday":0}
+
+curl exit: 0

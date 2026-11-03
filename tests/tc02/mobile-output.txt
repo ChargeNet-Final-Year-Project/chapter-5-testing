@@ -1,0 +1,382 @@
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: telemetry formatters formatClock renders the simulated duration as a clock
+00:00 +1: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: telemetry formatters formatPercent rounds, and reads "unknown" for null
+00:00 +2: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: stop reasons every reason the backend can send has words
+00:00 +3: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: stop reasons an unknown code degrades instead of leaking a backend enum
+00:00 +4: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor lays out the charger, battery progress and labelled readings
+00:02 +5: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor mirrors the session into the shared notifier
+00:02 +6: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor three telemetry frames move the %, kW and kWh
+00:03 +7: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a just-started session reads "unknown", never zero
+00:03 +8: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor completion dismisses only its own pending confirmation before the receipt
+00:04 +9: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a terminal frame ends the session and shows the receipt
+00:04 +10: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor the finish presenter receives the terminal session
+00:04 +11: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor sliding to stop asks the backend and blocks the screen
+00:04 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a rejected stop re-arms the slide and explains why
+00:05 +13: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a dropped stream and missing session never fabricate completion
+00:05 +14: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor stream exhaustion retains the active session without a receipt
+00:05 +15: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor coming back to the foreground re-opens the stream
+00:05 +16: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart
+00:08 +16: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: the shared cost and date rules energyCost rounds the way the backend rounds
+00:08 +17: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: the shared cost and date rules formatDayMonth matches the wallet ledger
+00:08 +18: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: the shared cost and date rules cpoAccentColor finds the brand colour and falls back
+00:08 +19: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth labelFor names the month and the year
+00:08 +20: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth group buckets a newest-first list into consecutive months
+00:08 +21: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth group parks an undated row under "Earlier"
+00:08 +22: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth flatten puts a divider in front of every month
+00:08 +23: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth flatten of an empty archive is empty
+00:08 +24: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile dateLabel and detailLabel summarise a row
+00:08 +25: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile a row the backend never dated still reads
+00:08 +26: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile costLabel prefers the priced total over the estimate
+00:08 +27: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile isFailed flags only a failed session
+00:08 +28: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard quotes the live numbers, and the estimate behind the cost
+00:08 +29: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard a priced session reports the backend total
+00:08 +30: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard missing readings read as unknown, never as zero
+00:08 +31: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard socLabel names the target and socFraction stays inside the bar
+00:08 +32: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing offers a way back to the map when nothing is running
+00:10 +33: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing follows the telemetry notifier while a session runs
+00:10 +34: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing hands the session to the live monitor
+00:10 +35: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing paints the card in the CPO brand colour
+00:11 +36: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History lists finished sessions newest first, grouped by month
+00:11 +37: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History tapping a row opens its digital receipt
+00:11 +38: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History flags a failed session in the row
+00:12 +39: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History pull-to-refresh reloads the tab
+00:12 +40: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History shows an empty state before the first charge
+00:12 +41: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History appends the next page at the end, then stops asking
+00:13 +42: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/api_service_test.dart
+00:17 +42: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/api_service_test.dart: login posts the credentials and decodes the session
+00:17 +43: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/api_service_test.dart: an error envelope becomes an ApiException with its codes
+00:17 +44: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/api_service_test.dart: an authenticated call carries the bearer token
+00:17 +45: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/auth_test.dart
+00:20 +45: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/auth_test.dart: login reports an empty email and password
+00:22 +46: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/auth_test.dart: login rejects a malformed email
+00:22 +47: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/auth_test.dart: the debug demo shortcut prefills the demo account
+00:22 +48: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/auth_test.dart: register rejects a mismatched confirmation
+00:23 +49: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart
+00:26 +49: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: activation capabilities the camera scanner only exists on Android and iOS
+00:26 +50: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: activation capabilities the seeded EVSE shortcut is offered where the camera cannot run
+00:26 +51: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: pre-charge rules the wallet must hold the RM 10 minimum
+00:26 +52: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: pre-charge rules start needs an available connector and enough balance
+00:26 +53: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: pre-charge rules blocker explains a busy connector and a thin wallet
+00:26 +54: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: pre-charge rules estimates energy, time and cost from the charging formula
+00:26 +55: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: pre-charge rules start failures are translated for the driver
+00:26 +56: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel a preselected EVSE goes straight to the confirm panel
+00:28 +57: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel estimates the session for the chosen vehicle and target
+00:28 +58: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel without a vehicle the default energy assumption is disclosed
+00:28 +59: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel a thin wallet disables the slide and offers a top-up
+00:28 +60: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel a busy connector disables the slide
+00:28 +61: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel a full slide starts the session and opens the monitor
+00:29 +62: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel changed pricing requires confirmation again and never starts automatically
+00:30 +63: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: confirm panel an already-running session offers the monitor instead
+00:30 +64: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: manual entry opens on manual entry when no EVSE is preselected
+00:30 +65: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: manual entry normalises the typed code before looking it up
+00:31 +66: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: manual entry refuses input that is not a ChargeNet code
+00:31 +67: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: manual entry an unknown EVSE leaves the code in the field with a reason
+00:31 +68: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charger_activation_test.dart: manual entry the debug shortcut fills in the seeded EVSE
+00:31 +69: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_mini_bar_test.dart
+00:32 +69: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_mini_bar_test.dart: telemetryLabel joins the battery level and the power
+00:32 +70: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_mini_bar_test.dart: telemetryLabel survives a session whose readings are not in yet
+00:32 +71: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_mini_bar_test.dart: shows the live numbers and taps through to the monitor
+00:34 +72: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart
+00:35 +72: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt formatters formatDuration renders the backend seconds as a clock
+00:35 +73: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt formatters the monitor row and the receipt row read the same clock
+00:35 +74: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt formatters formatDateTime writes a local date and time
+00:35 +75: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows prints one row per itemised line in display order
+00:35 +76: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows the paid figure is the wallet's CHARGING_DEBIT row
+00:35 +77: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows an unpriced settlement keeps paid money unknown
+00:35 +78: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows a very small session prices out at RM 0.00, not unknown
+00:35 +79: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows the two optional rows only appear when there is something to say
+00:35 +80: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows plainText carries every row and never the platform fee
+00:35 +81: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt renders the header, the detail rows and both actions
+00:37 +82: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt reads as a failure when the session failed
+00:37 +83: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt stays paper-light over the dark monitor
+00:37 +84: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt a tiny session on a small phone scrolls instead of clipping
+00:37 +85: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt Done dismisses the sheet
+00:37 +86: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt Copy receipt puts the plain text on the clipboard
+00:38 +87: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart
+00:39 +87: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget renders the standard, rating, tariff and a live badge
+00:40 +88: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget enables Start charging when AVAILABLE and reports the tap
+00:40 +89: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget disables Start charging while the connector is CHARGING
+00:40 +90: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget disables Start charging when the connector is INOPERATIVE
+00:40 +91: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget maps known standards onto their display names
+00:40 +92: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget falls back to the raw value for an unknown standard
+00:40 +93: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/connector_tile_test.dart: ConnectorTileWidget title-cases statuses and tolerates an empty one
+00:40 +94: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart
+00:41 +94: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart: new search wins reversed completion and superseded errors
+00:41 +95: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart: refresh updates selected connectors, dismisses missing selection, hides fallback distance
+00:41 +96: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart: clearing filters cancels a pending search debounce
+00:43 +97: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart
+00:44 +97: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart: EvseCodeParser accepts a bare uid, trimming and upper-casing it
+00:44 +98: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart: EvseCodeParser reads the ChargeNet deep link
+00:44 +99: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart: EvseCodeParser reads an /evse/<uid> path out of an https link
+00:44 +100: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart: EvseCodeParser rejects links that do not point at an EVSE
+00:44 +101: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart: EvseCodeParser rejects empty, malformed and clearly not-a-code input
+00:44 +102: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/evse_code_parser_test.dart: EvseCodeParser isValidUid mirrors what parse returns
+00:44 +103: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/home_search_selection_test.dart
+00:47 +103: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/home_search_selection_test.dart: selecting a search result dismisses search and retains station selection
+  [1m[flutter_map][0m
+    We want to help keep OpenStreetMap available for everyone. Our examples
+    and demo app use the public tile servers, but they are NOT free to use by
+    everyone! Please review whether the OpenStreetMap tile servers are suitable
+    for your project.
+    See:
+      * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+      * https://docs.fleaflet.dev/osm-warn for more information about this warning
+00:51 +104: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart
+00:52 +104: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: scanner feedback and torch remain reachable at 1.0 text
+00:53 +105: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: scanner feedback and torch remain reachable at 2.0 text
+00:53 +106: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: semantic and keyboard activation require a second deliberate confirmation
+00:54 +107: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: interrupted drag resets without submitting
+00:54 +108: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: disabling the action while confirmation is open prevents submission
+00:54 +109: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: first-load failures hide default balances and retry independently
+00:54 +110: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: onboarding exposes the current step to assistive technology
+00:54 +111: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: operator swatches retain identity with contrasting foregrounds
+00:54 +112: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart
+00:55 +112: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: (setUpAll)
+00:55 +112: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(320.0, 640.0) / 1.0
+00:57 +113: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(320.0, 640.0) / 1.0
+00:58 +114: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(320.0, 640.0) / 1.0
+00:58 +115: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(320.0, 640.0) / 2.0
+00:58 +116: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(320.0, 640.0) / 2.0
+00:58 +117: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(320.0, 640.0) / 2.0
+00:58 +118: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(640.0, 320.0) / 1.0
+00:58 +119: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(640.0, 320.0) / 1.0
+00:59 +120: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(640.0, 320.0) / 1.0
+00:59 +121: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(640.0, 320.0) / 2.0
+00:59 +122: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(640.0, 320.0) / 2.0
+00:59 +123: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(640.0, 320.0) / 2.0
+00:59 +124: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: (tearDownAll)
+00:59 +124: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/load_state_service_test.dart
+01:00 +124: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/load_state_service_test.dart: a failed wallet does not turn successful empty slices into failures
+01:00 +125: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/load_state_service_test.dart: zero becomes valid after success and remains labelled stale after failure
+01:00 +126: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/load_state_service_test.dart: settlement refresh includes the transaction ledger
+01:00 +127: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/load_state_service_test.dart: account cleanup rejects an old successful wallet response
+01:00 +128: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart
+01:01 +128: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) AppUser
+01:01 +129: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) CpoPartner
+01:01 +130: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) Connector
+01:01 +131: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) Station with connectors
+01:01 +132: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) Station sent without a computed distance
+01:01 +133: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) Wallet
+01:01 +134: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) WalletTransaction
+01:01 +135: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: model round-trips (fromJson → toJson is the identity) Vehicle
+01:01 +136: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: ChargingSession completed session with an object cdrJson
+01:01 +137: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: ChargingSession running session keeps every optional field null
+01:01 +138: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: ChargingSession a vehicle-less session parses vehicleId as null
+01:01 +139: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: EvConnectorType fromApi maps every canonical value
+01:01 +140: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: EvConnectorType fromApi tolerates case and surrounding whitespace
+01:01 +141: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: EvConnectorType apiValue round-trips through fromApi
+01:01 +142: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: EvConnectorType fromApi throws for an unknown standard
+01:01 +143: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: EvConnectorType display names are unchanged
+01:01 +144: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: KConstants exposes the API contract defaults
+01:01 +145: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/models_test.dart: KConstants apiBaseUrl is always an absolute http URL
+01:01 +146: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart
+01:02 +146: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: quote confirmation glyphs fit the track at 200% text
+01:04 +147: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: new OCPI-style charging identifiers survive discovery and QR entry
+01:04 +148: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: currency formatting identifies all three denominations
+01:04 +149: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: quote is readable at 320dp / 1.0 text
+01:04 +150: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: quote is readable at 320dp / 2.0 text
+01:04 +151: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: failed estimate can be retried
+01:04 +152: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: receipt preserves original amount and wallet deduction
+01:04 +153: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/multi_currency_test.dart: clusters respect distance and zoom without merging countries
+01:04 +154: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart
+01:05 +154: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen stacks user, wallet, vehicles and sign out
+01:07 +155: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen keeps saved vehicles without a roaming catalogue on Profile
+01:07 +156: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen shows the empty garage call to action without a vehicle
+01:07 +157: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen keeps the wallet card visible while partners load
+01:07 +158: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart
+01:08 +158: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: terminal snapshot settles once despite stop and late-frame races
+01:08 +159: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: 404 reconciliation retains uncertainty and retry can confirm failure
+01:08 +160: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: replacement and account reset ignore old stream and reconciliation
+01:08 +161: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: minimising preserves one owner; reopening uses fresh telemetry
+01:10 +162: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: a nonterminal stop response cannot authorize a receipt
+01:10 +163: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 1.0
+01:11 +164: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 2.0
+01:11 +165: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 1.0
+01:11 +166: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 2.0
+01:11 +167: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: late reconciliation cannot overwrite a newer live snapshot
+01:11 +168: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart
+01:12 +168: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents emits each telemetry frame, then completed, then closes
+01:12 +169: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents reassembles frames split across many byte chunks
+01:12 +170: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents accepts CRLF line endings
+01:12 +171: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents ignores comments, unknown events and bad payloads
+01:12 +172: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents emits a final frame that arrived without its blank line
+01:12 +173: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents a comment-only stream closes without emitting
+01:12 +174: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: watchdogSseBytes a silent connection fails with a TimeoutException, after its frames
+01:12 +175: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: watchdogSseBytes keepalive traffic keeps the watchdog from firing
+01:13 +176: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: watchdogSseBytes the default window outlasts the backend keepalive
+01:13 +177: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: isSessionTerminal only COMPLETED and FAILED are terminal
+01:13 +178: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart
+01:14 +178: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm geometry the thumb travels the track minus its own width
+01:14 +179: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm geometry arms only past 90 % of the travel
+01:14 +180: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget runs the action once on a full swipe
+01:15 +181: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget springs back without firing on a short drag
+01:15 +182: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget does nothing while disabled
+01:15 +183: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget shows a spinner and ignores drags while loading
+01:15 +184: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget renders the blocker hint under the track
+01:15 +185: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart
+01:16 +185: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: changing country clears its region and retains other filters
+01:16 +186: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: API sends geographic and power constraints in one request
+01:16 +187: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 1.0
+01:19 +188: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 2.0
+01:20 +189: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 1.0
+01:20 +190: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 2.0
+01:20 +191: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: country change clears region and Apply returns the combined draft
+01:21 +192: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: Reset is a draft and dismissal cancels all changes
+01:22 +193: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart
+01:23 +193: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: colorFromHex parses the 6-digit brand tokens served by the API
+01:23 +194: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: colorFromHex honours an explicit alpha channel
+01:23 +195: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: colorFromHex expands 3-digit shorthand
+01:23 +196: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: colorFromHex falls back instead of throwing on malformed input
+01:23 +197: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget.ringColorFor green while at least one bay is free
+01:23 +198: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget.ringColorFor amber when the station is live but full
+01:23 +199: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget.ringColorFor grey when the station is inactive
+01:23 +200: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget.ringColorFor grey when every connector reports INOPERATIVE
+01:23 +201: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget.ringColorFor amber, not grey, when full but the connectors are merely busy
+01:23 +202: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget.ringColorFor falls back to the bay count when connector rows are absent
+01:23 +203: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget paints the CPO brand colour and a green ring when free
+01:24 +204: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget shows the grey ring and a 0/total chip when inactive
+01:24 +205: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget reports taps so the map can select the station
+01:24 +206: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_marker_test.dart: StationMarkerWidget an unusable brand colour degrades to the fallback
+01:24 +207: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart
+01:25 +207: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet amount rules offers the four preset amounts
+01:25 +208: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet amount rules accepts 5–2000 and rejects everything else
+01:25 +209: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet amount rules labels the pay button with the amount, or plain Pay
+01:25 +210: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet amount rules accepts at most two decimals in the field
+01:25 +211: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet amount rules the keystroke formatter keeps the last valid text
+01:25 +212: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet widget starts with Pay disabled and no amount
+01:27 +213: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet widget disables Pay for an amount below RM 5
+01:27 +214: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet widget enables Pay and updates the label for a custom amount
+01:28 +215: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet widget a preset fills the field and relabels the button
+01:28 +216: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/topup_sheet_test.dart: TopUpSheet widget offers the three simulated gateways with icons
+01:28 +217: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart
+01:29 +217: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget labels prefixes a top-up with + and a charge with −
+01:29 +218: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget labels colours credits green and charges red
+01:29 +219: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget labels names the gateway for a top-up and the session for a debit
+01:30 +220: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget labels picks a distinct icon per type
+01:30 +221: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget labels formats the local date as dd MMM, h:mm a
+01:30 +222: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget widget renders a credit row
+01:31 +223: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/transaction_tile_test.dart: TransactionTileWidget widget renders a debit row in red
+01:31 +224: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart
+01:32 +224: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: (setUpAll)
+01:32 +224: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(320.0, 640.0) / 1.0
+01:33 +225: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(320.0, 640.0) / 1.0
+01:33 +226: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(320.0, 640.0) / 1.3
+01:34 +227: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(320.0, 640.0) / 1.3
+01:34 +228: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(320.0, 640.0) / 2.0
+01:34 +229: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(320.0, 640.0) / 2.0
+01:34 +230: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(640.0, 320.0) / 1.0
+01:34 +231: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(640.0, 320.0) / 1.0
+01:34 +232: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(640.0, 320.0) / 1.3
+01:34 +233: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(640.0, 320.0) / 1.3
+01:34 +234: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(640.0, 320.0) / 2.0
+01:34 +235: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(640.0, 320.0) / 2.0
+01:34 +236: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: wallet keeps its balance and controls at 200% text
+01:35 +237: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: charging strip reflows and remains actionable at 200% text
+01:35 +238: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 320.0 / 1.0
+01:35 +239: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 320.0 / 2.0
+01:35 +240: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 390.0 / 1.0
+01:35 +241: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 390.0 / 2.0
+01:35 +242: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: (tearDownAll)
+01:35 +242: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart
+01:36 +242: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget formatting drops a trailing .0 from the capacity
+01:36 +243: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget formatting keeps one decimal when the capacity has one
+01:36 +244: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget formatting maps the canonical connector value onto its display name
+01:36 +245: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget formatting falls back to the raw value for an unknown connector
+01:36 +246: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget widget renders name, plate, connector, capacity and badge
+01:38 +247: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget widget hides the Default badge for a non-default vehicle
+01:38 +248: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_card_test.dart: VehicleCardWidget widget shows a decimal capacity without rounding it away
+01:38 +249: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart
+01:39 +249: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen validation requires a name
+01:39 +250: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen validation requires a license plate
+01:39 +251: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen validation keeps the capacity between 10 and 250 kWh
+01:39 +252: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen validation the capacity field allows three digits and one decimal
+01:39 +253: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen validation uppercases plates and drops the characters the API rejects
+01:39 +254: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen validation maps an unknown connector onto the CCS2 default
+01:39 +255: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen form add mode shows every validation message
+01:41 +256: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen form rejects an out-of-range capacity and uppercases the plate
+01:42 +257: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen form edit mode prefills the saved vehicle
+01:42 +258: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/vehicle_edit_test.dart: VehicleEditScreen form delete asks for confirmation first
+01:42 +259: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/wallet_card_test.dart
+01:43 +259: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/wallet_card_test.dart: WalletCardWidget.formatBalance renders two decimals with the RM prefix
+01:44 +260: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/wallet_card_test.dart: WalletCardWidget.formatBalance groups thousands
+01:44 +261: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/wallet_card_test.dart: WalletCardWidget shows the live balance from the notifier
+01:45 +262: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/wallet_card_test.dart: WalletCardWidget hides the balance behind a mask and restores it
+01:45 +263: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/wallet_card_test.dart: WalletCardWidget remembers a hidden balance across a restart
+01:45 +264: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/widget_test.dart
+01:46 +264: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/widget_test.dart: shows light onboarding even when the OS prefers dark
+01:48 +265: All tests passed!
+tests exit: 0
+Resolving dependencies...
+Downloading packages...
+  archive 4.5.2 (4.7.1 available)
+  code_assets 1.2.1 (2.2.0 available)
+  crypto 3.0.7 (3.0.8 available)
+  dbus 0.7.15 (0.8.0 available)
+  geolocator 14.1.1 (14.1.2 available)
+  geolocator_android 5.1.1+1 (5.2.1 available)
+  geolocator_apple 2.3.15 (2.4.3 available)
+  geolocator_platform_interface 4.4.0 (4.4.1 available)
+  gsettings 0.2.8 (0.2.9 available)
+  hooks 2.0.2 (2.2.0 available)
+  jni 1.1.0 (1.1.2 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  meta 1.18.3 (1.19.0 available)
+  mobile_scanner 7.4.2 (7.5.0 available)
+  objective_c 9.5.0 (9.6.4 available)
+  petitparser 7.0.2 (7.1.0 available)
+  posix 6.5.2 (6.5.4 available)
+  record_use 0.6.0 (1.1.1 available)
+  shared_preferences_android 2.4.28 (2.5.5 available)
+  shared_preferences_foundation 2.5.7 (2.6.2 available)
+  test_api 0.7.12 (0.7.15 available)
+  vector_math 2.4.0 (2.4.4 available)
+  web 1.1.1 (1.1.2 available)
+  xml 7.0.1 (7.1.0 available)
+Got dependencies!
+24 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+Running Gradle task 'assembleDebug'...                          
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if "Windows_NT" == "Windows_NT" setlocal
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set DEFAULT_JVM_OPTS= 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set DIRNAME=C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android\ 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if "C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android\" == "" set DIRNAME=. 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set APP_BASE_NAME=gradlew 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set APP_HOME=C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android\ 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if defined JAVA_HOME goto findJavaFromJavaHome 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set JAVA_HOME=C:\Program Files\Java\jdk-21.0.12.1 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set JAVA_EXE=C:\Program Files\Java\jdk-21.0.12.1/bin/java.exe 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if exist "C:\Program Files\Java\jdk-21.0.12.1/bin/java.exe" goto init 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if not "Windows_NT" == "Windows_NT" goto win9xME_args 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if "@eval[2+2]" == "4" goto 4NT_args 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set CMD_LINE_ARGS= 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set _SKIP=2 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>if "x-q" == "x" goto execute 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set CMD_LINE_ARGS=-q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=QVBJX0JBU0VfVVJMPWh0dHA6Ly8xMC4wLjIuMjoxODA4MA==,RkxVVFRFUl9CVUlMRF9OQU1FPTEuMC4w,RkxVVFRFUl9CVUlMRF9OVU1CRVI9MQ==,RkxVVFRFUl9WRVJTSU9OPTMuNDcuMQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NjY1NTQ4MmVjMA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NWQ1MzE3ODg2OQ==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMy4x -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false -Pflutter.androidSdkRoot=C:\Users\ongji\AppData\Local\Android\sdk -Pflutter.installedNdkVersions=28.2.13676358 -Pflutter.sdkManagerPath=C:\Users\ongji\AppData\Local\Android\sdk\cmdline-tools\22.0\bin\sdkmanager.bat assembleDebug 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>goto execute 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>set CLASSPATH=C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android\\gradle\wrapper\gradle-wrapper.jar 
+
+C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android>"C:\Program Files\Java\jdk-21.0.12.1/bin/java.exe"    "-Dorg.gradle.appname=gradlew" -classpath "C:\code projects\chargenet-latest\chapter-5-testing-new\.work\chargenet-mobile\android\\gradle\wrapper\gradle-wrapper.jar" org.gradle.wrapper.GradleWrapperMain -q -Ptarget-platform=android-arm,android-arm64,android-x64 -Ptarget=lib\main.dart -Pbase-application-name=android.app.Application -Pdart-defines=QVBJX0JBU0VfVVJMPWh0dHA6Ly8xMC4wLjIuMjoxODA4MA==,RkxVVFRFUl9CVUlMRF9OQU1FPTEuMC4w,RkxVVFRFUl9CVUlMRF9OVU1CRVI9MQ==,RkxVVFRFUl9WRVJTSU9OPTMuNDcuMQ==,RkxVVFRFUl9DSEFOTkVMPXN0YWJsZQ==,RkxVVFRFUl9HSVRfVVJMPWh0dHBzOi8vZ2l0aHViLmNvbS9mbHV0dGVyL2ZsdXR0ZXIuZ2l0,RkxVVFRFUl9GUkFNRVdPUktfUkVWSVNJT049NjY1NTQ4MmVjMA==,RkxVVFRFUl9FTkdJTkVfUkVWSVNJT049NWQ1MzE3ODg2OQ==,RkxVVFRFUl9EQVJUX1ZFUlNJT049My4xMy4x -Pdart-obfuscation=false -Ptrack-widget-creation=true -Ptree-shake-icons=false -Pflutter.androidSdkRoot=C:\Users\ongji\AppData\Local\Android\sdk -Pflutter.installedNdkVersions=28.2.13676358 -Pflutter.sdkManagerPath=C:\Users\ongji\AppData\Local\Android\sdk\cmdline-tools\22.0\bin\sdkmanager.bat assembleDebug 
+warning: [options] source value 8 is obsolete and will be removed in a future release
+warning: [options] target value 8 is obsolete and will be removed in a future release
+warning: [options] To suppress warnings about obsolete options, use -Xlint:-options.
+Note: C:\Users\ongji\AppData\Local\Pub\Cache\hosted\pub.dev\geolocator_android-5.1.1+1\android\src\main\java\com\baseflow\geolocator\location\LocationMapper.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+3 warnings
+

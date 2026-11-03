@@ -1,0 +1,23 @@
+
+2026-11-02T01:11:14.129365+08:00
+$ C:/Users/ongji/flutter/bin/flutter.bat test --no-pub --concurrency=1 --reporter expanded test/interaction_accessibility_test.dart test/slide_to_confirm_test.dart
+00:00 +0: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: scanner feedback and torch remain reachable at 1.0 text
+00:01 +1: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: scanner feedback and torch remain reachable at 2.0 text
+00:01 +2: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: semantic and keyboard activation require a second deliberate confirmation
+00:02 +3: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: interrupted drag resets without submitting
+00:02 +4: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: disabling the action while confirmation is open prevents submission
+00:02 +5: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: first-load failures hide default balances and retry independently
+00:02 +6: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: onboarding exposes the current step to assistive technology
+00:02 +7: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/interaction_accessibility_test.dart: operator swatches retain identity with contrasting foregrounds
+00:02 +8: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart
+00:03 +8: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm geometry the thumb travels the track minus its own width
+00:03 +9: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm geometry arms only past 90 % of the travel
+00:03 +10: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget runs the action once on a full swipe
+00:04 +11: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget springs back without firing on a short drag
+00:05 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget does nothing while disabled
+00:05 +13: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget shows a spinner and ignores drags while loading
+00:05 +14: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/slide_to_confirm_test.dart: SlideToConfirm widget renders the blocker hint under the track
+00:05 +15: All tests passed!
+
+exit: 0

@@ -1,0 +1,105 @@
+
+2026-11-02T01:29:29.929426+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc10\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc10\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-5631e7f2-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:29:29 GMT
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI5NjksImlhdCI6MTc5NDkzNjU2OX0.ymnJ1h9t4b9tOt_Ti2Q08EMuyT6AyPhJXhDGdxlWBGw","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T01:29:29.987536+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc10\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc10\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI5NjksImlhdCI6MTc5NDkzNjU2OX0.ymnJ1h9t4b9tOt_Ti2Q08EMuyT6AyPhJXhDGdxlWBGw" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:29:29 GMT
+
+Content-Length: 855
+
+
+
+{"quoteId":"qte_39110b2137e54156368932f3","originalCurrency":"THB","walletCurrency":"MYR","exchangeRate":"0.1300000000","rateSource":"chapter-five-restore","originalCost":5.72,"unfundedAmount":0,"reservedAmount":380.43,"tariffDecimal":"7.500000","id":"ses_12bb7594f829e1df74951c2a","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_ecowatt","cpoName":"EcoWatt","stationId":"stn_demo_hat_yai_east","stationName":"EcoWatt Hat Yai East","connectorId":"con_demo_hat_yai_east_dc","evseUid":"TH*ECO*E*D21DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T01:29:24.311268+08:00","endTime":null,"durationSeconds":50,"kwhDelivered":0.763,"currentPowerKw":55.68,"batterySoc":30.12,"targetSoc":80,"tariffPerKwh":7.5,"totalCost":0.74,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > before-minimise.png (unaltered PNG; 156557 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 4
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > minimised-monitor.png (unaltered PNG; 277530 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2250
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > activity-during-charge.png (unaltered PNG; 112039 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 900 2250
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > profile-during-charge.png (unaltered PNG; 148840 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 3
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am start -n com.chargenet.mobile/com.example.chargenet_mobile.MainActivity
+Starting: Intent { cmp=com.chargenet.mobile/com.example.chargenet_mobile.MainActivity }
+
+Warning: Activity not started, its current task has been brought to the front
+
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > foreground-restored-session.png (unaltered PNG; 154677 bytes)
+
+2026-11-02T01:29:43.234821+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc10\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc10\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI5NjksImlhdCI6MTc5NDkzNjU2OX0.ymnJ1h9t4b9tOt_Ti2Q08EMuyT6AyPhJXhDGdxlWBGw" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:29:43 GMT
+
+Content-Length: 857
+
+
+
+{"quoteId":"qte_39110b2137e54156368932f3","originalCurrency":"THB","walletCurrency":"MYR","exchangeRate":"0.1300000000","rateSource":"chapter-five-restore","originalCost":20.51,"unfundedAmount":0,"reservedAmount":380.43,"tariffDecimal":"7.500000","id":"ses_12bb7594f829e1df74951c2a","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_ecowatt","cpoName":"EcoWatt","stationId":"stn_demo_hat_yai_east","stationName":"EcoWatt Hat Yai East","connectorId":"con_demo_hat_yai_east_dc","evseUid":"TH*ECO*E*D21DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T01:29:24.311268+08:00","endTime":null,"durationSeconds":180,"kwhDelivered":2.735,"currentPowerKw":53.89,"batterySoc":32.75,"targetSoc":80,"tariffPerKwh":7.5,"totalCost":2.67,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_12bb7594f829e1df74951c2a';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_12bb7594f829e1df74951c2a,usr_9a31c7c2a47632bffde832d2,CHARGING,2.735,THB,20.51,MYR,2.67,0.1300000000,7.500000,CHARGING,0,0,380.43,380.43
+
+exit: 0

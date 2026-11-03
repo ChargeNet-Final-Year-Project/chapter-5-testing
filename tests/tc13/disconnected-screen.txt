@@ -1,0 +1,62 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Test Operator
+tc13-71740513@example.test
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Connect your OCPI platform
+Handshake NOT_STARTED
+Company SUSPENDED
+Last tested Nov 02, 2026 01:37 AM
+1 · Give these to your OCPI platform
+
+Your platform registers with ChargeNet before verification.
+
+Versions URL
+http://localhost:18080/ocpi/emsp/versions
+Copy
+Token A (one-time registration token)
+Consumed — no longer valid
+Reveal
+Copy
+Regenerate
+Country / party id
+MY / XBE
+Supported OCPI version
+2.3.0
+2 · Your OCPI endpoint
+
+Where ChargeNet sends its handshake and pulls your locations and tariffs.
+
+Base URL
+Your OCPI API root; ChargeNet appends /versions.
+Save endpoint
+3 · Verify the connection
+
+After your platform registers using Token A, this test checks the stored credentials, versions, locations and tariffs. It does not perform registration.
+
+Run handshake test
+Tokens B & C
+
+Stored automatically during registration. Shown only as a last-4 hint — the full values never leave ChargeNet.
+
+Token B — ChargeNet authenticates to you
+Not set
+Token C — you authenticate to ChargeNet
+Not set
+Rotate
+Disconnect
+How the handshake works
+You share the Versions URL and Token A with your OCPI platform.
+Your platform supplies Token B during registration; ChargeNet uses it to authenticate to your platform.
+ChargeNet returns Token C for your platform to authenticate to ChargeNet.
+Run the handshake test to verify every step end to end.

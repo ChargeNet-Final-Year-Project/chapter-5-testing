@@ -1,0 +1,121 @@
+Fresh application capture; actual execution clock; no historical execution claim.
+
+2026-11-02T00:50:56.211276+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:50:56 GMT
+
+Content-Length: 368
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjJhYmQ4NmM4YTliNDJiYjU0MTgzMjEzIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NTYsImlhdCI6MTc5NDkzNDI1Nn0.ElYZ2EG3Whnuok2WwdMVUh4pau4QhXNzMQjbtWWj9Nc","user":{"id":"usr_62abd86c8a9b42bb54183213","name":"Chapter Five Driver","email":"ch5-608c7ef5b0@example.test","createdAt":"2026-11-02T16:50:56.1875672Z"}}
+
+curl exit: 0
+
+2026-11-02T00:50:56.407855+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjJhYmQ4NmM4YTliNDJiYjU0MTgzMjEzIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NTYsImlhdCI6MTc5NDkzNDI1Nn0.ElYZ2EG3Whnuok2WwdMVUh4pau4QhXNzMQjbtWWj9Nc" --data-binary @input-002.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 409 Conflict
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:50:56 GMT
+
+Content-Length: 79
+
+
+
+{"error":{"code":"EMAIL_TAKEN","message":"That email is already registered."}}
+
+curl exit: 0
+
+2026-11-02T00:50:56.598565+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-003.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 401 Unauthorized
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:50:56 GMT
+
+Content-Length: 80
+
+
+
+{"error":{"code":"INVALID_CREDENTIALS","message":"Invalid email or password."}}
+
+curl exit: 0
+
+2026-11-02T00:50:56.785087+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-004.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:50:56 GMT
+
+Content-Length: 372
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjJhYmQ4NmM4YTliNDJiYjU0MTgzMjEzIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NTYsImlhdCI6MTc5NDkzNDI1Nn0.ElYZ2EG3Whnuok2WwdMVUh4pau4QhXNzMQjbtWWj9Nc","user":{"id":"usr_62abd86c8a9b42bb54183213","name":"Chapter Five Driver","email":"ch5-608c7ef5b0@example.test","createdAt":"2026-11-02T00:50:56.191353+08:00"}}
+
+curl exit: 0
+
+2026-11-02T00:50:56.849073+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc04\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjJhYmQ4NmM4YTliNDJiYjU0MTgzMjEzIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NTYsImlhdCI6MTc5NDkzNDI1Nn0.ElYZ2EG3Whnuok2WwdMVUh4pau4QhXNzMQjbtWWj9Nc" http://localhost:18080/api/v1/auth/me
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 16:50:56 GMT
+
+Content-Length: 152
+
+
+
+{"id":"usr_62abd86c8a9b42bb54183213","name":"Chapter Five Driver","email":"ch5-608c7ef5b0@example.test","createdAt":"2026-11-02T00:50:56.191353+08:00"}
+
+curl exit: 0

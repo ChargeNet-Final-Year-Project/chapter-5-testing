@@ -1,0 +1,44 @@
+
+2026-11-02T01:36:14.804867+08:00
+$ npm.cmd ci --cache "C:\code projects\chargenet-latest\chapter-5-testing-new\.cache\npm"
+
+added 71 packages, and audited 72 packages in 31s
+
+7 packages are looking for funding
+  run `npm fund` for details
+
+4 vulnerabilities (3 moderate, 1 high)
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force
+
+Run `npm audit` for details.
+
+exit: 0
+
+2026-11-02T01:36:46.850241+08:00
+$ npm.cmd run typecheck
+
+> chargenet-portal@0.1.0 typecheck
+> tsc --noEmit
+
+
+exit: 0
+
+2026-11-02T01:36:54.313595+08:00
+$ npm.cmd run build
+
+> chargenet-portal@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v5.4.21 building for production...
+transforming...
+✓ 56 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.55 kB │ gzip:  0.33 kB
+dist/assets/index-BmCTFoFQ.css   19.38 kB │ gzip:  4.69 kB
+dist/assets/index-Blc6_dOI.js   238.07 kB │ gzip: 73.76 kB
+✓ built in 22.49s
+
+exit: 0

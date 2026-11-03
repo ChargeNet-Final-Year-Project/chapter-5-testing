@@ -1,0 +1,43 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Test Operator
+tc14-34880662@example.test
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Company & billing
+Company
+Company name (required)
+Contact email (required)
+Base URL
+Your OCPI API root; ChargeNet appends /versions.
+Brand colour
+Used in the driver app.
+Billing & payouts
+Bank
+Maybank
+CIMB
+Public Bank
+RHB
+Hong Leong
+AmBank
+Other
+Account holder (required)
+Account number (required)
+Shown masked; type a new number to replace it.
+Payout cycle
+Monthly
+Weekly
+How often ChargeNet pays out your net share.
+
+Onboarded Nov 02, 2026 · country MY · party X7A
+
+Save changes

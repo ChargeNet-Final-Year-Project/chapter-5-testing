@@ -1,0 +1,8 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am start -n com.chargenet.mobile/com.example.chargenet_mobile.MainActivity
+Starting: Intent { cmp=com.chargenet.mobile/com.example.chargenet_mobile.MainActivity }
+
+Warning: Activity not started, intent has been delivered to currently running top-most instance.
+
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > app-after-idle.png (unaltered PNG; 105661 bytes)

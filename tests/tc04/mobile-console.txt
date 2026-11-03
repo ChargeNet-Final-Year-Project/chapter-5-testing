@@ -1,0 +1,67 @@
+Start from a clean test app, complete its two onboarding pages, then exercise login.
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell pm clear com.chargenet.mobile
+Success
+
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell pm grant com.chargenet.mobile android.permission.ACCESS_FINE_LOCATION
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell pm grant com.chargenet.mobile android.permission.ACCESS_COARSE_LOCATION
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am start -n com.chargenet.mobile/com.example.chargenet_mobile.MainActivity
+Starting: Intent { cmp=com.chargenet.mobile/com.example.chargenet_mobile.MainActivity }
+
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 1550
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 1590
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 500 580
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 123
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input text demo@chargenet.my
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 4
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 500 780
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 123
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input text WrongPassword123
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 4
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > invalid-login-input.png (unaltered PNG; 109097 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 500 975
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > invalid-login-result.png (unaltered PNG; 117034 bytes)
+Tap the Use demo account shortcut in the error-expanded form; it clears the error and restores the normal form.
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 1266
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > valid-login-input.png (unaltered PNG; 107927 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 975
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > valid-login-result.png (unaltered PNG; 113584 bytes)

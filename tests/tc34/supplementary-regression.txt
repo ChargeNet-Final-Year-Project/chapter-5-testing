@@ -1,0 +1,29 @@
+
+2026-11-02T01:03:01.905755+08:00
+$ go test -v -count=1 -p 1 ./internal/store -run TestQuoteCurrencyMatrix|TestLockedRateAndHistoricalReceipt
+=== RUN   TestQuoteCurrencyMatrix
+=== RUN   TestQuoteCurrencyMatrix/MYR_MY
+=== RUN   TestQuoteCurrencyMatrix/MYR_SG
+=== RUN   TestQuoteCurrencyMatrix/MYR_TH
+=== RUN   TestQuoteCurrencyMatrix/SGD_MY
+=== RUN   TestQuoteCurrencyMatrix/SGD_SG
+=== RUN   TestQuoteCurrencyMatrix/SGD_TH
+=== RUN   TestQuoteCurrencyMatrix/THB_MY
+=== RUN   TestQuoteCurrencyMatrix/THB_SG
+=== RUN   TestQuoteCurrencyMatrix/THB_TH
+--- PASS: TestQuoteCurrencyMatrix (2.66s)
+    --- PASS: TestQuoteCurrencyMatrix/MYR_MY (0.35s)
+    --- PASS: TestQuoteCurrencyMatrix/MYR_SG (0.27s)
+    --- PASS: TestQuoteCurrencyMatrix/MYR_TH (0.27s)
+    --- PASS: TestQuoteCurrencyMatrix/SGD_MY (0.27s)
+    --- PASS: TestQuoteCurrencyMatrix/SGD_SG (0.17s)
+    --- PASS: TestQuoteCurrencyMatrix/SGD_TH (0.19s)
+    --- PASS: TestQuoteCurrencyMatrix/THB_MY (0.27s)
+    --- PASS: TestQuoteCurrencyMatrix/THB_SG (0.18s)
+    --- PASS: TestQuoteCurrencyMatrix/THB_TH (0.18s)
+=== RUN   TestLockedRateAndHistoricalReceipt
+--- PASS: TestLockedRateAndHistoricalReceipt (0.60s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/store	3.466s
+
+exit: 0

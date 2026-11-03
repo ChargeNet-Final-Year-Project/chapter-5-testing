@@ -1,0 +1,1 @@
+{"companyName": "Controlled tc20", "partyId": "X20", "countryCode": "MY", "contactEmail": "tc20-cbeef634@example.test", "contactName": "Test Operator", "password": "LocalOnly123!", "bank": {"bankName": "Synthetic Bank", "accountHolder": "Test Operator", "accountNo": "1234567890"}, "payoutCycle": "MONTHLY"}

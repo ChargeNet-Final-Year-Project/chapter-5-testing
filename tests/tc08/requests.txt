@@ -1,0 +1,231 @@
+Fresh application capture; actual execution clock; no historical execution claim.
+
+2026-11-02T00:51:01.797259+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:01 GMT
+Content-Length: 368
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ","user":{"id":"usr_695e6d7ffec0d1aba4059d91","name":"Chapter Five Driver","email":"ch5-bf4094b18e@example.test","createdAt":"2026-11-02T16:51:01.7735445Z"}}
+
+curl exit: 0
+
+2026-11-02T00:51:01.863151+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:01 GMT
+Content-Length: 141
+
+{"reserved":0,"availableBalance":0,"id":"wal_c2b0bd27f22524064ccafc96","userId":"usr_695e6d7ffec0d1aba4059d91","balance":0,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T00:51:01.939181+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:01 GMT
+Content-Length: 3
+
+[]
+
+curl exit: 0
+
+2026-11-02T00:51:02.831266+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" -H "Idempotency-Key: 2ee0b0694bc648f9963c5df45521b83b" --data-binary @input-004.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:02 GMT
+Content-Length: 155
+
+{"id": "wal_c2b0bd27f22524064ccafc96", "userId": "usr_695e6d7ffec0d1aba4059d91", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T00:51:02.894539+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" -H "Idempotency-Key: 2ee0b0694bc648f9963c5df45521b83b" --data-binary @input-005.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Idempotent-Replay: true
+Date: Mon, 02 Nov 2026 16:51:02 GMT
+Content-Length: 155
+
+{"id": "wal_c2b0bd27f22524064ccafc96", "userId": "usr_695e6d7ffec0d1aba4059d91", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T00:51:02.964364+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" --data-binary @input-006.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:02 GMT
+Content-Length: 174
+
+{"error":{"code":"VALIDATION_ERROR","message":"Please fix the highlighted fields.","fields":{"amount":"Top-up amount must be between 5 and 2,000 in your wallet currency."}}}
+
+curl exit: 0
+
+2026-11-02T00:51:03.030535+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" --data-binary @input-007.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 400 Bad Request
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:03 GMT
+Content-Length: 91
+
+{"error":{"code":"INVALID_PAYMENT_METHOD","message":"Choose a supported payment method."}}
+
+curl exit: 0
+
+2026-11-02T00:51:03.065656+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:03 GMT
+Content-Length: 145
+
+{"reserved":0,"availableBalance":100,"id":"wal_c2b0bd27f22524064ccafc96","userId":"usr_695e6d7ffec0d1aba4059d91","balance":100,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T00:51:03.103379+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNjk1ZTZkN2ZmZWMwZDFhYmE0MDU5ZDkxIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NjEsImlhdCI6MTc5NDkzNDI2MX0.ra9mVf6XC1I_xIthGCUo0xKrpPZrcSMqNTpZpkO5ZyQ" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:03 GMT
+Content-Length: 283
+
+[{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_767df29638e038cc1cf51244","walletId":"wal_c2b0bd27f22524064ccafc96","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934262","status":"SUCCESS","createdAt":"2026-11-02T00:51:02.80356+08:00"}]
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 900 2250
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > wallet-before-topup.png (unaltered PNG; 135380 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 230 730
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > topup-form.png (unaltered PNG; 157908 bytes)
+
+2026-11-02T01:54:23.271493+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-bdb14524-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:54:23 GMT
+Content-Length: 351
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjQ0NjMsImlhdCI6MTc5NDkzODA2M30.cIIqsdh1EsnXYg5T15hONppld8A21bc74lr5QtrpviY","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T01:54:23.323748+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjQ0NjMsImlhdCI6MTc5NDkzODA2M30.cIIqsdh1EsnXYg5T15hONppld8A21bc74lr5QtrpviY" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:54:23 GMT
+Content-Length: 151
+
+{"reserved":0,"availableBalance":523.54,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":523.54,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T01:54:23.377585+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjQ0NjMsImlhdCI6MTc5NDkzODA2M30.cIIqsdh1EsnXYg5T15hONppld8A21bc74lr5QtrpviY" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:54:23 GMT
+Transfer-Encoding: chunked
+
+[{"currency":"MYR","sessionId":"ses_1f536021cb700cd1ad8f7d01","cdrId":"cdr_d9ae91ef1141f2475bf9f5e8","id":"wtx_b641e2c8dc579f6a2f401ea4","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":41.8,"paymentMethod":"Wallet","referenceId":"cdr_d9ae91ef1141f2475bf9f5e8","status":"SUCCESS","createdAt":"2026-11-02T01:45:59.33571+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_8fd845d483fd3adbb311125e","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937481","status":"SUCCESS","createdAt":"2026-11-02T01:44:41.859796+08:00"},{"currency":"MYR","sessionId":"ses_5724de798104fdbe82b07697","cdrId":"cdr_a075fca52e7072432a00cf1a","id":"wtx_49e86affe29250ae053192d0","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":46.7,"paymentMethod":"Wallet","referenceId":"cdr_a075fca52e7072432a00cf1a","status":"SUCCESS","createdAt":"2026-11-02T01:43:36.939405+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_93625faaa456279190359dbd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937329","status":"SUCCESS","createdAt":"2026-11-02T01:42:09.788747+08:00"},{"currency":"MYR","sessionId":"ses_c5a845919736952d4c60e366","cdrId":"cdr_9cd5ffc2d7651e6cbae05d1d","id":"wtx_ace177e548e18a0dc5d04800","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":45.09,"paymentMethod":"Wallet","referenceId":"cdr_9cd5ffc2d7651e6cbae05d1d","status":"SUCCESS","createdAt":"2026-11-02T01:40:24.327657+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_2de552ca393829b0a80821dc","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937099","status":"SUCCESS","createdAt":"2026-11-02T01:38:19.438431+08:00"},{"currency":"MYR","sessionId":"ses_02bf268505479c7990994198","cdrId":"cdr_90e42e32a308ba079b988987","id":"wtx_e6231a05567d984041c4df08","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.9,"paymentMethod":"Wallet","referenceId":"cdr_90e42e32a308ba079b988987","status":"SUCCESS","createdAt":"2026-11-02T01:34:54.975922+08:00"},{"currency":"MYR","sessionId":"ses_0bcc35c09c8985384d3575e2","cdrId":"cdr_13f49cdeb0d498a4b7dfe965","id":"wtx_30235e110e0c40382d6c4dbe","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":3.54,"paymentMethod":"Wallet","referenceId":"cdr_13f49cdeb0d498a4b7dfe965","status":"SUCCESS","createdAt":"2026-11-02T01:32:55.854433+08:00"},{"currency":"MYR","sessionId":"ses_12bb7594f829e1df74951c2a","cdrId":"cdr_d28cd318b4e6fff04028d937","id":"wtx_4195e319ab4f7f9838255fdd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":17.86,"paymentMethod":"Wallet","referenceId":"cdr_d28cd318b4e6fff04028d937","status":"SUCCESS","createdAt":"2026-11-02T01:31:31.652797+08:00"},{"currency":"MYR","sessionId":"ses_919a99d51decd59ca2fff85e","cdrId":"cdr_aacfed41e83af8e1da860d13","id":"wtx_8010d3f90d51ab0fba5eeea5","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.57,"paymentMethod":"Wallet","referenceId":"cdr_aacfed41e83af8e1da860d13","status":"SUCCESS","createdAt":"2026-11-02T01:20:51.687146+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_b72fc74e9f97ceeca4766a37","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794936050","status":"SUCCESS","createdAt":"2026-11-02T01:20:50.329024+08:00"},{"currency":"MYR","sessionId":"ses_533ca16e4151437382dc59f2","cdrId":"cdr_bbf1aea89618ed32ca797398","id":"wtx_bef656f92402601395976294","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":2.42,"paymentMethod":"Wallet","referenceId":"cdr_bbf1aea89618ed32ca797398","status":"SUCCESS","createdAt":"2026-11-02T00:52:17.178819+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_430adbd3a980cb197a8fc605","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934332","status":"SUCCESS","createdAt":"2026-11-02T00:52:12.666864+08:00"},{"currency":"MYR","sessionId":"ses_2d2018e7fa218068a01451a6","cdrId":"cdr_2c91d777a64d271fd238d755","id":"wtx_3d3f38971b7b9c2b556281f2","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.32,"paymentMethod":"Wallet","referenceId":"cdr_2c91d777a64d271fd238d755","status":"SUCCESS","createdAt":"2026-11-02T00:51:13.342591+08:00"},{"currency":"MYR","sessionId":"ses_741c8fb0b09f5a34ac966031","cdrId":"cdr_8cb8af25030ad991a1dcbf69","id":"wtx_8f5cd200b111692228fb2d52","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.62,"paymentMethod":"Wallet","referenceId":"cdr_8cb8af25030ad991a1dcbf69","status":"SUCCESS","createdAt":"2026-11-02T00:51:10.222523+08:00"},{"currency":"MYR","sessionId":"ses_c9a49a0ea0a3d842d13692c6","cdrId":"cdr_ffbf7c34a274b5a5d35c2972","id":"wtx_2af6a0540a337112f45edfb8","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.14,"paymentMethod":"Wallet","referenceId":"cdr_ffbf7c34a274b5a5d35c2972","status":"SUCCESS","createdAt":"2026-11-02T00:51:07.090455+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_1b69d026f7e86fca077cc201","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934264","status":"SUCCESS","createdAt":"2026-11-02T00:51:04.335614+08:00"}]
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 635 1375
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > topup-100-input.png (unaltered PNG; 164730 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2280
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > topup-result.png (unaltered PNG; 141015 bytes)
+
+2026-11-02T01:54:28.257383+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjQ0NjMsImlhdCI6MTc5NDkzODA2M30.cIIqsdh1EsnXYg5T15hONppld8A21bc74lr5QtrpviY" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:54:28 GMT
+Content-Length: 151
+
+{"reserved":0,"availableBalance":623.54,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":623.54,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T01:54:28.290803+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc08\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjQ0NjMsImlhdCI6MTc5NDkzODA2M30.cIIqsdh1EsnXYg5T15hONppld8A21bc74lr5QtrpviY" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:54:28 GMT
+Transfer-Encoding: chunked
+
+[{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_585d3a58485e292441beb940","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Maybank FPX","referenceId":"SIM-1794938065","status":"SUCCESS","createdAt":"2026-11-02T01:54:25.917122+08:00"},{"currency":"MYR","sessionId":"ses_1f536021cb700cd1ad8f7d01","cdrId":"cdr_d9ae91ef1141f2475bf9f5e8","id":"wtx_b641e2c8dc579f6a2f401ea4","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":41.8,"paymentMethod":"Wallet","referenceId":"cdr_d9ae91ef1141f2475bf9f5e8","status":"SUCCESS","createdAt":"2026-11-02T01:45:59.33571+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_8fd845d483fd3adbb311125e","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937481","status":"SUCCESS","createdAt":"2026-11-02T01:44:41.859796+08:00"},{"currency":"MYR","sessionId":"ses_5724de798104fdbe82b07697","cdrId":"cdr_a075fca52e7072432a00cf1a","id":"wtx_49e86affe29250ae053192d0","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":46.7,"paymentMethod":"Wallet","referenceId":"cdr_a075fca52e7072432a00cf1a","status":"SUCCESS","createdAt":"2026-11-02T01:43:36.939405+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_93625faaa456279190359dbd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937329","status":"SUCCESS","createdAt":"2026-11-02T01:42:09.788747+08:00"},{"currency":"MYR","sessionId":"ses_c5a845919736952d4c60e366","cdrId":"cdr_9cd5ffc2d7651e6cbae05d1d","id":"wtx_ace177e548e18a0dc5d04800","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":45.09,"paymentMethod":"Wallet","referenceId":"cdr_9cd5ffc2d7651e6cbae05d1d","status":"SUCCESS","createdAt":"2026-11-02T01:40:24.327657+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_2de552ca393829b0a80821dc","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937099","status":"SUCCESS","createdAt":"2026-11-02T01:38:19.438431+08:00"},{"currency":"MYR","sessionId":"ses_02bf268505479c7990994198","cdrId":"cdr_90e42e32a308ba079b988987","id":"wtx_e6231a05567d984041c4df08","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.9,"paymentMethod":"Wallet","referenceId":"cdr_90e42e32a308ba079b988987","status":"SUCCESS","createdAt":"2026-11-02T01:34:54.975922+08:00"},{"currency":"MYR","sessionId":"ses_0bcc35c09c8985384d3575e2","cdrId":"cdr_13f49cdeb0d498a4b7dfe965","id":"wtx_30235e110e0c40382d6c4dbe","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":3.54,"paymentMethod":"Wallet","referenceId":"cdr_13f49cdeb0d498a4b7dfe965","status":"SUCCESS","createdAt":"2026-11-02T01:32:55.854433+08:00"},{"currency":"MYR","sessionId":"ses_12bb7594f829e1df74951c2a","cdrId":"cdr_d28cd318b4e6fff04028d937","id":"wtx_4195e319ab4f7f9838255fdd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":17.86,"paymentMethod":"Wallet","referenceId":"cdr_d28cd318b4e6fff04028d937","status":"SUCCESS","createdAt":"2026-11-02T01:31:31.652797+08:00"},{"currency":"MYR","sessionId":"ses_919a99d51decd59ca2fff85e","cdrId":"cdr_aacfed41e83af8e1da860d13","id":"wtx_8010d3f90d51ab0fba5eeea5","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.57,"paymentMethod":"Wallet","referenceId":"cdr_aacfed41e83af8e1da860d13","status":"SUCCESS","createdAt":"2026-11-02T01:20:51.687146+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_b72fc74e9f97ceeca4766a37","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794936050","status":"SUCCESS","createdAt":"2026-11-02T01:20:50.329024+08:00"},{"currency":"MYR","sessionId":"ses_533ca16e4151437382dc59f2","cdrId":"cdr_bbf1aea89618ed32ca797398","id":"wtx_bef656f92402601395976294","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":2.42,"paymentMethod":"Wallet","referenceId":"cdr_bbf1aea89618ed32ca797398","status":"SUCCESS","createdAt":"2026-11-02T00:52:17.178819+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_430adbd3a980cb197a8fc605","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934332","status":"SUCCESS","createdAt":"2026-11-02T00:52:12.666864+08:00"},{"currency":"MYR","sessionId":"ses_2d2018e7fa218068a01451a6","cdrId":"cdr_2c91d777a64d271fd238d755","id":"wtx_3d3f38971b7b9c2b556281f2","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.32,"paymentMethod":"Wallet","referenceId":"cdr_2c91d777a64d271fd238d755","status":"SUCCESS","createdAt":"2026-11-02T00:51:13.342591+08:00"},{"currency":"MYR","sessionId":"ses_741c8fb0b09f5a34ac966031","cdrId":"cdr_8cb8af25030ad991a1dcbf69","id":"wtx_8f5cd200b111692228fb2d52","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.62,"paymentMethod":"Wallet","referenceId":"cdr_8cb8af25030ad991a1dcbf69","status":"SUCCESS","createdAt":"2026-11-02T00:51:10.222523+08:00"},{"currency":"MYR","sessionId":"ses_c9a49a0ea0a3d842d13692c6","cdrId":"cdr_ffbf7c34a274b5a5d35c2972","id":"wtx_2af6a0540a337112f45edfb8","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.14,"paymentMethod":"Wallet","referenceId":"cdr_ffbf7c34a274b5a5d35c2972","status":"SUCCESS","createdAt":"2026-11-02T00:51:07.090455+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_1b69d026f7e86fca077cc201","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934264","status":"SUCCESS","createdAt":"2026-11-02T00:51:04.335614+08:00"}]
+
+curl exit: 0

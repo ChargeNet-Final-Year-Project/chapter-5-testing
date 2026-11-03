@@ -1,0 +1,135 @@
+
+2026-11-02T01:31:31.128027+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-591b75f8-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:31:31 GMT
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwOTEsImlhdCI6MTc5NDkzNjY5MX0.Z2bwrTOrB72tv4PnpLKkW1OygsDxqk6sQOvbXnFXT_Q","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T01:31:31.178635+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwOTEsImlhdCI6MTc5NDkzNjY5MX0.Z2bwrTOrB72tv4PnpLKkW1OygsDxqk6sQOvbXnFXT_Q" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:31:31 GMT
+
+Content-Length: 860
+
+
+
+{"quoteId":"qte_39110b2137e54156368932f3","originalCurrency":"THB","walletCurrency":"MYR","exchangeRate":"0.1300000000","rateSource":"chapter-five-restore","originalCost":136.4,"unfundedAmount":0,"reservedAmount":380.43,"tariffDecimal":"7.500000","id":"ses_12bb7594f829e1df74951c2a","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_ecowatt","cpoName":"EcoWatt","stationId":"stn_demo_hat_yai_east","stationName":"EcoWatt Hat Yai East","connectorId":"con_demo_hat_yai_east_dc","evseUid":"TH*ECO*E*D21DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T01:29:24.311268+08:00","endTime":null,"durationSeconds":1260,"kwhDelivered":18.186,"currentPowerKw":48.78,"batterySoc":53.35,"targetSoc":80,"tariffPerKwh":7.5,"totalCost":17.73,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 670 1430
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > Hat Yai East-receipt.png (unaltered PNG; 176637 bytes)
+
+2026-11-02T01:31:35.535600+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwOTEsImlhdCI6MTc5NDkzNjY5MX0.Z2bwrTOrB72tv4PnpLKkW1OygsDxqk6sQOvbXnFXT_Q" http://localhost:18080/api/v1/sessions/ses_12bb7594f829e1df74951c2a
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:31:35 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"quoteId":"qte_39110b2137e54156368932f3","originalCurrency":"THB","walletCurrency":"MYR","exchangeRate":"0.1300000000","rateSource":"chapter-five-restore","originalCost":137.42,"unfundedAmount":0,"reservedAmount":380.43,"tariffDecimal":"7.500000","id":"ses_12bb7594f829e1df74951c2a","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_ecowatt","cpoName":"EcoWatt","stationId":"stn_demo_hat_yai_east","stationName":"EcoWatt Hat Yai East","connectorId":"con_demo_hat_yai_east_dc","evseUid":"TH*ECO*E*D21DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T01:29:24.311268+08:00","endTime":"2026-11-02T01:31:31.652797+08:00","durationSeconds":1270,"kwhDelivered":18.323,"currentPowerKw":49.1,"batterySoc":53.53,"targetSoc":80,"tariffPerKwh":7.5,"totalCost":17.86,"balanceAfter":362.57,"stopReason":"USER","cdrId":"cdr_d28cd318b4e6fff04028d937","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Kanchanawanit Road, Hat Yai East, Thailand (simulated site)","city":"Hat Yai East","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"7.008000","longitude":"100.500000"},"country":"THA","evse_id":"TH*ECO*E*D21DC","evse_uid":"TH*ECO*E*D21DC","id":"DEMO-HAT-YAI-EAST","name":"EcoWatt Hat Yai East"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":18.323},{"type":"TIME","volume":0.3528}],"start_date_time":"2026-11-02T17:29:24Z"}],"country_code":"MY","currency":"THB","end_date_time":"2026-11-02T17:31:31Z","id":"cdr_d28cd318b4e6fff04028d937","last_updated":"2026-11-02T17:31:31Z","party_id":"ECO","session_id":"ses_12bb7594f829e1df74951c2a","start_date_time":"2026-11-02T17:29:24Z","tariffs":[{"country_code":"MY","currency":"THB","elements":[{"price_components":[{"price":7.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_ecowatt_th_dc","last_updated":"2026-11-02T17:29:24Z","party_id":"ECO","tax_included":"N/A"}],"total_cost":{"before_taxes":137.42},"total_energy":18.323,"total_time":0.3528}}
+
+curl exit: 0
+
+2026-11-02T01:31:35.590637+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwOTEsImlhdCI6MTc5NDkzNjY5MX0.Z2bwrTOrB72tv4PnpLKkW1OygsDxqk6sQOvbXnFXT_Q" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:31:35 GMT
+
+Content-Length: 151
+
+
+
+{"reserved":0,"availableBalance":362.57,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":362.57,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T01:31:35.647295+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwOTEsImlhdCI6MTc5NDkzNjY5MX0.Z2bwrTOrB72tv4PnpLKkW1OygsDxqk6sQOvbXnFXT_Q" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:31:35 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"currency":"MYR","sessionId":"ses_12bb7594f829e1df74951c2a","cdrId":"cdr_d28cd318b4e6fff04028d937","id":"wtx_4195e319ab4f7f9838255fdd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":17.86,"paymentMethod":"Wallet","referenceId":"cdr_d28cd318b4e6fff04028d937","status":"SUCCESS","createdAt":"2026-11-02T01:31:31.652797+08:00"},{"currency":"MYR","sessionId":"ses_919a99d51decd59ca2fff85e","cdrId":"cdr_aacfed41e83af8e1da860d13","id":"wtx_8010d3f90d51ab0fba5eeea5","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.57,"paymentMethod":"Wallet","referenceId":"cdr_aacfed41e83af8e1da860d13","status":"SUCCESS","createdAt":"2026-11-02T01:20:51.687146+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_b72fc74e9f97ceeca4766a37","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794936050","status":"SUCCESS","createdAt":"2026-11-02T01:20:50.329024+08:00"},{"currency":"MYR","sessionId":"ses_533ca16e4151437382dc59f2","cdrId":"cdr_bbf1aea89618ed32ca797398","id":"wtx_bef656f92402601395976294","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":2.42,"paymentMethod":"Wallet","referenceId":"cdr_bbf1aea89618ed32ca797398","status":"SUCCESS","createdAt":"2026-11-02T00:52:17.178819+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_430adbd3a980cb197a8fc605","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934332","status":"SUCCESS","createdAt":"2026-11-02T00:52:12.666864+08:00"},{"currency":"MYR","sessionId":"ses_2d2018e7fa218068a01451a6","cdrId":"cdr_2c91d777a64d271fd238d755","id":"wtx_3d3f38971b7b9c2b556281f2","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.32,"paymentMethod":"Wallet","referenceId":"cdr_2c91d777a64d271fd238d755","status":"SUCCESS","createdAt":"2026-11-02T00:51:13.342591+08:00"},{"currency":"MYR","sessionId":"ses_741c8fb0b09f5a34ac966031","cdrId":"cdr_8cb8af25030ad991a1dcbf69","id":"wtx_8f5cd200b111692228fb2d52","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.62,"paymentMethod":"Wallet","referenceId":"cdr_8cb8af25030ad991a1dcbf69","status":"SUCCESS","createdAt":"2026-11-02T00:51:10.222523+08:00"},{"currency":"MYR","sessionId":"ses_c9a49a0ea0a3d842d13692c6","cdrId":"cdr_ffbf7c34a274b5a5d35c2972","id":"wtx_2af6a0540a337112f45edfb8","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.14,"paymentMethod":"Wallet","referenceId":"cdr_ffbf7c34a274b5a5d35c2972","status":"SUCCESS","createdAt":"2026-11-02T00:51:07.090455+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_1b69d026f7e86fca077cc201","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934264","status":"SUCCESS","createdAt":"2026-11-02T00:51:04.335614+08:00"}]
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_12bb7594f829e1df74951c2a';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_12bb7594f829e1df74951c2a,usr_9a31c7c2a47632bffde832d2,COMPLETED,18.323,THB,137.42,MYR,17.86,0.1300000000,7.500000,AVAILABLE,1,1,0,362.57
+
+exit: 0

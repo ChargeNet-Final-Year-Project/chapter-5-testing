@@ -1,0 +1,47 @@
+
+2026-11-02T01:10:52.474984+08:00
+$ C:/Users/ongji/flutter/bin/flutter.bat test --no-pub --concurrency=1 --reporter expanded test/layout_test.dart test/typesetting_test.dart test/profile_screen_test.dart
+00:00 +0: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: (setUpAll)
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(320.0, 640.0) / 1.0
+00:01 +1: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(320.0, 640.0) / 1.0
+00:02 +2: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(320.0, 640.0) / 1.0
+00:02 +3: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(320.0, 640.0) / 2.0
+00:02 +4: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(320.0, 640.0) / 2.0
+00:03 +5: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(320.0, 640.0) / 2.0
+00:03 +6: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(640.0, 320.0) / 1.0
+00:03 +7: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(640.0, 320.0) / 1.0
+00:03 +8: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(640.0, 320.0) / 1.0
+00:03 +9: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: profile groups remain reachable at Size(640.0, 320.0) / 2.0
+00:03 +10: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: discovery controls reflow at Size(640.0, 320.0) / 2.0
+00:04 +11: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: ongoing activity stays actionable at Size(640.0, 320.0) / 2.0
+00:04 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/layout_test.dart: (tearDownAll)
+00:04 +12: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart
+00:05 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: (setUpAll)
+00:05 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(320.0, 640.0) / 1.0
+00:07 +13: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(320.0, 640.0) / 1.0
+00:07 +14: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(320.0, 640.0) / 1.3
+00:07 +15: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(320.0, 640.0) / 1.3
+00:07 +16: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(320.0, 640.0) / 2.0
+00:07 +17: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(320.0, 640.0) / 2.0
+00:08 +18: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(640.0, 320.0) / 1.0
+00:08 +19: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(640.0, 320.0) / 1.0
+00:08 +20: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(640.0, 320.0) / 1.3
+00:08 +21: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(640.0, 320.0) / 1.3
+00:08 +22: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: welcome remains reachable at Size(640.0, 320.0) / 2.0
+00:08 +23: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: features remains reachable at Size(640.0, 320.0) / 2.0
+00:08 +24: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: wallet keeps its balance and controls at 200% text
+00:09 +25: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: charging strip reflows and remains actionable at 200% text
+00:09 +26: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 320.0 / 1.0
+00:09 +27: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 320.0 / 2.0
+00:09 +28: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 390.0 / 1.0
+00:09 +29: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: monitor preserves readouts at 390.0 / 2.0
+00:09 +30: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/typesetting_test.dart: (tearDownAll)
+00:09 +30: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart
+00:10 +30: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen stacks user, wallet, vehicles and sign out
+00:12 +31: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen keeps saved vehicles without a roaming catalogue on Profile
+00:12 +32: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen shows the empty garage call to action without a vehicle
+00:12 +33: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/profile_screen_test.dart: ProfileScreen keeps the wallet card visible while partners load
+00:13 +34: All tests passed!
+
+exit: 0

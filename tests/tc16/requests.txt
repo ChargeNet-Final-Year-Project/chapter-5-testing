@@ -1,0 +1,24 @@
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS count,sum(gross_amount) AS gross FROM cdrs WHERE user_id <> 'usr_sandbox' GROUP BY currency ORDER BY currency;"
+currency,count,gross
+MYR,40,268.73
+SGD,33,45.98
+THB,32,58.61
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS count,sum(gross_amount) AS gross FROM cdrs WHERE user_id <> 'usr_sandbox' GROUP BY currency ORDER BY currency;"
+currency,count,gross
+MYR,40,268.73
+SGD,33,45.98
+THB,32,58.61
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS count,sum(gross_amount) AS gross FROM cdrs WHERE user_id <> 'usr_sandbox' GROUP BY currency ORDER BY currency;"
+currency,count,gross
+MYR,40,268.73
+SGD,33,45.98
+THB,32,58.61
+
+exit: 0

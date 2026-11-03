@@ -1,0 +1,52 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell wm size 960x1920
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell wm density 480
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell settings put system font_scale 2.0
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 500 900 1600 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 500 900 1600 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 500 900 1600 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 500 900 1600 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 500 900 1600 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 500 900 1600 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > estimate-200-top.png (unaltered PNG; 188680 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 900 1600 900 500 500
+
+exit: 0

@@ -1,0 +1,54 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 730 1460
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > Hat Yai East-live.png (unaltered PNG; 157520 bytes)
+
+2026-11-02T01:29:29.489042+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-b592e05f-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:29:29 GMT
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI5NjksImlhdCI6MTc5NDkzNjU2OX0.ymnJ1h9t4b9tOt_Ti2Q08EMuyT6AyPhJXhDGdxlWBGw","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T01:29:29.545694+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc09\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI5NjksImlhdCI6MTc5NDkzNjU2OX0.ymnJ1h9t4b9tOt_Ti2Q08EMuyT6AyPhJXhDGdxlWBGw" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:29:29 GMT
+
+Content-Length: 855
+
+
+
+{"quoteId":"qte_39110b2137e54156368932f3","originalCurrency":"THB","walletCurrency":"MYR","exchangeRate":"0.1300000000","rateSource":"chapter-five-restore","originalCost":5.72,"unfundedAmount":0,"reservedAmount":380.43,"tariffDecimal":"7.500000","id":"ses_12bb7594f829e1df74951c2a","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_ecowatt","cpoName":"EcoWatt","stationId":"stn_demo_hat_yai_east","stationName":"EcoWatt Hat Yai East","connectorId":"con_demo_hat_yai_east_dc","evseUid":"TH*ECO*E*D21DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T01:29:24.311268+08:00","endTime":null,"durationSeconds":50,"kwhDelivered":0.763,"currentPowerKw":55.68,"batterySoc":30.12,"targetSoc":80,"tariffPerKwh":7.5,"totalCost":0.74,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0

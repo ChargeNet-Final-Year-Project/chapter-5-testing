@@ -1,0 +1,45 @@
+
+2026-11-02T01:10:33.121006+08:00
+$ C:/Users/ongji/flutter/bin/flutter.bat test --no-pub --concurrency=1 --reporter expanded test/active_charging_test.dart test/session_stream_test.dart test/session_coordinator_test.dart
+00:00 +0: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: telemetry formatters formatClock renders the simulated duration as a clock
+00:00 +1: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: telemetry formatters formatPercent rounds, and reads "unknown" for null
+00:00 +2: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: stop reasons every reason the backend can send has words
+00:00 +3: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: stop reasons an unknown code degrades instead of leaking a backend enum
+00:00 +4: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor lays out the charger, battery progress and labelled readings
+00:01 +5: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor mirrors the session into the shared notifier
+00:01 +6: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor three telemetry frames move the %, kW and kWh
+00:02 +7: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a just-started session reads "unknown", never zero
+00:02 +8: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor completion dismisses only its own pending confirmation before the receipt
+00:02 +9: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a terminal frame ends the session and shows the receipt
+00:03 +10: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor the finish presenter receives the terminal session
+00:03 +11: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor sliding to stop asks the backend and blocks the screen
+00:03 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a rejected stop re-arms the slide and explains why
+00:04 +13: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor a dropped stream and missing session never fabricate completion
+00:04 +14: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor stream exhaustion retains the active session without a receipt
+00:04 +15: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/active_charging_test.dart: live monitor coming back to the foreground re-opens the stream
+00:04 +16: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart
+00:05 +16: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents emits each telemetry frame, then completed, then closes
+00:05 +17: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents reassembles frames split across many byte chunks
+00:05 +18: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents accepts CRLF line endings
+00:05 +19: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents ignores comments, unknown events and bad payloads
+00:05 +20: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents emits a final frame that arrived without its blank line
+00:05 +21: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: parseSessionEvents a comment-only stream closes without emitting
+00:05 +22: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: watchdogSseBytes a silent connection fails with a TimeoutException, after its frames
+00:05 +23: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: watchdogSseBytes keepalive traffic keeps the watchdog from firing
+00:06 +24: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: watchdogSseBytes the default window outlasts the backend keepalive
+00:06 +25: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_stream_test.dart: isSessionTerminal only COMPLETED and FAILED are terminal
+00:06 +26: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart
+00:07 +26: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: terminal snapshot settles once despite stop and late-frame races
+00:07 +27: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: 404 reconciliation retains uncertainty and retry can confirm failure
+00:07 +28: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: replacement and account reset ignore old stream and reconciliation
+00:07 +29: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: minimising preserves one owner; reopening uses fresh telemetry
+00:09 +30: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: a nonterminal stop response cannot authorize a receipt
+00:09 +31: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 1.0
+00:09 +32: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(320.0, 640.0) / 2.0
+00:09 +33: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 1.0
+00:10 +34: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: interrupted monitor keeps Stop and Retry usable at Size(640.0, 320.0) / 2.0
+00:10 +35: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/session_coordinator_test.dart: late reconciliation cannot overwrite a newer live snapshot
+00:10 +36: All tests passed!
+
+exit: 0

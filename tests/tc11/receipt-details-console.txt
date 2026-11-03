@@ -1,0 +1,86 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 300 2225
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > receipt-copied.png (unaltered PNG; 232509 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2045
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > receipt-identifiers.png (unaltered PNG; 217068 bytes)
+
+2026-11-02T02:06:14.851409+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-c9dfd394-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 18:06:14 GMT
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUxNzQsImlhdCI6MTc5NDkzODc3NH0.sOQtg7jCdiUbZ35xDUu1moJx-BMVi6AB9gAi5i0WvIk","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T02:06:14.927621+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUxNzQsImlhdCI6MTc5NDkzODc3NH0.sOQtg7jCdiUbZ35xDUu1moJx-BMVi6AB9gAi5i0WvIk" http://localhost:18080/api/v1/sessions/history?limit=2&offset=0
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 18:06:14 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"quoteId":"qte_13028b6c3b990f3ae4e91322","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","originalCost":0.18,"unfundedAmount":0,"reservedAmount":709.93,"tariffDecimal":"0.600000","id":"ses_c2a1b2681f6d4addaf39a7f9","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T02:04:04.457356+08:00","endTime":"2026-11-02T02:04:06.718387+08:00","durationSeconds":20,"kwhDelivered":0.3,"currentPowerKw":53.44,"batterySoc":34.5,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.62,"balanceAfter":709.31,"stopReason":"USER","cdrId":"cdr_c3387d16f85dd8e402655734","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"1.280000","longitude":"103.854000"},"country":"SGP","evse_id":"SG*CSY*E*D12DC","evse_uid":"SG*CSY*E*D12DC","id":"DEMO-MARINA-BAY","name":"ChargeSync Marina Bay"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.3},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T18:04:04Z"}],"country_code":"MY","currency":"SGD","end_date_time":"2026-11-02T18:04:06Z","id":"cdr_c3387d16f85dd8e402655734","last_updated":"2026-11-02T18:04:06Z","party_id":"CSY","session_id":"ses_c2a1b2681f6d4addaf39a7f9","start_date_time":"2026-11-02T18:04:04Z","tariffs":[{"country_code":"MY","currency":"SGD","elements":[{"price_components":[{"price":0.6,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_chargesync_sg_dc","last_updated":"2026-11-02T18:04:04Z","party_id":"CSY","tax_included":"N/A"}],"total_cost":{"before_taxes":0.18},"total_energy":0.3,"total_time":0.0056}},{"quoteId":"qte_972a69da2a661eb3b0afc670","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":13.61,"unfundedAmount":0,"reservedAmount":723.54,"tariffDecimal":"1.500000","id":"ses_40d116d2cf8d0f200469a7f2","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T02:02:18.942784+08:00","endTime":"2026-11-02T02:02:45.456974+08:00","durationSeconds":26,"kwhDelivered":9.071,"currentPowerKw":125.8,"batterySoc":46.19,"targetSoc":100,"tariffPerKwh":1.5,"totalCost":13.61,"balanceAfter":709.93,"stopReason":"USER","cdrId":"cdr_2ab561f4b092593ff2dcfd5c","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11DC","evse_uid":"MY*VLT*E*D11DC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":9.071},{"type":"TIME","volume":0.0072}],"start_date_time":"2026-11-02T18:02:18Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T18:02:45Z","id":"cdr_2ab561f4b092593ff2dcfd5c","last_updated":"2026-11-02T18:02:45Z","party_id":"VLT","session_id":"ses_40d116d2cf8d0f200469a7f2","start_date_time":"2026-11-02T18:02:18Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":1.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_dc","last_updated":"2026-11-02T18:02:18Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":13.61},"total_energy":9.071,"total_time":0.0072}}]
+
+curl exit: 0
+
+2026-11-02T02:06:14.988496+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUxNzQsImlhdCI6MTc5NDkzODc3NH0.sOQtg7jCdiUbZ35xDUu1moJx-BMVi6AB9gAi5i0WvIk" http://localhost:18080/api/v1/sessions/history?limit=2&offset=2
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 18:06:14 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"quoteId":"qte_619b9f2dcc981fe9be62eea0","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":41.8,"unfundedAmount":0,"reservedAmount":565.34,"tariffDecimal":"1.500000","id":"ses_1f536021cb700cd1ad8f7d01","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T01:44:42.794811+08:00","endTime":"2026-11-02T01:45:59.33571+08:00","durationSeconds":760,"kwhDelivered":27.867,"currentPowerKw":118.82,"batterySoc":56.16,"targetSoc":100,"tariffPerKwh":1.5,"totalCost":41.8,"balanceAfter":523.54,"stopReason":"USER","cdrId":"cdr_d9ae91ef1141f2475bf9f5e8","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11DC","evse_uid":"MY*VLT*E*D11DC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":27.867},{"type":"TIME","volume":0.2111}],"start_date_time":"2026-11-02T17:44:42Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T17:45:59Z","id":"cdr_d9ae91ef1141f2475bf9f5e8","last_updated":"2026-11-02T17:45:59Z","party_id":"VLT","session_id":"ses_1f536021cb700cd1ad8f7d01","start_date_time":"2026-11-02T17:44:42Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":1.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_dc","last_updated":"2026-11-02T17:44:42Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":41.8},"total_energy":27.867,"total_time":0.2111}},{"quoteId":"qte_77ad144dd35721ad026d847d","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":46.7,"unfundedAmount":0,"reservedAmount":512.04,"tariffDecimal":"1.500000","id":"ses_5724de798104fdbe82b07697","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T01:42:10.723078+08:00","endTime":"2026-11-02T01:43:36.939405+08:00","durationSeconds":860,"kwhDelivered":31.135,"currentPowerKw":118.2,"batterySoc":61.01,"targetSoc":100,"tariffPerKwh":1.5,"totalCost":46.7,"balanceAfter":465.34,"stopReason":"USER","cdrId":"cdr_a075fca52e7072432a00cf1a","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11DC","evse_uid":"MY*VLT*E*D11DC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":31.135},{"type":"TIME","volume":0.2389}],"start_date_time":"2026-11-02T17:42:10Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T17:43:36Z","id":"cdr_a075fca52e7072432a00cf1a","last_updated":"2026-11-02T17:43:36Z","party_id":"VLT","session_id":"ses_5724de798104fdbe82b07697","start_date_time":"2026-11-02T17:42:10Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":1.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_dc","last_updated":"2026-11-02T17:42:10Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":46.7},"total_energy":31.135,"total_time":0.2389}}]
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 4
+
+exit: 0

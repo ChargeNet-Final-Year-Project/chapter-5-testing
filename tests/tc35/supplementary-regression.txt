@@ -1,0 +1,14 @@
+
+2026-11-02T01:03:08.211547+08:00
+$ go test -v -count=1 -p 1 ./internal/sessions -run TestStartChargingSettlesAtTarget|TestWalletExhaustedStopsAndClampsSettlement|TestEvidenceZeroEnergyRepeatedStop
+=== RUN   TestEvidenceZeroEnergyRepeatedStop
+    accounting_safety_test.go:137: session=ses_87a1fc63ca72c6606af1f448 cdrs=1 debits=0 balance=100.00 reserved=0.00 connector=AVAILABLE
+--- PASS: TestEvidenceZeroEnergyRepeatedStop (0.81s)
+=== RUN   TestStartChargingSettlesAtTarget
+--- PASS: TestStartChargingSettlesAtTarget (1.06s)
+=== RUN   TestWalletExhaustedStopsAndClampsSettlement
+--- PASS: TestWalletExhaustedStopsAndClampsSettlement (0.77s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/sessions	2.856s
+
+exit: 0

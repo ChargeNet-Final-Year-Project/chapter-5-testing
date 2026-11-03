@@ -1,0 +1,63 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Ops voltgo
+ops@voltgo.my
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Sandbox
+Test commands only
+These commands bill ChargeNet's internal test driver. They are excluded from your revenue reports.
+Send a command
+EVSE (required)
+TH*VLT*E*D24AC · VoltGo Bangkok West · AVAILABLE
+TH*VLT*E*D24DC · VoltGo Bangkok West · AVAILABLE
+MY*VLT*E*D11AC · VoltGo Batu Kawan · CHARGING
+MY*VLT*E*D11DC · VoltGo Batu Kawan · CHARGING
+MY*VLT*E*D05AC · VoltGo Bayan Lepas / Queensbay area · AVAILABLE
+MY*VLT*E*D05DC · VoltGo Bayan Lepas / Queensbay area · AVAILABLE
+MY*VLT*E*D07AC · VoltGo Butterworth · AVAILABLE
+MY*VLT*E*D07DC · VoltGo Butterworth · AVAILABLE
+VLT-GSR-01 · VoltGo Genting Sempah R&R · AVAILABLE
+VLT-GSR-02 · VoltGo Genting Sempah R&R · AVAILABLE
+MY*VLT*E*D01AC · VoltGo George Town · AVAILABLE
+MY*VLT*E*D01DC · VoltGo George Town · AVAILABLE
+TH*VLT*E*D17AC · VoltGo Hat Yai · AVAILABLE
+TH*VLT*E*D17DC · VoltGo Hat Yai · AVAILABLE
+SG*VLT*E*D13AC · VoltGo Jurong East · AVAILABLE
+SG*VLT*E*D13DC · VoltGo Jurong East · AVAILABLE
+SG*VLT*E*D23AC · VoltGo Marina South · AVAILABLE
+SG*VLT*E*D23DC · VoltGo Marina South · AVAILABLE
+VLT-PJS-01 · VoltGo Putrajaya Sentral · AVAILABLE
+VLT-PJS-02 · VoltGo Putrajaya Sentral · AVAILABLE
+VLT-PJS-03 · VoltGo Putrajaya Sentral · AVAILABLE
+VLT-SRR-01 · VoltGo Seremban R&R · AVAILABLE
+VLT-SRR-02 · VoltGo Seremban R&R · AVAILABLE
+VLT-SRR-03 · VoltGo Seremban R&R · AVAILABLE
+VLT-SRR-04 · VoltGo Seremban R&R · INOPERATIVE
+VLT-SGB-01 · VoltGo Sungai Buloh R&R · AVAILABLE
+VLT-SGB-02 · VoltGo Sungai Buloh R&R · CHARGING
+VLT-SGB-03 · VoltGo Sungai Buloh R&R · AVAILABLE
+SG*VLT*E*D15AC · VoltGo Woodlands · AVAILABLE
+SG*VLT*E*D15DC · VoltGo Woodlands · AVAILABLE
+Command (required)
+Start session — RemoteStartTransaction
+Stop session — RemoteStopTransaction
+Unlock connector — UnlockConnector
+Target state of charge (%) (required)
+Used by START_SESSION.
+Send command
+Refresh status
+Status:
+AVAILABLE
+Request / response trace
+
+Send a command to see the request and response.

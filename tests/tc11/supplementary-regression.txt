@@ -1,0 +1,49 @@
+
+2026-11-02T02:07:15.521776+08:00
+$ C:/Users/ongji/flutter/bin/flutter.bat test --no-pub --concurrency=1 --reporter expanded test/charging_receipt_test.dart test/activity_screen_test.dart
+00:00 +0: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt formatters formatDuration renders the backend seconds as a clock
+00:00 +1: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt formatters the monitor row and the receipt row read the same clock
+00:00 +2: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt formatters formatDateTime writes a local date and time
+00:00 +3: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows prints one row per itemised line in display order
+00:00 +4: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows the paid figure is the wallet's CHARGING_DEBIT row
+00:00 +5: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows an unpriced settlement keeps paid money unknown
+00:00 +6: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows a very small session prices out at RM 0.00, not unknown
+00:00 +7: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows the two optional rows only appear when there is something to say
+00:00 +8: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: receipt rows plainText carries every row and never the platform fee
+00:00 +9: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt renders the header, the detail rows and both actions
+00:01 +10: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt reads as a failure when the session failed
+00:01 +11: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt stays paper-light over the dark monitor
+00:02 +12: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt a tiny session on a small phone scrolls instead of clipping
+00:02 +13: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt Done dismisses the sheet
+00:02 +14: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/charging_receipt_test.dart: ChargingReceipt Copy receipt puts the plain text on the clipboard
+00:02 +15: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart
+00:03 +15: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: the shared cost and date rules energyCost rounds the way the backend rounds
+00:03 +16: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: the shared cost and date rules formatDayMonth matches the wallet ledger
+00:03 +17: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: the shared cost and date rules cpoAccentColor finds the brand colour and falls back
+00:03 +18: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth labelFor names the month and the year
+00:03 +19: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth group buckets a newest-first list into consecutive months
+00:03 +20: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth group parks an undated row under "Earlier"
+00:03 +21: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth flatten puts a divider in front of every month
+00:03 +22: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryMonth flatten of an empty archive is empty
+00:03 +23: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile dateLabel and detailLabel summarise a row
+00:03 +24: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile a row the backend never dated still reads
+00:03 +25: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile costLabel prefers the priced total over the estimate
+00:03 +26: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: HistoryTile isFailed flags only a failed session
+00:03 +27: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard quotes the live numbers, and the estimate behind the cost
+00:03 +28: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard a priced session reports the backend total
+00:03 +29: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard missing readings read as unknown, never as zero
+00:03 +30: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: OngoingSessionCard socLabel names the target and socFraction stays inside the bar
+00:03 +31: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing offers a way back to the map when nothing is running
+00:05 +32: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing follows the telemetry notifier while a session runs
+00:05 +33: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing hands the session to the live monitor
+00:05 +34: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · Ongoing paints the card in the CPO brand colour
+00:05 +35: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History lists finished sessions newest first, grouped by month
+00:06 +36: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History tapping a row opens its digital receipt
+00:06 +37: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History flags a failed session in the row
+00:06 +38: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History pull-to-refresh reloads the tab
+00:07 +39: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History shows an empty state before the first charge
+00:07 +40: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/activity_screen_test.dart: ActivityScreen · History appends the next page at the end, then stops asking
+00:07 +41: All tests passed!
+
+exit: 0

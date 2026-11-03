@@ -1,0 +1,536 @@
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id AS station,k.id AS connector,k.evse_uid FROM stations s JOIN connectors k ON k.station_id=s.id WHERE s.cpo_id='cpo_voltgo' AND s.country_code='MY' AND k.power_type='DC' ORDER BY s.id LIMIT 1;"
+station,connector,evse_uid
+stn_demo_batu_kawan,con_demo_batu_kawan_dc,MY*VLT*E*D11DC
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id AS station,k.id AS connector,k.evse_uid FROM stations s JOIN connectors k ON k.station_id=s.id WHERE s.cpo_id='cpo_voltgo' AND s.country_code='SG' AND k.power_type='DC' ORDER BY s.id LIMIT 1;"
+station,connector,evse_uid
+stn_demo_jurong_east,con_demo_jurong_east_dc,SG*VLT*E*D13DC
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id AS station,k.id AS connector,k.evse_uid FROM stations s JOIN connectors k ON k.station_id=s.id WHERE s.cpo_id='cpo_voltgo' AND s.country_code='TH' AND k.power_type='DC' ORDER BY s.id LIMIT 1;"
+station,connector,evse_uid
+stn_demo_bangkok_west,con_demo_bangkok_west_dc,TH*VLT*E*D24DC
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "INSERT INTO users(id,name,email,password_hash) VALUES ('usr_report_evidence','Synthetic reporting fixture','report-evidence@example.test','not-a-login') ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_MYR_inside_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_batu_kawan','con_demo_batu_kawan_dc','MY*VLT*E*D11DC','COMPLETED','2026-10-31T16:00:00Z'::timestamptz-interval '1 minute','2026-10-31T16:00:00Z'::timestamptz,60,1,1.60,1.60,'MYR','MYR',1,1.60 FROM generate_series(1,26) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_MYR_inside_'||i,'report_MYR_inside_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'MYR','{}','2026-10-31T16:00:00Z'::timestamptz FROM generate_series(1,26) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_MYR_before_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_batu_kawan','con_demo_batu_kawan_dc','MY*VLT*E*D11DC','COMPLETED','2026-10-31T15:59:59.999999Z'::timestamptz-interval '1 minute','2026-10-31T15:59:59.999999Z'::timestamptz,60,1,1.60,1.60,'MYR','MYR',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_MYR_before_'||i,'report_MYR_before_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'MYR','{}','2026-10-31T15:59:59.999999Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_MYR_after_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_batu_kawan','con_demo_batu_kawan_dc','MY*VLT*E*D11DC','COMPLETED','2026-11-01T16:00:00Z'::timestamptz-interval '1 minute','2026-11-01T16:00:00Z'::timestamptz,60,1,1.60,1.60,'MYR','MYR',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_MYR_after_'||i,'report_MYR_after_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'MYR','{}','2026-11-01T16:00:00Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_MYR_sandbox_'||i,'usr_sandbox','cpo_voltgo','stn_demo_batu_kawan','con_demo_batu_kawan_dc','MY*VLT*E*D11DC','COMPLETED','2026-10-31T17:00:00Z'::timestamptz-interval '1 minute','2026-10-31T17:00:00Z'::timestamptz,60,1,1.60,1.60,'MYR','MYR',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_MYR_sandbox_'||i,'report_MYR_sandbox_'||i,'cpo_voltgo','usr_sandbox',1,60,1.60,0.08,1.52,'MYR','{}','2026-10-31T17:00:00Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_SGD_inside_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_jurong_east','con_demo_jurong_east_dc','SG*VLT*E*D13DC','COMPLETED','2026-10-31T16:00:00Z'::timestamptz-interval '1 minute','2026-10-31T16:00:00Z'::timestamptz,60,1,1.60,1.60,'SGD','SGD',1,1.60 FROM generate_series(1,26) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_SGD_inside_'||i,'report_SGD_inside_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'SGD','{}','2026-10-31T16:00:00Z'::timestamptz FROM generate_series(1,26) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_SGD_before_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_jurong_east','con_demo_jurong_east_dc','SG*VLT*E*D13DC','COMPLETED','2026-10-31T15:59:59.999999Z'::timestamptz-interval '1 minute','2026-10-31T15:59:59.999999Z'::timestamptz,60,1,1.60,1.60,'SGD','SGD',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_SGD_before_'||i,'report_SGD_before_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'SGD','{}','2026-10-31T15:59:59.999999Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_SGD_after_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_jurong_east','con_demo_jurong_east_dc','SG*VLT*E*D13DC','COMPLETED','2026-11-01T16:00:00Z'::timestamptz-interval '1 minute','2026-11-01T16:00:00Z'::timestamptz,60,1,1.60,1.60,'SGD','SGD',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_SGD_after_'||i,'report_SGD_after_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'SGD','{}','2026-11-01T16:00:00Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_SGD_sandbox_'||i,'usr_sandbox','cpo_voltgo','stn_demo_jurong_east','con_demo_jurong_east_dc','SG*VLT*E*D13DC','COMPLETED','2026-10-31T17:00:00Z'::timestamptz-interval '1 minute','2026-10-31T17:00:00Z'::timestamptz,60,1,1.60,1.60,'SGD','SGD',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_SGD_sandbox_'||i,'report_SGD_sandbox_'||i,'cpo_voltgo','usr_sandbox',1,60,1.60,0.08,1.52,'SGD','{}','2026-10-31T17:00:00Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_THB_inside_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_bangkok_west','con_demo_bangkok_west_dc','TH*VLT*E*D24DC','COMPLETED','2026-10-31T16:00:00Z'::timestamptz-interval '1 minute','2026-10-31T16:00:00Z'::timestamptz,60,1,1.60,1.60,'THB','THB',1,1.60 FROM generate_series(1,26) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_THB_inside_'||i,'report_THB_inside_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'THB','{}','2026-10-31T16:00:00Z'::timestamptz FROM generate_series(1,26) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_THB_before_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_bangkok_west','con_demo_bangkok_west_dc','TH*VLT*E*D24DC','COMPLETED','2026-10-31T15:59:59.999999Z'::timestamptz-interval '1 minute','2026-10-31T15:59:59.999999Z'::timestamptz,60,1,1.60,1.60,'THB','THB',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_THB_before_'||i,'report_THB_before_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'THB','{}','2026-10-31T15:59:59.999999Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_THB_after_'||i,'usr_report_evidence','cpo_voltgo','stn_demo_bangkok_west','con_demo_bangkok_west_dc','TH*VLT*E*D24DC','COMPLETED','2026-11-01T16:00:00Z'::timestamptz-interval '1 minute','2026-11-01T16:00:00Z'::timestamptz,60,1,1.60,1.60,'THB','THB',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_THB_after_'||i,'report_THB_after_'||i,'cpo_voltgo','usr_report_evidence',1,60,1.60,0.08,1.52,'THB','{}','2026-11-01T16:00:00Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO charging_sessions(id,user_id,cpo_id,station_id,connector_id,evse_uid,status,start_time,end_time,duration_seconds,kwh_delivered,tariff_per_kwh,total_cost,original_currency,wallet_currency,exchange_rate,original_cost)
+SELECT 'report_THB_sandbox_'||i,'usr_sandbox','cpo_voltgo','stn_demo_bangkok_west','con_demo_bangkok_west_dc','TH*VLT*E*D24DC','COMPLETED','2026-10-31T17:00:00Z'::timestamptz-interval '1 minute','2026-10-31T17:00:00Z'::timestamptz,60,1,1.60,1.60,'THB','THB',1,1.60 FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+INSERT INTO cdrs(id,session_id,cpo_id,user_id,total_energy_kwh,total_time_seconds,gross_amount,platform_fee,net_payout,currency,cdr_json,created_at)
+SELECT 'cdr_report_THB_sandbox_'||i,'report_THB_sandbox_'||i,'cpo_voltgo','usr_sandbox',1,60,1.60,0.08,1.52,'THB','{}','2026-10-31T17:00:00Z'::timestamptz FROM generate_series(1,1) i ON CONFLICT DO NOTHING;
+"
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+INSERT 0 0
+
+exit: 0
+
+2026-11-02T01:32:02.566695+08:00
+Request body: {"email": "ops@voltgo.my", "password": "Cpo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" --data-binary @input-f1bfb2ec-001.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9lMGU0MTc2NTI2ZWJmZmExMzExNmEwYTYiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3OTkyMiwiaWF0IjoxNzk0OTM2NzIyLCJyb2xlIjoiQ1BPIiwiY3BvSWQiOiJjcG9fdm9sdGdvIn0.0ZVuoz0y_KOCjxQUHRiao5gqWbzOpW-C01g24tZp_o4; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 17:32:02 GMT
+
+Content-Length: 115
+
+
+
+{"id":"pu_e0e4176526ebffa13116a0a6","name":"Ops voltgo","email":"ops@voltgo.my","role":"CPO","cpoId":"cpo_voltgo"}
+
+curl exit: 0
+
+2026-11-02T01:32:02.649943+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/overview?currency=MYR
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:02 GMT
+
+Content-Length: 512
+
+
+
+{"currency":"MYR","sessionsToday":39,"kwhToday":268.742,"grossToday":370.95,"activeSessions":0,"netPayoutMtd":393.4,"counts":{"available":28,"charging":1,"blocked":0,"inoperative":1},"last7Days":[{"day":"2026-11-12","sessions":0,"gross":0},{"day":"2026-11-13","sessions":0,"gross":0},{"day":"2026-11-14","sessions":0,"gross":0},{"day":"2026-11-15","sessions":0,"gross":0},{"day":"2026-11-16","sessions":0,"gross":0},{"day":"2026-11-02","sessions":0,"gross":0},{"day":"2026-11-02","sessions":29,"gross":370.95}]}
+
+curl exit: 0
+
+2026-11-02T01:32:02.708626+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=MYR&from=2026-11-01&to=2026-11-01
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:02 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"evseUid":"","from":"2026-11-01T00:00:00+08:00","limit":25,"order":"settled_desc","page":1,"reportingTimezone":"Asia/Kuala_Lumpur","rows":[{"id":"cdr_report_MYR_inside_9","sessionId":"report_MYR_inside_9","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_8","sessionId":"report_MYR_inside_8","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_7","sessionId":"report_MYR_inside_7","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_6","sessionId":"report_MYR_inside_6","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_5","sessionId":"report_MYR_inside_5","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_4","sessionId":"report_MYR_inside_4","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_3","sessionId":"report_MYR_inside_3","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_26","sessionId":"report_MYR_inside_26","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_25","sessionId":"report_MYR_inside_25","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_24","sessionId":"report_MYR_inside_24","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_23","sessionId":"report_MYR_inside_23","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_22","sessionId":"report_MYR_inside_22","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_21","sessionId":"report_MYR_inside_21","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_20","sessionId":"report_MYR_inside_20","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_2","sessionId":"report_MYR_inside_2","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_19","sessionId":"report_MYR_inside_19","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_18","sessionId":"report_MYR_inside_18","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_17","sessionId":"report_MYR_inside_17","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_16","sessionId":"report_MYR_inside_16","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_15","sessionId":"report_MYR_inside_15","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_14","sessionId":"report_MYR_inside_14","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_13","sessionId":"report_MYR_inside_13","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_12","sessionId":"report_MYR_inside_12","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_11","sessionId":"report_MYR_inside_11","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"},{"id":"cdr_report_MYR_inside_10","sessionId":"report_MYR_inside_10","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"}],"to":"2026-11-02T00:00:00+08:00","totals":{"currency":"MYR","count":26,"energyKwh":26,"gross":41.6,"platformFee":2.08,"netPayout":39.52}}
+
+curl exit: 0
+
+2026-11-02T01:32:02.768691+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=MYR&from=2026-11-01&to=2026-11-01&page=2
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:02 GMT
+
+Content-Length: 595
+
+
+
+{"evseUid":"","from":"2026-11-01T00:00:00+08:00","limit":25,"order":"settled_desc","page":2,"reportingTimezone":"Asia/Kuala_Lumpur","rows":[{"id":"cdr_report_MYR_inside_1","sessionId":"report_MYR_inside_1","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Batu Kawan","evseUid":"MY*VLT*E*D11DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"MYR"}],"to":"2026-11-02T00:00:00+08:00","totals":{"currency":"MYR","count":26,"energyKwh":26,"gross":41.6,"platformFee":2.08,"netPayout":39.52}}
+
+curl exit: 0
+
+2026-11-02T01:32:02.839633+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=MYR&from=2026-11-01&to=2026-11-01&format=csv&limit=1&page=99
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Disposition: attachment; filename="chargenet-cdrs.csv"
+
+Content-Type: text/csv; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:02 GMT
+
+Transfer-Encoding: chunked
+
+
+
+cdr_id,session_id,start,end,station,evse,kwh,minutes,tariff,gross,platform_fee,net_payout,currency
+cdr_report_MYR_inside_9,report_MYR_inside_9,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_8,report_MYR_inside_8,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_7,report_MYR_inside_7,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_6,report_MYR_inside_6,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_5,report_MYR_inside_5,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_4,report_MYR_inside_4,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_3,report_MYR_inside_3,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_26,report_MYR_inside_26,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_25,report_MYR_inside_25,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_24,report_MYR_inside_24,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_23,report_MYR_inside_23,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_22,report_MYR_inside_22,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_21,report_MYR_inside_21,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_20,report_MYR_inside_20,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_2,report_MYR_inside_2,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_19,report_MYR_inside_19,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_18,report_MYR_inside_18,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_17,report_MYR_inside_17,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_16,report_MYR_inside_16,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_15,report_MYR_inside_15,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_14,report_MYR_inside_14,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_13,report_MYR_inside_13,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_12,report_MYR_inside_12,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_11,report_MYR_inside_11,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_10,report_MYR_inside_10,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+cdr_report_MYR_inside_1,report_MYR_inside_1,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Batu Kawan,MY*VLT*E*D11DC,1.000,1,1.60,1.60,0.08,1.52,MYR
+TOTAL,,,,,,26.000,,,41.60,2.08,39.52,MYR
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS cdrs,sum(gross_amount) AS gross,sum(platform_fee) AS fee,sum(net_payout) AS net FROM cdrs WHERE cpo_id='cpo_voltgo' AND user_id<>'usr_sandbox' AND currency='MYR' AND created_at>='2026-10-31T16:00:00Z' AND created_at<'2026-11-01T16:00:00Z' GROUP BY currency;"
+currency,cdrs,gross,fee,net
+MYR,26,41.60,2.08,39.52
+
+exit: 0
+
+2026-11-02T01:32:03.095927+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/overview?currency=SGD
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Content-Length: 507
+
+
+
+{"currency":"SGD","sessionsToday":39,"kwhToday":268.742,"grossToday":1.89,"activeSessions":0,"netPayoutMtd":42.85,"counts":{"available":28,"charging":1,"blocked":0,"inoperative":1},"last7Days":[{"day":"2026-11-12","sessions":0,"gross":0},{"day":"2026-11-13","sessions":0,"gross":0},{"day":"2026-11-14","sessions":0,"gross":0},{"day":"2026-11-15","sessions":0,"gross":0},{"day":"2026-11-16","sessions":0,"gross":0},{"day":"2026-11-02","sessions":0,"gross":0},{"day":"2026-11-02","sessions":4,"gross":1.89}]}
+
+curl exit: 0
+
+2026-11-02T01:32:03.160857+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=SGD&from=2026-11-01&to=2026-11-01
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"evseUid":"","from":"2026-11-01T00:00:00+08:00","limit":25,"order":"settled_desc","page":1,"reportingTimezone":"Asia/Kuala_Lumpur","rows":[{"id":"cdr_report_SGD_inside_9","sessionId":"report_SGD_inside_9","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_8","sessionId":"report_SGD_inside_8","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_7","sessionId":"report_SGD_inside_7","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_6","sessionId":"report_SGD_inside_6","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_5","sessionId":"report_SGD_inside_5","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_4","sessionId":"report_SGD_inside_4","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_3","sessionId":"report_SGD_inside_3","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_26","sessionId":"report_SGD_inside_26","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_25","sessionId":"report_SGD_inside_25","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_24","sessionId":"report_SGD_inside_24","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_23","sessionId":"report_SGD_inside_23","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_22","sessionId":"report_SGD_inside_22","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_21","sessionId":"report_SGD_inside_21","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_20","sessionId":"report_SGD_inside_20","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_2","sessionId":"report_SGD_inside_2","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_19","sessionId":"report_SGD_inside_19","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_18","sessionId":"report_SGD_inside_18","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_17","sessionId":"report_SGD_inside_17","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_16","sessionId":"report_SGD_inside_16","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_15","sessionId":"report_SGD_inside_15","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_14","sessionId":"report_SGD_inside_14","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_13","sessionId":"report_SGD_inside_13","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_12","sessionId":"report_SGD_inside_12","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_11","sessionId":"report_SGD_inside_11","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"},{"id":"cdr_report_SGD_inside_10","sessionId":"report_SGD_inside_10","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"}],"to":"2026-11-02T00:00:00+08:00","totals":{"currency":"SGD","count":26,"energyKwh":26,"gross":41.6,"platformFee":2.08,"netPayout":39.52}}
+
+curl exit: 0
+
+2026-11-02T01:32:03.219597+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=SGD&from=2026-11-01&to=2026-11-01&page=2
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Content-Length: 596
+
+
+
+{"evseUid":"","from":"2026-11-01T00:00:00+08:00","limit":25,"order":"settled_desc","page":2,"reportingTimezone":"Asia/Kuala_Lumpur","rows":[{"id":"cdr_report_SGD_inside_1","sessionId":"report_SGD_inside_1","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Jurong East","evseUid":"SG*VLT*E*D13DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"SGD"}],"to":"2026-11-02T00:00:00+08:00","totals":{"currency":"SGD","count":26,"energyKwh":26,"gross":41.6,"platformFee":2.08,"netPayout":39.52}}
+
+curl exit: 0
+
+2026-11-02T01:32:03.279326+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=SGD&from=2026-11-01&to=2026-11-01&format=csv&limit=1&page=99
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Disposition: attachment; filename="chargenet-cdrs.csv"
+
+Content-Type: text/csv; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Transfer-Encoding: chunked
+
+
+
+cdr_id,session_id,start,end,station,evse,kwh,minutes,tariff,gross,platform_fee,net_payout,currency
+cdr_report_SGD_inside_9,report_SGD_inside_9,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_8,report_SGD_inside_8,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_7,report_SGD_inside_7,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_6,report_SGD_inside_6,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_5,report_SGD_inside_5,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_4,report_SGD_inside_4,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_3,report_SGD_inside_3,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_26,report_SGD_inside_26,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_25,report_SGD_inside_25,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_24,report_SGD_inside_24,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_23,report_SGD_inside_23,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_22,report_SGD_inside_22,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_21,report_SGD_inside_21,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_20,report_SGD_inside_20,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_2,report_SGD_inside_2,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_19,report_SGD_inside_19,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_18,report_SGD_inside_18,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_17,report_SGD_inside_17,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_16,report_SGD_inside_16,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_15,report_SGD_inside_15,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_14,report_SGD_inside_14,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_13,report_SGD_inside_13,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_12,report_SGD_inside_12,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_11,report_SGD_inside_11,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_10,report_SGD_inside_10,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+cdr_report_SGD_inside_1,report_SGD_inside_1,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Jurong East,SG*VLT*E*D13DC,1.000,1,1.60,1.60,0.08,1.52,SGD
+TOTAL,,,,,,26.000,,,41.60,2.08,39.52,SGD
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS cdrs,sum(gross_amount) AS gross,sum(platform_fee) AS fee,sum(net_payout) AS net FROM cdrs WHERE cpo_id='cpo_voltgo' AND user_id<>'usr_sandbox' AND currency='SGD' AND created_at>='2026-10-31T16:00:00Z' AND created_at<'2026-11-01T16:00:00Z' GROUP BY currency;"
+currency,cdrs,gross,fee,net
+SGD,26,41.60,2.08,39.52
+
+exit: 0
+
+2026-11-02T01:32:03.531521+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/overview?currency=THB
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Content-Length: 509
+
+
+
+{"currency":"THB","sessionsToday":39,"kwhToday":268.742,"grossToday":28.08,"activeSessions":0,"netPayoutMtd":67.72,"counts":{"available":28,"charging":1,"blocked":0,"inoperative":1},"last7Days":[{"day":"2026-11-12","sessions":0,"gross":0},{"day":"2026-11-13","sessions":0,"gross":0},{"day":"2026-11-14","sessions":0,"gross":0},{"day":"2026-11-15","sessions":0,"gross":0},{"day":"2026-11-16","sessions":0,"gross":0},{"day":"2026-11-02","sessions":0,"gross":0},{"day":"2026-11-02","sessions":4,"gross":28.08}]}
+
+curl exit: 0
+
+2026-11-02T01:32:03.593157+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=THB&from=2026-11-01&to=2026-11-01
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"evseUid":"","from":"2026-11-01T00:00:00+08:00","limit":25,"order":"settled_desc","page":1,"reportingTimezone":"Asia/Kuala_Lumpur","rows":[{"id":"cdr_report_THB_inside_9","sessionId":"report_THB_inside_9","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_8","sessionId":"report_THB_inside_8","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_7","sessionId":"report_THB_inside_7","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_6","sessionId":"report_THB_inside_6","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_5","sessionId":"report_THB_inside_5","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_4","sessionId":"report_THB_inside_4","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_3","sessionId":"report_THB_inside_3","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_26","sessionId":"report_THB_inside_26","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_25","sessionId":"report_THB_inside_25","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_24","sessionId":"report_THB_inside_24","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_23","sessionId":"report_THB_inside_23","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_22","sessionId":"report_THB_inside_22","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_21","sessionId":"report_THB_inside_21","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_20","sessionId":"report_THB_inside_20","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_2","sessionId":"report_THB_inside_2","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_19","sessionId":"report_THB_inside_19","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_18","sessionId":"report_THB_inside_18","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_17","sessionId":"report_THB_inside_17","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_16","sessionId":"report_THB_inside_16","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_15","sessionId":"report_THB_inside_15","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_14","sessionId":"report_THB_inside_14","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_13","sessionId":"report_THB_inside_13","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_12","sessionId":"report_THB_inside_12","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_11","sessionId":"report_THB_inside_11","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"},{"id":"cdr_report_THB_inside_10","sessionId":"report_THB_inside_10","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"}],"to":"2026-11-02T00:00:00+08:00","totals":{"currency":"THB","count":26,"energyKwh":26,"gross":41.6,"platformFee":2.08,"netPayout":39.52}}
+
+curl exit: 0
+
+2026-11-02T01:32:03.651258+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=THB&from=2026-11-01&to=2026-11-01&page=2
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Content-Length: 597
+
+
+
+{"evseUid":"","from":"2026-11-01T00:00:00+08:00","limit":25,"order":"settled_desc","page":2,"reportingTimezone":"Asia/Kuala_Lumpur","rows":[{"id":"cdr_report_THB_inside_1","sessionId":"report_THB_inside_1","startTime":"2026-10-31T23:59:00+08:00","endTime":"2026-11-01T00:00:00+08:00","stationName":"VoltGo Bangkok West","evseUid":"TH*VLT*E*D24DC","energyKwh":1,"minutes":1,"tariffPerKwh":1.6,"gross":1.6,"platformFee":0.08,"netPayout":1.52,"currency":"THB"}],"to":"2026-11-02T00:00:00+08:00","totals":{"currency":"THB","count":26,"energyKwh":26,"gross":41.6,"platformFee":2.08,"netPayout":39.52}}
+
+curl exit: 0
+
+2026-11-02T01:32:03.711112+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc15\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cdrs?currency=THB&from=2026-11-01&to=2026-11-01&format=csv&limit=1&page=99
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Disposition: attachment; filename="chargenet-cdrs.csv"
+
+Content-Type: text/csv; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:32:03 GMT
+
+Transfer-Encoding: chunked
+
+
+
+cdr_id,session_id,start,end,station,evse,kwh,minutes,tariff,gross,platform_fee,net_payout,currency
+cdr_report_THB_inside_9,report_THB_inside_9,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_8,report_THB_inside_8,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_7,report_THB_inside_7,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_6,report_THB_inside_6,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_5,report_THB_inside_5,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_4,report_THB_inside_4,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_3,report_THB_inside_3,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_26,report_THB_inside_26,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_25,report_THB_inside_25,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_24,report_THB_inside_24,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_23,report_THB_inside_23,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_22,report_THB_inside_22,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_21,report_THB_inside_21,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_20,report_THB_inside_20,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_2,report_THB_inside_2,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_19,report_THB_inside_19,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_18,report_THB_inside_18,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_17,report_THB_inside_17,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_16,report_THB_inside_16,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_15,report_THB_inside_15,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_14,report_THB_inside_14,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_13,report_THB_inside_13,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_12,report_THB_inside_12,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_11,report_THB_inside_11,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_10,report_THB_inside_10,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+cdr_report_THB_inside_1,report_THB_inside_1,2026-10-31T23:59:00+08:00,2026-11-01T00:00:00+08:00,VoltGo Bangkok West,TH*VLT*E*D24DC,1.000,1,1.60,1.60,0.08,1.52,THB
+TOTAL,,,,,,26.000,,,41.60,2.08,39.52,THB
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS cdrs,sum(gross_amount) AS gross,sum(platform_fee) AS fee,sum(net_payout) AS net FROM cdrs WHERE cpo_id='cpo_voltgo' AND user_id<>'usr_sandbox' AND currency='THB' AND created_at>='2026-10-31T16:00:00Z' AND created_at<'2026-11-01T16:00:00Z' GROUP BY currency;"
+currency,cdrs,gross,fee,net
+THB,26,41.60,2.08,39.52
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT currency,count(*) AS count,sum(gross_amount) AS gross,sum(net_payout) AS net FROM cdrs WHERE cpo_id='cpo_voltgo' AND user_id<>'usr_sandbox' AND created_at>='2026-10-31T16:00:00Z' AND created_at<'2026-11-30T16:00:00Z' GROUP BY currency ORDER BY currency;"
+currency,count,gross,net
+MYR,56,414.15,393.40
+SGD,31,45.09,42.85
+THB,31,71.28,67.72
+
+exit: 0

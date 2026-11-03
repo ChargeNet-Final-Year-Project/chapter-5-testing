@@ -1,0 +1,196 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Ops voltgo
+ops@voltgo.my
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Network
+Live · refreshes every 5s
+Country
+All countries
+Malaysia
+Singapore
+Thailand
+All
+Available
+Charging
+Blocked
+Inoperative
+Stations
+13
+Bays available
+27
+Charging now
+2
+Sessions today
+9
+VoltGo Bangkok West
+2/2 bays free
+Charoen Nakhon Road, Bangkok West, Thailand (simulated site), Bangkok West · TH · Simulated station
+TH*VLT*E*D24AC
+TYPE2 · SOCKET · 22 kW
+THB 6.50 / kWh
+AVAILABLE
+TH*VLT*E*D24DC
+CCS2 · CABLE · 150 kW
+THB 8.00 / kWh
+AVAILABLE
+VoltGo Batu Kawan
+1/2 bays free
+Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site), Batu Kawan · MY · Simulated station
+MY*VLT*E*D11AC
+TYPE2 · SOCKET · 22 kW
+MYR 0.90 / kWh
+CHARGING
+MY*VLT*E*D11DC
+CCS2 · CABLE · 150 kW
+MYR 1.50 / kWh
+AVAILABLE
+VoltGo Bayan Lepas / Queensbay area
+2/2 bays free
+Persiaran Bayan Indah, Bayan Lepas / Queensbay area, Penang, Malaysia (simulated site), Bayan Lepas / Queensbay area · MY · Simulated station
+MY*VLT*E*D05AC
+TYPE2 · SOCKET · 22 kW
+MYR 0.90 / kWh
+AVAILABLE
+MY*VLT*E*D05DC
+CCS2 · CABLE · 150 kW
+MYR 1.50 / kWh
+AVAILABLE
+VoltGo Butterworth
+2/2 bays free
+Jalan Bagan Luar, Butterworth, Penang, Malaysia (simulated site), Butterworth · MY · Simulated station
+MY*VLT*E*D07AC
+TYPE2 · SOCKET · 22 kW
+MYR 0.90 / kWh
+AVAILABLE
+MY*VLT*E*D07DC
+CCS2 · CABLE · 150 kW
+MYR 1.50 / kWh
+AVAILABLE
+VoltGo Genting Sempah R&R
+2/2 bays free
+Lebuhraya Kuala Lumpur-Karak, Genting Sempah, Genting Sempah · MY · Simulated station
+VLT-GSR-01
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+AVAILABLE
+VLT-GSR-02
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+AVAILABLE
+VoltGo George Town
+2/2 bays free
+Jalan Penang, George Town, Penang, Malaysia (simulated site), George Town · MY · Simulated station
+MY*VLT*E*D01AC
+TYPE2 · SOCKET · 22 kW
+MYR 0.90 / kWh
+AVAILABLE
+MY*VLT*E*D01DC
+CCS2 · CABLE · 150 kW
+MYR 1.50 / kWh
+AVAILABLE
+VoltGo Hat Yai
+2/2 bays free
+Niphat Uthit 3 Road, Hat Yai, Thailand (simulated site), Hat Yai · TH · Simulated station
+TH*VLT*E*D17AC
+TYPE2 · SOCKET · 22 kW
+THB 6.50 / kWh
+AVAILABLE
+TH*VLT*E*D17DC
+CCS2 · CABLE · 150 kW
+THB 8.00 / kWh
+AVAILABLE
+VoltGo Jurong East
+2/2 bays free
+Jurong Gateway Road, Jurong East, Singapore (simulated site), Jurong East · SG · Simulated station
+SG*VLT*E*D13AC
+TYPE2 · SOCKET · 22 kW
+SGD 0.45 / kWh
+AVAILABLE
+SG*VLT*E*D13DC
+CCS2 · CABLE · 150 kW
+SGD 0.60 / kWh
+AVAILABLE
+VoltGo Marina South
+2/2 bays free
+Marina Gardens Drive, Marina South, Singapore (simulated site), Marina South · SG · Simulated station
+SG*VLT*E*D23AC
+TYPE2 · SOCKET · 22 kW
+SGD 0.45 / kWh
+AVAILABLE
+SG*VLT*E*D23DC
+CCS2 · CABLE · 150 kW
+SGD 0.60 / kWh
+AVAILABLE
+VoltGo Putrajaya Sentral
+3/3 bays free
+Putrajaya Sentral, Presint 7, Putrajaya · MY · Simulated station
+VLT-PJS-01
+CCS2 · CABLE · 250 kW
+MYR 1.70 / kWh
+AVAILABLE
+VLT-PJS-02
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+AVAILABLE
+VLT-PJS-03
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+AVAILABLE
+VoltGo Seremban R&R
+3/4 bays free
+Lebuhraya Utara-Selatan, Seremban, Seremban · MY · Simulated station
+VLT-SRR-01
+CCS2 · CABLE · 350 kW
+MYR 1.80 / kWh
+AVAILABLE
+VLT-SRR-02
+CCS2 · CABLE · 350 kW
+MYR 1.80 / kWh
+AVAILABLE
+VLT-SRR-03
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+AVAILABLE
+VLT-SRR-04
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+INOPERATIVE
+VoltGo Sungai Buloh R&R
+2/3 bays free
+Lebuhraya Utara-Selatan, Sungai Buloh, Sungai Buloh · MY · Simulated station
+VLT-SGB-01
+CCS2 · CABLE · 350 kW
+MYR 1.80 / kWh
+AVAILABLE
+VLT-SGB-02
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+CHARGING
+VLT-SGB-03
+CCS2 · CABLE · 180 kW
+MYR 1.60 / kWh
+AVAILABLE
+VoltGo Woodlands
+2/2 bays free
+Woodlands Avenue 3, Woodlands, Singapore (simulated site), Woodlands · SG · Simulated station
+SG*VLT*E*D15AC
+TYPE2 · SOCKET · 22 kW
+SGD 0.45 / kWh
+AVAILABLE
+SG*VLT*E*D15DC
+CCS2 · CABLE · 150 kW
+SGD 0.60 / kWh
+AVAILABLE
+Your session expired. Please sign in again.
+Your session expired. Please sign in again.

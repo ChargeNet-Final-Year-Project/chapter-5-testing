@@ -1,0 +1,475 @@
+Fresh application capture; actual execution clock; no historical execution claim.
+
+2026-11-02T01:24:45.571779+08:00
+Request body: {"name": "Chapter Five Driver", "email": "ch5-25b0da156a@example.test", "password": "LocalOnly123!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-6f7d967a-001.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:45 GMT
+
+Content-Length: 367
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY","user":{"id":"usr_017d437776b309f8a8cee779","name":"Chapter Five Driver","email":"ch5-25b0da156a@example.test","createdAt":"2026-11-02T17:24:45.554438Z"}}
+
+curl exit: 0
+
+2026-11-02T01:24:46.437403+08:00
+Request body: {"amount": 100, "paymentMethod": "Credit Card"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" -H "Idempotency-Key: 8f81aed096e14235a895b40da7d364e4" --data-binary @input-e2bdfb6e-002.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 155
+
+
+
+{"id": "wal_f233b526e27f1c4f28552de1", "userId": "usr_017d437776b309f8a8cee779", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T01:24:46.513013+08:00
+Request body: {"name": "Type 2", "licensePlate": "CH5 1", "connectorType": "TYPE2", "batteryCapacity": 60, "isDefault": false}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" --data-binary @input-779e53c6-003.json http://localhost:18080/api/v1/vehicles
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 179
+
+
+
+{"id":"veh_49fe0793217d039e93fb1bbf","userId":"usr_017d437776b309f8a8cee779","name":"Type 2","licensePlate":"CH5 1","connectorType":"TYPE2","batteryCapacity":60,"isDefault":true}
+
+curl exit: 0
+
+2026-11-02T01:24:46.588946+08:00
+Request body: {"name": "CCS2", "licensePlate": "CH5 1", "connectorType": "CCS2", "batteryCapacity": 60, "isDefault": false}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" --data-binary @input-4c183bae-004.json http://localhost:18080/api/v1/vehicles
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 177
+
+
+
+{"id":"veh_d944cb92a63f8350d321652a","userId":"usr_017d437776b309f8a8cee779","name":"CCS2","licensePlate":"CH5 1","connectorType":"CCS2","batteryCapacity":60,"isDefault":false}
+
+curl exit: 0
+
+2026-11-02T01:24:46.712407+08:00
+Request body: {"name": "Edited Type 2", "licensePlate": "CH5 1", "connectorType": "TYPE2", "batteryCapacity": 60, "isDefault": true}
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" --data-binary @input-ca2eb2d6-005.json http://localhost:18080/api/v1/vehicles/veh_49fe0793217d039e93fb1bbf
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 186
+
+
+
+{"id":"veh_49fe0793217d039e93fb1bbf","userId":"usr_017d437776b309f8a8cee779","name":"Edited Type 2","licensePlate":"CH5 1","connectorType":"TYPE2","batteryCapacity":60,"isDefault":true}
+
+curl exit: 0
+
+2026-11-02T01:24:46.772835+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/vehicles
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 365
+
+
+
+[{"id":"veh_49fe0793217d039e93fb1bbf","userId":"usr_017d437776b309f8a8cee779","name":"Edited Type 2","licensePlate":"CH5 1","connectorType":"TYPE2","batteryCapacity":60,"isDefault":true},{"id":"veh_d944cb92a63f8350d321652a","userId":"usr_017d437776b309f8a8cee779","name":"CCS2","licensePlate":"CH5 1","connectorType":"CCS2","batteryCapacity":60,"isDefault":false}]
+
+curl exit: 0
+
+2026-11-02T01:24:46.824648+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/stations?country=MY&cpoId=cpo_voltgo
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_batu_kawan","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Batu Kawan","address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","latitude":5.245,"longitude":100.438,"totalBays":2,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_batu_kawan_ac","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_batu_kawan_dc","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"CHARGING"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_bayan_lepas","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Bayan Lepas / Queensbay area","address":"Persiaran Bayan Indah, Bayan Lepas / Queensbay area, Penang, Malaysia (simulated site)","city":"Bayan Lepas / Queensbay area","latitude":5.334,"longitude":100.305,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_bayan_lepas_ac","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_bayan_lepas_dc","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_butterworth","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Butterworth","address":"Jalan Bagan Luar, Butterworth, Penang, Malaysia (simulated site)","city":"Butterworth","latitude":5.399,"longitude":100.368,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_butterworth_ac","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_butterworth_dc","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Pahang","countryCode":"MY","isSimulated":true,"id":"stn_vlt_gsr","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Genting Sempah R\u0026R","address":"Lebuhraya Kuala Lumpur-Karak, Genting Sempah","city":"Genting Sempah","latitude":3.365,"longitude":101.787,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_gsr_01","stationId":"stn_vlt_gsr","evseUid":"VLT-GSR-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_gsr_02","stationId":"stn_vlt_gsr","evseUid":"VLT-GSR-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_george_town","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo George Town","address":"Jalan Penang, George Town, Penang, Malaysia (simulated site)","city":"George Town","latitude":5.419,"longitude":100.331,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_george_town_ac","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_george_town_dc","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Putrajaya","countryCode":"MY","isSimulated":true,"id":"stn_vlt_pjs","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Putrajaya Sentral","address":"Putrajaya Sentral, Presint 7","city":"Putrajaya","latitude":2.9264,"longitude":101.6764,"totalBays":3,"availableBays":3,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_250","id":"con_vlt_pjs_01","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":250,"tariffPerKwh":1.7,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_pjs_02","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_pjs_03","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]},{"region":"Negeri Sembilan","countryCode":"MY","isSimulated":true,"id":"stn_vlt_srr","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Seremban R\u0026R","address":"Lebuhraya Utara-Selatan, Seremban","city":"Seremban","latitude":2.734,"longitude":101.918,"totalBays":4,"availableBays":3,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_srr_01","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_srr_02","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_srr_03","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_srr_04","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-04","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"INOPERATIVE"}]},{"region":"Selangor","countryCode":"MY","isSimulated":true,"id":"stn_vlt_sgb","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Sungai Buloh R\u0026R","address":"Lebuhraya Utara-Selatan, Sungai Buloh","city":"Sungai Buloh","latitude":3.2105,"longitude":101.579,"totalBays":3,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_sgb_01","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_sgb_02","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"CHARGING"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_sgb_03","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T01:24:46.885849+08:00
+Request body: {"evseUid": "MY*VLT*E*D05DC", "estimatedKwh": "15"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" --data-binary @input-bbd3352a-008.json http://localhost:18080/api/v1/quotes
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 658
+
+
+
+{"id":"qte_1bea9c275006c7d85634281d","userId":"usr_017d437776b309f8a8cee779","walletId":"wal_f233b526e27f1c4f28552de1","cpoId":"cpo_voltgo","stationId":"stn_demo_bayan_lepas","connectorId":"con_demo_bayan_lepas_dc","tariffId":"trf_demo_voltgo_my_dc","tariffUpdatedAt":"2026-11-02T00:48:39.765711+08:00","tariffPerKwh":"1.500000","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRateId":null,"exchangeRate":"1.0000000000","rateSource":"same-currency","estimatedKwh":"15.000","estimatedOriginalCost":"22.50","estimatedWalletCost":"22.50","budget":"100.00","createdAt":"2026-11-02T01:24:46.867136+08:00","acceptedAt":null,"equivalentTariff":"1.500000"}
+
+curl exit: 0
+
+2026-11-02T01:24:46.964108+08:00
+Request body: {"evseUid": "MY*VLT*E*D05DC", "quoteId": "qte_1bea9c275006c7d85634281d", "targetSoc": 100}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" -H "Idempotency-Key: f456a7a630f94733bad19ff3d411c7bc" --data-binary @input-989253ce-009.json http://localhost:18080/api/v1/sessions/start
+HTTP/1.1 422 Unprocessable Entity
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:46 GMT
+
+Content-Length: 101
+
+
+
+{"error":{"code":"INCOMPATIBLE_CONNECTOR","message":"A TYPE2 vehicle cannot use a CCS2 connector."}}
+
+curl exit: 0
+
+2026-11-02T01:24:47.036323+08:00
+Request body: {"name": "Default CCS2", "licensePlate": "CH5 1", "connectorType": "CCS2", "batteryCapacity": 60, "isDefault": true}
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" --data-binary @input-e728b3f0-010.json http://localhost:18080/api/v1/vehicles/veh_d944cb92a63f8350d321652a
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:47 GMT
+
+Content-Length: 184
+
+
+
+{"id":"veh_d944cb92a63f8350d321652a","userId":"usr_017d437776b309f8a8cee779","name":"Default CCS2","licensePlate":"CH5 1","connectorType":"CCS2","batteryCapacity":60,"isDefault":true}
+
+curl exit: 0
+
+2026-11-02T01:24:47.074463+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/stations?country=MY&cpoId=cpo_voltgo
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:47 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_batu_kawan","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Batu Kawan","address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","latitude":5.245,"longitude":100.438,"totalBays":2,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_batu_kawan_ac","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_batu_kawan_dc","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"CHARGING"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_bayan_lepas","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Bayan Lepas / Queensbay area","address":"Persiaran Bayan Indah, Bayan Lepas / Queensbay area, Penang, Malaysia (simulated site)","city":"Bayan Lepas / Queensbay area","latitude":5.334,"longitude":100.305,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_bayan_lepas_ac","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_bayan_lepas_dc","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_butterworth","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Butterworth","address":"Jalan Bagan Luar, Butterworth, Penang, Malaysia (simulated site)","city":"Butterworth","latitude":5.399,"longitude":100.368,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_butterworth_ac","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_butterworth_dc","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Pahang","countryCode":"MY","isSimulated":true,"id":"stn_vlt_gsr","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Genting Sempah R\u0026R","address":"Lebuhraya Kuala Lumpur-Karak, Genting Sempah","city":"Genting Sempah","latitude":3.365,"longitude":101.787,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_gsr_01","stationId":"stn_vlt_gsr","evseUid":"VLT-GSR-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_gsr_02","stationId":"stn_vlt_gsr","evseUid":"VLT-GSR-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_george_town","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo George Town","address":"Jalan Penang, George Town, Penang, Malaysia (simulated site)","city":"George Town","latitude":5.419,"longitude":100.331,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_george_town_ac","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_george_town_dc","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Putrajaya","countryCode":"MY","isSimulated":true,"id":"stn_vlt_pjs","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Putrajaya Sentral","address":"Putrajaya Sentral, Presint 7","city":"Putrajaya","latitude":2.9264,"longitude":101.6764,"totalBays":3,"availableBays":3,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_250","id":"con_vlt_pjs_01","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":250,"tariffPerKwh":1.7,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_pjs_02","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_pjs_03","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]},{"region":"Negeri Sembilan","countryCode":"MY","isSimulated":true,"id":"stn_vlt_srr","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Seremban R\u0026R","address":"Lebuhraya Utara-Selatan, Seremban","city":"Seremban","latitude":2.734,"longitude":101.918,"totalBays":4,"availableBays":3,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_srr_01","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_srr_02","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_srr_03","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_srr_04","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-04","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"INOPERATIVE"}]},{"region":"Selangor","countryCode":"MY","isSimulated":true,"id":"stn_vlt_sgb","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Sungai Buloh R\u0026R","address":"Lebuhraya Utara-Selatan, Sungai Buloh","city":"Sungai Buloh","latitude":3.2105,"longitude":101.579,"totalBays":3,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_sgb_01","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_sgb_02","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"CHARGING"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_sgb_03","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T01:24:47.147364+08:00
+Request body: {"evseUid": "MY*VLT*E*D11AC", "estimatedKwh": "15"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" --data-binary @input-f196fc4f-012.json http://localhost:18080/api/v1/quotes
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:47 GMT
+
+Content-Length: 656
+
+
+
+{"id":"qte_5f21cc1a24745b2da03e79cd","userId":"usr_017d437776b309f8a8cee779","walletId":"wal_f233b526e27f1c4f28552de1","cpoId":"cpo_voltgo","stationId":"stn_demo_batu_kawan","connectorId":"con_demo_batu_kawan_ac","tariffId":"trf_demo_voltgo_my_ac","tariffUpdatedAt":"2026-11-02T00:48:39.765711+08:00","tariffPerKwh":"0.900000","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRateId":null,"exchangeRate":"1.0000000000","rateSource":"same-currency","estimatedKwh":"15.000","estimatedOriginalCost":"13.50","estimatedWalletCost":"13.50","budget":"100.00","createdAt":"2026-11-02T01:24:47.128017+08:00","acceptedAt":null,"equivalentTariff":"0.900000"}
+
+curl exit: 0
+
+2026-11-02T01:24:47.296797+08:00
+Request body: {"evseUid": "MY*VLT*E*D11AC", "quoteId": "qte_5f21cc1a24745b2da03e79cd", "targetSoc": 100}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" -H "Idempotency-Key: ff0d89b82a80466a9c0865a1709e1128" --data-binary @input-803a15ca-013.json http://localhost:18080/api/v1/sessions/start
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:47 GMT
+
+Content-Length: 890
+
+
+
+{"id": "ses_9eefe0954a1e996583644662", "cdrId": null, "cpoId": "cpo_voltgo", "status": "CHARGING", "userId": "usr_017d437776b309f8a8cee779", "cdrJson": null, "cpoName": "VoltGo", "endTime": null, "evseUid": "MY*VLT*E*D11AC", "quoteId": "qte_5f21cc1a24745b2da03e79cd", "startTime": "2026-11-02T01:24:47.235628+08:00", "stationId": "stn_demo_batu_kawan", "targetSoc": 100, "totalCost": 0, "vehicleId": "veh_d944cb92a63f8350d321652a", "batterySoc": 30.9, "rateSource": "same-currency", "stopReason": null, "connectorId": "con_demo_batu_kawan_ac", "stationName": "VoltGo Batu Kawan", "balanceAfter": null, "exchangeRate": "1.0000000000", "kwhDelivered": 0, "originalCost": 0, "tariffPerKwh": 0.9, "connectorType": "TYPE2", "tariffDecimal": "0.900000", "currentPowerKw": 10.01, "reservedAmount": 100, "unfundedAmount": 0, "walletCurrency": "MYR", "durationSeconds": 0, "originalCurrency": "MYR"}
+curl exit: 0
+
+2026-11-02T01:24:47.351083+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/sessions/ses_9eefe0954a1e996583644662
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:47 GMT
+
+Content-Length: 826
+
+
+
+{"quoteId":"qte_5f21cc1a24745b2da03e79cd","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":0,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.900000","id":"ses_9eefe0954a1e996583644662","userId":"usr_017d437776b309f8a8cee779","vehicleId":"veh_d944cb92a63f8350d321652a","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_ac","evseUid":"MY*VLT*E*D11AC","connectorType":"TYPE2","status":"CHARGING","startTime":"2026-11-02T01:24:47.235628+08:00","endTime":null,"durationSeconds":0,"kwhDelivered":0,"currentPowerKw":10.01,"batterySoc":30.9,"targetSoc":100,"tariffPerKwh":0.9,"totalCost":0,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T01:24:48.387875+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/sessions/ses_9eefe0954a1e996583644662
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:48 GMT
+
+Content-Length: 826
+
+
+
+{"quoteId":"qte_5f21cc1a24745b2da03e79cd","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":0,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.900000","id":"ses_9eefe0954a1e996583644662","userId":"usr_017d437776b309f8a8cee779","vehicleId":"veh_d944cb92a63f8350d321652a","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_ac","evseUid":"MY*VLT*E*D11AC","connectorType":"TYPE2","status":"CHARGING","startTime":"2026-11-02T01:24:47.235628+08:00","endTime":null,"durationSeconds":0,"kwhDelivered":0,"currentPowerKw":10.01,"batterySoc":30.9,"targetSoc":100,"tariffPerKwh":0.9,"totalCost":0,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T01:24:49.422099+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/sessions/ses_9eefe0954a1e996583644662
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:49 GMT
+
+Content-Length: 837
+
+
+
+{"quoteId":"qte_5f21cc1a24745b2da03e79cd","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":0.05,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.900000","id":"ses_9eefe0954a1e996583644662","userId":"usr_017d437776b309f8a8cee779","vehicleId":"veh_d944cb92a63f8350d321652a","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_ac","evseUid":"MY*VLT*E*D11AC","connectorType":"TYPE2","status":"CHARGING","startTime":"2026-11-02T01:24:47.235628+08:00","endTime":null,"durationSeconds":20,"kwhDelivered":0.055,"currentPowerKw":9.87,"batterySoc":30.99,"targetSoc":100,"tariffPerKwh":0.9,"totalCost":0.05,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T01:24:49.544441+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/sessions/ses_9eefe0954a1e996583644662/stop
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:49 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"quoteId":"qte_5f21cc1a24745b2da03e79cd","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":0.05,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.900000","id":"ses_9eefe0954a1e996583644662","userId":"usr_017d437776b309f8a8cee779","vehicleId":"veh_d944cb92a63f8350d321652a","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_ac","evseUid":"MY*VLT*E*D11AC","connectorType":"TYPE2","status":"COMPLETED","startTime":"2026-11-02T01:24:47.235628+08:00","endTime":"2026-11-02T01:24:49.492901+08:00","durationSeconds":20,"kwhDelivered":0.055,"currentPowerKw":9.87,"batterySoc":30.99,"targetSoc":100,"tariffPerKwh":0.9,"totalCost":0.05,"balanceAfter":99.95,"stopReason":"USER","cdrId":"cdr_a89d854f6d1471dcda204d52","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"SOCKET","connector_id":"1","connector_power_type":"AC_3_PHASE","connector_standard":"IEC_62196_T2","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11AC","evse_uid":"MY*VLT*E*D11AC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_017d437776b309f8a8cee779","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_017d437776b309f8a8cee779"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.055},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T17:24:47Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T17:24:49Z","id":"cdr_a89d854f6d1471dcda204d52","last_updated":"2026-11-02T17:24:49Z","party_id":"VLT","session_id":"ses_9eefe0954a1e996583644662","start_date_time":"2026-11-02T17:24:47Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":0.9,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_ac","last_updated":"2026-11-02T17:24:47Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":0.05},"total_energy":0.055,"total_time":0.0056}}
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_9eefe0954a1e996583644662';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_9eefe0954a1e996583644662,usr_017d437776b309f8a8cee779,COMPLETED,0.055,MYR,0.05,MYR,0.05,1.0000000000,0.900000,AVAILABLE,1,1,0,99.95
+
+exit: 0
+
+2026-11-02T01:24:49.822109+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X DELETE -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/vehicles/veh_49fe0793217d039e93fb1bbf
+HTTP/1.1 204 No Content
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Date: Mon, 02 Nov 2026 17:24:49 GMT
+
+
+
+
+curl exit: 0
+
+2026-11-02T01:24:49.855495+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc07\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMDE3ZDQzNzc3NmIzMDlmOGE4Y2VlNzc5IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjI2ODUsImlhdCI6MTc5NDkzNjI4NX0.cR71OlC0d6zE8lvQp9SFN2yrj_7-1ooHkLrsYubu0EY" http://localhost:18080/api/v1/vehicles
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:24:49 GMT
+
+Content-Length: 186
+
+
+
+[{"id":"veh_d944cb92a63f8350d321652a","userId":"usr_017d437776b309f8a8cee779","name":"Default CCS2","licensePlate":"CH5 1","connectorType":"CCS2","batteryCapacity":60,"isDefault":true}]
+
+curl exit: 0

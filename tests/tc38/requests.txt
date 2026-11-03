@@ -1,0 +1,461 @@
+Fresh application capture; actual execution clock; no historical execution claim.
+
+2026-11-02T00:52:09.272551+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/ocpi/versions
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 19
+
+404 page not found
+
+curl exit: 0
+
+2026-11-02T00:52:09.331822+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 128
+
+{"data":{},"status_code":2001,"status_message":"Missing or malformed Authorization header.","timestamp":"2026-11-02T16:52:09Z"}
+
+curl exit: 0
+
+2026-11-02T00:52:09.386829+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/ocpi/emsp/2.3.0/locations
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 128
+
+{"data":{},"status_code":2001,"status_message":"Missing or malformed Authorization header.","timestamp":"2026-11-02T16:52:09Z"}
+
+curl exit: 0
+
+2026-11-02T00:52:09.440641+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token unknown" http://localhost:18080/ocpi/versions
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 19
+
+404 page not found
+
+curl exit: 0
+
+2026-11-02T00:52:09.495135+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token unknown" http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T16:52:09Z"}
+
+curl exit: 0
+
+2026-11-02T00:52:09.556551+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token unknown" http://localhost:18080/ocpi/emsp/2.3.0/locations
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T16:52:09Z"}
+
+curl exit: 0
+
+2026-11-02T00:52:09.639331+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token dW5rbm93bg==" http://localhost:18080/ocpi/versions
+HTTP/1.1 404 Not Found
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 19
+
+404 page not found
+
+curl exit: 0
+
+2026-11-02T00:52:09.698238+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token dW5rbm93bg==" http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T16:52:09Z"}
+
+curl exit: 0
+
+2026-11-02T00:52:09.750274+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\anonymous-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token dW5rbm93bg==" http://localhost:18080/ocpi/emsp/2.3.0/locations
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:52:09 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T16:52:09Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:42.695087+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\operator-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/admin/api/register
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9mMDk3ZWRhYzVkMzgwY2M5ZjQxOGFiY2MiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3ODg4MiwiaWF0IjoxNzk0OTM1NjgyLCJyb2xlIjoiQ1BPIiwiY3BvSWQiOiJjcG9fZjIyY2EzOTk3MzhhYmI5NDEzNzFhNDRkIn0.yOYb-9utjzZU1MiA8eLKsye834-yjw3atJKa42FqMvo; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+Date: Mon, 02 Nov 2026 17:14:42 GMT
+Content-Length: 815
+
+{"cpo":{"ocpiVersion":"2.3.0","id":"cpo_f22ca399738abb941371a44d","name":"Controlled tc38 394e6b","slug":"controlledtc38394e6b","countryCode":"MY","partyId":"X60","baseUrl":"","colorHex":"#6B7280","contactEmail":"tc38-4f08b6c3@example.test","tokenA":"4a8ffe6bbf35bdfedb50f58c0faa22bbe2dfc6b943dcfb88fefb942e715908c0","tokenAUsed":false,"tokenBSet":false,"tokenCSet":false,"tokenBLast4":"","tokenCLast4":"","handshakeStatus":"NOT_STARTED","status":"PENDING","platformFeePct":5,"bankName":"Synthetic Bank","bankAccountHolder":"Test Operator","bankAccountNo":"1234567890","payoutCycle":"MONTHLY","createdAt":"2026-11-02T01:14:42.6706+08:00","handshakeAt":null},"user":{"id":"pu_f097edac5d380cc9f418abcc","name":"Test Operator","email":"tc38-4f08b6c3@example.test","role":"CPO","cpoId":"cpo_f22ca399738abb941371a44d"}}
+
+curl exit: 0
+
+2026-11-02T01:14:42.768318+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\exchange-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\exchange-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token NGE4ZmZlNmJiZjM1YmRmZWRiNTBmNThjMGZhYTIyYmJlMmRmYzZiOTQzZGNmYjg4ZmVmYjk0MmU3MTU5MDhjMA==" --data-binary @input-002.json http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:42 GMT
+Content-Length: 320
+
+{"data":{"token":"539b78caeb8d96a21acd867f6504371fc6d8e797527ee1a19ae06ef5d36243bb","url":"http://localhost:18080/ocpi/emsp/versions","roles":[{"role":"EMSP","business_details":{"name":"ChargeNet"},"party_id":"CNT","country_code":"MY"}]},"status_code":1000,"status_message":"Success","timestamp":"2026-11-02T17:14:42Z"}
+
+curl exit: 0
+SOURCE GET /versions -> {"status_code": 1000, "data": [{"version": "2.3.0", "url": "http://127.0.0.1:18090/2.3.0"}], "timestamp": "2026-11-02T17:14:42.828339+00:00"}
+SOURCE GET /2.3.0/ -> {"status_code": 1000, "data": {"version": "2.3.0", "endpoints": [{"identifier": "locations", "role": "SENDER", "url": "http://127.0.0.1:18090/2.3.0/locations"}, {"identifier": "tariffs", "role": "SENDER", "url": "http://127.0.0.1:18090/2.3.0/tariffs"}, {"identifier": "commands", "role": "RECEIVER", "url": "http://127.0.0.1:18090/2.3.0/commands"}, {"identifier": "credentials", "role": "RECEIVER", "url": "http://127.0.0.1:18090/2.3.0/credentials"}]}, "timestamp": "2026-11-02T17:14:42.834393+00:00"}
+SOURCE GET /2.3.0/locations -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X60", "id": "LOCAL01", "name": "Controlled Chapter Five Station", "address": "Synthetic test site", "city": "Kuala Lumpur", "country": "MYS", "coordinates": {"latitude": "3.139", "longitude": "101.686"}, "evse": [{"uid": "MY*X60*E*01DC", "status": "AVAILABLE", "connectors": [{"id": "1", "standard": "IEC_62196_T2_COMBO", "format": "CABLE", "power_type": "DC", "max_electric_power": 50000, "tariff_ids": ["price-X60"]}]}]}], "timestamp": "2026-11-02T17:14:42.841541+00:00"}
+SOURCE GET /2.3.0/tariffs -> {"status_code": 1000, "data": [{"country_code": "MY", "party_id": "X60", "id": "price-X60", "currency": "MYR", "elements": [{"price_components": [{"type": "ENERGY", "price": 1.25, "step_size": 1}]}]}], "timestamp": "2026-11-02T17:14:42.861069+00:00"}
+SOURCE GET /2.3.0/commands -> {"status_code": 1000, "data": [], "timestamp": "2026-11-02T17:14:42.873267+00:00"}
+
+2026-11-02T01:14:42.886725+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo/handshake-test
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:42 GMT
+Content-Length: 713
+
+{"status":"VERIFIED","steps":[{"step":1,"label":"Credentials registered","status":"PASS","detail":"Token B and Token C are registered.","durationMs":0},{"step":2,"label":"GET versions","status":"PASS","detail":"The CPO serves OCPI 2.3.0.","durationMs":7},{"step":3,"label":"GET version details","status":"PASS","detail":"4 endpoints, including locations and commands.","durationMs":7},{"step":4,"label":"GET locations","status":"PASS","detail":"1 locations, 1 EVSEs; 1 stored.","durationMs":19},{"step":5,"label":"GET tariffs","status":"PASS","detail":"1 tariffs stored.","durationMs":11},{"step":6,"label":"Commands endpoint reachable","status":"PASS","detail":"The commands endpoint answers.","durationMs":3}]}
+
+curl exit: 0
+
+2026-11-02T01:14:43.049518+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-004.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9lZDZlNGY1ODNkN2NjNGQ4NDI2MTExYjkiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3ODg4MywiaWF0IjoxNzk0OTM1NjgzLCJyb2xlIjoiU1VQRVJfQURNSU4ifQ.QtMW8mqPgDzmUaA0vChR0pN_QQNiF_fqYJKe6R02vT0; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 112
+
+{"id":"pu_ed6e4f583d7cc4d8426111b9","name":"ChargeNet Admin","email":"admin@chargenet.my","role":"SUPER_ADMIN"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.221710+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-005.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 351
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjIwODMsImlhdCI6MTc5NDkzNTY4M30.qI6U4Lx7VU0TXou26yv2xdgVBJ0BeK3ijmBC1hJtAXY","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T01:14:43.269604+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/ocpi/emsp/versions
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 128
+
+{"data":{},"status_code":2001,"status_message":"Missing or malformed Authorization header.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.319337+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 128
+
+{"data":{},"status_code":2001,"status_message":"Missing or malformed Authorization header.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.369234+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/ocpi/emsp/2.3.0/locations
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 128
+
+{"data":{},"status_code":2001,"status_message":"Missing or malformed Authorization header.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.419048+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token unknown" http://localhost:18080/ocpi/emsp/versions
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.467334+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token unknown" http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.539558+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token unknown" http://localhost:18080/ocpi/emsp/2.3.0/locations
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.591354+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token dW5rbm93bg==" http://localhost:18080/ocpi/emsp/versions
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.639803+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token dW5rbm93bg==" http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.688506+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\invalid-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token dW5rbm93bg==" http://localhost:18080/ocpi/emsp/2.3.0/locations
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.736530+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\reused-a-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\reused-a-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token NGE4ZmZlNmJiZjM1YmRmZWRiNTBmNThjMGZhYTIyYmJlMmRmYzZiOTQzZGNmYjg4ZmVmYjk0MmU3MTU5MDhjMA==" --data-binary @input-015.json http://localhost:18080/ocpi/emsp/2.3.0/credentials
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.807565+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-016.json http://localhost:18080/admin/api/admin/cpos/cpo_f22ca399738abb941371a44d/status
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 78
+
+{"id":"cpo_f22ca399738abb941371a44d","platformFeePct":null,"status":"ACTIVE"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.862495+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjIwODMsImlhdCI6MTc5NDkzNTY4M30.qI6U4Lx7VU0TXou26yv2xdgVBJ0BeK3ijmBC1hJtAXY" http://localhost:18080/api/v1/stations?cpoId=cpo_f22ca399738abb941371a44d
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 658
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_a720def6c410020b110d4045","cpoId":"cpo_f22ca399738abb941371a44d","cpoName":"Controlled tc38 394e6b","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X60","id":"con_feb6ec9205101f5d50ad98f3","stationId":"stn_a720def6c410020b110d4045","evseUid":"MY*X60*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T01:14:43.924994+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\mismatch-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\mismatch-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token NTM5Yjc4Y2FlYjhkOTZhMjFhY2Q4NjdmNjUwNDM3MWZjNmQ4ZTc5NzUyN2VlMWExOWFlMDZlZjVkMzYyNDNiYg==" --data-binary @input-018.json http://localhost:18080/ocpi/emsp/2.3.0/locations/MY/BAD/LOCAL01
+HTTP/1.1 403 Forbidden
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 153
+
+{"data":{},"status_code":2001,"status_message":"That party does not belong to the token this request was made with.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:43.986279+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\callback-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\callback-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Token NGE4ZmZlNmJiZjM1YmRmZWRiNTBmNThjMGZhYTIyYmJlMmRmYzZiOTQzZGNmYjg4ZmVmYjk0MmU3MTU5MDhjMA==" --data-binary @input-019.json http://localhost:18080/ocpi/emsp/2.3.0/commands/STOP_SESSION/unknown-command
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:43 GMT
+Content-Length: 111
+
+{"data":{},"status_code":2001,"status_message":"Unknown or expired token.","timestamp":"2026-11-02T17:14:43Z"}
+
+curl exit: 0
+
+2026-11-02T01:14:44.022018+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjIwODMsImlhdCI6MTc5NDkzNTY4M30.qI6U4Lx7VU0TXou26yv2xdgVBJ0BeK3ijmBC1hJtAXY" http://localhost:18080/api/v1/stations?cpoId=cpo_f22ca399738abb941371a44d
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:44 GMT
+Content-Length: 658
+
+[{"region":"","countryCode":"MY","isSimulated":false,"id":"stn_a720def6c410020b110d4045","cpoId":"cpo_f22ca399738abb941371a44d","cpoName":"Controlled tc38 394e6b","cpoColorHex":"#6B7280","name":"Controlled Chapter Five Station","address":"Synthetic test site","city":"Kuala Lumpur","latitude":3.139,"longitude":101.686,"totalBays":1,"availableBays":1,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"price-X60","id":"con_feb6ec9205101f5d50ad98f3","stationId":"stn_a720def6c410020b110d4045","evseUid":"MY*X60*E*01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.25,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T01:14:44.070375+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc38\operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:14:44 GMT
+Content-Length: 652
+
+{"ocpiVersion":"2.3.0","id":"cpo_f22ca399738abb941371a44d","name":"Controlled tc38 394e6b","slug":"controlledtc38394e6b","countryCode":"MY","partyId":"X60","baseUrl":"http://127.0.0.1:18090","colorHex":"#6B7280","contactEmail":"tc38-4f08b6c3@example.test","tokenA":"","tokenAUsed":true,"tokenBSet":true,"tokenCSet":true,"tokenBLast4":"6731","tokenCLast4":"43bb","handshakeStatus":"VERIFIED","status":"ACTIVE","platformFeePct":5,"bankName":"Synthetic Bank","bankAccountHolder":"Test Operator","bankAccountNo":"••••••7890","payoutCycle":"MONTHLY","createdAt":"2026-11-02T01:14:42.6706+08:00","handshakeAt":"2026-11-02T01:14:42.876556+08:00"}
+
+curl exit: 0

@@ -1,0 +1,9 @@
+
+2026-11-02T01:39:37.916440+08:00
+$ go test -v -count=1 -p 1 ./internal/sessions -run TestRestartFinishesDurableSettlementAndReleasesHold
+=== RUN   TestRestartFinishesDurableSettlementAndReleasesHold
+--- PASS: TestRestartFinishesDurableSettlementAndReleasesHold (0.81s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/sessions	1.004s
+
+exit: 0

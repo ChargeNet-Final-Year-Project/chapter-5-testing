@@ -1,0 +1,108 @@
+CN
+ChargeNet
+Partner Portal
+Partners
+ChargeNet Admin
+admin@chargenet.my
+Super admin
+Sign out
+Administration
+OCPI 2.3.0
+Partners
+Revenue currency
+MYR · Malaysian ringgit
+SGD · Singapore dollar
+THB · Thai baht
+Original tariff currency. Currencies are reported separately.
+Pending approval
+2
+Failed handshakes
+0
+Suspended
+0
+All CPO partners
+PARTNER	PARTY	STATUS	HANDSHAKE	FEE	STATIONS	EVSES	SESSIONS TODAY	GROSS TODAY	ACTIONS
+ChargeSync	CSY	ACTIVE	VERIFIED	5.0 %	13	33	6	MYR 1.86	
+Suspend
+Set pending
+Edit fee
+
+Controlled tc12	X12	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+Controlled tc13	X13	PENDING	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Suspend
+Edit fee
+
+Controlled tc17	X17	PENDING	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Suspend
+Edit fee
+
+Controlled tc19	X19	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+Controlled tc20	X20	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+Controlled tc22	X22	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+EcoWatt	ECO	ACTIVE	VERIFIED	5.0 %	12	31	4	MYR 0.35	
+Suspend
+Set pending
+Edit fee
+
+Updated Chapter Five Company	X14	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+VoltGo	VLT	ACTIVE	VERIFIED	5.0 %	13	30	9	MYR 79.65	
+Suspend
+Set pending
+Edit fee
+Partners
+10
+Active partners
+8
+Stations
+45
+EVSEs
+101
+Sessions today
+19
+Gross today
+MYR 81.86
+Network gross — last 7 days
+Gross revenue (MYR)
+100
+75
+50
+25
+0
+12
+Nov
+13
+Nov
+14
+Nov
+15
+Nov
+16
+Nov
+17
+Nov
+18
+Nov
+View daily revenue
+Your session expired. Please sign in again.

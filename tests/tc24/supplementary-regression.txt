@@ -1,0 +1,55 @@
+
+2026-11-02T01:02:36.146759+08:00
+$ go test -v -count=1 -p 1 ./internal/ocpi -run TestSessionPush|TestCDRPost|TestCommandResult|TestReceiver
+=== RUN   TestSessionPushLinksToTheChargeNetSession
+=== RUN   TestSessionPushLinksToTheChargeNetSession/a_status_that_says_nothing_about_a_running_charge_is_accepted_silently
+2026/11/02 01:02:39 ocpi: session csn_T40 is PENDING at the CPO; ChargeNet keeps the status it has
+=== RUN   TestSessionPushLinksToTheChargeNetSession/an_unknown_status_is_accepted_silently
+2026/11/02 01:02:39 ocpi: session csn_T40 reports the status "SOMETHING_NEW"; ChargeNet keeps the status it has
+=== RUN   TestSessionPushLinksToTheChargeNetSession/a_push_for_a_charge_ChargeNet_does_not_have_is_a_404
+=== RUN   TestSessionPushLinksToTheChargeNetSession/the_id_in_the_body_must_be_the_one_in_the_URL
+=== RUN   TestSessionPushLinksToTheChargeNetSession/another_partner_cannot_push_a_charge_that_is_not_its_own
+=== RUN   TestSessionPushLinksToTheChargeNetSession/the_sessions_module_serves_no_reads
+--- PASS: TestSessionPushLinksToTheChargeNetSession (0.73s)
+    --- PASS: TestSessionPushLinksToTheChargeNetSession/a_status_that_says_nothing_about_a_running_charge_is_accepted_silently (0.09s)
+    --- PASS: TestSessionPushLinksToTheChargeNetSession/an_unknown_status_is_accepted_silently (0.00s)
+    --- PASS: TestSessionPushLinksToTheChargeNetSession/a_push_for_a_charge_ChargeNet_does_not_have_is_a_404 (0.00s)
+    --- PASS: TestSessionPushLinksToTheChargeNetSession/the_id_in_the_body_must_be_the_one_in_the_URL (0.00s)
+    --- PASS: TestSessionPushLinksToTheChargeNetSession/another_partner_cannot_push_a_charge_that_is_not_its_own (0.02s)
+    --- PASS: TestSessionPushLinksToTheChargeNetSession/the_sessions_module_serves_no_reads (0.00s)
+=== RUN   TestCDRPostSettlesTheSessionOnce
+2026/11/02 01:02:40 ocpi: partner=cpo_test_t50 stored the cdr of session csn_T50 (10.000 kWh)
+2026/11/02 01:02:40 ocpi: partner=cpo_test_t50 stored the cdr of session csn_T50 (12.000 kWh)
+=== RUN   TestCDRPostSettlesTheSessionOnce/a_CDR_for_a_charge_ChargeNet_does_not_have_is_a_404
+=== RUN   TestCDRPostSettlesTheSessionOnce/a_CDR_that_names_no_session_is_refused
+=== RUN   TestCDRPostSettlesTheSessionOnce/the_id_in_the_body_must_be_the_one_in_the_URL
+=== RUN   TestCDRPostSettlesTheSessionOnce/a_CDR_for_another_party_is_refused
+=== RUN   TestCDRPostSettlesTheSessionOnce/another_partner_cannot_read_the_record
+=== RUN   TestCDRPostSettlesTheSessionOnce/the_read_URL_names_ChargeNet's_own_party
+=== RUN   TestCDRPostSettlesTheSessionOnce/the_cdrs_module_only_takes_a_POST
+--- PASS: TestCDRPostSettlesTheSessionOnce (0.67s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/a_CDR_for_a_charge_ChargeNet_does_not_have_is_a_404 (0.01s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/a_CDR_that_names_no_session_is_refused (0.00s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/the_id_in_the_body_must_be_the_one_in_the_URL (0.00s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/a_CDR_for_another_party_is_refused (0.00s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/another_partner_cannot_read_the_record (0.02s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/the_read_URL_names_ChargeNet's_own_party (0.00s)
+    --- PASS: TestCDRPostSettlesTheSessionOnce/the_cdrs_module_only_takes_a_POST (0.00s)
+=== RUN   TestCommandResultReachesTheGateway
+2026/11/02 01:02:40 ocpi: command STOP_SESSION for SES-T52 answered ACCEPTED
+2026/11/02 01:02:40 ocpi: command START_SESSION for SES-T52 answered REJECTED
+=== RUN   TestCommandResultReachesTheGateway/a_command_ChargeNet_never_sends_is_a_3001
+=== RUN   TestCommandResultReachesTheGateway/the_commands_module_serves_no_reads
+=== RUN   TestCommandResultReachesTheGateway/a_callback_needs_both_a_command_and_a_uid
+=== RUN   TestCommandResultReachesTheGateway/another_token_cannot_answer_the_command
+=== RUN   TestCommandResultReachesTheGateway/with_no_gateway_running_the_answer_has_nowhere_to_go
+--- PASS: TestCommandResultReachesTheGateway (0.47s)
+    --- PASS: TestCommandResultReachesTheGateway/a_command_ChargeNet_never_sends_is_a_3001 (0.00s)
+    --- PASS: TestCommandResultReachesTheGateway/the_commands_module_serves_no_reads (0.00s)
+    --- PASS: TestCommandResultReachesTheGateway/a_callback_needs_both_a_command_and_a_uid (0.00s)
+    --- PASS: TestCommandResultReachesTheGateway/another_token_cannot_answer_the_command (0.00s)
+    --- PASS: TestCommandResultReachesTheGateway/with_no_gateway_running_the_answer_has_nowhere_to_go (0.00s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/ocpi	2.027s
+
+exit: 0

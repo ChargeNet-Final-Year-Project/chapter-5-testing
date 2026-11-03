@@ -1,0 +1,12 @@
+* text=auto eol=lf
+evidence/** -text -whitespace
+results/** -text -whitespace
+provenance/** -text -whitespace
+tests/backend/** -text whitespace=cr-at-eol
+snapshots/** -text whitespace=cr-at-eol
+*.png binary
+*.jpg binary
+
+# Preserve captured evidence and supplied test assets byte for byte.
+tests/** -text -whitespace
+*.txt -text -whitespace

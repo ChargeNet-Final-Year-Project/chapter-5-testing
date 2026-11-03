@@ -1,0 +1,337 @@
+$ powershell -NoProfile -Command "Get-Process server -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq 'C:\code projects\chargenet-latest\chapter-5-testing-new\.runtime\server.exe' } | ForEach-Object { Write-Output ('Kill task backend PID '+$_.Id); Stop-Process -Id $_.Id -Force }"
+Kill task backend PID 11904
+
+
+Started same backend executable with same database and OCPI gateway; PID 10916
+$ curl.exe --silent --show-error --max-time 3 http://localhost:18081/healthz
+{"db":"up","status":"ok"}
+
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am force-stop com.chargenet.mobile
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am start -n com.chargenet.mobile/com.example.chargenet_mobile.MainActivity
+Starting: Intent { cmp=com.chargenet.mobile/com.example.chargenet_mobile.MainActivity }
+
+
+exit: 0
+REAL FORWARDED REQUEST GET /api/v1/auth/me -> 200
+REAL FORWARDED REQUEST GET /api/v1/wallet -> 200
+REAL FORWARDED REQUEST GET /api/v1/sessions/active -> 404
+REAL FORWARDED REQUEST GET /api/v1/vehicles -> 200
+REAL FORWARDED REQUEST GET /api/v1/cpos -> 200
+REAL FORWARDED REQUEST GET /api/v1/sessions/history?limit=20&offset=0 -> 200
+REAL FORWARDED REQUEST GET /api/v1/wallet/transactions?limit=50&offset=0 -> 200
+REAL FORWARDED REQUEST POST /api/v1/auth/login -> 200
+
+2026-11-02T02:30:28.049822+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-d5f2e520-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Server: BaseHTTP/0.6 Python/3.12.0
+
+Date: Mon, 02 Nov 2026 18:30:28 GMT
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjY2MjgsImlhdCI6MTc5NDk0MDIyOH0.6KvpL_rWUTXohPSKnHuwHSDhJVLASGChztkYbiifEDs","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 180 2250
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 840 160
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 450 160
+
+exit: 0
+REAL FORWARDED REQUEST GET /api/v1/stations?lat=5.4&lng=100.34 -> 200
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 123
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67 67
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input text Batu%sKawan
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 4
+
+exit: 0
+REAL FORWARDED REQUEST GET /api/v1/stations?query=Batu+Kawan&lat=5.4&lng=100.34 -> 200
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 450 325
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 700 1970 700 1100 600
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 1555
+
+exit: 0
+REAL FORWARDED REQUEST GET /api/v1/evse/MY*VLT*E*D11DC -> 200
+REAL FORWARDED REQUEST POST /api/v1/quotes -> 201
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 700 1900 700 1400 500
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > estimate-light-theme.png (unaltered PNG; 224705 bytes)
+REAL FORWARDED REQUEST GET /api/v1/sessions/active -> 404
+
+2026-11-02T02:30:45.191115+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjY2MjgsImlhdCI6MTc5NDk0MDIyOH0.6KvpL_rWUTXohPSKnHuwHSDhJVLASGChztkYbiifEDs" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 404 Not Found
+
+Server: BaseHTTP/0.6 Python/3.12.0
+
+Date: Mon, 02 Nov 2026 18:30:45 GMT
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Content-Length: 84
+
+
+
+{"error":{"code":"NO_ACTIVE_SESSION","message":"You have no session in progress."}}
+
+curl exit: 0
+REAL FORWARDED REQUEST GET /api/v1/wallet -> 200
+
+2026-11-02T02:30:45.458866+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjY2MjgsImlhdCI6MTc5NDk0MDIyOH0.6KvpL_rWUTXohPSKnHuwHSDhJVLASGChztkYbiifEDs" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Server: BaseHTTP/0.6 Python/3.12.0
+
+Date: Mon, 02 Nov 2026 18:30:45 GMT
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Content-Length: 151
+
+
+
+{"reserved":0,"availableBalance":709.31,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":709.31,"currency":"MYR"}
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input swipe 120 2120 350 2120 600
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > cancelled-short-drag.png (unaltered PNG; 224696 bytes)
+REAL FORWARDED REQUEST GET /api/v1/sessions/active -> 404
+
+2026-11-02T02:30:47.134292+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjY2MjgsImlhdCI6MTc5NDk0MDIyOH0.6KvpL_rWUTXohPSKnHuwHSDhJVLASGChztkYbiifEDs" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 404 Not Found
+
+Server: BaseHTTP/0.6 Python/3.12.0
+
+Date: Mon, 02 Nov 2026 18:30:47 GMT
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Content-Length: 84
+
+
+
+{"error":{"code":"NO_ACTIVE_SESSION","message":"You have no session in progress."}}
+
+curl exit: 0
+REAL FORWARDED REQUEST GET /api/v1/wallet -> 200
+
+2026-11-02T02:30:47.375854+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjY2MjgsImlhdCI6MTc5NDk0MDIyOH0.6KvpL_rWUTXohPSKnHuwHSDhJVLASGChztkYbiifEDs" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Server: BaseHTTP/0.6 Python/3.12.0
+
+Date: Mon, 02 Nov 2026 18:30:47 GMT
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Content-Length: 151
+
+
+
+{"reserved":0,"availableBalance":709.31,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":709.31,"currency":"MYR"}
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2260
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > accessible-confirmation-dialog.png (unaltered PNG; 218479 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 730 1430
+
+exit: 0
+REAL FORWARDED REQUEST POST /emulator/voltgo/ocpi/2.3.0/commands/START_SESSION -> 200
+REAL FORWARDED REQUEST POST /ocpi/emsp/2.3.0/commands/START_SESSION/ses_211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BATU-KAWAN/MY%2AVLT%2AE%2AD11DC -> 200
+REAL FORWARDED REQUEST POST /api/v1/sessions/start -> 201
+FAULT SETUP: hold this genuine application response for three seconds; no response data is changed.
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 730 1430
+
+exit: 0
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > busy-controls-during-real-start.png (unaltered PNG; 221384 bytes)
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST GET /api/v1/sessions/ses_211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST GET /api/v1/sessions/ses_211fa1a28c3e89a4ab1fa752/stream -> 200
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > one-live-session.png (unaltered PNG; 136174 bytes)
+REAL FORWARDED REQUEST GET /api/v1/sessions/active -> 200
+
+2026-11-02T02:30:56.854523+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc41\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjY2MjgsImlhdCI6MTc5NDk0MDIyOH0.6KvpL_rWUTXohPSKnHuwHSDhJVLASGChztkYbiifEDs" http://localhost:18080/api/v1/sessions/active
+HTTP/1.1 200 OK
+
+Server: BaseHTTP/0.6 Python/3.12.0
+
+Date: Mon, 02 Nov 2026 18:30:56 GMT
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Content-Length: 839
+
+
+
+{"quoteId":"qte_b4895e8659e83886b0dd49b7","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":3.99,"unfundedAmount":0,"reservedAmount":709.31,"tariffDecimal":"1.500000","id":"ses_211fa1a28c3e89a4ab1fa752","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T02:30:49.034437+08:00","endTime":null,"durationSeconds":70,"kwhDelivered":2.66,"currentPowerKw":134.71,"batterySoc":31.95,"targetSoc":80,"tariffPerKwh":1.5,"totalCost":3.99,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_211fa1a28c3e89a4ab1fa752';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_211fa1a28c3e89a4ab1fa752,usr_9a31c7c2a47632bffde832d2,CHARGING,2.660,MYR,3.99,MYR,3.99,1.0000000000,1.500000,CHARGING,0,0,709.31,709.31
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2225
+
+exit: 0
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 670 1430
+
+exit: 0
+REAL FORWARDED REQUEST POST /ocpi/emsp/2.3.0/commands/STOP_SESSION/ses_211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST POST /emulator/voltgo/ocpi/2.3.0/commands/STOP_SESSION -> 200
+REAL FORWARDED REQUEST PATCH /ocpi/emsp/2.3.0/locations/MY/VLT/DEMO-BATU-KAWAN/MY%2AVLT%2AE%2AD11DC -> 200
+REAL FORWARDED REQUEST PUT /ocpi/emsp/2.3.0/sessions/MY/VLT/VLT-211fa1a28c3e89a4ab1fa752 -> 200
+REAL FORWARDED REQUEST POST /api/v1/sessions/ses_211fa1a28c3e89a4ab1fa752/stop -> 200
+REAL FORWARDED REQUEST POST /ocpi/emsp/2.3.0/cdrs -> 201
+REAL FORWARDED REQUEST GET /api/v1/wallet/transactions?limit=50&offset=0 -> 200
+REAL FORWARDED REQUEST GET /api/v1/sessions/history?limit=20&offset=0 -> 200
+REAL FORWARDED REQUEST GET /api/v1/wallet -> 200
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > receipt-light-theme.png (unaltered PNG; 168897 bytes)
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_211fa1a28c3e89a4ab1fa752';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_211fa1a28c3e89a4ab1fa752,usr_9a31c7c2a47632bffde832d2,COMPLETED,3.035,MYR,4.55,MYR,4.55,1.0000000000,1.500000,AVAILABLE,1,1,0,704.76
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 790 2225
+
+exit: 0
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 60483)
+----------------------------------------
+Exception occurred during processing of request from ('127.0.0.1', 60429)
+$ powershell -NoProfile -Command "Get-Process server -ErrorAction SilentlyContinue | Where-Object { $_.Path -eq 'C:\code projects\chargenet-latest\chapter-5-testing-new\.runtime\server.exe' } | ForEach-Object { Write-Output ('Kill task backend PID '+$_.Id); Stop-Process -Id $_.Id -Force }"
+Kill task backend PID 10916
+
+
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 761, in __init__
+    self.handle()
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 692, in process_request_thread
+    self.finish_request(request, client_address)
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 362, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socketserver.py", line 761, in __init__
+    self.handle()
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 438, in handle
+    self.handle_one_request()
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 438, in handle
+    self.handle_one_request()
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\http\server.py", line 404, in handle_one_request
+    self.raw_requestline = self.rfile.readline(65537)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ongji\AppData\Local\Programs\Python\Python312\Lib\socket.py", line 707, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+Started same backend executable with same database and OCPI gateway; PID 27548
+----------------------------------------
+----------------------------------------
+$ curl.exe --silent --show-error --max-time 3 http://localhost:18080/healthz
+{"db":"up","status":"ok"}
+

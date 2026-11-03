@@ -1,0 +1,10 @@
+
+2026-11-02T01:02:48.724036+08:00
+$ go test -v -count=1 -p 1 ./internal/sessions -run TestRestartResumesInterruptedSession
+=== RUN   TestRestartResumesInterruptedSession
+2026/11/02 01:02:51 sessions: resumed ses_a95ad19750e1fae40a7d7b16 on con_vlt_sgb_01 after restart
+--- PASS: TestRestartResumesInterruptedSession (1.18s)
+PASS
+ok  	github.com/chargenet/chargenet-backend/internal/sessions	1.405s
+
+exit: 0

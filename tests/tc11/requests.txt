@@ -1,0 +1,459 @@
+Fresh application capture; actual execution clock; no historical execution claim.
+
+2026-11-02T00:51:14.080226+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:14 GMT
+Content-Length: 368
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY","user":{"id":"usr_759bc0e55fa3bdd1a8477816","name":"Chapter Five Driver","email":"ch5-70a5a3beed@example.test","createdAt":"2026-11-02T16:51:14.0634004Z"}}
+
+curl exit: 0
+
+2026-11-02T00:51:14.959628+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" -H "Idempotency-Key: 685ef162119148debf7d06fc7e45d31f" --data-binary @input-002.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:14 GMT
+Content-Length: 155
+
+{"id": "wal_0a958f665e5e4eaf1709aa06", "userId": "usr_759bc0e55fa3bdd1a8477816", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T00:51:15.039626+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/stations?country=SG&cpoId=cpo_chargesync
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:15 GMT
+Content-Length: 914
+
+[{"region":"Central","countryCode":"SG","isSimulated":true,"id":"stn_demo_marina_bay","cpoId":"cpo_chargesync","cpoName":"ChargeSync","cpoColorHex":"#2563EB","name":"ChargeSync Marina Bay","address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","latitude":1.28,"longitude":103.854,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"SGD","tariffId":"trf_demo_chargesync_sg_ac","id":"con_demo_marina_bay_ac","stationId":"stn_demo_marina_bay","evseUid":"SG*CSY*E*D12AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.45,"status":"AVAILABLE"},{"currency":"SGD","tariffId":"trf_demo_chargesync_sg_dc","id":"con_demo_marina_bay_dc","stationId":"stn_demo_marina_bay","evseUid":"SG*CSY*E*D12DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":0.6,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T00:51:15.114802+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" --data-binary @input-004.json http://localhost:18080/api/v1/quotes
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:15 GMT
+Content-Length: 680
+
+{"id":"qte_10b16f31956ad024c907a915","userId":"usr_759bc0e55fa3bdd1a8477816","walletId":"wal_0a958f665e5e4eaf1709aa06","cpoId":"cpo_chargesync","stationId":"stn_demo_marina_bay","connectorId":"con_demo_marina_bay_dc","tariffId":"trf_demo_chargesync_sg_dc","tariffUpdatedAt":"2026-11-02T00:48:39.765711+08:00","tariffPerKwh":"0.600000","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRateId":"fx_demo_sgd_myr","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","estimatedKwh":"15.000","estimatedOriginalCost":"9.00","estimatedWalletCost":"31.05","budget":"100.00","createdAt":"2026-11-02T00:51:15.091865+08:00","acceptedAt":null,"equivalentTariff":"2.070000"}
+
+curl exit: 0
+
+2026-11-02T00:51:15.173024+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:15 GMT
+Content-Length: 145
+
+{"reserved":0,"availableBalance":100,"id":"wal_0a958f665e5e4eaf1709aa06","userId":"usr_759bc0e55fa3bdd1a8477816","balance":100,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T00:51:15.312112+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" -H "Idempotency-Key: c0532f19de664abc8bfeb7e508757e0c" --data-binary @input-006.json http://localhost:18080/api/v1/sessions/start
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:15 GMT
+Content-Length: 877
+
+{"id": "ses_65cc1dfd7d5e7773ba81ca83", "cdrId": null, "cpoId": "cpo_chargesync", "status": "CHARGING", "userId": "usr_759bc0e55fa3bdd1a8477816", "cdrJson": null, "cpoName": "ChargeSync", "endTime": null, "evseUid": "SG*CSY*E*D12DC", "quoteId": "qte_10b16f31956ad024c907a915", "startTime": "2026-11-02T00:51:15.2531+08:00", "stationId": "stn_demo_marina_bay", "targetSoc": 100, "totalCost": 0, "vehicleId": null, "batterySoc": 18.6, "rateSource": "chargenet-demo-v1", "stopReason": null, "connectorId": "con_demo_marina_bay_dc", "stationName": "ChargeSync Marina Bay", "balanceAfter": null, "exchangeRate": "3.4500000000", "kwhDelivered": 0, "originalCost": 0, "tariffPerKwh": 0.6, "connectorType": "CCS2", "tariffDecimal": "0.600000", "currentPowerKw": 57.79, "reservedAmount": 100, "unfundedAmount": 0, "walletCurrency": "MYR", "durationSeconds": 0, "originalCurrency": "SGD"}
+curl exit: 0
+
+2026-11-02T00:51:15.370238+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/sessions/ses_65cc1dfd7d5e7773ba81ca83
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:15 GMT
+Content-Length: 813
+
+{"quoteId":"qte_10b16f31956ad024c907a915","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","originalCost":0,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.600000","id":"ses_65cc1dfd7d5e7773ba81ca83","userId":"usr_759bc0e55fa3bdd1a8477816","vehicleId":null,"cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T00:51:15.2531+08:00","endTime":null,"durationSeconds":0,"kwhDelivered":0,"currentPowerKw":57.79,"batterySoc":18.6,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T00:51:16.423808+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/sessions/ses_65cc1dfd7d5e7773ba81ca83
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:16 GMT
+Content-Length: 813
+
+{"quoteId":"qte_10b16f31956ad024c907a915","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","originalCost":0,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.600000","id":"ses_65cc1dfd7d5e7773ba81ca83","userId":"usr_759bc0e55fa3bdd1a8477816","vehicleId":null,"cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T00:51:15.2531+08:00","endTime":null,"durationSeconds":0,"kwhDelivered":0,"currentPowerKw":57.79,"batterySoc":18.6,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T00:51:17.465923+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/sessions/ses_65cc1dfd7d5e7773ba81ca83
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:17 GMT
+Content-Length: 825
+
+{"quoteId":"qte_10b16f31956ad024c907a915","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","originalCost":0.19,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.600000","id":"ses_65cc1dfd7d5e7773ba81ca83","userId":"usr_759bc0e55fa3bdd1a8477816","vehicleId":null,"cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T00:51:15.2531+08:00","endTime":null,"durationSeconds":20,"kwhDelivered":0.321,"currentPowerKw":58.27,"batterySoc":19.13,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.66,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T00:51:17.625275+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/sessions/ses_65cc1dfd7d5e7773ba81ca83/stop
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:17 GMT
+Transfer-Encoding: chunked
+
+{"quoteId":"qte_10b16f31956ad024c907a915","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","originalCost":0.19,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.600000","id":"ses_65cc1dfd7d5e7773ba81ca83","userId":"usr_759bc0e55fa3bdd1a8477816","vehicleId":null,"cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T00:51:15.2531+08:00","endTime":"2026-11-02T00:51:17.547759+08:00","durationSeconds":20,"kwhDelivered":0.321,"currentPowerKw":58.27,"batterySoc":19.13,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.66,"balanceAfter":99.34,"stopReason":"USER","cdrId":"cdr_2726ca590b39f734c53ab9cd","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"1.280000","longitude":"103.854000"},"country":"SGP","evse_id":"SG*CSY*E*D12DC","evse_uid":"SG*CSY*E*D12DC","id":"DEMO-MARINA-BAY","name":"ChargeSync Marina Bay"},"cdr_token":{"contract_id":"usr_759bc0e55fa3bdd1a8477816","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_759bc0e55fa3bdd1a8477816"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.321},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T16:51:15Z"}],"country_code":"MY","currency":"SGD","end_date_time":"2026-11-02T16:51:17Z","id":"cdr_2726ca590b39f734c53ab9cd","last_updated":"2026-11-02T16:51:17Z","party_id":"CSY","session_id":"ses_65cc1dfd7d5e7773ba81ca83","start_date_time":"2026-11-02T16:51:15Z","tariffs":[{"country_code":"MY","currency":"SGD","elements":[{"price_components":[{"price":0.6,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_chargesync_sg_dc","last_updated":"2026-11-02T16:51:15Z","party_id":"CSY","tax_included":"N/A"}],"total_cost":{"before_taxes":0.19},"total_energy":0.321,"total_time":0.0056}}
+
+curl exit: 0
+
+2026-11-02T00:51:17.669808+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/sessions/ses_65cc1dfd7d5e7773ba81ca83
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:17 GMT
+Transfer-Encoding: chunked
+
+{"quoteId":"qte_10b16f31956ad024c907a915","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","originalCost":0.19,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.600000","id":"ses_65cc1dfd7d5e7773ba81ca83","userId":"usr_759bc0e55fa3bdd1a8477816","vehicleId":null,"cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T00:51:15.2531+08:00","endTime":"2026-11-02T00:51:17.547759+08:00","durationSeconds":20,"kwhDelivered":0.321,"currentPowerKw":58.27,"batterySoc":19.13,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.66,"balanceAfter":99.34,"stopReason":"USER","cdrId":"cdr_2726ca590b39f734c53ab9cd","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"1.280000","longitude":"103.854000"},"country":"SGP","evse_id":"SG*CSY*E*D12DC","evse_uid":"SG*CSY*E*D12DC","id":"DEMO-MARINA-BAY","name":"ChargeSync Marina Bay"},"cdr_token":{"contract_id":"usr_759bc0e55fa3bdd1a8477816","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_759bc0e55fa3bdd1a8477816"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.321},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T16:51:15Z"}],"country_code":"MY","currency":"SGD","end_date_time":"2026-11-02T16:51:17Z","id":"cdr_2726ca590b39f734c53ab9cd","last_updated":"2026-11-02T16:51:17Z","party_id":"CSY","session_id":"ses_65cc1dfd7d5e7773ba81ca83","start_date_time":"2026-11-02T16:51:15Z","tariffs":[{"country_code":"MY","currency":"SGD","elements":[{"price_components":[{"price":0.6,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_chargesync_sg_dc","last_updated":"2026-11-02T16:51:15Z","party_id":"CSY","tax_included":"N/A"}],"total_cost":{"before_taxes":0.19},"total_energy":0.321,"total_time":0.0056}}
+
+curl exit: 0
+
+2026-11-02T00:51:17.750488+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/sessions/history
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:17 GMT
+Transfer-Encoding: chunked
+
+[{"quoteId":"qte_10b16f31956ad024c907a915","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chargenet-demo-v1","originalCost":0.19,"unfundedAmount":0,"reservedAmount":100,"tariffDecimal":"0.600000","id":"ses_65cc1dfd7d5e7773ba81ca83","userId":"usr_759bc0e55fa3bdd1a8477816","vehicleId":null,"cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T00:51:15.2531+08:00","endTime":"2026-11-02T00:51:17.547759+08:00","durationSeconds":20,"kwhDelivered":0.321,"currentPowerKw":58.27,"batterySoc":19.13,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.66,"balanceAfter":99.34,"stopReason":"USER","cdrId":"cdr_2726ca590b39f734c53ab9cd","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"1.280000","longitude":"103.854000"},"country":"SGP","evse_id":"SG*CSY*E*D12DC","evse_uid":"SG*CSY*E*D12DC","id":"DEMO-MARINA-BAY","name":"ChargeSync Marina Bay"},"cdr_token":{"contract_id":"usr_759bc0e55fa3bdd1a8477816","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_759bc0e55fa3bdd1a8477816"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.321},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T16:51:15Z"}],"country_code":"MY","currency":"SGD","end_date_time":"2026-11-02T16:51:17Z","id":"cdr_2726ca590b39f734c53ab9cd","last_updated":"2026-11-02T16:51:17Z","party_id":"CSY","session_id":"ses_65cc1dfd7d5e7773ba81ca83","start_date_time":"2026-11-02T16:51:15Z","tariffs":[{"country_code":"MY","currency":"SGD","elements":[{"price_components":[{"price":0.6,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_chargesync_sg_dc","last_updated":"2026-11-02T16:51:15Z","party_id":"CSY","tax_included":"N/A"}],"total_cost":{"before_taxes":0.19},"total_energy":0.321,"total_time":0.0056}}]
+
+curl exit: 0
+
+2026-11-02T00:51:17.832957+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfNzU5YmMwZTU1ZmEzYmRkMWE4NDc3ODE2IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjA2NzQsImlhdCI6MTc5NDkzNDI3NH0.wDgOwxGQtL3vbEMOq9ulX1jLmbBLCggMGeH1CDt0mLY" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 16:51:17 GMT
+Content-Length: 637
+
+[{"currency":"MYR","sessionId":"ses_65cc1dfd7d5e7773ba81ca83","cdrId":"cdr_2726ca590b39f734c53ab9cd","id":"wtx_4ece059159e78b4bef51f2d2","walletId":"wal_0a958f665e5e4eaf1709aa06","type":"CHARGING_DEBIT","amount":0.66,"paymentMethod":"Wallet","referenceId":"cdr_2726ca590b39f734c53ab9cd","status":"SUCCESS","createdAt":"2026-11-02T00:51:17.547759+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_aa22ad391558ca4c5e4259a4","walletId":"wal_0a958f665e5e4eaf1709aa06","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934274","status":"SUCCESS","createdAt":"2026-11-02T00:51:14.936127+08:00"}]
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_65cc1dfd7d5e7773ba81ca83';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_65cc1dfd7d5e7773ba81ca83,usr_759bc0e55fa3bdd1a8477816,COMPLETED,0.321,SGD,0.19,MYR,0.66,3.4500000000,0.600000,AVAILABLE,1,1,0,99.34
+
+exit: 0
+
+2026-11-02T02:04:04.153532+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-9f1e38e1-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:04 GMT
+Content-Length: 351
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T02:04:04.212655+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:04 GMT
+Content-Length: 151
+
+{"reserved":0,"availableBalance":709.93,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":709.93,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T02:04:04.274095+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/stations?country=SG&cpoId=cpo_chargesync
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:04 GMT
+Content-Length: 914
+
+[{"region":"Central","countryCode":"SG","isSimulated":true,"id":"stn_demo_marina_bay","cpoId":"cpo_chargesync","cpoName":"ChargeSync","cpoColorHex":"#2563EB","name":"ChargeSync Marina Bay","address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","latitude":1.28,"longitude":103.854,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"SGD","tariffId":"trf_demo_chargesync_sg_ac","id":"con_demo_marina_bay_ac","stationId":"stn_demo_marina_bay","evseUid":"SG*CSY*E*D12AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.45,"status":"AVAILABLE"},{"currency":"SGD","tariffId":"trf_demo_chargesync_sg_dc","id":"con_demo_marina_bay_dc","stationId":"stn_demo_marina_bay","evseUid":"SG*CSY*E*D12DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":0.6,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T02:04:04.370278+08:00
+Request body: {"evseUid": "SG*CSY*E*D12DC", "estimatedKwh": "15"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" --data-binary @input-d6bccf53-004.json http://localhost:18080/api/v1/quotes
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:04 GMT
+Content-Length: 703
+
+{"id":"qte_13028b6c3b990f3ae4e91322","userId":"usr_9a31c7c2a47632bffde832d2","walletId":"wal_41f585200882f4c2ff2d7cf1","cpoId":"cpo_chargesync","stationId":"stn_demo_marina_bay","connectorId":"con_demo_marina_bay_dc","tariffId":"trf_demo_chargesync_sg_dc","tariffUpdatedAt":"2026-11-02T00:48:39.765711+08:00","tariffPerKwh":"0.600000","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRateId":"fx_2bf51a4a55ac4f42821fccb5c994ec9d","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","estimatedKwh":"15.000","estimatedOriginalCost":"9.00","estimatedWalletCost":"31.05","budget":"709.93","createdAt":"2026-11-02T02:04:04.337217+08:00","acceptedAt":null,"equivalentTariff":"2.070000"}
+
+curl exit: 0
+
+2026-11-02T02:04:04.524926+08:00
+Request body: {"evseUid": "SG*CSY*E*D12DC", "quoteId": "qte_13028b6c3b990f3ae4e91322", "targetSoc": 100}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" -H "Idempotency-Key: 67792a085fb84051a9caf206d604e8ac" --data-binary @input-0081bc00-005.json http://localhost:18080/api/v1/sessions/start
+HTTP/1.1 201 Created
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:04 GMT
+Content-Length: 910
+
+{"id": "ses_c2a1b2681f6d4addaf39a7f9", "cdrId": null, "cpoId": "cpo_chargesync", "status": "CHARGING", "userId": "usr_9a31c7c2a47632bffde832d2", "cdrJson": null, "cpoName": "ChargeSync", "endTime": null, "evseUid": "SG*CSY*E*D12DC", "quoteId": "qte_13028b6c3b990f3ae4e91322", "startTime": "2026-11-02T02:04:04.457356+08:00", "stationId": "stn_demo_marina_bay", "targetSoc": 100, "totalCost": 0, "vehicleId": "veh_d86a568c90e2a77f765148c7", "batterySoc": 34.1, "rateSource": "chapter-five-restore", "stopReason": null, "connectorId": "con_demo_marina_bay_dc", "stationName": "ChargeSync Marina Bay", "balanceAfter": null, "exchangeRate": "3.4500000000", "kwhDelivered": 0, "originalCost": 0, "tariffPerKwh": 0.6, "connectorType": "CCS2", "tariffDecimal": "0.600000", "currentPowerKw": 53.8, "reservedAmount": 709.93, "unfundedAmount": 0, "walletCurrency": "MYR", "durationSeconds": 0, "originalCurrency": "SGD"}
+curl exit: 0
+
+2026-11-02T02:04:04.580028+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/sessions/ses_c2a1b2681f6d4addaf39a7f9
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:04 GMT
+Content-Length: 846
+
+{"quoteId":"qte_13028b6c3b990f3ae4e91322","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","originalCost":0,"unfundedAmount":0,"reservedAmount":709.93,"tariffDecimal":"0.600000","id":"ses_c2a1b2681f6d4addaf39a7f9","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T02:04:04.457356+08:00","endTime":null,"durationSeconds":0,"kwhDelivered":0,"currentPowerKw":53.8,"batterySoc":34.1,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T02:04:05.613640+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/sessions/ses_c2a1b2681f6d4addaf39a7f9
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:05 GMT
+Content-Length: 846
+
+{"quoteId":"qte_13028b6c3b990f3ae4e91322","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","originalCost":0,"unfundedAmount":0,"reservedAmount":709.93,"tariffDecimal":"0.600000","id":"ses_c2a1b2681f6d4addaf39a7f9","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T02:04:04.457356+08:00","endTime":null,"durationSeconds":0,"kwhDelivered":0,"currentPowerKw":53.8,"batterySoc":34.1,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T02:04:06.647672+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/sessions/ses_c2a1b2681f6d4addaf39a7f9
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:06 GMT
+Content-Length: 856
+
+{"quoteId":"qte_13028b6c3b990f3ae4e91322","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","originalCost":0.18,"unfundedAmount":0,"reservedAmount":709.93,"tariffDecimal":"0.600000","id":"ses_c2a1b2681f6d4addaf39a7f9","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"CHARGING","startTime":"2026-11-02T02:04:04.457356+08:00","endTime":null,"durationSeconds":20,"kwhDelivered":0.3,"currentPowerKw":53.44,"batterySoc":34.5,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.62,"balanceAfter":null,"stopReason":null,"cdrId":null,"cdrJson":null}
+
+curl exit: 0
+
+2026-11-02T02:04:06.774097+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/sessions/ses_c2a1b2681f6d4addaf39a7f9/stop
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:06 GMT
+Transfer-Encoding: chunked
+
+{"quoteId":"qte_13028b6c3b990f3ae4e91322","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","originalCost":0.18,"unfundedAmount":0,"reservedAmount":709.93,"tariffDecimal":"0.600000","id":"ses_c2a1b2681f6d4addaf39a7f9","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T02:04:04.457356+08:00","endTime":"2026-11-02T02:04:06.718387+08:00","durationSeconds":20,"kwhDelivered":0.3,"currentPowerKw":53.44,"batterySoc":34.5,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.62,"balanceAfter":709.31,"stopReason":"USER","cdrId":"cdr_c3387d16f85dd8e402655734","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"1.280000","longitude":"103.854000"},"country":"SGP","evse_id":"SG*CSY*E*D12DC","evse_uid":"SG*CSY*E*D12DC","id":"DEMO-MARINA-BAY","name":"ChargeSync Marina Bay"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.3},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T18:04:04Z"}],"country_code":"MY","currency":"SGD","end_date_time":"2026-11-02T18:04:06Z","id":"cdr_c3387d16f85dd8e402655734","last_updated":"2026-11-02T18:04:06Z","party_id":"CSY","session_id":"ses_c2a1b2681f6d4addaf39a7f9","start_date_time":"2026-11-02T18:04:04Z","tariffs":[{"country_code":"MY","currency":"SGD","elements":[{"price_components":[{"price":0.6,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_chargesync_sg_dc","last_updated":"2026-11-02T18:04:04Z","party_id":"CSY","tax_included":"N/A"}],"total_cost":{"before_taxes":0.18},"total_energy":0.3,"total_time":0.0056}}
+
+curl exit: 0
+
+2026-11-02T02:04:06.809024+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:06 GMT
+Content-Length: 151
+
+{"reserved":0,"availableBalance":709.31,"id":"wal_41f585200882f4c2ff2d7cf1","userId":"usr_9a31c7c2a47632bffde832d2","balance":709.31,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T02:04:06.858645+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUwNDQsImlhdCI6MTc5NDkzODY0NH0.j1aV_XZK4tVRU6psAJucXET1s0OKVPjCLtj5nmlTnIA" http://localhost:18080/api/v1/wallet/transactions
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:04:06 GMT
+Transfer-Encoding: chunked
+
+[{"currency":"MYR","sessionId":"ses_c2a1b2681f6d4addaf39a7f9","cdrId":"cdr_c3387d16f85dd8e402655734","id":"wtx_8e1d91556a6d0f310517c590","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.62,"paymentMethod":"Wallet","referenceId":"cdr_c3387d16f85dd8e402655734","status":"SUCCESS","createdAt":"2026-11-02T02:04:06.718387+08:00"},{"currency":"MYR","sessionId":"ses_40d116d2cf8d0f200469a7f2","cdrId":"cdr_2ab561f4b092593ff2dcfd5c","id":"wtx_4355f158f0058929d67a89ba","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":13.61,"paymentMethod":"Wallet","referenceId":"cdr_2ab561f4b092593ff2dcfd5c","status":"SUCCESS","createdAt":"2026-11-02T02:02:45.456974+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_b5ad7af76dad79171d065f51","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794938538","status":"SUCCESS","createdAt":"2026-11-02T02:02:18.709919+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_585d3a58485e292441beb940","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Maybank FPX","referenceId":"SIM-1794938065","status":"SUCCESS","createdAt":"2026-11-02T01:54:25.917122+08:00"},{"currency":"MYR","sessionId":"ses_1f536021cb700cd1ad8f7d01","cdrId":"cdr_d9ae91ef1141f2475bf9f5e8","id":"wtx_b641e2c8dc579f6a2f401ea4","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":41.8,"paymentMethod":"Wallet","referenceId":"cdr_d9ae91ef1141f2475bf9f5e8","status":"SUCCESS","createdAt":"2026-11-02T01:45:59.33571+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_8fd845d483fd3adbb311125e","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937481","status":"SUCCESS","createdAt":"2026-11-02T01:44:41.859796+08:00"},{"currency":"MYR","sessionId":"ses_5724de798104fdbe82b07697","cdrId":"cdr_a075fca52e7072432a00cf1a","id":"wtx_49e86affe29250ae053192d0","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":46.7,"paymentMethod":"Wallet","referenceId":"cdr_a075fca52e7072432a00cf1a","status":"SUCCESS","createdAt":"2026-11-02T01:43:36.939405+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_93625faaa456279190359dbd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937329","status":"SUCCESS","createdAt":"2026-11-02T01:42:09.788747+08:00"},{"currency":"MYR","sessionId":"ses_c5a845919736952d4c60e366","cdrId":"cdr_9cd5ffc2d7651e6cbae05d1d","id":"wtx_ace177e548e18a0dc5d04800","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":45.09,"paymentMethod":"Wallet","referenceId":"cdr_9cd5ffc2d7651e6cbae05d1d","status":"SUCCESS","createdAt":"2026-11-02T01:40:24.327657+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_2de552ca393829b0a80821dc","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794937099","status":"SUCCESS","createdAt":"2026-11-02T01:38:19.438431+08:00"},{"currency":"MYR","sessionId":"ses_02bf268505479c7990994198","cdrId":"cdr_90e42e32a308ba079b988987","id":"wtx_e6231a05567d984041c4df08","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.9,"paymentMethod":"Wallet","referenceId":"cdr_90e42e32a308ba079b988987","status":"SUCCESS","createdAt":"2026-11-02T01:34:54.975922+08:00"},{"currency":"MYR","sessionId":"ses_0bcc35c09c8985384d3575e2","cdrId":"cdr_13f49cdeb0d498a4b7dfe965","id":"wtx_30235e110e0c40382d6c4dbe","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":3.54,"paymentMethod":"Wallet","referenceId":"cdr_13f49cdeb0d498a4b7dfe965","status":"SUCCESS","createdAt":"2026-11-02T01:32:55.854433+08:00"},{"currency":"MYR","sessionId":"ses_12bb7594f829e1df74951c2a","cdrId":"cdr_d28cd318b4e6fff04028d937","id":"wtx_4195e319ab4f7f9838255fdd","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":17.86,"paymentMethod":"Wallet","referenceId":"cdr_d28cd318b4e6fff04028d937","status":"SUCCESS","createdAt":"2026-11-02T01:31:31.652797+08:00"},{"currency":"MYR","sessionId":"ses_919a99d51decd59ca2fff85e","cdrId":"cdr_aacfed41e83af8e1da860d13","id":"wtx_8010d3f90d51ab0fba5eeea5","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.57,"paymentMethod":"Wallet","referenceId":"cdr_aacfed41e83af8e1da860d13","status":"SUCCESS","createdAt":"2026-11-02T01:20:51.687146+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_b72fc74e9f97ceeca4766a37","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794936050","status":"SUCCESS","createdAt":"2026-11-02T01:20:50.329024+08:00"},{"currency":"MYR","sessionId":"ses_533ca16e4151437382dc59f2","cdrId":"cdr_bbf1aea89618ed32ca797398","id":"wtx_bef656f92402601395976294","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":2.42,"paymentMethod":"Wallet","referenceId":"cdr_bbf1aea89618ed32ca797398","status":"SUCCESS","createdAt":"2026-11-02T00:52:17.178819+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_430adbd3a980cb197a8fc605","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934332","status":"SUCCESS","createdAt":"2026-11-02T00:52:12.666864+08:00"},{"currency":"MYR","sessionId":"ses_2d2018e7fa218068a01451a6","cdrId":"cdr_2c91d777a64d271fd238d755","id":"wtx_3d3f38971b7b9c2b556281f2","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.32,"paymentMethod":"Wallet","referenceId":"cdr_2c91d777a64d271fd238d755","status":"SUCCESS","createdAt":"2026-11-02T00:51:13.342591+08:00"},{"currency":"MYR","sessionId":"ses_741c8fb0b09f5a34ac966031","cdrId":"cdr_8cb8af25030ad991a1dcbf69","id":"wtx_8f5cd200b111692228fb2d52","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":0.62,"paymentMethod":"Wallet","referenceId":"cdr_8cb8af25030ad991a1dcbf69","status":"SUCCESS","createdAt":"2026-11-02T00:51:10.222523+08:00"},{"currency":"MYR","sessionId":"ses_c9a49a0ea0a3d842d13692c6","cdrId":"cdr_ffbf7c34a274b5a5d35c2972","id":"wtx_2af6a0540a337112f45edfb8","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"CHARGING_DEBIT","amount":1.14,"paymentMethod":"Wallet","referenceId":"cdr_ffbf7c34a274b5a5d35c2972","status":"SUCCESS","createdAt":"2026-11-02T00:51:07.090455+08:00"},{"currency":"MYR","sessionId":null,"cdrId":null,"id":"wtx_1b69d026f7e86fca077cc201","walletId":"wal_41f585200882f4c2ff2d7cf1","type":"TOPUP","amount":100,"paymentMethod":"Credit Card","referenceId":"SIM-1794934264","status":"SUCCESS","createdAt":"2026-11-02T00:51:04.335614+08:00"}]
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT s.id,s.user_id,s.status,s.kwh_delivered,s.original_currency,s.original_cost,s.wallet_currency,s.total_cost,s.exchange_rate,s.tariff_per_kwh,k.status AS connector_status,(SELECT count(*) FROM cdrs c WHERE c.session_id=s.id) AS cdr_count,(SELECT count(*) FROM wallet_transactions t WHERE t.session_id=s.id AND t.type='CHARGING_DEBIT') AS debit_count,(SELECT coalesce(sum(amount),0) FROM wallet_reservations r WHERE r.wallet_id=w.id AND r.status='HELD') AS reserved,w.balance FROM charging_sessions s JOIN wallets w ON w.user_id=s.user_id JOIN connectors k ON k.id=s.connector_id WHERE s.id='ses_c2a1b2681f6d4addaf39a7f9';"
+id,user_id,status,kwh_delivered,original_currency,original_cost,wallet_currency,total_cost,exchange_rate,tariff_per_kwh,connector_status,cdr_count,debit_count,reserved,balance
+ses_c2a1b2681f6d4addaf39a7f9,usr_9a31c7c2a47632bffde832d2,COMPLETED,0.300,SGD,0.18,MYR,0.62,3.4500000000,0.600000,AVAILABLE,1,1,0,709.31
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am force-stop com.chargenet.mobile
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell am start -n com.chargenet.mobile/com.example.chargenet_mobile.MainActivity
+Starting: Intent { cmp=com.chargenet.mobile/com.example.chargenet_mobile.MainActivity }
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2250
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > activity-history-input.png (unaltered PNG; 82539 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 800 160
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > activity-history-input.png (unaltered PNG; 234216 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 400
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > history-receipt-opened.png (unaltered PNG; 205598 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 300 2225
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > receipt-copied.png (unaltered PNG; 232509 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2045
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > receipt-identifiers.png (unaltered PNG; 217068 bytes)
+
+2026-11-02T02:06:14.851409+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-c9dfd394-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:06:14 GMT
+Content-Length: 351
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUxNzQsImlhdCI6MTc5NDkzODc3NH0.sOQtg7jCdiUbZ35xDUu1moJx-BMVi6AB9gAi5i0WvIk","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T02:06:14.927621+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUxNzQsImlhdCI6MTc5NDkzODc3NH0.sOQtg7jCdiUbZ35xDUu1moJx-BMVi6AB9gAi5i0WvIk" http://localhost:18080/api/v1/sessions/history?limit=2&offset=0
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:06:14 GMT
+Transfer-Encoding: chunked
+
+[{"quoteId":"qte_13028b6c3b990f3ae4e91322","originalCurrency":"SGD","walletCurrency":"MYR","exchangeRate":"3.4500000000","rateSource":"chapter-five-restore","originalCost":0.18,"unfundedAmount":0,"reservedAmount":709.93,"tariffDecimal":"0.600000","id":"ses_c2a1b2681f6d4addaf39a7f9","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_chargesync","cpoName":"ChargeSync","stationId":"stn_demo_marina_bay","stationName":"ChargeSync Marina Bay","connectorId":"con_demo_marina_bay_dc","evseUid":"SG*CSY*E*D12DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T02:04:04.457356+08:00","endTime":"2026-11-02T02:04:06.718387+08:00","durationSeconds":20,"kwhDelivered":0.3,"currentPowerKw":53.44,"batterySoc":34.5,"targetSoc":100,"tariffPerKwh":0.6,"totalCost":0.62,"balanceAfter":709.31,"stopReason":"USER","cdrId":"cdr_c3387d16f85dd8e402655734","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"1.280000","longitude":"103.854000"},"country":"SGP","evse_id":"SG*CSY*E*D12DC","evse_uid":"SG*CSY*E*D12DC","id":"DEMO-MARINA-BAY","name":"ChargeSync Marina Bay"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":0.3},{"type":"TIME","volume":0.0056}],"start_date_time":"2026-11-02T18:04:04Z"}],"country_code":"MY","currency":"SGD","end_date_time":"2026-11-02T18:04:06Z","id":"cdr_c3387d16f85dd8e402655734","last_updated":"2026-11-02T18:04:06Z","party_id":"CSY","session_id":"ses_c2a1b2681f6d4addaf39a7f9","start_date_time":"2026-11-02T18:04:04Z","tariffs":[{"country_code":"MY","currency":"SGD","elements":[{"price_components":[{"price":0.6,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_chargesync_sg_dc","last_updated":"2026-11-02T18:04:04Z","party_id":"CSY","tax_included":"N/A"}],"total_cost":{"before_taxes":0.18},"total_energy":0.3,"total_time":0.0056}},{"quoteId":"qte_972a69da2a661eb3b0afc670","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":13.61,"unfundedAmount":0,"reservedAmount":723.54,"tariffDecimal":"1.500000","id":"ses_40d116d2cf8d0f200469a7f2","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T02:02:18.942784+08:00","endTime":"2026-11-02T02:02:45.456974+08:00","durationSeconds":26,"kwhDelivered":9.071,"currentPowerKw":125.8,"batterySoc":46.19,"targetSoc":100,"tariffPerKwh":1.5,"totalCost":13.61,"balanceAfter":709.93,"stopReason":"USER","cdrId":"cdr_2ab561f4b092593ff2dcfd5c","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11DC","evse_uid":"MY*VLT*E*D11DC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":9.071},{"type":"TIME","volume":0.0072}],"start_date_time":"2026-11-02T18:02:18Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T18:02:45Z","id":"cdr_2ab561f4b092593ff2dcfd5c","last_updated":"2026-11-02T18:02:45Z","party_id":"VLT","session_id":"ses_40d116d2cf8d0f200469a7f2","start_date_time":"2026-11-02T18:02:18Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":1.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_dc","last_updated":"2026-11-02T18:02:18Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":13.61},"total_energy":9.071,"total_time":0.0072}}]
+
+curl exit: 0
+
+2026-11-02T02:06:14.988496+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc11\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjUxNzQsImlhdCI6MTc5NDkzODc3NH0.sOQtg7jCdiUbZ35xDUu1moJx-BMVi6AB9gAi5i0WvIk" http://localhost:18080/api/v1/sessions/history?limit=2&offset=2
+HTTP/1.1 200 OK
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 18:06:14 GMT
+Transfer-Encoding: chunked
+
+[{"quoteId":"qte_619b9f2dcc981fe9be62eea0","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":41.8,"unfundedAmount":0,"reservedAmount":565.34,"tariffDecimal":"1.500000","id":"ses_1f536021cb700cd1ad8f7d01","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T01:44:42.794811+08:00","endTime":"2026-11-02T01:45:59.33571+08:00","durationSeconds":760,"kwhDelivered":27.867,"currentPowerKw":118.82,"batterySoc":56.16,"targetSoc":100,"tariffPerKwh":1.5,"totalCost":41.8,"balanceAfter":523.54,"stopReason":"USER","cdrId":"cdr_d9ae91ef1141f2475bf9f5e8","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11DC","evse_uid":"MY*VLT*E*D11DC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":27.867},{"type":"TIME","volume":0.2111}],"start_date_time":"2026-11-02T17:44:42Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T17:45:59Z","id":"cdr_d9ae91ef1141f2475bf9f5e8","last_updated":"2026-11-02T17:45:59Z","party_id":"VLT","session_id":"ses_1f536021cb700cd1ad8f7d01","start_date_time":"2026-11-02T17:44:42Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":1.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_dc","last_updated":"2026-11-02T17:44:42Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":41.8},"total_energy":27.867,"total_time":0.2111}},{"quoteId":"qte_77ad144dd35721ad026d847d","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRate":"1.0000000000","rateSource":"same-currency","originalCost":46.7,"unfundedAmount":0,"reservedAmount":512.04,"tariffDecimal":"1.500000","id":"ses_5724de798104fdbe82b07697","userId":"usr_9a31c7c2a47632bffde832d2","vehicleId":"veh_d86a568c90e2a77f765148c7","cpoId":"cpo_voltgo","cpoName":"VoltGo","stationId":"stn_demo_batu_kawan","stationName":"VoltGo Batu Kawan","connectorId":"con_demo_batu_kawan_dc","evseUid":"MY*VLT*E*D11DC","connectorType":"CCS2","status":"COMPLETED","startTime":"2026-11-02T01:42:10.723078+08:00","endTime":"2026-11-02T01:43:36.939405+08:00","durationSeconds":860,"kwhDelivered":31.135,"currentPowerKw":118.2,"batterySoc":61.01,"targetSoc":100,"tariffPerKwh":1.5,"totalCost":46.7,"balanceAfter":465.34,"stopReason":"USER","cdrId":"cdr_a075fca52e7072432a00cf1a","cdrJson":{"auth_method":"COMMAND","cdr_location":{"address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","connector_format":"CABLE","connector_id":"1","connector_power_type":"DC","connector_standard":"IEC_62196_T2_COMBO","coordinates":{"latitude":"5.245000","longitude":"100.438000"},"country":"MYS","evse_id":"MY*VLT*E*D11DC","evse_uid":"MY*VLT*E*D11DC","id":"DEMO-BATU-KAWAN","name":"VoltGo Batu Kawan"},"cdr_token":{"contract_id":"usr_9a31c7c2a47632bffde832d2","country_code":"MY","party_id":"CNT","type":"APP_USER","uid":"usr_9a31c7c2a47632bffde832d2"},"charging_periods":[{"dimensions":[{"type":"ENERGY","volume":31.135},{"type":"TIME","volume":0.2389}],"start_date_time":"2026-11-02T17:42:10Z"}],"country_code":"MY","currency":"MYR","end_date_time":"2026-11-02T17:43:36Z","id":"cdr_a075fca52e7072432a00cf1a","last_updated":"2026-11-02T17:43:36Z","party_id":"VLT","session_id":"ses_5724de798104fdbe82b07697","start_date_time":"2026-11-02T17:42:10Z","tariffs":[{"country_code":"MY","currency":"MYR","elements":[{"price_components":[{"price":1.5,"step_size":1,"type":"ENERGY"}]}],"id":"trf_demo_voltgo_my_dc","last_updated":"2026-11-02T17:42:10Z","party_id":"VLT","tax_included":"N/A"}],"total_cost":{"before_taxes":46.7},"total_energy":31.135,"total_time":0.2389}}]
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input keyevent 4
+
+exit: 0

@@ -1,0 +1,32 @@
+**********************
+PowerShell transcript start
+Start time: 20261102004653
+Username: JIAE-LAPTOP\ongji
+RunAs User: JIAE-LAPTOP\ongji
+Configuration Name: 
+Machine: JIAE-LAPTOP (Microsoft Windows NT 10.0.26300.0)
+Host Application: C:\Users\ongji\AppData\Local\Microsoft\WindowsApps\pwsh.exe -NoProfile -Command try { [Console]::OutputEncoding=[System.Text.Encoding]::UTF8 } catch {}
+.\chapter-5-testing-new\tests\tc01\run.ps1
+Process ID: 4848
+PSVersion: 7.7.0
+PSEdition: Core
+GitCommitId: 7.7.0
+OS: Microsoft Windows 10.0.26300
+Platform: Win32NT
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1, 6.0, 7.0
+PSRemotingProtocolVersion: 2.4
+SerializationVersion: 1.1.0.1
+WSManStackVersion: 3.0
+**********************
+Transcript started, output file is C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc01/backend-regression.txt
+
+
+go test exit: 0
+
+go vet exit: 0
+
+go build exit: 0
+**********************
+PowerShell transcript end
+End time: 20261102005053
+**********************

@@ -1,0 +1,158 @@
+CN
+ChargeNet
+Partner Portal
+Partners
+ChargeNet Admin
+admin@chargenet.my
+Super admin
+Sign out
+Administration
+OCPI 2.3.0
+Partners
+Revenue currency
+MYR · Malaysian ringgit
+SGD · Singapore dollar
+THB · Thai baht
+Original tariff currency. Currencies are reported separately.
+Pending approval
+3
+Failed handshakes
+0
+Suspended
+12
+All CPO partners
+PARTNER	PARTY	STATUS	HANDSHAKE	FEE	STATIONS	EVSES	SESSIONS TODAY	GROSS TODAY	ACTIONS
+ChargeSync	CSY	ACTIVE	VERIFIED	5.0 %	13	33	10	MYR 2.76	
+Suspend
+Set pending
+Edit fee
+
+Company Saved From Browser 0e7f69	X7A	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+Controlled tc12	X12	SUSPENDED	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc12 18506c	X5E	ACTIVE	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Suspend
+Set pending
+Edit fee
+
+Controlled tc12 ab101f	XF7	SUSPENDED	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc13	X13	PENDING	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Suspend
+Edit fee
+
+Controlled tc13 cd7a99	XBE	SUSPENDED	NOT_STARTED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc13 dca434	XDA	PENDING	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Suspend
+Edit fee
+
+Controlled tc13 e4f59f	XA0	SUSPENDED	NOT_STARTED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc17	X17	PENDING	VERIFIED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Suspend
+Edit fee
+
+Controlled tc17 303ed7	X0D	SUSPENDED	NOT_STARTED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc17 a7e89f	XEE	SUSPENDED	NOT_STARTED	5.0 %	1	1	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc19	X19	SUSPENDED	VERIFIED	5.0 %	1	0	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc20	X20	SUSPENDED	VERIFIED	5.0 %	1	0	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc22	X22	SUSPENDED	VERIFIED	5.0 %	1	0	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Controlled tc38 394e6b	X60	SUSPENDED	VERIFIED	5.0 %	1	0	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+EcoWatt	ECO	ACTIVE	VERIFIED	5.0 %	12	31	5	MYR 0.35	
+Suspend
+Set pending
+Edit fee
+
+Updated Chapter Five Company	X14	SUSPENDED	VERIFIED	5.0 %	1	0	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+Updated Chapter Five Company	X25	SUSPENDED	VERIFIED	5.0 %	1	0	0	MYR 0.00	
+Approve
+Set pending
+Edit fee
+
+VoltGo	VLT	ACTIVE	VERIFIED	5.0 %	13	30	42	MYR 466.28	
+Suspend
+Set pending
+Edit fee
+Partners
+20
+Active partners
+5
+Stations
+55
+EVSEs
+105
+Sessions today
+57
+Gross today
+MYR 469.39
+Network gross — last 7 days
+Gross revenue (MYR)
+800
+600
+400
+200
+0
+12
+Nov
+13
+Nov
+14
+Nov
+15
+Nov
+16
+Nov
+17
+Nov
+18
+Nov
+View daily revenue
+Controlled tc12 18506c is now active.

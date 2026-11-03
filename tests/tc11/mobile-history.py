@@ -1,0 +1,3 @@
+from mobile import *
+c=Client();c.login();before=c.call('GET','/api/v1/wallet');station,k=c.pick('SG','cpo_chargesync');q=c.quote(k);s=c.start(k,q);c.positive(s);c.call('POST','/api/v1/sessions/'+s['id']+'/stop');c.call('GET','/api/v1/wallet');c.call('GET','/api/v1/wallet/transactions');accounting(s['id'])
+adb('shell','am','force-stop','com.chargenet.mobile');launch();time.sleep(12);tap(540,2250);tap(800,160);time.sleep(1);shot('activity-history-input');tap(540,400);time.sleep(1);shot('history-receipt-opened');tap(300,2225);shot('receipt-copied');tap(540,2045);shot('receipt-identifiers');c.call('GET','/api/v1/sessions/history?limit=2&offset=0');c.call('GET','/api/v1/sessions/history?limit=2&offset=2');adb('shell','input','keyevent','4')

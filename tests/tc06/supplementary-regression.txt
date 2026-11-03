@@ -1,0 +1,29 @@
+
+2026-11-02T01:47:18.841376+08:00
+$ C:/Users/ongji/flutter/bin/flutter.bat test --no-pub --concurrency=1 --reporter expanded test/station_filters_test.dart test/discovery_controller_test.dart test/home_search_selection_test.dart
+00:00 +0: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart
+00:00 +0: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: changing country clears its region and retains other filters
+00:00 +1: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: API sends geographic and power constraints in one request
+00:00 +2: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 1.0
+00:02 +3: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(320.0, 640.0) / 2.0
+00:03 +4: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 1.0
+00:03 +5: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: filter sheet is scrollable with Apply visible at Size(640.0, 320.0) / 2.0
+00:03 +6: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: country change clears region and Apply returns the combined draft
+00:04 +7: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/station_filters_test.dart: Reset is a draft and dismissal cancels all changes
+00:05 +8: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart
+00:06 +8: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart: new search wins reversed completion and superseded errors
+00:06 +9: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart: refresh updates selected connectors, dismisses missing selection, hides fallback distance
+00:06 +10: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/discovery_controller_test.dart: clearing filters cancels a pending search debounce
+00:07 +11: loading C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/home_search_selection_test.dart
+00:09 +11: C:/code projects/chargenet-latest/chapter-5-testing-new/.work/chargenet-mobile/test/home_search_selection_test.dart: selecting a search result dismisses search and retains station selection
+  [1m[flutter_map][0m
+    We want to help keep OpenStreetMap available for everyone. Our examples
+    and demo app use the public tile servers, but they are NOT free to use by
+    everyone! Please review whether the OpenStreetMap tile servers are suitable
+    for your project.
+    See:
+      * https://operations.osmfoundation.org/policies/tiles (OSM Tile Usage Policy)
+      * https://docs.fleaflet.dev/osm-warn for more information about this warning
+00:13 +12: All tests passed!
+
+exit: 0

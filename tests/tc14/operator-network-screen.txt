@@ -1,0 +1,42 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Test Operator
+tc14-34880662@example.test
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Network
+Live · refreshes every 5s
+Country
+All countries
+Malaysia
+Singapore
+Thailand
+All
+Available
+Charging
+Blocked
+Inoperative
+Stations
+1
+Bays available
+1
+Charging now
+0
+Sessions today
+0
+Controlled Chapter Five Station
+1/1 bays free
+Synthetic test site, Kuala Lumpur · MY
+MY*X7A*E*01DC
+CCS2 · CABLE · 50 kW
+MYR 1.25 / kWh
+AVAILABLE

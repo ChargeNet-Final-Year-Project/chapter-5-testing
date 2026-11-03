@@ -1,0 +1,121 @@
+
+2026-11-02T01:04:51.682922+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-001.json http://localhost:18080/admin/api/login
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:51 GMT
+Content-Length: 80
+
+{"error":{"code":"INVALID_CREDENTIALS","message":"Invalid email or password."}}
+
+curl exit: 0
+
+2026-11-02T01:04:51.754807+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-002.json http://localhost:18080/admin/api/login
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:51 GMT
+Content-Length: 80
+
+{"error":{"code":"INVALID_CREDENTIALS","message":"Invalid email or password."}}
+
+curl exit: 0
+
+2026-11-02T01:04:51.823186+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-003.json http://localhost:18080/admin/api/login
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:51 GMT
+Content-Length: 80
+
+{"error":{"code":"INVALID_CREDENTIALS","message":"Invalid email or password."}}
+
+curl exit: 0
+
+2026-11-02T01:04:51.890319+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-004.json http://localhost:18080/admin/api/login
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:51 GMT
+Content-Length: 80
+
+{"error":{"code":"INVALID_CREDENTIALS","message":"Invalid email or password."}}
+
+curl exit: 0
+
+2026-11-02T01:04:51.958874+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-005.json http://localhost:18080/admin/api/login
+HTTP/1.1 401 Unauthorized
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:51 GMT
+Content-Length: 80
+
+{"error":{"code":"INVALID_CREDENTIALS","message":"Invalid email or password."}}
+
+curl exit: 0
+
+2026-11-02T01:04:52.024284+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-006.json http://localhost:18080/admin/api/login
+HTTP/1.1 429 Too Many Requests
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:52 GMT
+Content-Length: 93
+
+{"error":{"code":"RATE_LIMITED","message":"Too many attempts. Try again in a few minutes."}}
+
+curl exit: 0
+
+2026-11-02T01:04:52.095930+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-007.json http://localhost:18080/admin/api/login
+HTTP/1.1 429 Too Many Requests
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:52 GMT
+Content-Length: 93
+
+{"error":{"code":"RATE_LIMITED","message":"Too many attempts. Try again in a few minutes."}}
+
+curl exit: 0
+
+2026-11-02T01:04:52.159177+08:00
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc39\throttle-cookies.txt" -H "Content-Type: application/json" --data-binary @input-008.json http://localhost:18080/admin/api/login
+HTTP/1.1 429 Too Many Requests
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: 600
+Content-Type: application/json; charset=utf-8
+Date: Mon, 02 Nov 2026 17:04:52 GMT
+Content-Length: 93
+
+{"error":{"code":"RATE_LIMITED","message":"Too many attempts. Try again in a few minutes."}}
+
+curl exit: 0
+Expired JWT claims sent to browser: {"sub": "pu_e0e4176526ebffa13116a0a6", "aud": ["portal"], "exp": 1794935035, "iat": 1794931495, "role": "CPO", "cpoId": "cpo_voltgo"}

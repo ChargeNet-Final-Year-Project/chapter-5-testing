@@ -1,0 +1,79 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2188
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > combined-filter-final-input.png (unaltered PNG; 198280 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2230
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > combined-filter-result.png (unaltered PNG; 172711 bytes)
+
+2026-11-02T02:16:03.860968+08:00
+Request body: {"email": "demo@chargenet.my", "password": "Demo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc06\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc06\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-a8707ffe-001.json http://localhost:18080/api/v1/auth/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 18:16:03 GMT
+
+Content-Length: 351
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjU3NjMsImlhdCI6MTc5NDkzOTM2M30.JjHX7uCavNZyybV11Mp7b6J_LkIN36_7G8WWEMulVzw","user":{"id":"usr_9a31c7c2a47632bffde832d2","name":"Mark Tan","email":"demo@chargenet.my","createdAt":"2026-11-02T00:48:42.217158+08:00"}}
+
+curl exit: 0
+
+2026-11-02T02:16:04.209758+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc06\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc06\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfOWEzMWM3YzJhNDc2MzJiZmZkZTgzMmQyIiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjU3NjMsImlhdCI6MTc5NDkzOTM2M30.JjHX7uCavNZyybV11Mp7b6J_LkIN36_7G8WWEMulVzw" http://localhost:18080/api/v1/stations?country=MY&region=Penang&cpoId=cpo_voltgo&connectorType=CCS2&powerType=DC&minPower=40&maxPower=150
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 18:16:04 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_batu_kawan","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Batu Kawan","address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","latitude":5.245,"longitude":100.438,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_batu_kawan_ac","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_batu_kawan_dc","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_bayan_lepas","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Bayan Lepas / Queensbay area","address":"Persiaran Bayan Indah, Bayan Lepas / Queensbay area, Penang, Malaysia (simulated site)","city":"Bayan Lepas / Queensbay area","latitude":5.334,"longitude":100.305,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_bayan_lepas_ac","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_bayan_lepas_dc","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_butterworth","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Butterworth","address":"Jalan Bagan Luar, Butterworth, Penang, Malaysia (simulated site)","city":"Butterworth","latitude":5.399,"longitude":100.368,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_butterworth_ac","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_butterworth_dc","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_george_town","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo George Town","address":"Jalan Penang, George Town, Penang, Malaysia (simulated site)","city":"George Town","latitude":5.419,"longitude":100.331,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_george_town_ac","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_george_town_dc","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 140 315
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 840 740
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > reset-draft-input.png (unaltered PNG; 306507 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 985 740
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 140 315
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > cancel-preserved-applied-filters.png (unaltered PNG; 307153 bytes)
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 840 740
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 540 2230
+
+exit: 0
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe exec-out screencap -p > reset-applied-result.png (unaltered PNG; 1238316 bytes)

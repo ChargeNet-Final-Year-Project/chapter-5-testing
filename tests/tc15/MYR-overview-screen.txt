@@ -1,0 +1,65 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Ops voltgo
+ops@voltgo.my
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Overview
+Revenue currency
+MYR · Malaysian ringgit
+SGD · Singapore dollar
+THB · Thai baht
+Original tariff currency. Currencies are reported separately.
+Network status
+View stations
+
+30 bays · 0 active sessions
+
+Available
+28
+Charging
+1
+Blocked
+0
+Inoperative
+1
+Sessions today
+39
+Energy today
+268.74 kWh
+Gross today
+MYR 370.95
+Net payout this month
+MYR 393.40
+Last 7 days
+View revenue
+Gross revenue (MYR)
+400
+300
+200
+100
+0
+12
+Nov
+13
+Nov
+14
+Nov
+15
+Nov
+16
+Nov
+17
+Nov
+18
+Nov
+View daily revenue

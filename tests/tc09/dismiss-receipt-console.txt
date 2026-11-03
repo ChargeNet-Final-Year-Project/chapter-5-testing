@@ -1,0 +1,3 @@
+$ C:\Users\ongji\AppData\Local\Android\Sdk\platform-tools\adb.exe shell input tap 790 2225
+
+exit: 0

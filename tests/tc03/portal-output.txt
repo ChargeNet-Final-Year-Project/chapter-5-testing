@@ -1,0 +1,10 @@
+✓ 56 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.55 kB │ gzip:  0.33 kB
+dist/assets/index-BmCTFoFQ.css   19.38 kB │ gzip:  4.69 kB
+dist/assets/index-DOu7Sxdf.js   238.10 kB │ gzip: 73.78 kB
+✓ built in 19.52s
+build exit: 0
+Transcript stopped, output file is C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc03\portal-build.txt
+

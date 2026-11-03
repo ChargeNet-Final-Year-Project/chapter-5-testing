@@ -1,0 +1,94 @@
+Partner portal
+OCPI 2.3.0
+Revenue
+Export CSV
+Revenue currency
+MYR · Malaysian ringgit
+SGD · Singapore dollar
+THB · Thai baht
+Original tariff currency. Currencies are reported separately.
+Last 7 days
+Last 30 days
+This month
+Today
+2026-10-20 → 2026-11-02
+From
+To
+Reporting calendar: Asia/Kuala_Lumpur. Records use settlement date, newest first. Displayed start times are in this timezone.
+Charge sessions
+48
+Energy
+283.00 kWh
+Gross
+MYR 405.15
+Platform fee
+MYR 20.29
+Net payout
+MYR 384.86
+SESSION START STATION EVSE ENERGY MINUTES TARIFF GROSS FEE NET RECORD
+Nov 02, 2026 12:51 AM VoltGo Batu Kawan MY*VLT*E*D11AC 36.92 kWh 240 MYR 0.90 MYR 33.23 MYR 1.66 MYR 31.57
+View
+Nov 02, 2026 01:14 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.80 kWh 0 MYR 1.50 MYR 1.19 MYR 0.06 MYR 1.13
+View
+Nov 02, 2026 01:12 AM VoltGo Batu Kawan MY*VLT*E*D11DC 6.65 kWh 3 MYR 1.50 MYR 9.98 MYR 0.50 MYR 9.48
+View
+Nov 02, 2026 01:12 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.00 kWh 0 MYR 1.50 MYR 0.00 MYR 0.00 MYR 0.00
+View
+Nov 02, 2026 01:12 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.75 kWh 0 MYR 1.50 MYR 1.12 MYR 0.06 MYR 1.06
+View
+Nov 02, 2026 01:11 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.79 kWh 0 MYR 1.50 MYR 1.19 MYR 0.06 MYR 1.13
+View
+Nov 02, 2026 01:10 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.77 kWh 0 MYR 1.50 MYR 1.15 MYR 0.06 MYR 1.09
+View
+Nov 02, 2026 01:10 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.74 kWh 0 MYR 1.50 MYR 1.11 MYR 0.06 MYR 1.05
+View
+Nov 02, 2026 01:04 AM VoltGo Batu Kawan MY*VLT*E*D11DC 46.14 kWh 32 MYR 1.50 MYR 69.21 MYR 3.46 MYR 65.75
+View
+Nov 02, 2026 01:06 AM VoltGo Bayan Lepas / Queensbay area MY*VLT*E*D05DC 0.76 kWh 0 MYR 1.50 MYR 1.13 MYR 0.06 MYR 1.07
+View
+Nov 02, 2026 01:06 AM VoltGo Bayan Lepas / Queensbay area MY*VLT*E*D05DC 12.88 kWh 5 MYR 1.50 MYR 19.32 MYR 0.97 MYR 18.35
+View
+Nov 02, 2026 01:04 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.81 kWh 0 MYR 1.50 MYR 1.22 MYR 0.06 MYR 1.16
+View
+Nov 02, 2026 01:00 AM VoltGo Bayan Lepas / Queensbay area MY*VLT*E*D05DC 46.20 kWh 32 MYR 1.50 MYR 69.30 MYR 3.47 MYR 65.83
+View
+Nov 02, 2026 12:58 AM VoltGo Batu Kawan MY*VLT*E*D11DC 47.70 kWh 32 MYR 1.50 MYR 71.55 MYR 3.58 MYR 67.97
+View
+Nov 02, 2026 12:51 AM VoltGo Batu Kawan MY*VLT*E*D11DC 48.00 kWh 33 MYR 1.50 MYR 72.00 MYR 3.60 MYR 68.40
+View
+Nov 02, 2026 12:52 AM VoltGo Bayan Lepas / Queensbay area MY*VLT*E*D05DC 1.61 kWh 0 MYR 1.50 MYR 2.42 MYR 0.12 MYR 2.30
+View
+Nov 02, 2026 12:52 AM VoltGo Bayan Lepas / Queensbay area MY*VLT*E*D05DC 1.19 kWh 0 MYR 1.50 MYR 1.78 MYR 0.09 MYR 1.69
+View
+Nov 02, 2026 12:51 AM VoltGo Bayan Lepas / Queensbay area MY*VLT*E*D05DC 0.79 kWh 0 MYR 1.50 MYR 1.19 MYR 0.06 MYR 1.13
+View
+Nov 02, 2026 12:51 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.75 kWh 0 MYR 1.50 MYR 1.12 MYR 0.06 MYR 1.06
+View
+Nov 02, 2026 12:51 AM VoltGo Batu Kawan MY*VLT*E*D11DC 0.76 kWh 0 MYR 1.50 MYR 1.14 MYR 0.06 MYR 1.08
+View
+Nov 01, 2026 11:59 PM VoltGo Batu Kawan MY*VLT*E*D11DC 1.00 kWh 1 MYR 1.60 MYR 1.60 MYR 0.08 MYR 1.52
+View
+Oct 31, 2026 11:59 PM VoltGo Batu Kawan MY*VLT*E*D11DC 1.00 kWh 1 MYR 1.60 MYR 1.60 MYR 0.08 MYR 1.52
+View
+Oct 31, 2026 11:59 PM VoltGo Batu Kawan MY*VLT*E*D11DC 1.00 kWh 1 MYR 1.60 MYR 1.60 MYR 0.08 MYR 1.52
+View
+Oct 31, 2026 11:59 PM VoltGo Batu Kawan MY*VLT*E*D11DC 1.00 kWh 1 MYR 1.60 MYR 1.60 MYR 0.08 MYR 1.52
+View
+Oct 31, 2026 11:59 PM VoltGo Batu Kawan MY*VLT*E*D11DC 1.00 kWh 1 MYR 1.60 MYR 1.60 MYR 0.08 MYR 1.52
+View
+Whole-range totals 283.00 kWh MYR 405.15 MYR 20.29 MYR 384.86
+Prev
+Page 1 of 2
+Next
+Payouts
+Bank
+Maybank · ••••••••5678
+Cycle
+MONTHLY
+Scheduled cycle date (demo)
+2026-12-01
+Current cycle
+2026-11-01 → 2026-11-02
+Estimated net for current cycle
+MYR 383.34
+Demo cycle estimate. No bank transfer or previous payout is recorded.

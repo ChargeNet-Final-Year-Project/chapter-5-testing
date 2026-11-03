@@ -1,0 +1,92 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Test Operator
+tc12-c1669251@example.test
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Connect your OCPI platform
+
+Awaiting administrator approval. You can configure and verify your connection; your stations remain hidden from drivers until approved.
+
+Handshake VERIFIED
+Company PENDING
+Last tested Nov 02, 2026 01:43 AM
+1 · Give these to your OCPI platform
+
+Your platform registers with ChargeNet before verification.
+
+Versions URL
+http://localhost:18080/ocpi/emsp/versions
+Copy
+Token A (one-time registration token)
+Consumed — no longer valid
+Reveal
+Copy
+Regenerate
+Country / party id
+MY / X5E
+Supported OCPI version
+2.3.0
+2 · Your OCPI endpoint
+
+Where ChargeNet sends its handshake and pulls your locations and tariffs.
+
+Base URL
+Your OCPI API root; ChargeNet appends /versions.
+Save endpoint
+3 · Verify the connection
+
+After your platform registers using Token A, this test checks the stored credentials, versions, locations and tariffs. It does not perform registration.
+
+Run handshake test
+✔
+1. Credentials registered
+Token B and Token C are registered.
+0 ms
+✔
+2. GET versions
+The CPO serves OCPI 2.3.0.
+8 ms
+✔
+3. GET version details
+4 endpoints, including locations and commands.
+7 ms
+✔
+4. GET locations
+1 locations, 1 EVSEs; 1 stored.
+13 ms
+✔
+5. GET tariffs
+1 tariffs stored.
+10 ms
+✔
+6. Commands endpoint reachable
+The commands endpoint answers.
+2 ms
+Connection verified. Administrator approval is still required before drivers can use your stations.
+Tokens B & C
+
+Stored automatically during registration. Shown only as a last-4 hint — the full values never leave ChargeNet.
+
+Token B — ChargeNet authenticates to you
+Registered
+••••7382
+Token C — you authenticate to ChargeNet
+Registered
+••••1404
+Rotate
+Disconnect
+How the handshake works
+You share the Versions URL and Token A with your OCPI platform.
+Your platform supplies Token B during registration; ChargeNet uses it to authenticate to your platform.
+ChargeNet returns Token C for your platform to authenticate to ChargeNet.
+Run the handshake test to verify every step end to end.

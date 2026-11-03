@@ -1,0 +1,52 @@
+Partner portal
+OCPI 2.3.0
+Revenue
+Export CSV
+Revenue currency
+MYR · Malaysian ringgit
+SGD · Singapore dollar
+THB · Thai baht
+Original tariff currency. Currencies are reported separately.
+Last 7 days
+Last 30 days
+This month
+Today
+2026-10-20 → 2026-11-02
+From
+To
+
+Reporting calendar: Asia/Kuala_Lumpur. Records use settlement date, newest first. Displayed start times are in this timezone.
+
+Charge sessions
+6
+Energy
+53.10 kWh
+Gross
+MYR 79.65
+Platform fee
+MYR 3.99
+Net payout
+MYR 75.66
+SESSION START	STATION	EVSE	ENERGY	MINUTES	TARIFF	GROSS	FEE	NET	RECORD
+Nov 02, 2026 12:51 AM	VoltGo Batu Kawan	MY*VLT*E*D11DC	48.00 kWh	33	MYR 1.50	MYR 72.00	MYR 3.60	MYR 68.40	View
+Nov 02, 2026 12:52 AM	VoltGo Bayan Lepas / Queensbay area	MY*VLT*E*D05DC	1.61 kWh	0	MYR 1.50	MYR 2.42	MYR 0.12	MYR 2.30	View
+Nov 02, 2026 12:52 AM	VoltGo Bayan Lepas / Queensbay area	MY*VLT*E*D05DC	1.19 kWh	0	MYR 1.50	MYR 1.78	MYR 0.09	MYR 1.69	View
+Nov 02, 2026 12:51 AM	VoltGo Bayan Lepas / Queensbay area	MY*VLT*E*D05DC	0.79 kWh	0	MYR 1.50	MYR 1.19	MYR 0.06	MYR 1.13	View
+Nov 02, 2026 12:51 AM	VoltGo Batu Kawan	MY*VLT*E*D11DC	0.75 kWh	0	MYR 1.50	MYR 1.12	MYR 0.06	MYR 1.06	View
+Nov 02, 2026 12:51 AM	VoltGo Batu Kawan	MY*VLT*E*D11DC	0.76 kWh	0	MYR 1.50	MYR 1.14	MYR 0.06	MYR 1.08	View
+Whole-range totals	53.10 kWh			MYR 79.65	MYR 3.99	MYR 75.66	
+Prev
+Page 1 of 1
+Next
+Payouts
+Bank
+Maybank · ••••••••5678
+Cycle
+MONTHLY
+Scheduled cycle date (demo)
+2026-12-01
+Current cycle
+2026-11-01 → 2026-11-02
+Estimated net for current cycle
+MYR 75.66
+Demo cycle estimate. No bank transfer or previous payout is recorded.

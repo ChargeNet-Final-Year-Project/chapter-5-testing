@@ -1,0 +1,623 @@
+
+2026-11-02T01:30:03.138322+08:00
+Request body: {"name": "Chapter Five Driver", "email": "ch5-63eee79646@example.test", "password": "LocalOnly123!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" --data-binary @input-25166dcd-001.json http://localhost:18080/api/v1/auth/register
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:03 GMT
+
+Content-Length: 368
+
+
+
+{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8","user":{"id":"usr_1d344fccb2514318daf7be95","name":"Chapter Five Driver","email":"ch5-63eee79646@example.test","createdAt":"2026-11-02T17:30:03.1224946Z"}}
+
+curl exit: 0
+
+2026-11-02T01:30:04.019448+08:00
+Request body: {"amount": 100, "paymentMethod": "Credit Card"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" -H "Idempotency-Key: 625bd797d28a42be8cf0c97d73c3db5f" --data-binary @input-08c41b20-002.json http://localhost:18080/api/v1/wallet/topup
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 155
+
+
+
+{"id": "wal_9058af47d0fc55298a7c88c3", "userId": "usr_1d344fccb2514318daf7be95", "balance": 100, "currency": "MYR", "reserved": 0, "availableBalance": 100}
+curl exit: 0
+
+2026-11-02T01:30:04.068354+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" http://localhost:18080/api/v1/stations?country=MY&cpoId=cpo_voltgo
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Transfer-Encoding: chunked
+
+
+
+[{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_batu_kawan","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Batu Kawan","address":"Persiaran Cassia Selatan, Batu Kawan, Penang, Malaysia (simulated site)","city":"Batu Kawan","latitude":5.245,"longitude":100.438,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_batu_kawan_ac","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_batu_kawan_dc","stationId":"stn_demo_batu_kawan","evseUid":"MY*VLT*E*D11DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_bayan_lepas","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Bayan Lepas / Queensbay area","address":"Persiaran Bayan Indah, Bayan Lepas / Queensbay area, Penang, Malaysia (simulated site)","city":"Bayan Lepas / Queensbay area","latitude":5.334,"longitude":100.305,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_bayan_lepas_ac","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_bayan_lepas_dc","stationId":"stn_demo_bayan_lepas","evseUid":"MY*VLT*E*D05DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_butterworth","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Butterworth","address":"Jalan Bagan Luar, Butterworth, Penang, Malaysia (simulated site)","city":"Butterworth","latitude":5.399,"longitude":100.368,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_butterworth_ac","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_butterworth_dc","stationId":"stn_demo_butterworth","evseUid":"MY*VLT*E*D07DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Pahang","countryCode":"MY","isSimulated":true,"id":"stn_vlt_gsr","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Genting Sempah R\u0026R","address":"Lebuhraya Kuala Lumpur-Karak, Genting Sempah","city":"Genting Sempah","latitude":3.365,"longitude":101.787,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_gsr_01","stationId":"stn_vlt_gsr","evseUid":"VLT-GSR-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_gsr_02","stationId":"stn_vlt_gsr","evseUid":"VLT-GSR-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]},{"region":"Penang","countryCode":"MY","isSimulated":true,"id":"stn_demo_george_town","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo George Town","address":"Jalan Penang, George Town, Penang, Malaysia (simulated site)","city":"George Town","latitude":5.419,"longitude":100.331,"totalBays":2,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_demo_voltgo_my_ac","id":"con_demo_george_town_ac","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_voltgo_my_dc","id":"con_demo_george_town_dc","stationId":"stn_demo_george_town","evseUid":"MY*VLT*E*D01DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":150,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"region":"Putrajaya","countryCode":"MY","isSimulated":true,"id":"stn_vlt_pjs","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Putrajaya Sentral","address":"Putrajaya Sentral, Presint 7","city":"Putrajaya","latitude":2.9264,"longitude":101.6764,"totalBays":3,"availableBays":3,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_250","id":"con_vlt_pjs_01","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":250,"tariffPerKwh":1.7,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_pjs_02","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_pjs_03","stationId":"stn_vlt_pjs","evseUid":"VLT-PJS-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]},{"region":"Negeri Sembilan","countryCode":"MY","isSimulated":true,"id":"stn_vlt_srr","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Seremban R\u0026R","address":"Lebuhraya Utara-Selatan, Seremban","city":"Seremban","latitude":2.734,"longitude":101.918,"totalBays":4,"availableBays":3,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_srr_01","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_srr_02","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_srr_03","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_srr_04","stationId":"stn_vlt_srr","evseUid":"VLT-SRR-04","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"INOPERATIVE"}]},{"region":"Selangor","countryCode":"MY","isSimulated":true,"id":"stn_vlt_sgb","cpoId":"cpo_voltgo","cpoName":"VoltGo","cpoColorHex":"#0D9488","name":"VoltGo Sungai Buloh R\u0026R","address":"Lebuhraya Utara-Selatan, Sungai Buloh","city":"Sungai Buloh","latitude":3.2105,"longitude":101.579,"totalBays":3,"availableBays":2,"isActive":true,"distanceKm":null,"connectors":[{"currency":"MYR","tariffId":"trf_voltgo_350","id":"con_vlt_sgb_01","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":350,"tariffPerKwh":1.8,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_sgb_02","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"CHARGING"},{"currency":"MYR","tariffId":"trf_voltgo_180","id":"con_vlt_sgb_03","stationId":"stn_vlt_sgb","evseUid":"VLT-SGB-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":180,"tariffPerKwh":1.6,"status":"AVAILABLE"}]}]
+
+curl exit: 0
+
+2026-11-02T01:30:04.128894+08:00
+Request body: {"evseUid": "MY*VLT*E*D11DC", "estimatedKwh": "15"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" --data-binary @input-4f89e17f-004.json http://localhost:18080/api/v1/quotes
+HTTP/1.1 201 Created
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 654
+
+
+
+{"id":"qte_3fd351e3e6836cf6a8143911","userId":"usr_1d344fccb2514318daf7be95","walletId":"wal_9058af47d0fc55298a7c88c3","cpoId":"cpo_voltgo","stationId":"stn_demo_batu_kawan","connectorId":"con_demo_batu_kawan_dc","tariffId":"trf_demo_voltgo_my_dc","tariffUpdatedAt":"2026-11-02T00:48:39.765711+08:00","tariffPerKwh":"1.500000","originalCurrency":"MYR","walletCurrency":"MYR","exchangeRateId":null,"exchangeRate":"1.0000000000","rateSource":"same-currency","estimatedKwh":"15.000","estimatedOriginalCost":"22.50","estimatedWalletCost":"22.50","budget":"100.00","createdAt":"2026-11-02T01:30:04.1084+08:00","acceptedAt":null,"equivalentTariff":"1.500000"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.287632+08:00
+Request body: {"email": "admin@chargenet.my", "password": "Admin1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-3095bc31-005.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9lZDZlNGY1ODNkN2NjNGQ4NDI2MTExYjkiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3OTgwNCwiaWF0IjoxNzk0OTM2NjA0LCJyb2xlIjoiU1VQRVJfQURNSU4ifQ.4olBRe7bCbCbjJI2xTYbMwZWwDW7WFUdIZAvKfem5gA; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 112
+
+
+
+{"id":"pu_ed6e4f583d7cc4d8426111b9","name":"ChargeNet Admin","email":"admin@chargenet.my","role":"SUPER_ADMIN"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.352610+08:00
+Request body: {"offline": true}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-0aa278c2-006.json http://localhost:18080/emulator/voltgo/ocpi/admin/scenario
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 151
+
+
+
+{"data":{"offline":true,"reject_next":false,"fault_after_seconds":0},"status_code":1000,"status_message":"Success","timestamp":"2026-11-02T17:30:04Z"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.458729+08:00
+Request body: {"evseUid": "MY*VLT*E*D11DC", "quoteId": "qte_3fd351e3e6836cf6a8143911", "targetSoc": 100}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" -H "Idempotency-Key: b9dad7a7084e482aba9d2b398cae85fb" --data-binary @input-83a5d97d-007.json http://localhost:18080/api/v1/sessions/start
+HTTP/1.1 502 Bad Gateway
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 166
+
+
+
+{"error":{"code":"CPO_UNREACHABLE","message":"CPO_UNREACHABLE: POST http://localhost:18080/emulator/voltgo/ocpi/2.3.0/commands/START_SESSION: the CPO answered 503"}}
+
+curl exit: 0
+
+2026-11-02T01:30:04.505149+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 145
+
+
+
+{"reserved":0,"availableBalance":100,"id":"wal_9058af47d0fc55298a7c88c3","userId":"usr_1d344fccb2514318daf7be95","balance":100,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.561955+08:00
+Request body: {"offline": false}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-821de8cb-009.json http://localhost:18080/emulator/voltgo/ocpi/admin/scenario
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 152
+
+
+
+{"data":{"offline":false,"reject_next":false,"fault_after_seconds":0},"status_code":1000,"status_message":"Success","timestamp":"2026-11-02T17:30:04Z"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.631151+08:00
+Request body: {"status": "SUSPENDED"}
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-8a4c92b8-010.json http://localhost:18080/admin/api/admin/cpos/cpo_voltgo/status
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 63
+
+
+
+{"id":"cpo_voltgo","platformFeePct":null,"status":"SUSPENDED"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.681412+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" http://localhost:18080/api/v1/stations?cpoId=cpo_voltgo
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 3
+
+
+
+[]
+
+curl exit: 0
+
+2026-11-02T01:30:04.745872+08:00
+Request body: {"evseUid": "MY*VLT*E*D11DC", "quoteId": "qte_3fd351e3e6836cf6a8143911", "targetSoc": 100}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" -H "Idempotency-Key: 34b1faca665e4dcab41ba8e9ef3bbfda" --data-binary @input-25458cdd-012.json http://localhost:18080/api/v1/sessions/start
+HTTP/1.1 409 Conflict
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 96
+
+
+
+{"error":{"code":"CONNECTOR_UNAVAILABLE","message":"That charger is not available right now."}}
+
+curl exit: 0
+
+2026-11-02T01:30:04.777846+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\driver-cookies.txt" -H "Content-Type: application/json" -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c3JfMWQzNDRmY2NiMjUxNDMxOGRhZjdiZTk1IiwiYXVkIjpbIm1vYmlsZSJdLCJleHAiOjE3OTUwMjMwMDMsImlhdCI6MTc5NDkzNjYwM30.v5aaSx_focfum0VTVp8YzEVGmHW0pOrWR-e60pMX_O8" http://localhost:18080/api/v1/wallet
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 145
+
+
+
+{"reserved":0,"availableBalance":100,"id":"wal_9058af47d0fc55298a7c88c3","userId":"usr_1d344fccb2514318daf7be95","balance":100,"currency":"MYR"}
+
+curl exit: 0
+
+2026-11-02T01:30:04.833127+08:00
+Request body: {"status": "ACTIVE"}
+$ curl.exe --silent --show-error --max-time 40 -i -X PUT -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\admin-cookies.txt" -H "Content-Type: application/json" --data-binary @input-d3723c69-014.json http://localhost:18080/admin/api/admin/cpos/cpo_voltgo/status
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:04 GMT
+
+Content-Length: 60
+
+
+
+{"id":"cpo_voltgo","platformFeePct":null,"status":"ACTIVE"}
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "SELECT base_url,module_endpoints::text FROM cpo_partners WHERE id='cpo_voltgo';"
+base_url,module_endpoints
+http://localhost:18080/emulator/voltgo/ocpi,{}
+
+exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "UPDATE cpo_partners SET base_url='http://127.0.0.1:18999',module_endpoints='{}'::jsonb WHERE id='cpo_voltgo';"
+UPDATE 1
+
+exit: 0
+
+2026-11-02T01:30:05.355203+08:00
+Request body: {"email": "ops@voltgo.my", "password": "Cpo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -H "Content-Type: application/json" --data-binary @input-eed421fb-015.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9lMGU0MTc2NTI2ZWJmZmExMzExNmEwYTYiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3OTgwNSwiaWF0IjoxNzk0OTM2NjA1LCJyb2xlIjoiQ1BPIiwiY3BvSWQiOiJjcG9fdm9sdGdvIn0.HkhujdhC8pGC4JJbBIK9eyosyiWsNTpt7zPGZQJHkGQ; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 17:30:05 GMT
+
+Content-Length: 115
+
+
+
+{"id":"pu_e0e4176526ebffa13116a0a6","name":"Ops voltgo","email":"ops@voltgo.my","role":"CPO","cpoId":"cpo_voltgo"}
+
+curl exit: 0
+
+2026-11-02T01:30:05.442544+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo/handshake-test
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:05 GMT
+
+Content-Length: 1866
+
+
+
+{"status":"FAILED","steps":[{"step":1,"label":"Credentials registered","status":"PASS","detail":"Token B and Token C are registered.","durationMs":0},{"step":2,"label":"GET versions","status":"FAIL","detail":"Calling http://127.0.0.1:18999/versions failed: CPO_UNREACHABLE: GET http://127.0.0.1:18999/versions: Get \"http://127.0.0.1:18999/versions\": dial tcp 127.0.0.1:18999: connectex: No connection could be made because the target machine actively refused it.","durationMs":0},{"step":3,"label":"GET version details","status":"FAIL","detail":"Calling http://127.0.0.1:18999/2.3.0/ failed: CPO_UNREACHABLE: GET http://127.0.0.1:18999/2.3.0/: Get \"http://127.0.0.1:18999/2.3.0/\": dial tcp 127.0.0.1:18999: connectex: No connection could be made because the target machine actively refused it.","durationMs":0},{"step":4,"label":"GET locations","status":"FAIL","detail":"Calling http://127.0.0.1:18999/2.3.0/locations failed: CPO_UNREACHABLE: GET http://127.0.0.1:18999/2.3.0/locations: Get \"http://127.0.0.1:18999/2.3.0/locations\": dial tcp 127.0.0.1:18999: connectex: No connection could be made because the target machine actively refused it.","durationMs":0},{"step":5,"label":"GET tariffs","status":"SKIPPED","detail":"The CPO does not serve the tariffs module (CPO_UNREACHABLE: GET http://127.0.0.1:18999/2.3.0/tariffs: Get \"http://127.0.0.1:18999/2.3.0/tariffs\": dial tcp 127.0.0.1:18999: connectex: No connection could be made because the target machine actively refused it.).","durationMs":0},{"step":6,"label":"Commands endpoint reachable","status":"SKIPPED","detail":"The commands endpoint did not answer (CPO_UNREACHABLE: GET http://127.0.0.1:18999/2.3.0/commands: Get \"http://127.0.0.1:18999/2.3.0/commands\": dial tcp 127.0.0.1:18999: connectex: No connection could be made because the target machine actively refused it.).","durationMs":1}]}
+
+curl exit: 0
+
+2026-11-02T01:30:05.510497+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:05 GMT
+
+Content-Length: 592
+
+
+
+{"ocpiVersion":"2.3.0","id":"cpo_voltgo","name":"VoltGo","slug":"voltgo","countryCode":"MY","partyId":"VLT","baseUrl":"http://127.0.0.1:18999","colorHex":"#0D9488","contactEmail":"ops@voltgo.my","tokenA":"","tokenAUsed":false,"tokenBSet":true,"tokenCSet":true,"tokenBLast4":"-dev","tokenCLast4":"-dev","handshakeStatus":"FAILED","status":"ACTIVE","platformFeePct":5,"bankName":"Maybank","bankAccountHolder":"VoltGo Sdn Bhd","bankAccountNo":"��������5678","payoutCycle":"MONTHLY","createdAt":"2026-11-02T00:48:39.765711+08:00","handshakeAt":"2026-11-02T01:30:05.427735+08:00"}
+
+curl exit: 0
+
+2026-11-02T01:30:05.717370+08:00
+Request body: {"email": "ops@chargesync.my", "password": "Cpo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\chargesync-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\chargesync-cookies.txt" -H "Content-Type: application/json" --data-binary @input-046495f8-018.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV8zMDZjMTA2MzRhOWFlZTQ0NjBjMTgwZDMiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3OTgwNSwiaWF0IjoxNzk0OTM2NjA1LCJyb2xlIjoiQ1BPIiwiY3BvSWQiOiJjcG9fY2hhcmdlc3luYyJ9.-X1tu7MWb1Y2uoROeD88SNc7s2tTi2rMeCGkWcS7Fv0; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 17:30:05 GMT
+
+Content-Length: 127
+
+
+
+{"id":"pu_306c10634a9aee4460c180d3","name":"Ops chargesync","email":"ops@chargesync.my","role":"CPO","cpoId":"cpo_chargesync"}
+
+curl exit: 0
+
+2026-11-02T01:30:06.209669+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\chargesync-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\chargesync-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo/handshake-test
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:06 GMT
+
+Content-Length: 720
+
+
+
+{"status":"VERIFIED","steps":[{"step":1,"label":"Credentials registered","status":"PASS","detail":"Token B and Token C are registered.","durationMs":0},{"step":2,"label":"GET versions","status":"PASS","detail":"The CPO serves OCPI 2.3.0.","durationMs":15},{"step":3,"label":"GET version details","status":"PASS","detail":"3 endpoints, including locations and commands.","durationMs":24},{"step":4,"label":"GET locations","status":"PASS","detail":"13 locations, 33 EVSEs; 13 stored.","durationMs":241},{"step":5,"label":"GET tariffs","status":"PASS","detail":"8 tariffs stored.","durationMs":104},{"step":6,"label":"Commands endpoint reachable","status":"PASS","detail":"The commands endpoint answers.","durationMs":0}]}
+
+curl exit: 0
+
+2026-11-02T01:30:06.273608+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\chargesync-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\chargesync-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/network
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:06 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"stations":[{"countryCode":"MY","isSimulated":true,"id":"stn_csy_1u","name":"ChargeSync 1 Utama","address":"1 Utama Shopping Centre, Bandar Utama","city":"Petaling Jaya","latitude":3.1503,"longitude":101.615,"totalBays":4,"availableBays":4,"connectors":[{"currency":"MYR","tariffId":"trf_chargesync_120","id":"con_csy_1u_01","stationId":"stn_csy_1u","evseUid":"CSY-1U-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":120,"tariffPerKwh":1.5,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_120","id":"con_csy_1u_02","stationId":"stn_csy_1u","evseUid":"CSY-1U-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":120,"tariffPerKwh":1.5,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_1u_03","stationId":"stn_csy_1u","evseUid":"CSY-1U-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_1u_04","stationId":"stn_csy_1u","evseUid":"CSY-1U-04","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_air_itam","name":"ChargeSync Air Itam","address":"Jalan Air Itam, Air Itam, Penang, Malaysia (simulated site)","city":"Air Itam","latitude":5.4033,"longitude":100.278,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_demo_chargesync_my_ac","id":"con_demo_air_itam_ac","stationId":"stn_demo_air_itam","evseUid":"MY*CSY*E*D04AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_chargesync_my_dc","id":"con_demo_air_itam_dc","stationId":"stn_demo_air_itam","evseUid":"MY*CSY*E*D04DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"countryCode":"TH","isSimulated":true,"id":"stn_demo_bangkok","name":"ChargeSync Bangkok","address":"Rama IV Road, Pathum Wan, Bangkok, Thailand (simulated site)","city":"Bangkok","latitude":13.733,"longitude":100.535,"totalBays":2,"availableBays":1,"connectors":[{"currency":"THB","tariffId":"trf_demo_chargesync_th_ac","id":"con_demo_bangkok_ac","stationId":"stn_demo_bangkok","evseUid":"TH*CSY*E*D20AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":6.5,"status":"BLOCKED"},{"currency":"THB","tariffId":"trf_demo_chargesync_th_dc","id":"con_demo_bangkok_dc","stationId":"stn_demo_bangkok","evseUid":"TH*CSY*E*D20DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":8,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_gurney","name":"ChargeSync Gurney Bay","address":"Persiaran Gurney, Gurney Bay, Penang, Malaysia (simulated site)","city":"Gurney Bay","latitude":5.4372,"longitude":100.31,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_demo_chargesync_my_ac","id":"con_demo_gurney_ac","stationId":"stn_demo_gurney","evseUid":"MY*CSY*E*D02AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_chargesync_my_dc","id":"con_demo_gurney_dc","stationId":"stn_demo_gurney","evseUid":"MY*CSY*E*D02DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":false,"id":"stn_csy_ioi","name":"ChargeSync IOI City Mall","address":"IOI City Mall, Putrajaya","city":"Putrajaya","latitude":2.9707,"longitude":101.7165,"totalBays":3,"availableBays":3,"connectors":[{"currency":"MYR","tariffId":"trf_chargesync_120","id":"con_csy_ioi_01","stationId":"stn_csy_ioi","evseUid":"CSY-IOI-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":120,"tariffPerKwh":1.5,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_ioi_02","stationId":"stn_csy_ioi","evseUid":"CSY-IOI-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_ioi_03","stationId":"stn_csy_ioi","evseUid":"CSY-IOI-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_juru","name":"ChargeSync Juru / Auto-City area","address":"Jalan Perusahaan, Juru / Auto-City area, Penang, Malaysia (simulated site)","city":"Juru / Auto-City area","latitude":5.338,"longitude":100.427,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_demo_chargesync_my_ac","id":"con_demo_juru_ac","stationId":"stn_demo_juru","evseUid":"MY*CSY*E*D10AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_chargesync_my_dc","id":"con_demo_juru_dc","stationId":"stn_demo_juru","evseUid":"MY*CSY*E*D10DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"countryCode":"SG","isSimulated":true,"id":"stn_demo_marina_bay","name":"ChargeSync Marina Bay","address":"Marina Boulevard, Marina Bay, Singapore (simulated site)","city":"Marina Bay","latitude":1.28,"longitude":103.854,"totalBays":2,"availableBays":2,"connectors":[{"currency":"SGD","tariffId":"trf_demo_chargesync_sg_ac","id":"con_demo_marina_bay_ac","stationId":"stn_demo_marina_bay","evseUid":"SG*CSY*E*D12AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.45,"status":"AVAILABLE"},{"currency":"SGD","tariffId":"trf_demo_chargesync_sg_dc","id":"con_demo_marina_bay_dc","stationId":"stn_demo_marina_bay","evseUid":"SG*CSY*E*D12DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":0.6,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_csy_mvl","name":"ChargeSync Mid Valley","address":"Mid Valley Megamall, Lingkaran Syed Putra","city":"Kuala Lumpur","latitude":3.1177,"longitude":101.677,"totalBays":4,"availableBays":3,"connectors":[{"currency":"MYR","tariffId":"trf_chargesync_120","id":"con_csy_mvl_01","stationId":"stn_csy_mvl","evseUid":"CSY-MVL-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":120,"tariffPerKwh":1.5,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_120","id":"con_csy_mvl_02","stationId":"stn_csy_mvl","evseUid":"CSY-MVL-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":120,"tariffPerKwh":1.5,"status":"CHARGING"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_mvl_03","stationId":"stn_csy_mvl","evseUid":"CSY-MVL-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_mvl_04","stationId":"stn_csy_mvl","evseUid":"CSY-MVL-04","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_csy_pav","name":"ChargeSync Pavilion KL","address":"Pavilion Kuala Lumpur, Bukit Bintang","city":"Kuala Lumpur","latitude":3.1488,"longitude":101.7134,"totalBays":3,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_chargesync_120","id":"con_csy_pav_01","stationId":"stn_csy_pav","evseUid":"CSY-PAV-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":120,"tariffPerKwh":1.5,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_pav_02","stationId":"stn_csy_pav","evseUid":"CSY-PAV-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_pav_03","stationId":"stn_csy_pav","evseUid":"CSY-PAV-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"BLOCKED"}]},{"countryCode":"TH","isSimulated":true,"id":"stn_demo_phuket","name":"ChargeSync Phuket Town","address":"Dibuk Road, Phuket Town, Thailand (simulated site)","city":"Phuket Town","latitude":7.885,"longitude":98.389,"totalBays":2,"availableBays":2,"connectors":[{"currency":"THB","tariffId":"trf_demo_chargesync_th_ac","id":"con_demo_phuket_ac","stationId":"stn_demo_phuket","evseUid":"TH*CSY*E*D19AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":6.5,"status":"AVAILABLE"},{"currency":"THB","tariffId":"trf_demo_chargesync_th_dc","id":"con_demo_phuket_dc","stationId":"stn_demo_phuket","evseUid":"TH*CSY*E*D19DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":8,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_seberang_jaya","name":"ChargeSync Seberang Jaya","address":"Jalan Todak, Seberang Jaya, Penang, Malaysia (simulated site)","city":"Seberang Jaya","latitude":5.394,"longitude":100.399,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_demo_chargesync_my_ac","id":"con_demo_seberang_jaya_ac","stationId":"stn_demo_seberang_jaya","evseUid":"MY*CSY*E*D08AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_chargesync_my_dc","id":"con_demo_seberang_jaya_dc","stationId":"stn_demo_seberang_jaya","evseUid":"MY*CSY*E*D08DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.5,"status":"AVAILABLE"}]},{"countryCode":"TH","isSimulated":true,"id":"stn_demo_songkhla_south","name":"ChargeSync Songkhla South","address":"Karnjanavanit Road, Songkhla South, Thailand (simulated site)","city":"Songkhla South","latitude":7.17,"longitude":100.607,"totalBays":2,"availableBays":2,"connectors":[{"currency":"THB","tariffId":"trf_demo_chargesync_th_ac","id":"con_demo_songkhla_south_ac","stationId":"stn_demo_songkhla_south","evseUid":"TH*CSY*E*D22AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":6.5,"status":"AVAILABLE"},{"currency":"THB","tariffId":"trf_demo_chargesync_th_dc","id":"con_demo_songkhla_south_dc","stationId":"stn_demo_songkhla_south","evseUid":"TH*CSY*E*D22DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":8,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_csy_swp","name":"ChargeSync Sunway Pyramid","address":"Sunway Pyramid, Bandar Sunway","city":"Subang Jaya","latitude":3.0731,"longitude":101.6067,"totalBays":3,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_swp_01","stationId":"stn_csy_swp","evseUid":"CSY-SWP-01","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_swp_02","stationId":"stn_csy_swp","evseUid":"CSY-SWP-02","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_chargesync_60","id":"con_csy_swp_03","stationId":"stn_csy_swp","evseUid":"CSY-SWP-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.2,"status":"CHARGING"}]}],"counts":{"available":29,"charging":2,"blocked":2,"inoperative":0},"sessionsToday":9}
+
+curl exit: 0
+
+2026-11-02T01:30:06.451755+08:00
+Request body: {"email": "ops@ecowatt.my", "password": "Cpo1234!"}
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\ecowatt-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\ecowatt-cookies.txt" -H "Content-Type: application/json" --data-binary @input-ed5415e2-021.json http://localhost:18080/admin/api/login
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Set-Cookie: cn_portal=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJwdV9kNDkzOThkNTYzOGJhNTA1YTliYjczZTQiLCJhdWQiOlsicG9ydGFsIl0sImV4cCI6MTc5NDk3OTgwNiwiaWF0IjoxNzk0OTM2NjA2LCJyb2xlIjoiQ1BPIiwiY3BvSWQiOiJjcG9fZWNvd2F0dCJ9.7Ac-Vs4q3R9i6QzOE9T7vkth4QbWchZFWF8N47W2feM; Path=/; Max-Age=43200; HttpOnly; SameSite=Lax
+
+Date: Mon, 02 Nov 2026 17:30:06 GMT
+
+Content-Length: 118
+
+
+
+{"id":"pu_d49398d5638ba505a9bb73e4","name":"Ops ecowatt","email":"ops@ecowatt.my","role":"CPO","cpoId":"cpo_ecowatt"}
+
+curl exit: 0
+
+2026-11-02T01:30:06.836913+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\ecowatt-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\ecowatt-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo/handshake-test
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:06 GMT
+
+Content-Length: 717
+
+
+
+{"status":"VERIFIED","steps":[{"step":1,"label":"Credentials registered","status":"PASS","detail":"Token B and Token C are registered.","durationMs":0},{"step":2,"label":"GET versions","status":"PASS","detail":"The CPO serves OCPI 2.3.0.","durationMs":4},{"step":3,"label":"GET version details","status":"PASS","detail":"3 endpoints, including locations and commands.","durationMs":4},{"step":4,"label":"GET locations","status":"PASS","detail":"12 locations, 31 EVSEs; 12 stored.","durationMs":219},{"step":5,"label":"GET tariffs","status":"PASS","detail":"8 tariffs stored.","durationMs":92},{"step":6,"label":"Commands endpoint reachable","status":"PASS","detail":"The commands endpoint answers.","durationMs":0}]}
+
+curl exit: 0
+
+2026-11-02T01:30:06.900089+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X GET -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\ecowatt-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\ecowatt-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/network
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:06 GMT
+
+Transfer-Encoding: chunked
+
+
+
+{"stations":[{"countryCode":"MY","isSimulated":true,"id":"stn_eco_bsg","name":"EcoWatt Bangsar South","address":"The Vertical, Bangsar South","city":"Kuala Lumpur","latitude":3.11,"longitude":101.665,"totalBays":4,"availableBays":3,"connectors":[{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_bsg_01","stationId":"stn_eco_bsg","evseUid":"ECO-BSG-01","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_bsg_02","stationId":"stn_eco_bsg","evseUid":"ECO-BSG-02","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_bsg_03","stationId":"stn_eco_bsg","evseUid":"ECO-BSG-03","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"CHARGING"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_bsg_04","stationId":"stn_eco_bsg","evseUid":"ECO-BSG-04","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_batu_ferringhi","name":"EcoWatt Batu Ferringhi","address":"Jalan Batu Ferringhi, Batu Ferringhi, Penang, Malaysia (simulated site)","city":"Batu Ferringhi","latitude":5.473,"longitude":100.25,"totalBays":2,"availableBays":1,"connectors":[{"currency":"MYR","tariffId":"trf_demo_ecowatt_my_ac","id":"con_demo_batu_ferringhi_ac","stationId":"stn_demo_batu_ferringhi","evseUid":"MY*ECO*E*D06AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_ecowatt_my_dc","id":"con_demo_batu_ferringhi_dc","stationId":"stn_demo_batu_ferringhi","evseUid":"MY*ECO*E*D06DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.1,"status":"INOPERATIVE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_eco_bbg","name":"EcoWatt Bukit Bintang Hotel","address":"Jalan Bukit Bintang, Kuala Lumpur","city":"Kuala Lumpur","latitude":3.1466,"longitude":101.711,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_bbg_01","stationId":"stn_eco_bbg","evseUid":"ECO-BBG-01","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_bbg_02","stationId":"stn_eco_bbg","evseUid":"ECO-BBG-02","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_bukit_mertajam","name":"EcoWatt Bukit Mertajam","address":"Jalan Pasar, Bukit Mertajam, Penang, Malaysia (simulated site)","city":"Bukit Mertajam","latitude":5.363,"longitude":100.461,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_demo_ecowatt_my_ac","id":"con_demo_bukit_mertajam_ac","stationId":"stn_demo_bukit_mertajam","evseUid":"MY*ECO*E*D09AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_ecowatt_my_dc","id":"con_demo_bukit_mertajam_dc","stationId":"stn_demo_bukit_mertajam","evseUid":"MY*ECO*E*D09DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.1,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_eco_cyb","name":"EcoWatt Cyberjaya","address":"Persiaran Multimedia, Cyberjaya","city":"Cyberjaya","latitude":2.9189,"longitude":101.65,"totalBays":4,"availableBays":4,"connectors":[{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_cyb_01","stationId":"stn_eco_cyb","evseUid":"ECO-CYB-01","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_cyb_02","stationId":"stn_eco_cyb","evseUid":"ECO-CYB-02","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_cyb_03","stationId":"stn_eco_cyb","evseUid":"ECO-CYB-03","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_cyb_04","stationId":"stn_eco_cyb","evseUid":"ECO-CYB-04","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"}]},{"countryCode":"TH","isSimulated":true,"id":"stn_demo_hat_yai_east","name":"EcoWatt Hat Yai East","address":"Kanchanawanit Road, Hat Yai East, Thailand (simulated site)","city":"Hat Yai East","latitude":7.008,"longitude":100.5,"totalBays":2,"availableBays":1,"connectors":[{"currency":"THB","tariffId":"trf_demo_ecowatt_th_ac","id":"con_demo_hat_yai_east_ac","stationId":"stn_demo_hat_yai_east","evseUid":"TH*ECO*E*D21AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":6.5,"status":"AVAILABLE"},{"currency":"THB","tariffId":"trf_demo_ecowatt_th_dc","id":"con_demo_hat_yai_east_dc","stationId":"stn_demo_hat_yai_east","evseUid":"TH*ECO*E*D21DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":7.5,"status":"CHARGING"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_eco_klc","name":"EcoWatt KLCC Hotel","address":"Jalan Kia Peng, Kuala Lumpur","city":"Kuala Lumpur","latitude":3.1578,"longitude":101.7123,"totalBays":4,"availableBays":4,"connectors":[{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_klc_01","stationId":"stn_eco_klc","evseUid":"ECO-KLC-01","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_klc_02","stationId":"stn_eco_klc","evseUid":"ECO-KLC-02","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_klc_03","stationId":"stn_eco_klc","evseUid":"ECO-KLC-03","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_dc","id":"con_eco_klc_04","stationId":"stn_eco_klc","evseUid":"ECO-KLC-04","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.1,"status":"AVAILABLE"}]},{"countryCode":"SG","isSimulated":true,"id":"stn_demo_orchard","name":"EcoWatt Orchard Road","address":"Orchard Road, Orchard Road, Singapore (simulated site)","city":"Orchard Road","latitude":1.304,"longitude":103.832,"totalBays":2,"availableBays":2,"connectors":[{"currency":"SGD","tariffId":"trf_demo_ecowatt_sg_ac","id":"con_demo_orchard_ac","stationId":"stn_demo_orchard","evseUid":"SG*ECO*E*D16AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.45,"status":"AVAILABLE"},{"currency":"SGD","tariffId":"trf_demo_ecowatt_sg_dc","id":"con_demo_orchard_dc","stationId":"stn_demo_orchard","evseUid":"SG*ECO*E*D16DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":0.55,"status":"AVAILABLE"}]},{"countryCode":"TH","isSimulated":true,"id":"stn_demo_songkhla","name":"EcoWatt Songkhla","address":"Nakhon Nok Road, Songkhla, Thailand (simulated site)","city":"Songkhla","latitude":7.197,"longitude":100.592,"totalBays":2,"availableBays":2,"connectors":[{"currency":"THB","tariffId":"trf_demo_ecowatt_th_ac","id":"con_demo_songkhla_ac","stationId":"stn_demo_songkhla","evseUid":"TH*ECO*E*D18AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":6.5,"status":"AVAILABLE"},{"currency":"THB","tariffId":"trf_demo_ecowatt_th_dc","id":"con_demo_songkhla_dc","stationId":"stn_demo_songkhla","evseUid":"TH*ECO*E*D18DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":7.5,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_eco_ttd","name":"EcoWatt TTDI Plaza","address":"TTDI Plaza, Taman Tun Dr Ismail","city":"Kuala Lumpur","latitude":3.137,"longitude":101.631,"totalBays":3,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_ttd_01","stationId":"stn_eco_ttd","evseUid":"ECO-TTD-01","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_ac","id":"con_eco_ttd_02","stationId":"stn_eco_ttd","evseUid":"ECO-TTD-02","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_ecowatt_dc","id":"con_eco_ttd_03","stationId":"stn_eco_ttd","evseUid":"ECO-TTD-03","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":50,"tariffPerKwh":1.1,"status":"INOPERATIVE"}]},{"countryCode":"SG","isSimulated":true,"id":"stn_demo_tampines","name":"EcoWatt Tampines","address":"Tampines Avenue 4, Tampines, Singapore (simulated site)","city":"Tampines","latitude":1.353,"longitude":103.945,"totalBays":2,"availableBays":2,"connectors":[{"currency":"SGD","tariffId":"trf_demo_ecowatt_sg_ac","id":"con_demo_tampines_ac","stationId":"stn_demo_tampines","evseUid":"SG*ECO*E*D14AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.45,"status":"AVAILABLE"},{"currency":"SGD","tariffId":"trf_demo_ecowatt_sg_dc","id":"con_demo_tampines_dc","stationId":"stn_demo_tampines","evseUid":"SG*ECO*E*D14DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":0.55,"status":"AVAILABLE"}]},{"countryCode":"MY","isSimulated":true,"id":"stn_demo_tanjung_tokong","name":"EcoWatt Tanjung Tokong","address":"Jalan Tanjung Tokong, Tanjung Tokong, Penang, Malaysia (simulated site)","city":"Tanjung Tokong","latitude":5.459,"longitude":100.307,"totalBays":2,"availableBays":2,"connectors":[{"currency":"MYR","tariffId":"trf_demo_ecowatt_my_ac","id":"con_demo_tanjung_tokong_ac","stationId":"stn_demo_tanjung_tokong","evseUid":"MY*ECO*E*D03AC","standard":"TYPE2","format":"SOCKET","powerType":"AC","maxPowerKw":22,"tariffPerKwh":0.9,"status":"AVAILABLE"},{"currency":"MYR","tariffId":"trf_demo_ecowatt_my_dc","id":"con_demo_tanjung_tokong_dc","stationId":"stn_demo_tanjung_tokong","evseUid":"MY*ECO*E*D03DC","standard":"CCS2","format":"CABLE","powerType":"DC","maxPowerKw":60,"tariffPerKwh":1.1,"status":"AVAILABLE"}]}],"counts":{"available":27,"charging":2,"blocked":0,"inoperative":2},"sessionsToday":5}
+
+curl exit: 0
+
+$ docker exec -i chargenet-ch5-new-postgres psql -U chargenet -d chargenet_evidence_test --csv -v ON_ERROR_STOP=1 -c "UPDATE cpo_partners SET base_url='http://localhost:18080/emulator/voltgo/ocpi',module_endpoints='{}'::jsonb WHERE id='cpo_voltgo';"
+UPDATE 1
+
+exit: 0
+
+2026-11-02T01:30:07.442293+08:00
+Request body: (none)
+$ curl.exe --silent --show-error --max-time 40 -i -X POST -b "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -c "C:\code projects\chargenet-latest\chapter-5-testing-new\tests\tc23\offline-operator-cookies.txt" -H "Content-Type: application/json" http://localhost:18080/admin/api/cpo/handshake-test
+HTTP/1.1 200 OK
+
+Access-Control-Allow-Headers: Authorization, Content-Type, Idempotency-Key
+
+Access-Control-Allow-Methods: GET, POST, PUT, PATCH, DELETE, OPTIONS
+
+Access-Control-Allow-Origin: *
+
+Access-Control-Max-Age: 600
+
+Content-Type: application/json; charset=utf-8
+
+Date: Mon, 02 Nov 2026 17:30:07 GMT
+
+Content-Length: 718
+
+
+
+{"status":"VERIFIED","steps":[{"step":1,"label":"Credentials registered","status":"PASS","detail":"Token B and Token C are registered.","durationMs":0},{"step":2,"label":"GET versions","status":"PASS","detail":"The CPO serves OCPI 2.3.0.","durationMs":4},{"step":3,"label":"GET version details","status":"PASS","detail":"3 endpoints, including locations and commands.","durationMs":2},{"step":4,"label":"GET locations","status":"PASS","detail":"13 locations, 30 EVSEs; 13 stored.","durationMs":197},{"step":5,"label":"GET tariffs","status":"PASS","detail":"9 tariffs stored.","durationMs":104},{"step":6,"label":"Commands endpoint reachable","status":"PASS","detail":"The commands endpoint answers.","durationMs":0}]}
+
+curl exit: 0

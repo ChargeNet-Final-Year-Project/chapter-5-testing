@@ -1,0 +1,84 @@
+CN
+ChargeNet
+Partner Portal
+Overview
+Network
+Revenue
+Credentials
+Company
+Sandbox
+Ops voltgo
+ops@voltgo.my
+CPO
+Sign out
+Partner portal
+OCPI 2.3.0
+Revenue
+Export CSV
+Revenue currency
+MYR · Malaysian ringgit
+SGD · Singapore dollar
+THB · Thai baht
+Original tariff currency. Currencies are reported separately.
+Last 7 days
+Last 30 days
+This month
+Today
+2026-11-01 → 2026-11-01
+From
+To
+
+Reporting calendar: Asia/Kuala_Lumpur. Records use settlement date, newest first. Displayed start times are in this timezone.
+
+Charge sessions
+26
+Energy
+26.00 kWh
+Gross
+SGD 41.60
+Platform fee
+SGD 2.08
+Net payout
+SGD 39.52
+SESSION START	STATION	EVSE	ENERGY	MINUTES	TARIFF	GROSS	FEE	NET	RECORD
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Oct 31, 2026 11:59 PM	VoltGo Jurong East	SG*VLT*E*D13DC	1.00 kWh	1	SGD 1.60	SGD 1.60	SGD 0.08	SGD 1.52	View
+Whole-range totals	26.00 kWh			SGD 41.60	SGD 2.08	SGD 39.52	
+Prev
+Page 1 of 2
+Next
+Payouts
+Bank
+Maybank · ••••••••5678
+Cycle
+MONTHLY
+Scheduled cycle date (demo)
+2026-12-01
+Current cycle
+2026-11-01 → 2026-11-02
+Estimated net for current cycle
+SGD 42.85
+Demo cycle estimate. No bank transfer or previous payout is recorded.
