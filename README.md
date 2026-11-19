@@ -1,6 +1,6 @@
 # ChargeNet Chapter 5 tests
 
-For the examination, open [tests/CASES.md](tests/CASES.md), find TC01–TC44, and follow its representative evidence link. Each case keeps the procedure, expected outcome, original result and test-code locations.
+For the examination, open [tests/CASES.md](tests/CASES.md), find TC01–TC44, and follow its evidence links and line ranges. Each case keeps the procedure, expected outcome, original result and test-code locations.
 
 - `tests/`: Python procedures/helpers and additional Go tests. Original application suites stay in the sibling `chargenet-backend` and `chargenet-mobile` repositories.
 - `evidence/`: original screenshots, captured output, responses, SQL and exports. Existing evidence paths are unchanged. `evidence/figures/sources.json` identifies the sources of composite figures.
@@ -21,4 +21,4 @@ python tests/run_checks.py portal
 
 Prepare `.work/backend` with `python tests/prepare_backend_checkout.py --source ../chargenet-backend` first. Browser/device procedures require the isolated running services, optional `requirements.txt` dependencies and the documented screen/account state. New results go to ignored `runs/`; captured results remain unchanged.
 
-Charging, operators, wallets and FX are simulated. Timing measurements describe the recorded local setup. One representative item does not demonstrate every substep; additional original records are linked in the case catalogue.
+Charging, operators, wallets and FX are simulated. Timing measurements describe the recorded local setup. Cases link complementary captures and output; shared files include case-specific line ranges.

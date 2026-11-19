@@ -1,6 +1,6 @@
 # Chapter 5 cases
 
-Find a test ID here, read its procedure and expected result, then open its representative evidence. Paths in the report are relative to this repository. A representative item shows one outcome; the supporting records cover additional steps.
+Find a test ID here, read its procedure and expected result, then open its evidence references. Paths in the report are relative to this repository. Cases may cite several complementary items. Line numbers are 1-based physical file lines, with inclusive ranges; references without line numbers use the whole file. Each item below states what it shows.
 
 Application test paths below are relative to the sibling backend/mobile/portal repositories. Additional Go tests live in `backend/`; Python procedures live alongside this file. [Running the tests](RUNNING.md). Original captured results are retained; a rerun writes to `runs/`.
 
@@ -14,9 +14,12 @@ Captured result (Pass): The complete current serial backend run passed 222 test/
 
 Test code: backend: [Makefile](../../chargenet-backend/Makefile); [docs/TESTING.md](../../chargenet-backend/docs/TESTING.md); [internal/testutil/db.go](../../chargenet-backend/internal/testutil/db.go).
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [backend-test-summary.json](../evidence/backend/backend-test-summary.json), [static-analysis.log](../evidence/backend/static-analysis.log), [build.log](../evidence/backend/build.log).
+- [evidence/backend/backend-test-summary.json](../evidence/backend/backend-test-summary.json) — 222 passing events, 133 top-level tests, zero failures/skips.
+- [evidence/backend/static-analysis.log](../evidence/backend/static-analysis.log) — Vet command, timestamps and exit code 0.
+- [evidence/backend/build.log](../evidence/backend/build.log) — Build command, timestamps and exit code 0.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) — Complete backend suite output.
 
 ## TC02: Mobile regression baseline
 
@@ -28,9 +31,11 @@ Captured result (Pass): Flutter 3.47.1/Dart 3.13.1 resolved dependencies, passed
 
 Test code: mobile: [pubspec.yaml](../../chargenet-mobile/pubspec.yaml); [test/](../../chargenet-mobile/test/).
 
-Representative evidence: [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log)
+Evidence:
 
-Supporting records: [mobile-test-summary.json](../evidence/mobile/mobile-test-summary.json), [static-analysis.log](../evidence/mobile/static-analysis.log), [android-build.log](../evidence/mobile/android-build.log).
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log) — Complete Flutter suite output.
+- [evidence/mobile/static-analysis.log](../evidence/mobile/static-analysis.log) — Analysis result.
+- [evidence/mobile/android-build.log](../evidence/mobile/android-build.log) — Debug APK build result.
 
 ## TC03: Portal build baseline
 
@@ -42,9 +47,10 @@ Captured result (Pass): Dependency installation, TypeScript checking and product
 
 Test code: portal: [package.json](../../chargenet-portal/package.json); [package-lock.json](../../chargenet-portal/package-lock.json).
 
-Representative evidence: [evidence/portal/production-build.log](../evidence/portal/production-build.log)
+Evidence:
 
-Supporting records: [dependency-installation.log](../evidence/portal/dependency-installation.log), [type-check.log](../evidence/portal/type-check.log).
+- [evidence/portal/type-check.log](../evidence/portal/type-check.log) — TypeScript check invocation/output.
+- [evidence/portal/production-build.log](../evidence/portal/production-build.log) — Successful production build.
 
 ## TC04: Driver account access
 
@@ -56,9 +62,11 @@ Captured result (Pass): API and Flutter access tests passed, including invalid/d
 
 Test code: backend: [internal/api/auth_handler_test.go](../../chargenet-backend/internal/api/auth_handler_test.go); mobile: [test/auth_test.dart](../../chargenet-mobile/test/auth_test.dart); [test/api_service_test.dart](../../chargenet-mobile/test/api_service_test.dart).
 
-Representative evidence: [evidence/mobile/tc04-logout.json](../evidence/mobile/tc04-logout.json)
+Evidence:
 
-Supporting records: [tc04-restored-profile.json](../evidence/mobile/tc04-restored-profile.json), [backend-tests.log](../evidence/backend/backend-tests.log), [mobile-tests.log](../evidence/mobile/mobile-tests.log).
+- [evidence/mobile/tc04-restored-profile.json](../evidence/mobile/tc04-restored-profile.json) — Account restored after cold restarts.
+- [evidence/mobile/tc04-logout.json](../evidence/mobile/tc04-logout.json) — Login gate visible after logout.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L4-L23) (lines 4–23) — Passing Go assertions and their captured output.
 
 ## TC05: Station discovery and comparison
 
@@ -70,9 +78,11 @@ Captured result (Pass): Android discovery and connector views were captured for 
 
 Test code: backend: [internal/api/station_handler_test.go](../../chargenet-backend/internal/api/station_handler_test.go); mobile: [test/models_test.dart](../../chargenet-mobile/test/models_test.dart); [test/connector_tile_test.dart](../../chargenet-mobile/test/connector_tile_test.dart).
 
-Representative evidence: [evidence/captures/android-tc05-chargesync-discovery.png](../evidence/captures/android-tc05-chargesync-discovery.png)
+Evidence:
 
-Supporting records: [demo-roaming-results.json](../evidence/integration/demo-roaming-results.json).
+- [evidence/captures/android-tc05-voltgo-discovery.png](../evidence/captures/android-tc05-voltgo-discovery.png) — voltgo station and country displayed on Android.
+- [evidence/captures/android-tc05-chargesync-discovery.png](../evidence/captures/android-tc05-chargesync-discovery.png) — chargesync station and country displayed on Android.
+- [evidence/captures/android-tc05-ecowatt-discovery.png](../evidence/captures/android-tc05-ecowatt-discovery.png) — ecowatt station and country displayed on Android.
 
 ## TC06: Combined discovery filters
 
@@ -84,11 +94,10 @@ Captured result (Pass): Backend and Flutter filter/controller/search-selection t
 
 Test code: backend: [internal/api/station_filters_test.go](../../chargenet-backend/internal/api/station_filters_test.go); mobile: [test/station_filters_test.dart](../../chargenet-mobile/test/station_filters_test.dart); [test/discovery_controller_test.dart](../../chargenet-mobile/test/discovery_controller_test.dart); [test/home_search_selection_test.dart](../../chargenet-mobile/test/home_search_selection_test.dart).
 
-Representative evidence: [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log)
+Evidence:
 
-Supporting records: [backend-tests.log](../evidence/backend/backend-tests.log).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 417–445, 450–457) — Passing Go assertions and their captured output.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log) (lines 225–230, 251–260, 467–482) — Named Flutter checks followed by their PASS results.
 
 ## TC07: Vehicle management and compatibility
 
@@ -100,11 +109,10 @@ Captured result (Pass): Vehicle API ownership/default/CRUD tests, compatibility 
 
 Test code: backend: [internal/api/vehicle_handler_test.go](../../chargenet-backend/internal/api/vehicle_handler_test.go); [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestStartValidationOrder; mobile: [test/vehicle_edit_test.dart](../../chargenet-mobile/test/vehicle_edit_test.dart).
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [mobile-tests.log](../evidence/mobile/mobile-tests.log).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 473–479, 484–511, 892–893) — Passing Go assertions and their captured output.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log#L623-L642) (lines 623–642) — Named Flutter checks followed by their PASS results.
 
 ## TC08: Simulated wallet top up
 
@@ -116,9 +124,10 @@ Captured result (Pass): Wallet API tests verified replayed top-ups and invalid i
 
 Test code: backend: [internal/api/wallet_handler_test.go](../../chargenet-backend/internal/api/wallet_handler_test.go); mobile: [test/topup_sheet_test.dart](../../chargenet-mobile/test/topup_sheet_test.dart); [test/wallet_card_test.dart](../../chargenet-mobile/test/wallet_card_test.dart).
 
-Representative evidence: [evidence/integration/tc08-mobile-topup-success.json](../evidence/integration/tc08-mobile-topup-success.json)
+Evidence:
 
-Supporting records: [backend-tests.log](../evidence/backend/backend-tests.log), [mobile-tests.log](../evidence/mobile/mobile-tests.log).
+- [evidence/integration/tc08-mobile-topup-success.json](../evidence/integration/tc08-mobile-topup-success.json) — Same wallet increases by exactly MYR 100.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L528-L541) (lines 528–541) — Passing Go assertions and their captured output.
 
 ## TC09: One account across three operators
 
@@ -130,9 +139,12 @@ Captured result (Pass): The same driver completed all three Android journeys, in
 
 Test code: backend: [scripts/demo_roaming.py](../../chargenet-backend/scripts/demo_roaming.py); [internal/api/roaming_e2e_test.go](../../chargenet-backend/internal/api/roaming_e2e_test.go); mobile: [test/active_charging_test.dart](../../chargenet-mobile/test/active_charging_test.dart); [test/charging_receipt_test.dart](../../chargenet-mobile/test/charging_receipt_test.dart).
 
-Representative evidence: [evidence/captures/android-tc11-chargesync-receipt-details.png](../evidence/captures/android-tc11-chargesync-receipt-details.png)
+Evidence:
 
-Supporting records: [tc09-mobile-voltgo.json](../evidence/integration/tc09-mobile-voltgo.json), [tc09-mobile-chargesync-journey.json](../evidence/integration/tc09-mobile-chargesync-journey.json), [tc09-mobile-ecowatt-journey.json](../evidence/integration/tc09-mobile-ecowatt-journey.json), [accounting-checks.json](../evidence/database/accounting-checks.json).
+- [evidence/captures/android-tc11-chargesync-receipt-details.png](../evidence/captures/android-tc11-chargesync-receipt-details.png) — ChargeSync completed session and receipt.
+- [evidence/integration/tc09-mobile-voltgo.json](../evidence/integration/tc09-mobile-voltgo.json) (lines 2, 4–113, 845–852) — VoltGo capture timestamp and wallet.
+- [evidence/integration/tc09-mobile-chargesync-journey.json](../evidence/integration/tc09-mobile-chargesync-journey.json) — Same driver, chargesync live session, receipt and wallet movement.
+- [evidence/integration/tc09-mobile-ecowatt-journey.json](../evidence/integration/tc09-mobile-ecowatt-journey.json) — Same driver, ecowatt live session, receipt and wallet movement.
 
 ## TC10: Minimise and restore charging
 
@@ -144,11 +156,10 @@ Captured result (Pass): The VoltGo session remained the same through minimise, t
 
 Test code: mobile: [test/session_coordinator_test.dart](../../chargenet-mobile/test/session_coordinator_test.dart); [test/active_charging_test.dart](../../chargenet-mobile/test/active_charging_test.dart); [test/charging_mini_bar_test.dart](../../chargenet-mobile/test/charging_mini_bar_test.dart).
 
-Representative evidence: [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log)
+Evidence:
 
-Supporting records: [tc09-mobile-voltgo-active.json](../evidence/integration/tc09-mobile-voltgo-active.json), [tc10-android-restored.json](../evidence/integration/tc10-android-restored.json), [accounting-checks.json](../evidence/database/accounting-checks.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/integration/tc10-android-restored.json](../evidence/integration/tc10-android-restored.json) — Active Android session after restoration.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log) (lines 35–36, 407–408) — Named Flutter checks followed by their PASS results.
 
 ## TC11: History and receipt reconciliation
 
@@ -160,9 +171,11 @@ Captured result (Pass): Actual Android receipts were opened and copied. Their or
 
 Test code: mobile: [test/activity_screen_test.dart](../../chargenet-mobile/test/activity_screen_test.dart); [test/charging_receipt_test.dart](../../chargenet-mobile/test/charging_receipt_test.dart); [test/multi_currency_test.dart](../../chargenet-mobile/test/multi_currency_test.dart); backend: [internal/api/roaming_e2e_test.go](../../chargenet-backend/internal/api/roaming_e2e_test.go).
 
-Representative evidence: [evidence/captures/android-tc11-chargesync-receipt-details.png](../evidence/captures/android-tc11-chargesync-receipt-details.png)
+Evidence:
 
-Supporting records: [tc09-mobile-chargesync-journey.json](../evidence/integration/tc09-mobile-chargesync-journey.json), [tc09-mobile-ecowatt-journey.json](../evidence/integration/tc09-mobile-ecowatt-journey.json), [session-cdr-wallet.csv](../evidence/database/session-cdr-wallet.csv), [mobile-tests.log](../evidence/mobile/mobile-tests.log).
+- [evidence/captures/android-tc11-chargesync-receipt-details.png](../evidence/captures/android-tc11-chargesync-receipt-details.png) — Paid amount, original currency, accepted FX and receipt ID.
+- [evidence/integration/tc11-wallet-history-correlation.json](../evidence/integration/tc11-wallet-history-correlation.json) — Receipt identifier and MYR 11.04 wallet entry agree.
+- [evidence/database/accounting-checks.json](../evidence/database/accounting-checks.json#L138-L153) (lines 138–153) — Session-specific settlement, debit, hold and connector invariants.
 
 ## TC12: Partner onboarding and governance
 
@@ -174,9 +187,10 @@ Captured result (Pass): A disposable partner was VERIFIED while still PENDING an
 
 Test code: backend: [internal/api/portal_test.go](../../chargenet-backend/internal/api/portal_test.go) TestPortalRegisterProfileAndHandshake and TestPortalAdminConsoleAndTenancy; [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestStartRejectsSuspendedCpo; portal: [src/pages/Admin.tsx](../../chargenet-portal/src/pages/Admin.tsx).
 
-Representative evidence: [evidence/captures/edge-tc12-verified-approved.png](../evidence/captures/edge-tc12-verified-approved.png)
+Evidence:
 
-Supporting records: [tc12-governance.json](../evidence/integration/tc12-governance.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/captures/edge-tc12-verified-approved.png](../evidence/captures/edge-tc12-verified-approved.png) — Verified handshake and active company.
+- [evidence/integration/tc12-governance.json](../evidence/integration/tc12-governance.json) — Pending/approved discovery, suspended start denial and restoration.
 
 ## TC13: Credential display and disconnect
 
@@ -188,9 +202,11 @@ Captured result (Pass): An unused Token A was revealed, copied, compared in memo
 
 Test code: backend: [internal/api/portal_test.go](../../chargenet-backend/internal/api/portal_test.go) TestPortalDisconnectCredentials; [internal/ocpi/ocpi_test.go](../../chargenet-backend/internal/ocpi/ocpi_test.go); portal: [src/pages/Credentials.tsx](../../chargenet-portal/src/pages/Credentials.tsx).
 
-Representative evidence: [evidence/integration/tc17-tc13-token-lifecycle.json](../evidence/integration/tc17-tc13-token-lifecycle.json)
+Evidence:
 
-Supporting records: [browser-checks.json](../evidence/portal/browser-checks.json), [tc13-operational-token-payload-check.json](../evidence/integration/tc13-operational-token-payload-check.json).
+- [evidence/integration/tc17-tc13-token-lifecycle.json](../evidence/integration/tc17-tc13-token-lifecycle.json) — Consumed token denied and operator unregistered.
+- [evidence/integration/tc13-operational-token-payload-check.json](../evidence/integration/tc13-operational-token-payload-check.json) — Full operational tokens absent from browser payload.
+- [evidence/portal/browser-checks.json](../evidence/portal/browser-checks.json#L49-L55) (lines 49–55) — Token A reveal/copy/hide check and clipboard match.
 
 ## TC14: Company and network records
 
@@ -202,9 +218,10 @@ Captured result (Pass): A disposable company name was updated through HTTP and v
 
 Test code: backend: [internal/api/portal_test.go](../../chargenet-backend/internal/api/portal_test.go); portal: [src/pages/Company.tsx](../../chargenet-portal/src/pages/Company.tsx); [src/pages/Network.tsx](../../chargenet-portal/src/pages/Network.tsx).
 
-Representative evidence: [evidence/integration/tc14-profile-reload.json](../evidence/integration/tc14-profile-reload.json)
+Evidence:
 
-Supporting records: [browser-results.json](../evidence/portal/browser-results.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/integration/tc14-profile-reload.json](../evidence/integration/tc14-profile-reload.json) — Edited company name survives browser reload.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L88-L99) (lines 88–99) — Passing Go assertions and their captured output.
 
 ## TC15: Revenue currencies and full export
 
@@ -216,9 +233,11 @@ Captured result (Pass): For each of MYR, SGD and THB, 26 synthetic report record
 
 Test code: backend: [internal/api/portal_reporting_test.go](../../chargenet-backend/internal/api/portal_reporting_test.go); [internal/api/reporting_range_test.go](../../chargenet-backend/internal/api/reporting_range_test.go); portal: [src/pages/Ledger.tsx](../../chargenet-portal/src/pages/Ledger.tsx); [src/ui/reporting.ts](../../chargenet-portal/src/ui/reporting.ts).
 
-Representative evidence: [evidence/captures/edge-tc15-full-range-myr.png](../evidence/captures/edge-tc15-full-range-myr.png)
+Evidence:
 
-Supporting records: [tc15-currency-midnight-pagination.json](../evidence/integration/tc15-currency-midnight-pagination.json), [tc15-totals-myr.csv](../evidence/database/tc15-totals-myr.csv), [tc15-totals-sgd.csv](../evidence/database/tc15-totals-sgd.csv), [tc15-totals-thb.csv](../evidence/database/tc15-totals-thb.csv), [browser-checks.json](../evidence/portal/browser-checks.json).
+- [evidence/captures/edge-tc15-full-range-myr.png](../evidence/captures/edge-tc15-full-range-myr.png) — MYR totals and Kuala Lumpur date range.
+- [evidence/integration/tc15-currency-midnight-pagination.json](../evidence/integration/tc15-currency-midnight-pagination.json) — All three currencies: 25+1 paginated records, 26 CSV records and matching SQL totals.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 2–3, 38–67) — Passing Go assertions and their captured output.
 
 ## TC16: Sandbox trace and revenue exclusion
 
@@ -230,9 +249,10 @@ Captured result (Pass): The browser sandbox request was accepted on an available
 
 Test code: backend: [internal/api/portal_test.go](../../chargenet-backend/internal/api/portal_test.go); portal: [src/pages/Sandbox.tsx](../../chargenet-portal/src/pages/Sandbox.tsx); [src/ui/sandboxTrace.ts](../../chargenet-portal/src/ui/sandboxTrace.ts).
 
-Representative evidence: [evidence/captures/edge-tc16-sandbox-stop.png](../evidence/captures/edge-tc16-sandbox-stop.png)
+Evidence:
 
-Supporting records: [browser-workflow-results.json](../evidence/portal/browser-workflow-results.json), [tc16-sandbox-browser-trace.json](../evidence/integration/tc16-sandbox-browser-trace.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/captures/edge-tc16-sandbox-stop.png](../evidence/captures/edge-tc16-sandbox-stop.png) — Accepted command and later observed AVAILABLE state.
+- [evidence/portal/browser-workflow-results.json](../evidence/portal/browser-workflow-results.json#L74-L119) (lines 74–119) — Sandbox before/after totals unchanged.
 
 ## TC17: Version and credential exchange
 
@@ -244,9 +264,11 @@ Captured result (Pass): The live receiver advertised 2.3.0 plus 2.2.1 compatibil
 
 Test code: backend: [internal/ocpi/ocpi_test.go](../../chargenet-backend/internal/ocpi/ocpi_test.go); internal/ocpi/version_test.go; [internal/ocpi/emulator/emulator_test.go](../../chargenet-backend/internal/ocpi/emulator/emulator_test.go) TestEmulatorRegistersWithChargeNet.
 
-Representative evidence: [evidence/integration/tc17-tc13-token-lifecycle.json](../evidence/integration/tc17-tc13-token-lifecycle.json)
+Evidence:
 
-Supporting records: [tc17-versions.json](../evidence/integration/tc17-versions.json), [tc17-modules.json](../evidence/integration/tc17-modules.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/integration/tc17-versions.json](../evidence/integration/tc17-versions.json) — Advertised OCPI version.
+- [evidence/integration/tc17-modules.json](../evidence/integration/tc17-modules.json) — Implemented module endpoints.
+- [evidence/integration/tc17-tc13-token-lifecycle.json](../evidence/integration/tc17-tc13-token-lifecycle.json) — Token reuse, rotation and unregistration results.
 
 ## TC18: Location normalisation
 
@@ -258,11 +280,10 @@ Captured result (Pass): Receiver normalization tests and all nine real-loopback 
 
 Test code: backend: [internal/ocpi/receiver_test.go](../../chargenet-backend/internal/ocpi/receiver_test.go) TestLocationPushStoresStationAndConnectors; [internal/api/roaming_e2e_test.go](../../chargenet-backend/internal/api/roaming_e2e_test.go).
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [operator-country-matrix.csv](../evidence/integration/operator-country-matrix.csv), [demo-roaming-results.json](../evidence/integration/demo-roaming-results.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 701–710, 783–784) — Passing Go assertions and their captured output.
+- [evidence/integration/operator-country-matrix.csv](../evidence/integration/operator-country-matrix.csv) — All nine operator/country combinations and their captured routing traces.
 
 ## TC19: Status and tariff push
 
@@ -274,9 +295,10 @@ Captured result (Pass): Status/tariff receiver tests passed. A real HTTP locatio
 
 Test code: backend: [internal/ocpi/receiver_test.go](../../chargenet-backend/internal/ocpi/receiver_test.go) TestLocationPatchUpdatesEvseStatuses and TestTariffPushRepricesConnectors.
 
-Representative evidence: [evidence/integration/tc19-push-visibility.json](../evidence/integration/tc19-push-visibility.json)
+Evidence:
 
-Supporting records: [tc20-normal-scheduler.json](../evidence/integration/tc20-normal-scheduler.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/integration/tc19-push-visibility.json](../evidence/integration/tc19-push-visibility.json) — Status/tariff push response and updated driver API.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L711-L734) (lines 711–734) — Passing Go assertions and their captured output.
 
 ## TC20: Pull reconciliation after a missed push
 
@@ -290,9 +312,11 @@ Test code: backend: [internal/ocpi/sync_test.go](../../chargenet-backend/interna
 
 Additional retained code: [backend/internal/ocpi/scheduled_reconciliation_test.go](backend/internal/ocpi/scheduled_reconciliation_test.go) — TestEvidenceScheduledSyncRepairsMissedPush (accelerated scheduler).
 
-Representative evidence: [evidence/captures/edge-tc20-after-scheduled-pull.png](../evidence/captures/edge-tc20-after-scheduled-pull.png)
+Evidence:
 
-Supporting records: [tc20-normal-scheduler.json](../evidence/integration/tc20-normal-scheduler.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/captures/edge-tc20-after-scheduled-pull.png](../evidence/captures/edge-tc20-after-scheduled-pull.png) — Recovered station name and MYR 1.75 tariff.
+- [evidence/integration/tc20-normal-scheduler.json](../evidence/integration/tc20-normal-scheduler.json) (lines 2–112, 1010–1053) — Normal scheduler timing, before/after snapshots and source reads.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L592-L600) (lines 592–600) — Passing Go assertions and their captured output.
 
 ## TC21: Command routing across nine combinations
 
@@ -304,9 +328,9 @@ Captured result (Pass): All nine operator/station-country subcases passed over r
 
 Test code: backend: [internal/api/roaming_e2e_test.go](../../chargenet-backend/internal/api/roaming_e2e_test.go) TestRoamingAcrossEveryEmulatorAndCountry; [internal/ocpi/gateway_test.go](../../chargenet-backend/internal/ocpi/gateway_test.go).
 
-Representative evidence: [evidence/integration/operator-country-matrix.csv](../evidence/integration/operator-country-matrix.csv)
+Evidence:
 
-Supporting records: [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/integration/operator-country-matrix.csv](../evidence/integration/operator-country-matrix.csv) — Nine passing loopback journeys with command URLs and session IDs.
 
 ## TC22: Malformed and foreign partner data
 
@@ -318,9 +342,9 @@ Captured result (Pass): Malformed-location, malformed-tariff and foreign-partner
 
 Test code: backend: [internal/ocpi/receiver_test.go](../../chargenet-backend/internal/ocpi/receiver_test.go); [internal/ocpi/sync_test.go](../../chargenet-backend/internal/ocpi/sync_test.go) TestSyncSkipsMalformedLocation.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 701–710, 720–750, 790–792) — Passing Go assertions and their captured output.
 
 ## TC23: Unreachable or inactive partner
 
@@ -332,9 +356,10 @@ Captured result (Pass): Direct-sync tests reported the unreachable partner while
 
 Test code: backend: [internal/ocpi/sync_test.go](../../chargenet-backend/internal/ocpi/sync_test.go) TestSyncOneReportsAnUnreachablePartner and TestSyncAllStoresEveryReachablePartner; [internal/ocpi/ocpi_test.go](../../chargenet-backend/internal/ocpi/ocpi_test.go) TestSuspendedPartnerLeavesDiscovery.
 
-Representative evidence: [evidence/reliability/tc23-controlled-start-errors.json](../evidence/reliability/tc23-controlled-start-errors.json)
+Evidence:
 
-Supporting records: [backend-tests.log](../evidence/backend/backend-tests.log), [tc12-governance.json](../evidence/integration/tc12-governance.json).
+- [evidence/reliability/tc23-controlled-start-errors.json](../evidence/reliability/tc23-controlled-start-errors.json) — Rejected/unreachable starts leave wallet and reservation unchanged.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 692–698, 788–789, 793–797, 894–895) — Passing Go assertions and their captured output.
 
 ## TC24: Session and CDR receivers
 
@@ -346,11 +371,9 @@ Captured result (Pass): Receiver tests passed for known-session updates, command
 
 Test code: backend: [internal/ocpi/receiver_test.go](../../chargenet-backend/internal/ocpi/receiver_test.go) TestSessionPushLinksToTheChargeNetSession, TestCommandResultReachesTheGateway and TestCDRPostSettlesTheSessionOnce.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [concurrent-stops.json](../evidence/reliability/tc28-repeated-settlement/concurrent-stops.json), [accounting-checks.json](../evidence/database/accounting-checks.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L735-L782) (lines 735–782) — Passing Go assertions and their captured output.
 
 ## TC25: Start eligibility failures
 
@@ -362,9 +385,9 @@ Captured result (Pass): The ordered start-validation and quote-acceptance failur
 
 Test code: backend: [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestStartValidationOrder; [internal/store/quotes_test.go](../../chargenet-backend/internal/store/quotes_test.go) TestQuoteOwnershipConsumptionAndFailure.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 874–881, 892–893, 977–978) — Passing Go assertions and their captured output.
 
 ## TC26: Repeated start response
 
@@ -376,9 +399,9 @@ Captured result (Pass): A complete start request was sent over a real socket and
 
 Test code: backend: [internal/api/roaming_e2e_test.go](../../chargenet-backend/internal/api/roaming_e2e_test.go); [internal/api/idempotency.go](../../chargenet-backend/internal/api/idempotency.go).
 
-Representative evidence: [evidence/reliability/tc26-dropped-start-replay.json](../evidence/reliability/tc26-dropped-start-replay.json)
+Evidence:
 
-Supporting records: [accounting-checks.json](../evidence/database/accounting-checks.json).
+- [evidence/reliability/tc26-dropped-start-replay.json](../evidence/reliability/tc26-dropped-start-replay.json) — Lost response replay returns original session and replay header.
 
 ## TC27: Concurrent competing starts
 
@@ -392,9 +415,9 @@ Test code: backend: [internal/store/quotes_test.go](../../chargenet-backend/inte
 
 Additional retained code: [backend/internal/sessions/accounting_safety_test.go](backend/internal/sessions/accounting_safety_test.go) — TestEvidenceConcurrentDriversSameConnector.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 867–870, 983–984) — Passing Go assertions and their captured output.
 
 ## TC28: Repeated stop and concurrent settlement
 
@@ -406,9 +429,11 @@ Captured result (Pass): Real simultaneous stop calls and a further repeated stop
 
 Test code: backend: [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestStopSettlesExactlyOnce; [internal/store/quotes_test.go](../../chargenet-backend/internal/store/quotes_test.go) TestQuoteCurrencyMatrix.
 
-Representative evidence: [evidence/database/tc28-session-cdr-wallet.csv](../evidence/database/tc28-session-cdr-wallet.csv)
+Evidence:
 
-Supporting records: [concurrent-stops.json](../evidence/reliability/tc28-repeated-settlement/concurrent-stops.json), [accounting-checks.json](../evidence/database/accounting-checks.json), [wallet-tariff-currency-matrix.csv](../evidence/integration/wallet-tariff-currency-matrix.csv).
+- [evidence/reliability/tc28-repeated-settlement/concurrent-stops.json](../evidence/reliability/tc28-repeated-settlement/concurrent-stops.json) — Concurrent stop responses return the same completed session and CDR.
+- [evidence/database/tc28-session-cdr-wallet.csv](../evidence/database/tc28-session-cdr-wallet.csv) (lines 1, 5) — CSV header and the matching session row.
+- [evidence/database/accounting-checks.json](../evidence/database/accounting-checks.json#L50-L65) (lines 50–65) — Session-specific settlement, debit, hold and connector invariants.
 
 ## TC29: Stop timeout and uncertain completion
 
@@ -422,9 +447,10 @@ Test code: backend: [internal/ocpi/gateway_test.go](../../chargenet-backend/inte
 
 Additional retained code: [backend/internal/sessions/stop_uncertainty_test.go](backend/internal/sessions/stop_uncertainty_test.go) — TestEvidenceUnknownStopPreservesUncertainty, TestEvidenceUnknownStopAfterConfirmedSettlement.
 
-Representative evidence: [evidence/backend/stop-confirmation-tests.log](../evidence/backend/stop-confirmation-tests.log)
+Evidence:
 
-Supporting records: [stop-confirmation-summary.json](../evidence/backend/stop-confirmation-summary.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/backend/stop-confirmation-tests.log](../evidence/backend/stop-confirmation-tests.log) — Three uncertain stops retain hold; confirmed terminal state settles once; completion during stop returns success.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log) (lines 401–402, 409–410) — Named Flutter checks followed by their PASS results.
 
 ## TC30: Telemetry interruption and reconnection
 
@@ -436,9 +462,11 @@ Captured result (Pass): Complete network loss displayed interrupted updates whil
 
 Test code: mobile: [test/session_stream_test.dart](../../chargenet-mobile/test/session_stream_test.dart); [test/session_coordinator_test.dart](../../chargenet-mobile/test/session_coordinator_test.dart); backend: [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestStreamCarriesTelemetryThenCompleted.
 
-Representative evidence: [evidence/captures/android-tc30-complete-network-restored.png](../evidence/captures/android-tc30-complete-network-restored.png)
+Evidence:
 
-Supporting records: [android.json](../evidence/reliability/tc30-telemetry-recovery/android.json), [android-confirmed-ui-recovery.json](../evidence/reliability/tc30-telemetry-recovery/android-confirmed-ui-recovery.json), [mobile-tests.log](../evidence/mobile/mobile-tests.log).
+- [evidence/captures/android-tc30-complete-network-restored.png](../evidence/captures/android-tc30-complete-network-restored.png) — Live charging screen after connection restoration.
+- [evidence/reliability/tc30-telemetry-recovery/android-confirmed-ui-recovery.json](../evidence/reliability/tc30-telemetry-recovery/android-confirmed-ui-recovery.json) — Same session restored through explicit Retry live updates.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log) (lines 31–34, 405–406, 419–420) — Named Flutter checks followed by their PASS results.
 
 ## TC31: Recovery of an active session
 
@@ -450,11 +478,12 @@ Captured result (Pass): The active-session experiment killed and restarted the e
 
 Test code: backend: [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestRestartResumesInterruptedSession.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [before.json](../evidence/reliability/tc31-active-restart/before.json), [after.json](../evidence/reliability/tc31-active-restart/after.json), [.json](../evidence/reliability/tc31-active-restart/.json), [accounting-checks.json](../evidence/database/accounting-checks.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L896-L898) (lines 896–898) — Passing Go assertions and their captured output.
+- [evidence/reliability/tc31-active-restart/before.json](../evidence/reliability/tc31-active-restart/before.json) — Persisted positive progress before process restart.
+- [evidence/reliability/tc31-active-restart/after.json](../evidence/reliability/tc31-active-restart/after.json) (lines 588–626, 628) — Last process-restart observation and the independent-CPO persistence limitation.
+- [evidence/database/accounting-checks.json](../evidence/database/accounting-checks.json#L90-L105) (lines 90–105) — Session-specific settlement, debit, hold and connector invariants.
 
 ## TC32: Recovery of interrupted settlement
 
@@ -466,9 +495,12 @@ Captured result (Pass): A durable settlement-intent fixture was persisted before
 
 Test code: backend: [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestRestartFinishesDurableSettlementAndReleasesHold; [internal/store/settlement_recovery.go](../../chargenet-backend/internal/store/settlement_recovery.go).
 
-Representative evidence: [evidence/reliability/tc32-settlement-restart/recovered.json](../evidence/reliability/tc32-settlement-restart/recovered.json)
+Evidence:
 
-Supporting records: [tc31-tc32-after-repeated-restart.csv](../evidence/database/tc31-tc32-after-repeated-restart.csv), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/reliability/tc32-settlement-restart/recovered.json](../evidence/reliability/tc32-settlement-restart/recovered.json) — Durable intent, locked pricing and recovered completed session.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L899-L900) (lines 899–900) — Passing Go assertions and their captured output.
+- [evidence/database/accounting-checks.json](../evidence/database/accounting-checks.json#L106-L121) (lines 106–121) — Session-specific settlement, debit, hold and connector invariants.
+- [evidence/database/tc31-tc32-after-repeated-restart.csv](../evidence/database/tc31-tc32-after-repeated-restart.csv) (lines 1, 9) — CSV header and the matching session row.
 
 ## TC33: Pricing revalidation without expiry
 
@@ -480,11 +512,9 @@ Captured result (Pass): Current-pricing tests passed for unchanged old estimates
 
 Test code: backend: [internal/store/pricing_revalidation_test.go](../../chargenet-backend/internal/store/pricing_revalidation_test.go); [internal/store/quotes_test.go](../../chargenet-backend/internal/store/quotes_test.go) TestStaleQuotesMissingRatesAndConcurrentAcceptance.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [backend-test-summary.json](../evidence/backend/backend-test-summary.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 945–956, 983–984) — Passing Go assertions and their captured output.
 
 ## TC34: Currency matrix and locked settlement
 
@@ -496,9 +526,11 @@ Captured result (Pass): All nine wallet/tariff currency subcases and locked hist
 
 Test code: backend: [internal/store/quotes_test.go](../../chargenet-backend/internal/store/quotes_test.go) TestQuoteCurrencyMatrix and TestLockedRateAndHistoricalReceipt; mobile: [test/multi_currency_test.dart](../../chargenet-mobile/test/multi_currency_test.dart).
 
-Representative evidence: [evidence/integration/wallet-tariff-currency-matrix.csv](../evidence/integration/wallet-tariff-currency-matrix.csv)
+Evidence:
 
-Supporting records: [tc09-mobile-chargesync-journey.json](../evidence/integration/tc09-mobile-chargesync-journey.json), [tc09-mobile-ecowatt-journey.json](../evidence/integration/tc09-mobile-ecowatt-journey.json), [accounting-checks.json](../evidence/database/accounting-checks.json).
+- [evidence/integration/wallet-tariff-currency-matrix.csv](../evidence/integration/wallet-tariff-currency-matrix.csv) — All nine wallet/tariff currency pairs pass.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L979-L980) (lines 979–980) — Passing Go assertions and their captured output.
+- [evidence/captures/android-tc11-chargesync-receipt-details.png](../evidence/captures/android-tc11-chargesync-receipt-details.png) — Original SGD charge, accepted FX and MYR debit retained in receipt.
 
 ## TC35: Automatic stop and zero cost boundary
 
@@ -512,9 +544,9 @@ Test code: backend: [internal/sessions/manager_test.go](../../chargenet-backend/
 
 Additional retained code: [backend/internal/sessions/accounting_safety_test.go](backend/internal/sessions/accounting_safety_test.go) — TestEvidenceZeroEnergyRepeatedStop.
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 871–873, 882–885) — Passing Go assertions and their captured output.
 
 ## TC36: Driver ownership boundaries
 
@@ -526,9 +558,10 @@ Captured result (Pass): Vehicle/quote ownership and subscription tests passed. D
 
 Test code: backend: [internal/api/vehicle_handler_test.go](../../chargenet-backend/internal/api/vehicle_handler_test.go) TestVehicleOwnershipIsolation; [internal/store/quotes_test.go](../../chargenet-backend/internal/store/quotes_test.go) TestQuoteOwnershipConsumptionAndFailure; [internal/sessions/manager_test.go](../../chargenet-backend/internal/sessions/manager_test.go) TestSubscribeHidesAnotherDriversSession.
 
-Representative evidence: [evidence/requests/tc36-tc37-tc38-access-denials.json](../evidence/requests/tc36-tc37-tc38-access-denials.json)
+Evidence:
 
-Supporting records: [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/requests/tc36-tc37-tc38-access-denials.json](../evidence/requests/tc36-tc37-tc38-access-denials.json#L2-L23) (lines 2–23) — Another driver receives 404 for session and stream.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 499–507, 890–891, 977–978) — Passing Go assertions and their captured output.
 
 ## TC37: Portal role and tenant boundaries
 
@@ -540,9 +573,10 @@ Captured result (Pass): Unauthenticated portal access returned 401; a CPO admini
 
 Test code: backend: [internal/api/portal_test.go](../../chargenet-backend/internal/api/portal_test.go) TestPortalRequiresSession, TestPortalAdminConsoleAndTenancy and TestPortalCDRDetailIsTenancyScopedAndFilterableByEVSE.
 
-Representative evidence: [evidence/requests/tc36-tc37-tc38-access-denials.json](../evidence/requests/tc36-tc37-tc38-access-denials.json)
+Evidence:
 
-Supporting records: [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/requests/tc36-tc37-tc38-access-denials.json](../evidence/requests/tc36-tc37-tc38-access-denials.json#L24-L56) (lines 24–56) — Unauthenticated, wrong-role and foreign-tenant denials.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 84–99, 106–113) — Passing Go assertions and their captured output.
 
 ## TC38: OCPI token contract
 
@@ -554,9 +588,11 @@ Captured result (Pass): Missing and unknown operational tokens were rejected thr
 
 Test code: backend: [internal/ocpi/ocpi_test.go](../../chargenet-backend/internal/ocpi/ocpi_test.go) TestModuleEndpointsEnforceTheTokenContract and TestMissingOrUnknownTokenIsRejected; [internal/ocpi/receiver_test.go](../../chargenet-backend/internal/ocpi/receiver_test.go).
 
-Representative evidence: [evidence/requests/tc36-tc37-tc38-access-denials.json](../evidence/requests/tc36-tc37-tc38-access-denials.json)
+Evidence:
 
-Supporting records: [tc17-tc13-token-lifecycle.json](../evidence/integration/tc17-tc13-token-lifecycle.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/requests/tc36-tc37-tc38-access-denials.json](../evidence/requests/tc36-tc37-tc38-access-denials.json#L57-L78) (lines 57–78) — Missing and unknown operational tokens denied.
+- [evidence/integration/tc17-tc13-token-lifecycle.json](../evidence/integration/tc17-tc13-token-lifecycle.json) — Consumed and rotated tokens denied.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L633-L670) (lines 633–670) — Passing Go assertions and their captured output.
 
 ## TC39: Login throttling and session expiry
 
@@ -568,9 +604,11 @@ Captured result (Pass): The configured five-failure login throttle test passed. 
 
 Test code: backend: [internal/api/portal_test.go](../../chargenet-backend/internal/api/portal_test.go) TestPortalLoginRateLimited; portal: [src/api.ts](../../chargenet-portal/src/api.ts); [src/auth/AuthContext.tsx](../../chargenet-portal/src/auth/AuthContext.tsx).
 
-Representative evidence: [evidence/portal/browser-checks.json](../evidence/portal/browser-checks.json)
+Evidence:
 
-Supporting records: [browser-workflow-results.json](../evidence/portal/browser-workflow-results.json), [backend-tests.log](../evidence/backend/backend-tests.log).
+- [evidence/portal/browser-checks.json](../evidence/portal/browser-checks.json#L42-L48) (lines 42–48) — Correctly signed expired JWT removes protected view.
+- [evidence/portal/browser-workflow-results.json](../evidence/portal/browser-workflow-results.json#L120-L132) (lines 120–132) — Invalid session, logout and trace-clearing boundaries.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log#L75-L83) (lines 75–83) — Passing Go assertions and their captured output.
 
 ## TC40: Small-screen and scalable text
 
@@ -582,9 +620,11 @@ Captured result (Pass): Flutter layout tests passed at 320x640 and 640x320 with 
 
 Test code: mobile: [test/layout_test.dart](../../chargenet-mobile/test/layout_test.dart); [test/typesetting_test.dart](../../chargenet-mobile/test/typesetting_test.dart); [test/multi_currency_test.dart](../../chargenet-mobile/test/multi_currency_test.dart).
 
-Representative evidence: [evidence/captures/android-tc40-320dp-200-confirmation-full-label.png](../evidence/captures/android-tc40-320dp-200-confirmation-full-label.png)
+Evidence:
 
-Supporting records: [mobile-tests.log](../evidence/mobile/mobile-tests.log), [tc40-android-controls.json](../evidence/mobile/tc40-android-controls.json).
+- [evidence/captures/android-tc40-320dp-200-confirmation-full-label.png](../evidence/captures/android-tc40-320dp-200-confirmation-full-label.png) — Full confirmation label and controls at 320dp/200% text.
+- [evidence/mobile/tc40-android-controls.json](../evidence/mobile/tc40-android-controls.json) — Recorded viewport, text scale and reachable controls.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log#L287-L310) (lines 287–310) — Named Flutter checks followed by their PASS results.
 
 ## TC41: Accessible confirmation and light appearance
 
@@ -596,11 +636,10 @@ Captured result (Pass): Accessible start and stop confirmation alternatives were
 
 Test code: mobile: [test/interaction_accessibility_test.dart](../../chargenet-mobile/test/interaction_accessibility_test.dart); [test/slide_to_confirm_test.dart](../../chargenet-mobile/test/slide_to_confirm_test.dart); [lib/core/app_theme.dart](../../chargenet-mobile/lib/core/app_theme.dart); portal: [src/app.css](../../chargenet-portal/src/app.css).
 
-Representative evidence: [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log)
+Evidence:
 
-Supporting records: [tc40-android-controls.json](../evidence/mobile/tc40-android-controls.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/captures/android-tc40-320dp-200-confirmation-full-label.png](../evidence/captures/android-tc40-320dp-200-confirmation-full-label.png) — Visible alternative confirmation action and light appearance.
+- [evidence/mobile/mobile-tests.log](../evidence/mobile/mobile-tests.log) (lines 269–274, 277–278, 453–460) — Named Flutter checks followed by their PASS results.
 
 ## TC42: Portal layout and browser compatibility
 
@@ -612,9 +651,12 @@ Captured result (Pass): Edge and Firefox passed eight sampled CPO route/width ch
 
 Test code: portal: [src/App.tsx](../../chargenet-portal/src/App.tsx); [src/layout/Shell.tsx](../../chargenet-portal/src/layout/Shell.tsx); [src/pages/](../../chargenet-portal/src/pages/); [src/app.css](../../chargenet-portal/src/app.css).
 
-Representative evidence: [evidence/captures/edge-tc42-390-ledger.png](../evidence/captures/edge-tc42-390-ledger.png)
+Evidence:
 
-Supporting records: [layout-browser-matrix.csv](../evidence/performance/layout-browser-matrix.csv), [firefox-results.json](../evidence/portal/firefox-results.json), [browser-checks.json](../evidence/portal/browser-checks.json).
+- [evidence/captures/edge-tc42-390-ledger.png](../evidence/captures/edge-tc42-390-ledger.png) — Narrow revenue view with keyboard-focused export.
+- [evidence/portal/browser-results.json](../evidence/portal/browser-results.json#L60-L140) (lines 60–140) — Desktop/narrow CPO route checks, focus and overflow results.
+- [evidence/portal/browser-checks.json](../evidence/portal/browser-checks.json#L2-L23) (lines 2–23) — Administrator desktop/narrow navigation results.
+- [evidence/portal/firefox-results.json](../evidence/portal/firefox-results.json) — Eight Firefox route/width samples and their results.
 
 ## TC43: Measured local response and update delay
 
@@ -626,9 +668,12 @@ Captured result (Pass): Descriptive measurement completed: five warm-ups and 30 
 
 Test code: backend: /api/v1/stations; /api/v1/sessions/{id}/stream; [internal/ocpi/sync.go](../../chargenet-backend/internal/ocpi/sync.go).
 
-Representative evidence: [evidence/performance/timing-summary.json](../evidence/performance/timing-summary.json)
+Evidence:
 
-Supporting records: [timing-samples.csv](../evidence/performance/timing-samples.csv), [tc43-start-to-first-sse.json](../evidence/performance/tc43-start-to-first-sse.json), [tc19-push-visibility.json](../evidence/integration/tc19-push-visibility.json), [tc20-normal-scheduler.json](../evidence/integration/tc20-normal-scheduler.json).
+- [evidence/performance/timing-summary.json](../evidence/performance/timing-summary.json) — 30 samples, five warm-ups, median, p95 and zero errors.
+- [evidence/performance/tc43-start-to-first-sse.json](../evidence/performance/tc43-start-to-first-sse.json) — Start-to-first-positive-telemetry timestamps and method.
+- [evidence/integration/tc19-push-visibility.json](../evidence/integration/tc19-push-visibility.json#L2-L5) (lines 2–5) — Push visibility timing.
+- [evidence/integration/tc20-normal-scheduler.json](../evidence/integration/tc20-normal-scheduler.json#L2-L7) (lines 2–7) — Missed-push recovery delay under the normal 300-second scheduler.
 
 ## TC44: Persistent migration and seed safety
 
@@ -640,8 +685,6 @@ Captured result (Pass): The disposable legacy migration/history-preservation and
 
 Test code: backend: [internal/store/migration_test.go](../../chargenet-backend/internal/store/migration_test.go) TestUpgradePreservesLegacyFinancialHistory; [internal/store/quotes_test.go](../../chargenet-backend/internal/store/quotes_test.go) TestStationGeographyAndSeedIdempotency; [scripts/migrations/](../../chargenet-backend/scripts/migrations/).
 
-Representative evidence: [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log)
+Evidence:
 
-Supporting records: [backend-test-summary.json](../evidence/backend/backend-test-summary.json).
-
-For suite logs, search for the test name above; the following PASS line records its result.
+- [evidence/backend/backend-tests.log](../evidence/backend/backend-tests.log) (lines 943–944, 981–982) — Passing Go assertions and their captured output.
